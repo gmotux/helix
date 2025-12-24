@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kallisto Biomedical — Candidate Experience Questionnaire</title>
+
+  <style>
+    :root{
+      --kb-ink:#0b1220;
+      --kb-paper:#ffffff;
+      --kb-muted:#5a677a;
+      --kb-line:#d9e1ee;
+      --kb-accent:#1fb6a6;   /* teal */
+      --kb-accent2:#2a5bd7;  /* blue */
+      --kb-warn:#b45309;
+
+      --radius:14px;
+      --shadow:0 18px 40px rgba(11,18,32,.10);
+      --shadow2:0 6px 16px rgba(11,18,32,.08);
+
+      color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --kb-ink:#e9eef7;
+        --kb-paper:#0c1424;
+        --kb-muted:#a7b4c8;
+        --kb-line:#22304a;
+        --shadow:0 18px 40px rgba(0,0,0,.35);
+        --shadow2:0 6px 16px rgba(0,0,0,.25);
+        color-scheme: dark;
+      }
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 15% 10%, color-mix(in oklab, var(--kb-accent) 18%, transparent), transparent 55%),
+                  radial-gradient(1000px 600px at 90% 0%, color-mix(in oklab, var(--kb-accent2) 14%, transparent), transparent 55%),
+                  color-mix(in oklab, var(--kb-paper) 92%, #0000);
+      color:var(--kb-ink);
+    }
+
+    .wrap{ max-width: 980px; margin: 28px auto 90px; padding: 0 18px; }
+    .card{
+      background: var(--kb-paper);
+      border: 1px solid var(--kb-line);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    header{
+      position: relative;
+      padding: 22px 22px 18px;
+      border-bottom: 1px solid var(--kb-line);
+      background:
+        linear-gradient(135deg,
+          color-mix(in oklab, var(--kb-accent2) 14%, transparent),
+          color-mix(in oklab, var(--kb-accent) 12%, transparent)
+        );
+    }
+
+    .hdr-row{ display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .brand{ display:flex; gap:12px; align-items:center; min-width: 260px; }
+    .logo{
+      width:44px; height:44px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--kb-accent2), var(--kb-accent));
+      box-shadow: var(--shadow2);
+      display:grid; place-items:center;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 50%, transparent);
+    }
+
+    .brand h1{ font-size: 16px; margin:0; letter-spacing:.2px; font-weight: 800; line-height: 1.05; }
+    .brand .sub{ font-size: 12px; margin-top: 2px; color: var(--kb-muted); font-weight: 600; }
+    .docmeta{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end; color: var(--kb-muted); font-size: 12px; font-weight: 600; }
+    .pill{
+      border: 1px solid var(--kb-line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: color-mix(in oklab, var(--kb-paper) 86%, transparent);
+      backdrop-filter: blur(6px);
+      white-space: nowrap;
+    }
+
+    .titleblock{ margin-top: 14px; display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap; align-items:flex-end; }
+    .titleblock h2{ margin:0; font-size: 20px; font-weight: 900; letter-spacing:.2px; }
+    .titleblock .note{ margin:0; font-size: 12px; color: var(--kb-muted); max-width: 560px; }
+    .watermark{
+      position:absolute; top: 16px; right: 18px; font-size: 10px;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: color-mix(in oklab, var(--kb-muted) 70%, transparent);
+      user-select:none; pointer-events:none;
+    }
+
+    main{ padding: 18px 22px 8px; }
+
+    .section{
+      border: 1px solid var(--kb-line);
+      border-radius: var(--radius);
+      padding: 14px;
+      margin: 14px 0;
+      box-shadow: var(--shadow2);
+      background: color-mix(in oklab, var(--kb-paper) 92%, transparent);
+    }
+
+    .section h3{
+      margin:0 0 10px;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--kb-muted);
+      font-weight: 900;
+    }
+
+    .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 760px){
+      .grid2{ grid-template-columns: 1fr; }
+      .docmeta{ justify-content:flex-start; }
+    }
+
+    .q{
+      padding: 10px 10px 12px;
+      border: 1px solid var(--kb-line);
+      border-radius: 12px;
+      background: var(--kb-paper);
+    }
+
+    .q .qlabel{ font-size: 13px; font-weight: 800; margin:0 0 8px; letter-spacing:.1px; }
+    .q .help{ font-size: 12px; color: var(--kb-muted); margin: -2px 0 8px; }
+
+    input[type="text"], textarea, select{
+      width:100%;
+      padding: 10px 10px;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 88%, #0000);
+      border-radius: 12px;
+      background: color-mix(in oklab, var(--kb-paper) 92%, transparent);
+      color: var(--kb-ink);
+      outline: none;
+      transition: border .15s ease, box-shadow .15s ease;
+      font-size: 14px;
+    }
+
+    textarea{ min-height: 86px; resize: vertical; }
+
+    input:focus, textarea:focus, select:focus{
+      border-color: color-mix(in oklab, var(--kb-accent2) 70%, var(--kb-line));
+      box-shadow: 0 0 0 4px color-mix(in oklab, var(--kb-accent2) 18%, transparent);
+    }
+
+    .choices{ display:flex; flex-wrap:wrap; gap:10px 14px; margin-top: 6px; }
+    .choice{
+      display:flex; align-items:center; gap:8px;
+      padding: 6px 10px;
+      border: 1px solid var(--kb-line);
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--kb-paper) 88%, transparent);
+    }
+    .choice input{ transform: translateY(1px); }
+
+    .divider{ height:1px; background: var(--kb-line); margin: 12px 0 0; }
+
+    /* Controls */
+    .controls{
+      position: fixed; left: 0; right: 0; bottom: 0;
+      border-top: 1px solid var(--kb-line);
+      background: color-mix(in oklab, var(--kb-paper) 88%, transparent);
+      backdrop-filter: blur(10px);
+      padding: 12px 16px;
+      z-index: 50;
+    }
+    .controls-inner{
+      max-width: 980px; margin: 0 auto;
+      display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    }
+    .btnrow{ display:flex; gap:10px; flex-wrap:wrap; }
+    button{
+      appearance: none;
+      border: 1px solid var(--kb-line);
+      background: var(--kb-paper);
+      color: var(--kb-ink);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-weight: 800;
+      cursor:pointer;
+      box-shadow: var(--shadow2);
+    }
+    .primary{
+      border-color: color-mix(in oklab, var(--kb-accent2) 55%, var(--kb-line));
+      background: linear-gradient(135deg,
+        color-mix(in oklab, var(--kb-accent2) 18%, var(--kb-paper)),
+        color-mix(in oklab, var(--kb-accent) 16%, var(--kb-paper))
+      );
+    }
+    .danger{ border-color: color-mix(in oklab, var(--kb-warn) 50%, var(--kb-line)); }
+    button:hover{ filter: brightness(1.03); }
+    .smallnote{ font-size: 12px; color: var(--kb-muted); font-weight: 650; }
+
+    /* =========================
+       Affinity visual output
+       ========================= */
+    .affinityWrap{
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 12px;
+      align-items: start;
+    }
+    @media (max-width: 760px){
+      .affinityWrap{ grid-template-columns: 1fr; }
+    }
+
+    .affinityHero{
+      border: 1px solid var(--kb-line);
+      border-radius: var(--radius);
+      background: color-mix(in oklab, var(--kb-paper) 92%, transparent);
+      padding: 12px;
+    }
+
+    .heroCard{
+      position: relative;
+      overflow: hidden;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid color-mix(in oklab, var(--kb-line) 88%, transparent);
+      background: linear-gradient(135deg,
+        color-mix(in oklab, var(--kb-accent2) 16%, var(--kb-paper)),
+        color-mix(in oklab, var(--kb-accent) 14%, var(--kb-paper))
+      );
+      box-shadow: var(--shadow2);
+      min-height: 160px;
+      padding: 14px;
+    }
+
+    .heroTitle{
+      font-weight: 950;
+      letter-spacing: .2px;
+      font-size: 16px;
+      margin: 0 0 6px;
+    }
+    .heroSub{
+      margin: 0;
+      color: var(--kb-muted);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .badgeScore{
+      position: absolute;
+      top: 10px; left: 10px;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 78%, transparent);
+      background: color-mix(in oklab, var(--kb-paper) 86%, transparent);
+      backdrop-filter: blur(10px);
+    }
+
+    .iconLarge{
+      position:absolute;
+      right: -18px;
+      bottom: -22px;
+      width: 210px;
+      height: 210px;
+      opacity: .22;
+      transform: rotate(8deg);
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,.18));
+      pointer-events:none;
+      user-select:none;
+    }
+
+    .affinityGrid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .miniCard{
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid color-mix(in oklab, var(--kb-line) 88%, transparent);
+      background: var(--kb-paper);
+      box-shadow: var(--shadow2);
+      padding: 10px;
+      min-height: 108px;
+      transform-origin: center;
+    }
+
+    .miniName{
+      font-weight: 900;
+      font-size: 13px;
+      margin: 0 0 4px;
+      letter-spacing: .2px;
+    }
+
+    .miniScore{
+      position:absolute;
+      top: 8px; left: 8px;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--kb-line);
+      background: color-mix(in oklab, var(--kb-paper) 88%, transparent);
+      backdrop-filter: blur(8px);
+    }
+
+    .iconMini{
+      position:absolute;
+      right: -14px;
+      bottom: -18px;
+      width: 130px;
+      height: 130px;
+      opacity: .20;
+      transform: rotate(8deg);
+      pointer-events:none;
+      user-select:none;
+    }
+
+    .mutedLine{
+      margin: 6px 0 0;
+      color: var(--kb-muted);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    /* Print */
+    @media print{
+      body{ background:#fff; color:#000; }
+      .controls{ display:none !important; }
+      .wrap{ margin:0; padding:0; max-width:none; }
+      .card{ box-shadow:none; border:none; }
+      header{ background:none; }
+      .section, .q, .miniCard, .heroCard{ box-shadow:none; }
+      input, textarea, select{ border: 1px solid #0006; }
+      .watermark{ color:#0007; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="watermark">INTERNAL • CEQ v3.11</div>
+
+        <div class="hdr-row">
+          <div class="brand">
+            <div class="logo" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2.2c5.96 0 10.8 4.84 10.8 10.8S18.96 23.8 13 23.8 2.2 18.96 2.2 13 7.04 2.2 13 2.2Z" stroke="rgba(255,255,255,.90)" stroke-width="1.8"/>
+                <path d="M7.2 15.2c2.2-5.6 9.4-7.6 11.6-2.2" stroke="rgba(255,255,255,.90)" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M8.6 10.6c2.8 1.0 6.0 5.2 7.6 7.0" stroke="rgba(255,255,255,.90)" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h1>Kallisto Biomedical</h1>
+              <div class="sub">Candidate Experience Questionnaire</div>
+            </div>
+          </div>
+
+          <div class="docmeta">
+            <div class="pill">Event: HELIX Summit</div>
+            <div class="pill">Form: CEQ</div>
+            <div class="pill">Locale: Onsite</div>
+          </div>
+        </div>
+
+        <div class="titleblock">
+          <div>
+            <h2>Candidate Intake</h2>
+            <p class="note">
+              Please complete this form for onsite safety planning and experience personalization. If uncertain, select the closest option.
+              Optional fields may be left blank.
+            </p>
+          </div>
+          <div class="smallnote">This document may be printed for submission.</div>
+        </div>
+      </header>
+
+      <main>
+        <form id="ceq" autocomplete="off">
+
+          <div class="section">
+            <h3>Identity & Context</h3>
+            <div class="grid2">
+              <div class="q">
+                <div class="qlabel">Preferred name</div>
+                <input type="text" name="name_preferred" />
+              </div>
+              <div class="q">
+                <div class="qlabel">Age range</div>
+                <select name="age_range">
+                  <option value="">— Select —</option>
+                  <option value="u18">&lt;18</option>
+                  <option value="18_24">18–24</option>
+                  <option value="25_34">25–34</option>
+                  <option value="35_44">35–44</option>
+                  <option value="45_54">45–54</option>
+                  <option value="55p">55+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid2" style="margin-top:12px;">
+              <div class="q">
+                <div class="qlabel">Occupation (plain language)</div>
+                <input type="text" name="occupation" />
+              </div>
+              <div class="q">
+                <div class="qlabel">Primary reason for attending</div>
+                <select name="attend_reason">
+                  <option value="">— Select —</option>
+                  <option value="press">Press / story</option>
+                  <option value="business">Business / investment</option>
+                  <option value="recruit">Recruiting / hiring</option>
+                  <option value="vendor">Vendor / contractor</option>
+                  <option value="academic">Academic interest</option>
+                  <option value="advocacy">Advocacy / policy</option>
+                  <option value="personal">Personal interest</option>
+                  <option value="network">Invited / networking</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="q" style="margin-top:12px;">
+              <div class="qlabel">Do you know any personnel or attendees here?</div>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="knows_someone" value="no"> No</label>
+                <label class="choice"><input type="radio" name="knows_someone" value="yes"> Yes</label>
+              </div>
+              <div class="help">Optional: name/role (if applicable)</div>
+              <input type="text" name="knows_details" />
+            </div>
+
+            <div class="q" style="margin-top:12px;">
+              <div class="qlabel">If you could leave today with exactly one outcome, what would it be?</div>
+              <select name="one_outcome">
+                <option value="">— Select —</option>
+                <option value="clarity">Clarity / answers</option>
+                <option value="access">Access / credentials</option>
+                <option value="deal">A deal / funding</option>
+                <option value="evidence">Documentation</option>
+                <option value="safety">Personal safety</option>
+                <option value="recognition">Recognition</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Baseline Constraints</h3>
+
+            <div class="q">
+              <div class="qlabel">Ongoing dependencies (optional)</div>
+              <div class="help">Examples: medication schedule, debt, legal constraints, caregiving obligations, time-critical commitments.</div>
+              <textarea name="dependencies"></textarea>
+            </div>
+
+            <div class="grid2" style="margin-top:12px;">
+              <div class="q">
+                <div class="qlabel">Allergies (optional)</div>
+                <input type="text" name="allergies" />
+              </div>
+              <div class="q">
+                <div class="qlabel">Implants / devices</div>
+                <select name="implants">
+                  <option value="">— Select —</option>
+                  <option value="none">None</option>
+                  <option value="medical">Medical device</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid2" style="margin-top:12px;">
+              <div class="q">
+                <div class="qlabel">Pain tolerance (self-rated)</div>
+                <select name="pain_tol">
+                  <option value="">— Select —</option>
+                  <option value="low">Low</option>
+                  <option value="mod">Moderate</option>
+                  <option value="high">High</option>
+                  <option value="vhigh">Very high</option>
+                </select>
+              </div>
+              <div class="q">
+                <div class="qlabel">Sleep deprivation (last 48 hours)</div>
+                <select name="sleep_dep">
+                  <option value="">— Select —</option>
+                  <option value="none">None</option>
+                  <option value="mild">Mild</option>
+                  <option value="severe">Severe</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="q" style="margin-top:12px;">
+              <div class="qlabel">If you are injured onsite, your priority is:</div>
+              <select name="injury_priority">
+                <option value="">— Select —</option>
+                <option value="bleed">Stop bleeding</option>
+                <option value="mobile">Stay mobile</option>
+                <option value="protect">Protect someone else</option>
+                <option value="evidence">Preserve documentation</option>
+                <option value="avoid">Avoid being restrained / detained</option>
+                <option value="unknown">Not sure</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Decision Style</h3>
+
+            <div class="grid2">
+              <div class="q">
+                <div class="qlabel">When something fails, you first:</div>
+                <select name="fail_first">
+                  <option value="">— Select —</option>
+                  <option value="patch">Patch immediately</option>
+                  <option value="diagnose">Diagnose root cause</option>
+                  <option value="delegate">Delegate</option>
+                  <option value="document">Document</option>
+                  <option value="disengage">Disengage</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">You trust most:</div>
+                <select name="trust_most">
+                  <option value="">— Select —</option>
+                  <option value="data">Data</option>
+                  <option value="people">People</option>
+                  <option value="instinct">Instinct</option>
+                  <option value="authority">Authority</option>
+                  <option value="patterns">Patterns from experience</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid2" style="margin-top:12px;">
+              <div class="q">
+                <div class="qlabel">Decision speed under pressure:</div>
+                <select name="speed_pressure">
+                  <option value="">— Select —</option>
+                  <option value="fast">Fast (accept risk)</option>
+                  <option value="moderate">Moderate (seek clarity)</option>
+                  <option value="slow">Slow (need certainty)</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">You prefer problems that are:</div>
+                <select name="problem_type">
+                  <option value="">— Select —</option>
+                  <option value="mechanical">Mechanical (tools, systems)</option>
+                  <option value="social">Social (people, motives)</option>
+                  <option value="abstract">Abstract (models, theory)</option>
+                  <option value="physical">Physical (endurance, force)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Stress Response</h3>
+
+            <div class="grid2">
+              <div class="q">
+                <div class="qlabel">Under threat, you typically:</div>
+                <select name="threat_response">
+                  <option value="">— Select —</option>
+                  <option value="freeze">Freeze</option>
+                  <option value="flee">Flee</option>
+                  <option value="fight">Fight</option>
+                  <option value="negotiate">Negotiate / de-escalate</option>
+                  <option value="hyperfocus">Hyperfocus</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">Which is more dangerous?</div>
+                <select name="danger_axis">
+                  <option value="">— Select —</option>
+                  <option value="slow">Not acting fast enough</option>
+                  <option value="uninformed">Acting without enough information</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="q" style="margin-top:12px;">
+              <div class="qlabel">In a crisis, you default to:</div>
+              <select name="crisis_default">
+                <option value="">— Select —</option>
+                <option value="lead">Take charge</option>
+                <option value="support">Support the strongest leader</option>
+                <option value="solo">Work alone</option>
+                <option value="observe">Observe quietly</option>
+                <option value="adapt">Adapt moment-by-moment</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Interpersonal Context</h3>
+
+            <div class="grid2">
+              <div class="q">
+                <div class="qlabel">Who would notice you’re missing within 24 hours?</div>
+                <select name="missing_notice">
+                  <option value="">— Select —</option>
+                  <option value="nobody">Nobody</option>
+                  <option value="employer">Employer</option>
+                  <option value="family">Family</option>
+                  <option value="friend">Friend</option>
+                  <option value="public">Public / media</option>
+                  <option value="legal">Legal system</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">Who do you protect by default?</div>
+                <select name="protect_default">
+                  <option value="">— Select —</option>
+                  <option value="kids">Kids</option>
+                  <option value="elderly">Elderly</option>
+                  <option value="friends">Partners / friends</option>
+                  <option value="coworkers">Coworkers</option>
+                  <option value="strangers">Strangers</option>
+                  <option value="none">No one by default</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="q" style="margin-top:12px;">
+              <div class="qlabel">Who do you distrust by default?</div>
+              <select name="distrust_default">
+                <option value="">— Select —</option>
+                <option value="authority">Police / security</option>
+                <option value="corps">Corporations</option>
+                <option value="media">Media</option>
+                <option value="activists">Activists</option>
+                <option value="everyone">Everyone</option>
+                <option value="noone">No one by default</option>
+              </select>
+            </div>
+
+            <div class="q" style="margin-top:12px;">
+              <div class="qlabel">Your most useful skill that doesn’t look useful on paper</div>
+              <textarea name="hidden_skill"></textarea>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Ethics & Thresholds</h3>
+
+            <div class="q">
+              <div class="qlabel">Would you lie to save a life?</div>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="eth_lie" value="yes"> Yes</label>
+                <label class="choice"><input type="radio" name="eth_lie" value="no"> No</label>
+                <label class="choice"><input type="radio" name="eth_lie" value="depends"> Depends</label>
+              </div>
+            </div>
+
+            <div class="q" style="margin-top:12px;">
+              <div class="qlabel">Would you seriously harm someone to save a life?</div>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="eth_harm" value="yes"> Yes</label>
+                <label class="choice"><input type="radio" name="eth_harm" value="no"> No</label>
+                <label class="choice"><input type="radio" name="eth_harm" value="depends"> Depends</label>
+              </div>
+            </div>
+
+            <div class="q" style="margin-top:12px;">
+              <div class="qlabel">Would you let one person die to save many?</div>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="eth_trade" value="yes"> Yes</label>
+                <label class="choice"><input type="radio" name="eth_trade" value="no"> No</label>
+                <label class="choice"><input type="radio" name="eth_trade" value="depends"> Depends</label>
+              </div>
+            </div>
+
+            <div class="grid2" style="margin-top:12px;">
+              <div class="q">
+                <div class="qlabel">Choose one line you will not cross</div>
+                <select name="eth_line">
+                  <option value="">— Select —</option>
+                  <option value="torture">Torture</option>
+                  <option value="betrayal">Betrayal of an ally</option>
+                  <option value="abandon">Abandoning a dependent</option>
+                  <option value="unarmed">Harming an unarmed person</option>
+                  <option value="theft">Stealing from victims</option>
+                  <option value="none">No hard lines</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">Ideal advantage in a lethal situation</div>
+                <select name="advantage">
+                  <option value="">— Select —</option>
+                  <option value="cover">Armor / cover</option>
+                  <option value="speed">Speed / escape routes</option>
+                  <option value="info">Information / control</option>
+                  <option value="influence">Influence / alliances</option>
+                  <option value="force">Raw force</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Consent & Acknowledgments</h3>
+
+            <div class="q">
+              <div class="qlabel">Please initial to acknowledge:</div>
+              <div class="help">These acknowledgments support onsite safety planning and incident response.</div>
+
+              <div class="choices">
+                <label class="choice"><input type="checkbox" name="ack1"> I understand the event may involve unexpected conditions.</label>
+                <label class="choice"><input type="checkbox" name="ack2"> I consent to onsite biometric telemetry and access logging.</label>
+                <label class="choice"><input type="checkbox" name="ack3"> I understand movement may be restricted during safety protocols.</label>
+                <label class="choice"><input type="checkbox" name="ack4"> I agree to comply with staff instructions during emergencies.</label>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="grid2" style="margin-top:12px;">
+                <div>
+                  <div class="help" style="margin:0 0 6px;">Signature</div>
+                  <input type="text" name="signature" />
+                </div>
+                <div>
+                  <div class="help" style="margin:0 0 6px;">Date</div>
+                  <input type="text" name="date" placeholder="YYYY-MM-DD" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual affinity output (no JSON) -->
+          <div class="section" id="affinitySection">
+            <h3>Affinity Indices</h3>
+            <div class="affinityWrap">
+              <div class="affinityHero">
+                <div class="heroCard" id="heroCard">
+                  <div class="badgeScore" id="heroScore">Score: 0</div>
+                  <div class="heroTitle" id="heroName">—</div>
+                  <p class="heroSub">Highest-scoring category based on selected responses.</p>
+                  <div class="iconLarge" id="heroIcon" aria-hidden="true"></div>
+                </div>
+                <div class="mutedLine" id="heroMeta">Complete the form and click “Auto-score”.</div>
+              </div>
+
+              <div class="affinityGrid" id="affinityGrid">
+                <!-- mini cards injected here -->
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="controls-inner">
+      <div class="smallnote">Tip: Use “Print / Save as PDF” to export.</div>
+      <div class="btnrow">
+        <button type="button" class="primary" id="btnScore">Auto-score</button>
+        <button type="button" id="btnPrint">Print / Save as PDF</button>
+        <button type="button" class="danger" id="btnClear">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    const form = document.getElementById("ceq");
+
+    const heroName = document.getElementById("heroName");
+    const heroScore = document.getElementById("heroScore");
+    const heroIcon = document.getElementById("heroIcon");
+    const heroMeta = document.getElementById("heroMeta");
+
+    const grid = document.getElementById("affinityGrid");
+
+    function val(name) {
+      const el = form.elements[name];
+      if (!el) return "";
+      if (el instanceof RadioNodeList) return el.value || "";
+      return (el.value || "").trim();
+    }
+
+    // Simple inline SVG "images" (no external files).
+    // You can replace these with your own artwork later without changing layout.
+    const ICON = {
+      Aegis: `
+        <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <defs>
+            <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--kb-accent2)" stop-opacity=".95"/>
+              <stop offset="1" stop-color="var(--kb-accent)" stop-opacity=".95"/>
+            </linearGradient>
+          </defs>
+          <path d="M128 18c40 22 74 18 92 18 0 120-56 170-92 202C92 206 36 156 36 36c18 0 52 4 92-18Z" stroke="url(#gA)" stroke-width="14" opacity=".95"/>
+          <path d="M128 56v140" stroke="url(#gA)" stroke-width="12" stroke-linecap="round" opacity=".85"/>
+          <path d="M92 104h72" stroke="url(#gA)" stroke-width="12" stroke-linecap="round" opacity=".85"/>
+        </svg>
+      `,
+      Wraith: `
+        <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <defs>
+            <linearGradient id="gW" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--kb-accent2)" stop-opacity=".95"/>
+              <stop offset="1" stop-color="var(--kb-accent)" stop-opacity=".95"/>
+            </linearGradient>
+          </defs>
+          <path d="M52 196c6-78 28-128 76-150 48 22 70 72 76 150-32 20-60 30-76 30s-44-10-76-30Z" stroke="url(#gW)" stroke-width="14" opacity=".95"/>
+          <path d="M84 122c12-10 28-10 44 0" stroke="url(#gW)" stroke-width="12" stroke-linecap="round" opacity=".85"/>
+          <path d="M128 122c12-10 28-10 44 0" stroke="url(#gW)" stroke-width="12" stroke-linecap="round" opacity=".85"/>
+          <path d="M96 160c20 14 44 14 64 0" stroke="url(#gW)" stroke-width="10" stroke-linecap="round" opacity=".75"/>
+        </svg>
+      `,
+      Eidolon: `
+        <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <defs>
+            <linearGradient id="gE" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--kb-accent2)" stop-opacity=".95"/>
+              <stop offset="1" stop-color="var(--kb-accent)" stop-opacity=".95"/>
+            </linearGradient>
+          </defs>
+          <path d="M128 46c62 0 104 82 104 82s-42 82-104 82S24 128 24 128s42-82 104-82Z" stroke="url(#gE)" stroke-width="14" opacity=".95"/>
+          <path d="M128 92a36 36 0 1 0 0 72 36 36 0 0 0 0-72Z" stroke="url(#gE)" stroke-width="12" opacity=".85"/>
+          <path d="M128 72v-18M128 202v-18M72 128H54M202 128h-18" stroke="url(#gE)" stroke-width="10" stroke-linecap="round" opacity=".65"/>
+        </svg>
+      `,
+      Chimera: `
+        <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <defs>
+            <linearGradient id="gC" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--kb-accent2)" stop-opacity=".95"/>
+              <stop offset="1" stop-color="var(--kb-accent)" stop-opacity=".95"/>
+            </linearGradient>
+          </defs>
+          <path d="M64 54c52 0 76 148 128 148" stroke="url(#gC)" stroke-width="14" stroke-linecap="round" opacity=".95"/>
+          <path d="M192 54C140 54 116 202 64 202" stroke="url(#gC)" stroke-width="14" stroke-linecap="round" opacity=".95"/>
+          <path d="M86 72h84M86 184h84" stroke="url(#gC)" stroke-width="10" stroke-linecap="round" opacity=".65"/>
+          <path d="M108 96l40 64M148 96l-40 64" stroke="url(#gC)" stroke-width="10" stroke-linecap="round" opacity=".75"/>
+        </svg>
+      `,
+      Threnody: `
+        <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <defs>
+            <linearGradient id="gT" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--kb-accent2)" stop-opacity=".95"/>
+              <stop offset="1" stop-color="var(--kb-accent)" stop-opacity=".95"/>
+            </linearGradient>
+          </defs>
+          <path d="M40 154c26 0 26-52 52-52s26 52 52 52 26-52 52-52 26 52 52 52" stroke="url(#gT)" stroke-width="14" stroke-linecap="round" opacity=".95"/>
+          <path d="M40 110c26 0 26-36 52-36s26 36 52 36 26-36 52-36 26 36 52 36" stroke="url(#gT)" stroke-width="10" stroke-linecap="round" opacity=".65"/>
+          <path d="M72 192h112" stroke="url(#gT)" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+        </svg>
+      `
+    };
+
+    // Same scoring model as before (kept intentionally opaque / non-spoilery).
+    function computeScores() {
+      const scores = { Aegis: 0, Wraith: 0, Eidolon: 0, Chimera: 0, Threnody: 0 };
+
+      switch (val("injury_priority")) {
+        case "bleed":   scores.Aegis += 2; break;
+        case "protect": scores.Aegis += 2; scores.Threnody += 1; break;
+        case "mobile":  scores.Wraith += 2; break;
+        case "avoid":   scores.Wraith += 1; scores.Eidolon += 1; break;
+        case "evidence":scores.Eidolon += 2; break;
+      }
+
+      switch (val("pain_tol")) {
+        case "high":  scores.Chimera += 1; break;
+        case "vhigh": scores.Chimera += 2; break;
+      }
+
+      switch (val("fail_first")) {
+        case "patch":     scores.Aegis += 1; scores.Wraith += 1; break;
+        case "diagnose":  scores.Eidolon += 2; break;
+        case "document":  scores.Eidolon += 1; scores.Threnody += 1; break;
+        case "delegate":  scores.Threnody += 1; break;
+        case "disengage": scores.Wraith += 1; break;
+      }
+
+      switch (val("trust_most")) {
+        case "data":      scores.Eidolon += 2; break;
+        case "patterns":  scores.Eidolon += 1; scores.Wraith += 1; break;
+        case "people":    scores.Threnody += 2; break;
+        case "instinct":  scores.Chimera += 1; scores.Wraith += 1; break;
+        case "authority": scores.Aegis += 1; scores.Threnody += 1; break;
+      }
+
+      switch (val("speed_pressure")) {
+        case "fast":     scores.Wraith += 2; scores.Chimera += 1; break;
+        case "moderate": scores.Aegis += 1; scores.Threnody += 1; break;
+        case "slow":     scores.Eidolon += 2; break;
+      }
+
+      switch (val("problem_type")) {
+        case "mechanical": scores.Wraith += 1; scores.Eidolon += 1; break;
+        case "social":     scores.Threnody += 2; break;
+        case "abstract":   scores.Eidolon += 2; break;
+        case "physical":   scores.Chimera += 2; break;
+      }
+
+      switch (val("threat_response")) {
+        case "fight":     scores.Aegis += 2; scores.Chimera += 1; break;
+        case "flee":      scores.Wraith += 2; break;
+        case "negotiate": scores.Threnody += 2; break;
+        case "hyperfocus":scores.Eidolon += 1; scores.Wraith += 1; break;
+        case "freeze":    scores.Eidolon += 1; break;
+      }
+
+      switch (val("danger_axis")) {
+        case "slow":       scores.Aegis += 1; scores.Wraith += 1; break;
+        case "uninformed": scores.Eidolon += 2; break;
+      }
+
+      switch (val("crisis_default")) {
+        case "lead":    scores.Aegis += 1; scores.Threnody += 1; break;
+        case "support": scores.Aegis += 1; break;
+        case "solo":    scores.Wraith += 2; break;
+        case "observe": scores.Eidolon += 2; break;
+        case "adapt":   scores.Chimera += 2; break;
+      }
+
+      switch (val("protect_default")) {
+        case "strangers": scores.Threnody += 2; scores.Aegis += 1; break;
+        case "kids":
+        case "elderly":   scores.Aegis += 2; break;
+        case "friends":   scores.Aegis += 1; scores.Threnody += 1; break;
+        case "coworkers": scores.Threnody += 1; break;
+        case "none":      scores.Wraith += 1; scores.Chimera += 1; break;
+      }
+
+      switch (val("distrust_default")) {
+        case "authority": scores.Wraith += 2; break;
+        case "corps":     scores.Wraith += 1; scores.Eidolon += 1; break;
+        case "everyone":  scores.Wraith += 1; scores.Eidolon += 1; break;
+        case "noone":     scores.Aegis += 1; scores.Threnody += 1; break;
+      }
+
+      const lie   = val("eth_lie");
+      const harm  = val("eth_harm");
+      const trade = val("eth_trade");
+
+      if (lie === "depends") scores.Threnody += 1;
+      if (lie === "yes")     scores.Wraith += 1;
+
+      if (harm === "yes")     scores.Chimera += 2;
+      if (harm === "depends") scores.Aegis += 1;
+
+      if (trade === "yes") { scores.Wraith += 1; scores.Eidolon += 1; }
+      if (trade === "no")    scores.Aegis += 2;
+
+      switch (val("eth_line")) {
+        case "abandon":  scores.Aegis += 2; break;
+        case "betrayal": scores.Threnody += 2; break;
+        case "torture":  scores.Aegis += 1; scores.Threnody += 1; break;
+        case "unarmed":  scores.Aegis += 1; break;
+        case "none":     scores.Chimera += 2; break;
+      }
+
+      switch (val("advantage")) {
+        case "cover":     scores.Aegis += 2; break;
+        case "speed":     scores.Wraith += 2; break;
+        case "info":      scores.Eidolon += 2; break;
+        case "influence": scores.Threnody += 2; break;
+        case "force":     scores.Chimera += 2; break;
+      }
+
+      return scores;
+    }
+
+    function clamp(x, lo, hi){ return Math.max(lo, Math.min(hi, x)); }
+
+    function render(scores) {
+      const entries = Object.entries(scores).sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+      const [topName, topScore] = entries[0];
+
+      // Hero
+      heroName.textContent = topName;
+      heroScore.textContent = `Score: ${topScore}`;
+      heroIcon.innerHTML = ICON[topName] || "";
+      heroMeta.textContent = `Ranked #1 of ${entries.length}`;
+
+      // Minis
+      grid.innerHTML = "";
+      const max = Math.max(1, topScore); // avoid division by zero
+      for (let i = 1; i < entries.length; i++){
+        const [name, score] = entries[i];
+
+        // scale by relative score, with sane bounds
+        const rel = score / max;                 // 0..1
+        const scale = clamp(0.86 + rel*0.20, 0.86, 1.06); // subtle sizing
+
+        const card = document.createElement("div");
+        card.className = "miniCard";
+        card.style.transform = `scale(${scale.toFixed(3)})`;
+
+        const s = document.createElement("div");
+        s.className = "miniScore";
+        s.textContent = `Score: ${score}`;
+
+        const title = document.createElement("div");
+        title.className = "miniName";
+        title.textContent = name;
+
+        const icon = document.createElement("div");
+        icon.className = "iconMini";
+        icon.innerHTML = ICON[name] || "";
+
+        card.appendChild(s);
+        //card.appendChild(title);
+        card.appendChild(icon);
+        grid.appendChild(card);
+      }
+    }
+
+    function scoreAndRender() {
+      const scores = computeScores();
+      render(scores);
+    }
+
+    document.getElementById("btnScore").addEventListener("click", scoreAndRender);
+
+    document.getElementById("btnPrint").addEventListener("click", () => {
+      scoreAndRender();
+      window.print();
+    });
+
+    document.getElementById("btnClear").addEventListener("click", () => {
+      form.reset();
+      render({Aegis:0,Wraith:0,Eidolon:0,Chimera:0,Threnody:0});
+      heroMeta.textContent = "Complete the form and click “Auto-score”.";
+    });
+
+    // Initial render
+    render({Aegis:0,Wraith:0,Eidolon:0,Chimera:0,Threnody:0});
+  })();
+  </script>
+</body>
+</html>
+
