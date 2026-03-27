@@ -529,7 +529,7 @@
 
             <div class="grid2" style="margin-top:12px;">
               <div class="q">
-                <div class="qlabel">Pain tolerance (self-rated)</div>
+                <div class="qlabel">Physical discomfort tolerance (self-rated)</div>
                 <select name="pain_tol">
                   <option value="">— Select —</option>
                   <option value="low">Low</option>
@@ -539,7 +539,7 @@
                 </select>
               </div>
               <div class="q">
-                <div class="qlabel">Sleep deprivation (last 48 hours)</div>
+                <div class="qlabel">Sleep loss in the last 48 hours</div>
                 <select name="sleep_dep">
                   <option value="">— Select —</option>
                   <option value="none">None</option>
@@ -550,14 +550,14 @@
             </div>
 
             <div class="q" style="margin-top:12px;">
-              <div class="qlabel">If you are injured onsite, your priority is:</div>
+              <div class="qlabel">If an onsite incident affects you directly, your first priority is:</div>
               <select name="injury_priority">
                 <option value="">— Select —</option>
-                <option value="bleed">Stop bleeding</option>
-                <option value="mobile">Stay mobile</option>
-                <option value="protect">Protect someone else</option>
-                <option value="evidence">Preserve documentation</option>
-                <option value="avoid">Avoid being restrained / detained</option>
+                <option value="bleed">Immediate medical stabilization</option>
+                <option value="mobile">Maintain mobility and exit access</option>
+                <option value="protect">Ensure someone else is safe</option>
+                <option value="evidence">Preserve notes / evidence</option>
+                <option value="avoid">Avoid forced restraint or detention</option>
                 <option value="unknown">Not sure</option>
               </select>
             </div>
@@ -621,36 +621,36 @@
 
             <div class="grid2">
               <div class="q">
-                <div class="qlabel">Under threat, you typically:</div>
+                <div class="qlabel">Under acute stress, you typically:</div>
                 <select name="threat_response">
                   <option value="">— Select —</option>
-                  <option value="freeze">Freeze</option>
-                  <option value="flee">Flee</option>
-                  <option value="fight">Fight</option>
-                  <option value="negotiate">Negotiate / de-escalate</option>
-                  <option value="hyperfocus">Hyperfocus</option>
+                  <option value="freeze">Pause or freeze</option>
+                  <option value="flee">Create distance</option>
+                  <option value="fight">Confront directly</option>
+                  <option value="negotiate">De-escalate verbally</option>
+                  <option value="hyperfocus">Narrow into task focus</option>
                 </select>
               </div>
 
               <div class="q">
-                <div class="qlabel">Which is more dangerous?</div>
+                <div class="qlabel">Which decision failure worries you more?</div>
                 <select name="danger_axis">
                   <option value="">— Select —</option>
-                  <option value="slow">Not acting fast enough</option>
+                  <option value="slow">Waiting too long to act</option>
                   <option value="uninformed">Acting without enough information</option>
                 </select>
               </div>
             </div>
 
             <div class="q" style="margin-top:12px;">
-              <div class="qlabel">In a crisis, you default to:</div>
+              <div class="qlabel">In a fast-moving incident, you tend to:</div>
               <select name="crisis_default">
                 <option value="">— Select —</option>
                 <option value="lead">Take charge</option>
-                <option value="support">Support the strongest leader</option>
-                <option value="solo">Work alone</option>
-                <option value="observe">Observe quietly</option>
-                <option value="adapt">Adapt moment-by-moment</option>
+                <option value="support">Support the clearest leader</option>
+                <option value="solo">Work independently</option>
+                <option value="observe">Observe before committing</option>
+                <option value="adapt">Adjust moment by moment</option>
               </select>
             </div>
           </div>
@@ -660,14 +660,14 @@
 
             <div class="grid2">
               <div class="q">
-                <div class="qlabel">In a tightly controlled environment, you naturally become:</div>
+                <div class="qlabel">In a tightly controlled environment, you naturally become the:</div>
                 <select name="env_role">
                   <option value="">— Select —</option>
                   <option value="coordinator">The coordinator</option>
                   <option value="specialist">The specialist operator</option>
                   <option value="analyst">The analyst</option>
                   <option value="liaison">The liaison / communicator</option>
-                  <option value="independent">The independent variable</option>
+                  <option value="independent">The independent operator</option>
                 </select>
               </div>
 
@@ -686,7 +686,7 @@
 
             <div class="grid2" style="margin-top:12px;">
               <div class="q">
-                <div class="qlabel">In a new room, you unconsciously scan first for:</div>
+                <div class="qlabel">In a new room, you first notice:</div>
                 <select name="scan_first">
                   <option value="">— Select —</option>
                   <option value="exits">Exits and choke points</option>
@@ -716,33 +716,33 @@
 
             <div class="grid2">
               <div class="q">
-                <div class="qlabel">You are handed incomplete instructions with a hard deadline. You:</div>
+                <div class="qlabel">You receive an incomplete brief and a hard deadline. You:</div>
                 <select name="incomplete_brief">
                   <option value="">— Select —</option>
-                  <option value="act_now">Act with what you have</option>
-                  <option value="verify">Pause to verify assumptions</option>
-                  <option value="split">Divide tasks across people</option>
-                  <option value="improvise">Improvise and adjust live</option>
-                  <option value="refuse">Refuse without minimum clarity</option>
+                  <option value="act_now">Start with what you have</option>
+                  <option value="verify">Pause to test assumptions</option>
+                  <option value="split">Break the work across people</option>
+                  <option value="improvise">Improvise and recalibrate live</option>
+                  <option value="refuse">Decline without minimum clarity</option>
                 </select>
               </div>
 
               <div class="q">
-                <div class="qlabel">A colleague becomes unpredictable. Your first move is to:</div>
+                <div class="qlabel">A colleague becomes volatile or erratic. Your first move is to:</div>
                 <select name="unstable_colleague">
                   <option value="">— Select —</option>
-                  <option value="contain">Contain the situation physically</option>
+                  <option value="contain">Secure the immediate area</option>
                   <option value="separate">Create distance and exits</option>
-                  <option value="read">Observe for pattern or trigger</option>
+                  <option value="read">Look for pattern or trigger</option>
                   <option value="talk">Talk them down</option>
-                  <option value="match">Match intensity and overpower them</option>
+                  <option value="match">Meet force with force</option>
                 </select>
               </div>
             </div>
 
             <div class="grid2" style="margin-top:12px;">
               <div class="q">
-                <div class="qlabel">When entering unknown territory, your best asset is usually:</div>
+                <div class="qlabel">In an unfamiliar environment, your best asset is usually:</div>
                 <select name="unknown_asset">
                   <option value="">— Select —</option>
                   <option value="discipline">Discipline</option>
@@ -754,14 +754,14 @@
               </div>
 
               <div class="q">
-                <div class="qlabel">You are most effective when:</div>
+                <div class="qlabel">You add the most value when:</div>
                 <select name="effective_when">
                   <option value="">— Select —</option>
-                  <option value="holding_line">Holding a line under pressure</option>
-                  <option value="unnoticed">Operating without attention</option>
-                  <option value="solving">Solving what others missed</option>
+                  <option value="holding_line">Creating stability under pressure</option>
+                  <option value="unnoticed">Working without drawing attention</option>
+                  <option value="solving">Resolving what others missed</option>
                   <option value="surviving">Continuing after others stall</option>
-                  <option value="aligning">Aligning people around a decision</option>
+                  <option value="aligning">Getting people aligned around a decision</option>
                 </select>
               </div>
             </div>
@@ -784,7 +784,7 @@
               </div>
 
               <div class="q">
-                <div class="qlabel">When others panic, you notice:</div>
+                <div class="qlabel">When others start to panic, you notice:</div>
                 <select name="panic_notice">
                   <option value="">— Select —</option>
                   <option value="procedure">What procedure should happen next</option>
@@ -828,7 +828,7 @@
 
             <div class="grid2">
               <div class="q">
-                <div class="qlabel">Who would notice you’re missing within 24 hours?</div>
+                <div class="qlabel">If you unexpectedly went off-grid for 24 hours, who would check first?</div>
                 <select name="missing_notice">
                   <option value="">— Select —</option>
                   <option value="nobody">Nobody</option>
@@ -856,20 +856,20 @@
             </div>
 
             <div class="q" style="margin-top:12px;">
-              <div class="qlabel">Who do you distrust by default?</div>
+              <div class="qlabel">Which group do you approach most cautiously by default?</div>
               <select name="distrust_default">
                 <option value="">— Select —</option>
-                <option value="authority">Police / security</option>
-                <option value="corps">Corporations</option>
-                <option value="media">Media</option>
-                <option value="activists">Activists</option>
-                <option value="everyone">Everyone</option>
-                <option value="noone">No one by default</option>
+                <option value="authority">Security / law enforcement</option>
+                <option value="corps">Large corporations</option>
+                <option value="media">Press / media</option>
+                <option value="activists">Cause-driven groups</option>
+                <option value="everyone">Almost everyone</option>
+                <option value="noone">No one in particular</option>
               </select>
             </div>
 
             <div class="q" style="margin-top:12px;">
-              <div class="qlabel">Your most useful skill that doesn’t look useful on paper</div>
+              <div class="qlabel">What is your most useful skill that would not stand out on a resume?</div>
               <textarea name="hidden_skill"></textarea>
             </div>
           </div>
@@ -878,7 +878,7 @@
             <h3>Ethics & Thresholds</h3>
 
             <div class="q">
-              <div class="qlabel">Would you lie to save a life?</div>
+              <div class="qlabel">Would you misrepresent facts to save a life?</div>
               <div class="choices">
                 <label class="choice"><input type="radio" name="eth_lie" value="yes"> Yes</label>
                 <label class="choice"><input type="radio" name="eth_lie" value="no"> No</label>
@@ -887,7 +887,7 @@
             </div>
 
             <div class="q" style="margin-top:12px;">
-              <div class="qlabel">Would you seriously harm someone to save a life?</div>
+              <div class="qlabel">Would you use force likely to cause lasting harm to save a life?</div>
               <div class="choices">
                 <label class="choice"><input type="radio" name="eth_harm" value="yes"> Yes</label>
                 <label class="choice"><input type="radio" name="eth_harm" value="no"> No</label>
@@ -896,7 +896,7 @@
             </div>
 
             <div class="q" style="margin-top:12px;">
-              <div class="qlabel">Would you let one person die to save many?</div>
+              <div class="qlabel">Would you accept one preventable death to protect many more?</div>
               <div class="choices">
                 <label class="choice"><input type="radio" name="eth_trade" value="yes"> Yes</label>
                 <label class="choice"><input type="radio" name="eth_trade" value="no"> No</label>
@@ -919,7 +919,7 @@
               </div>
 
               <div class="q">
-                <div class="qlabel">Ideal advantage in a lethal situation</div>
+                <div class="qlabel">If conditions become dangerous, the advantage you value most is:</div>
                 <select name="advantage">
                   <option value="">— Select —</option>
                   <option value="cover">Armor / cover</option>
@@ -1110,6 +1110,26 @@
         case "evidence": apply({ Eidolon: 3, Aegis: 1 }); break;
         case "safety": apply({ Aegis: 3, Chimera: -1 }); break;
         case "recognition": apply({ Threnody: 2, Chimera: 1 }); break;
+      }
+
+      const occupation = val("occupation").toLowerCase();
+      if (occupation) {
+        if (/(research|scientist|academic|analyst|investigat|journal|data|forensic)/.test(occupation)) apply({ Eidolon: 2 });
+        if (/(engineer|developer|programmer|coding|software|\bit\b|sysadmin|mechanic|technician|electric|fabricat|mainten|contractor)/.test(occupation)) apply({ Wraith: 2, Eidolon: 1 });
+        if (/(doctor|nurse|medic|caregiver|teacher|manager|coordinator|operations|logistics|security|military|police|fire|ems)/.test(occupation)) apply({ Aegis: 2 });
+        if (/(sales|marketing|\bpr\b|recruit|human resources|\bhr\b|politic|lobby|community|consult|founder|executive|organizer)/.test(occupation)) apply({ Threnody: 2 });
+        if (/(athlete|fighter|bouncer|labor|construction|driver|survival|marine|soldier|wrest|box)/.test(occupation)) apply({ Chimera: 2 });
+      }
+
+      if (val("knows_someone") === "yes") {
+        apply({ Threnody: 2, Aegis: 1 });
+      }
+
+      const dependencies = val("dependencies").toLowerCase();
+      if (dependencies) {
+        if (/(caregiv|child|parent|family|dependent|patient)/.test(dependencies)) apply({ Aegis: 1, Threnody: 1 });
+        if (/(debt|loan|rent|money|bills|legal|court|probation|visa|custody)/.test(dependencies)) apply({ Wraith: 1, Chimera: 1 });
+        if (/(schedule|deadline|shift|rotation|medication|treatment|compliance)/.test(dependencies)) apply({ Aegis: 1, Eidolon: 1 });
       }
 
       switch (val("implants")) {
@@ -1374,7 +1394,7 @@
 
     function renderPending() {
       heroName.textContent = "Pending";
-      heroScore.textContent = "Score: —";
+      heroScore.textContent = "Primary: Pending";
       heroIcon.innerHTML = "";
       heroMeta.textContent = "Complete the form and click “Auto-score” to generate a profile.";
       grid.innerHTML = "";
@@ -1396,7 +1416,7 @@
       else if (spread >= 4) confidence = "Moderate differentiation";
 
       heroName.textContent = topName;
-      heroScore.textContent = `Score: ${topScore}`;
+      heroScore.textContent = `Primary: ${topName} • Score: ${topScore}`;
       heroIcon.innerHTML = ICON[topName] || "";
       heroMeta.textContent = `${confidence} • Ranked #1 of ${entries.length}`;
 
