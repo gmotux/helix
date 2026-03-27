@@ -11,10 +11,9 @@
       --kb-paper:#ffffff;
       --kb-muted:#5a677a;
       --kb-line:#d9e1ee;
-      --kb-accent:#1fb6a6;   /* teal */
-      --kb-accent2:#2a5bd7;  /* blue */
+      --kb-accent:#1fb6a6;
+      --kb-accent2:#2a5bd7;
       --kb-warn:#b45309;
-
 
       --radius:14px;
       --shadow:0 18px 40px rgba(11,18,32,.10);
@@ -36,16 +35,19 @@
     }
 
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 15% 10%, color-mix(in oklab, var(--kb-accent) 18%, transparent), transparent 55%),
-                  radial-gradient(1000px 600px at 90% 0%, color-mix(in oklab, var(--kb-accent2) 14%, transparent), transparent 55%),
-                  color-mix(in oklab, var(--kb-paper) 92%, #0000);
+      background:
+        radial-gradient(1200px 600px at 15% 10%, color-mix(in oklab, var(--kb-accent) 18%, transparent), transparent 55%),
+        radial-gradient(1000px 600px at 90% 0%, color-mix(in oklab, var(--kb-accent2) 14%, transparent), transparent 55%),
+        color-mix(in oklab, var(--kb-paper) 92%, #0000);
       color:var(--kb-ink);
     }
 
     .wrap{ max-width: 980px; margin: 28px auto 90px; padding: 0 18px; }
+
     .card{
       background: var(--kb-paper);
       border: 1px solid var(--kb-line);
@@ -67,6 +69,7 @@
 
     .hdr-row{ display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
     .brand{ display:flex; gap:12px; align-items:center; min-width: 260px; }
+
     .logo{
       width:44px; height:44px; border-radius: 12px;
       background: linear-gradient(135deg, var(--kb-accent2), var(--kb-accent));
@@ -77,7 +80,12 @@
 
     .brand h1{ font-size: 16px; margin:0; letter-spacing:.2px; font-weight: 800; line-height: 1.05; }
     .brand .sub{ font-size: 12px; margin-top: 2px; color: var(--kb-muted); font-weight: 600; }
-    .docmeta{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end; color: var(--kb-muted); font-size: 12px; font-weight: 600; }
+
+    .docmeta{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end;
+      color: var(--kb-muted); font-size: 12px; font-weight: 600;
+    }
+
     .pill{
       border: 1px solid var(--kb-line);
       border-radius: 999px;
@@ -87,9 +95,14 @@
       white-space: nowrap;
     }
 
-    .titleblock{ margin-top: 14px; display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap; align-items:flex-end; }
+    .titleblock{
+      margin-top: 14px;
+      display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap; align-items:flex-end;
+    }
+
     .titleblock h2{ margin:0; font-size: 20px; font-weight: 900; letter-spacing:.2px; }
     .titleblock .note{ margin:0; font-size: 12px; color: var(--kb-muted); max-width: 560px; }
+
     .watermark{
       position:absolute; top: 16px; right: 18px; font-size: 10px;
       letter-spacing: .12em; text-transform: uppercase;
@@ -118,6 +131,7 @@
     }
 
     .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
     @media (max-width: 760px){
       .grid2{ grid-template-columns: 1fr; }
       .docmeta{ justify-content:flex-start; }
@@ -153,6 +167,7 @@
     }
 
     .choices{ display:flex; flex-wrap:wrap; gap:10px 14px; margin-top: 6px; }
+
     .choice{
       display:flex; align-items:center; gap:8px;
       padding: 6px 10px;
@@ -160,11 +175,11 @@
       border-radius: 999px;
       background: color-mix(in oklab, var(--kb-paper) 88%, transparent);
     }
+
     .choice input{ transform: translateY(1px); }
 
     .divider{ height:1px; background: var(--kb-line); margin: 12px 0 0; }
 
-    /* Controls */
     .controls{
       position: fixed; left: 0; right: 0; bottom: 0;
       border-top: 1px solid var(--kb-line);
@@ -173,11 +188,14 @@
       padding: 12px 16px;
       z-index: 50;
     }
+
     .controls-inner{
       max-width: 980px; margin: 0 auto;
       display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;
     }
+
     .btnrow{ display:flex; gap:10px; flex-wrap:wrap; }
+
     button{
       appearance: none;
       border: 1px solid var(--kb-line);
@@ -189,6 +207,7 @@
       cursor:pointer;
       box-shadow: var(--shadow2);
     }
+
     .primary{
       border-color: color-mix(in oklab, var(--kb-accent2) 55%, var(--kb-line));
       background: linear-gradient(135deg,
@@ -196,19 +215,19 @@
         color-mix(in oklab, var(--kb-accent) 16%, var(--kb-paper))
       );
     }
+
     .danger{ border-color: color-mix(in oklab, var(--kb-warn) 50%, var(--kb-line)); }
     button:hover{ filter: brightness(1.03); }
+
     .smallnote{ font-size: 12px; color: var(--kb-muted); font-weight: 650; }
 
-    /* =========================
-       Affinity visual output
-       ========================= */
     .affinityWrap{
       display: grid;
       grid-template-columns: 1.2fr .8fr;
       gap: 12px;
       align-items: start;
     }
+
     @media (max-width: 760px){
       .affinityWrap{ grid-template-columns: 1fr; }
     }
@@ -239,12 +258,19 @@
       letter-spacing: .2px;
       font-size: 16px;
       margin: 0 0 6px;
+      position: relative;
+      z-index: 1;
+      max-width: 58%;
     }
+
     .heroSub{
       margin: 0;
       color: var(--kb-muted);
       font-size: 12px;
       font-weight: 650;
+      position: relative;
+      z-index: 1;
+      max-width: 58%;
     }
 
     .badgeScore{
@@ -257,19 +283,28 @@
       border: 1px solid color-mix(in oklab, var(--kb-line) 78%, transparent);
       background: color-mix(in oklab, var(--kb-paper) 86%, transparent);
       backdrop-filter: blur(10px);
+      z-index: 2;
     }
 
     .iconLarge{
       position:absolute;
-      right: -18px;
-      bottom: -22px;
-      width: 210px;
-      height: 210px;
-      opacity: .22;
-      transform: rotate(8deg);
-      filter: drop-shadow(0 10px 24px rgba(0,0,0,.18));
+      right: 8px;
+      bottom: 8px;
+      width: min(42%, 180px);
+      aspect-ratio: 1 / 1;
+      opacity: .18;
+      transform: none;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,.14));
       pointer-events:none;
       user-select:none;
+      display: grid;
+      place-items: center;
+    }
+
+    .iconLarge svg{
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     .affinityGrid{
@@ -286,15 +321,21 @@
       background: var(--kb-paper);
       box-shadow: var(--shadow2);
       padding: 10px;
-      min-height: 108px;
+      min-height: 118px;
       transform-origin: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     .miniName{
       font-weight: 900;
       font-size: 13px;
-      margin: 0 0 4px;
+      margin: 24px 0 4px;
       letter-spacing: .2px;
+      position: relative;
+      z-index: 1;
+      max-width: 60%;
     }
 
     .miniScore{
@@ -307,18 +348,27 @@
       border: 1px solid var(--kb-line);
       background: color-mix(in oklab, var(--kb-paper) 88%, transparent);
       backdrop-filter: blur(8px);
+      z-index: 2;
     }
 
     .iconMini{
       position:absolute;
-      right: -14px;
-      bottom: -18px;
-      width: 130px;
-      height: 130px;
-      opacity: .20;
-      transform: rotate(8deg);
+      right: 6px;
+      bottom: 6px;
+      width: min(42%, 88px);
+      aspect-ratio: 1 / 1;
+      opacity: .15;
+      transform: none;
       pointer-events:none;
       user-select:none;
+      display: grid;
+      place-items: center;
+    }
+
+    .iconMini svg{
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     .mutedLine{
@@ -328,7 +378,6 @@
       font-weight: 650;
     }
 
-    /* Print */
     @media print{
       body{ background:#fff; color:#000; }
       .controls{ display:none !important; }
@@ -346,7 +395,7 @@
   <div class="wrap">
     <div class="card">
       <header>
-        <div class="watermark">INTERNAL • CEQ v3.11</div>
+        <div class="watermark">INTERNAL • CEQ v3.12</div>
 
         <div class="hdr-row">
           <div class="brand">
@@ -607,6 +656,174 @@
           </div>
 
           <div class="section">
+            <h3>Operational Preferences</h3>
+
+            <div class="grid2">
+              <div class="q">
+                <div class="qlabel">In a tightly controlled environment, you naturally become:</div>
+                <select name="env_role">
+                  <option value="">— Select —</option>
+                  <option value="coordinator">The coordinator</option>
+                  <option value="specialist">The specialist operator</option>
+                  <option value="analyst">The analyst</option>
+                  <option value="liaison">The liaison / communicator</option>
+                  <option value="independent">The independent variable</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">When access is denied, your first instinct is to:</div>
+                <select name="access_denied">
+                  <option value="">— Select —</option>
+                  <option value="comply">Comply and wait</option>
+                  <option value="escalate">Challenge the decision</option>
+                  <option value="alternate">Find another route</option>
+                  <option value="clarify">Request more context</option>
+                  <option value="persuade">Work through the right person</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid2" style="margin-top:12px;">
+              <div class="q">
+                <div class="qlabel">In a new room, you unconsciously scan first for:</div>
+                <select name="scan_first">
+                  <option value="">— Select —</option>
+                  <option value="exits">Exits and choke points</option>
+                  <option value="people">Who is influencing whom</option>
+                  <option value="systems">Screens, controls, and systems</option>
+                  <option value="anomalies">What does not belong</option>
+                  <option value="resources">Useful tools or supplies</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">Which recognition matters most to you?</div>
+                <select name="recognition_type">
+                  <option value="">— Select —</option>
+                  <option value="reliable">Being seen as reliable</option>
+                  <option value="precise">Being known for precision</option>
+                  <option value="effective">Being effective under pressure</option>
+                  <option value="influential">Being able to move people</option>
+                  <option value="unreadable">Not being easily read</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Field Judgment</h3>
+
+            <div class="grid2">
+              <div class="q">
+                <div class="qlabel">You are handed incomplete instructions with a hard deadline. You:</div>
+                <select name="incomplete_brief">
+                  <option value="">— Select —</option>
+                  <option value="act_now">Act with what you have</option>
+                  <option value="verify">Pause to verify assumptions</option>
+                  <option value="split">Divide tasks across people</option>
+                  <option value="improvise">Improvise and adjust live</option>
+                  <option value="refuse">Refuse without minimum clarity</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">A colleague becomes unpredictable. Your first move is to:</div>
+                <select name="unstable_colleague">
+                  <option value="">— Select —</option>
+                  <option value="contain">Contain the situation physically</option>
+                  <option value="separate">Create distance and exits</option>
+                  <option value="read">Observe for pattern or trigger</option>
+                  <option value="talk">Talk them down</option>
+                  <option value="match">Match intensity and overpower them</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid2" style="margin-top:12px;">
+              <div class="q">
+                <div class="qlabel">When entering unknown territory, your best asset is usually:</div>
+                <select name="unknown_asset">
+                  <option value="">— Select —</option>
+                  <option value="discipline">Discipline</option>
+                  <option value="stealth">Low visibility</option>
+                  <option value="insight">Interpretation</option>
+                  <option value="adaptability">Adaptability</option>
+                  <option value="rapport">Rapport</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">You are most effective when:</div>
+                <select name="effective_when">
+                  <option value="">— Select —</option>
+                  <option value="holding_line">Holding a line under pressure</option>
+                  <option value="unnoticed">Operating without attention</option>
+                  <option value="solving">Solving what others missed</option>
+                  <option value="surviving">Continuing after others stall</option>
+                  <option value="aligning">Aligning people around a decision</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Cognitive Framing</h3>
+
+            <div class="grid2">
+              <div class="q">
+                <div class="qlabel">Ambiguity is usually:</div>
+                <select name="ambiguity_view">
+                  <option value="">— Select —</option>
+                  <option value="risk">A risk to reduce</option>
+                  <option value="cover">A useful cover</option>
+                  <option value="signal">A signal to decode</option>
+                  <option value="test">A test of resilience</option>
+                  <option value="space">A space to influence</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">When others panic, you notice:</div>
+                <select name="panic_notice">
+                  <option value="">— Select —</option>
+                  <option value="procedure">What procedure should happen next</option>
+                  <option value="blindspot">Where the blind spots open up</option>
+                  <option value="pattern_shift">How the pattern changed</option>
+                  <option value="weakness">Who is about to fail physically</option>
+                  <option value="group_mood">Who the group will follow</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid2" style="margin-top:12px;">
+              <div class="q">
+                <div class="qlabel">Which failure bothers you most?</div>
+                <select name="failure_bother">
+                  <option value="">— Select —</option>
+                  <option value="duty">Failing a duty</option>
+                  <option value="exposure">Being exposed too early</option>
+                  <option value="misread">Misreading the situation</option>
+                  <option value="collapse">Breaking under strain</option>
+                  <option value="betrayal">Losing people you could have kept with you</option>
+                </select>
+              </div>
+
+              <div class="q">
+                <div class="qlabel">Your attention returns most often to:</div>
+                <select name="attention_return">
+                  <option value="">— Select —</option>
+                  <option value="responsibility">Responsibility</option>
+                  <option value="opportunity">Opportunity</option>
+                  <option value="meaning">Meaning</option>
+                  <option value="survival">Survival</option>
+                  <option value="relationships">Relationships</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
             <h3>Interpersonal Context</h3>
 
             <div class="grid2">
@@ -744,23 +961,20 @@
             </div>
           </div>
 
-          <!-- Visual affinity output (no JSON) -->
           <div class="section" id="affinitySection">
-            <h3>Affinity Indices</h3>
+            <h3>Response Profile</h3>
             <div class="affinityWrap">
               <div class="affinityHero">
                 <div class="heroCard" id="heroCard">
-                  <div class="badgeScore" id="heroScore">Score: 0</div>
-                  <div class="heroTitle" id="heroName">—</div>
-                  <p class="heroSub">Highest-scoring category based on selected responses.</p>
+                  <div class="badgeScore" id="heroScore">Score: —</div>
+                  <div class="heroTitle" id="heroName">Pending</div>
+                  <p class="heroSub">Primary response cluster inferred from selected answers.</p>
                   <div class="iconLarge" id="heroIcon" aria-hidden="true"></div>
                 </div>
-                <div class="mutedLine" id="heroMeta">Complete the form and click “Auto-score”.</div>
+                <div class="mutedLine" id="heroMeta">Complete the form and click “Auto-score” to generate a profile.</div>
               </div>
 
-              <div class="affinityGrid" id="affinityGrid">
-                <!-- mini cards injected here -->
-              </div>
+              <div class="affinityGrid" id="affinityGrid"></div>
             </div>
           </div>
 
@@ -771,7 +985,7 @@
 
   <div class="controls">
     <div class="controls-inner">
-      <div class="smallnote">Tip: Use “Print / Save as PDF” to export.</div>
+      <div class="smallnote">For records or check-in, use “Print / Save as PDF”.</div>
       <div class="btnrow">
         <button type="button" class="primary" id="btnScore">Auto-score</button>
         <button type="button" id="btnPrint">Print / Save as PDF</button>
@@ -788,7 +1002,6 @@
     const heroScore = document.getElementById("heroScore");
     const heroIcon = document.getElementById("heroIcon");
     const heroMeta = document.getElementById("heroMeta");
-
     const grid = document.getElementById("affinityGrid");
 
     function val(name) {
@@ -798,8 +1011,6 @@
       return (el.value || "").trim();
     }
 
-    // Simple inline SVG "images" (no external files).
-    // You can replace these with your own artwork later without changing layout.
     const ICON = {
       Aegis: `
         <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -870,142 +1081,332 @@
       `
     };
 
-    // Same scoring model as before (kept intentionally opaque / non-spoilery).
-    function computeScores() {
-      const scores = { Aegis: 0, Wraith: 0, Eidolon: 0, Chimera: 0, Threnody: 0 };
+    function zeroScores() {
+      return { Aegis: 0, Wraith: 0, Eidolon: 0, Chimera: 0, Threnody: 0 };
+    }
 
-      switch (val("injury_priority")) {
-        case "bleed":   scores.Aegis += 2; break;
-        case "protect": scores.Aegis += 2; scores.Threnody += 1; break;
-        case "mobile":  scores.Wraith += 2; break;
-        case "avoid":   scores.Wraith += 1; scores.Eidolon += 1; break;
-        case "evidence":scores.Eidolon += 2; break;
+    function computeScores() {
+      const scores = zeroScores();
+
+      function apply(map) {
+        for (const [k, v] of Object.entries(map)) scores[k] += v;
+      }
+
+      switch (val("attend_reason")) {
+        case "press": apply({ Eidolon: 2, Wraith: 1 }); break;
+        case "business": apply({ Threnody: 2, Eidolon: 1 }); break;
+        case "recruit": apply({ Threnody: 2, Aegis: 1 }); break;
+        case "vendor": apply({ Wraith: 1, Aegis: 1 }); break;
+        case "academic": apply({ Eidolon: 3, Threnody: -1 }); break;
+        case "advocacy": apply({ Threnody: 2, Aegis: 1, Wraith: -1 }); break;
+        case "personal": apply({ Chimera: 1, Wraith: 1 }); break;
+        case "network": apply({ Threnody: 2, Wraith: 1 }); break;
+      }
+
+      switch (val("one_outcome")) {
+        case "clarity": apply({ Eidolon: 3, Wraith: -1 }); break;
+        case "access": apply({ Wraith: 2, Threnody: 1 }); break;
+        case "deal": apply({ Threnody: 3, Eidolon: 1 }); break;
+        case "evidence": apply({ Eidolon: 3, Aegis: 1 }); break;
+        case "safety": apply({ Aegis: 3, Chimera: -1 }); break;
+        case "recognition": apply({ Threnody: 2, Chimera: 1 }); break;
+      }
+
+      switch (val("implants")) {
+        case "medical": apply({ Aegis: 1, Eidolon: 1 }); break;
+        case "other": apply({ Chimera: 1, Wraith: 1 }); break;
       }
 
       switch (val("pain_tol")) {
-        case "high":  scores.Chimera += 1; break;
-        case "vhigh": scores.Chimera += 2; break;
+        case "low": apply({ Eidolon: 1, Chimera: -2 }); break;
+        case "mod": apply({ Aegis: 1 }); break;
+        case "high": apply({ Chimera: 2, Aegis: 1 }); break;
+        case "vhigh": apply({ Chimera: 4, Aegis: 1, Eidolon: -1 }); break;
+      }
+
+      switch (val("sleep_dep")) {
+        case "mild": apply({ Chimera: 1, Wraith: 1 }); break;
+        case "severe": apply({ Chimera: 2, Wraith: 1, Eidolon: -1 }); break;
+      }
+
+      switch (val("injury_priority")) {
+        case "bleed": apply({ Aegis: 4, Chimera: -1 }); break;
+        case "mobile": apply({ Wraith: 3, Chimera: 1 }); break;
+        case "protect": apply({ Aegis: 3, Threnody: 2, Wraith: -1 }); break;
+        case "evidence": apply({ Eidolon: 4, Aegis: -1 }); break;
+        case "avoid": apply({ Wraith: 3, Eidolon: 1, Aegis: -1 }); break;
       }
 
       switch (val("fail_first")) {
-        case "patch":     scores.Aegis += 1; scores.Wraith += 1; break;
-        case "diagnose":  scores.Eidolon += 2; break;
-        case "document":  scores.Eidolon += 1; scores.Threnody += 1; break;
-        case "delegate":  scores.Threnody += 1; break;
-        case "disengage": scores.Wraith += 1; break;
+        case "patch": apply({ Aegis: 2, Wraith: 1, Eidolon: -1 }); break;
+        case "diagnose": apply({ Eidolon: 4, Chimera: -1 }); break;
+        case "delegate": apply({ Threnody: 2, Aegis: 1 }); break;
+        case "document": apply({ Eidolon: 3, Threnody: 1, Wraith: -1 }); break;
+        case "disengage": apply({ Wraith: 2, Threnody: -1 }); break;
       }
 
       switch (val("trust_most")) {
-        case "data":      scores.Eidolon += 2; break;
-        case "patterns":  scores.Eidolon += 1; scores.Wraith += 1; break;
-        case "people":    scores.Threnody += 2; break;
-        case "instinct":  scores.Chimera += 1; scores.Wraith += 1; break;
-        case "authority": scores.Aegis += 1; scores.Threnody += 1; break;
+        case "data": apply({ Eidolon: 4, Threnody: -1 }); break;
+        case "people": apply({ Threnody: 4, Eidolon: -1 }); break;
+        case "instinct": apply({ Chimera: 2, Wraith: 2, Eidolon: -1 }); break;
+        case "authority": apply({ Aegis: 2, Threnody: 1, Wraith: -2 }); break;
+        case "patterns": apply({ Eidolon: 2, Wraith: 2 }); break;
       }
 
       switch (val("speed_pressure")) {
-        case "fast":     scores.Wraith += 2; scores.Chimera += 1; break;
-        case "moderate": scores.Aegis += 1; scores.Threnody += 1; break;
-        case "slow":     scores.Eidolon += 2; break;
+        case "fast": apply({ Wraith: 3, Chimera: 2, Eidolon: -1 }); break;
+        case "moderate": apply({ Aegis: 2, Threnody: 1 }); break;
+        case "slow": apply({ Eidolon: 4, Wraith: -1, Chimera: -1 }); break;
       }
 
       switch (val("problem_type")) {
-        case "mechanical": scores.Wraith += 1; scores.Eidolon += 1; break;
-        case "social":     scores.Threnody += 2; break;
-        case "abstract":   scores.Eidolon += 2; break;
-        case "physical":   scores.Chimera += 2; break;
+        case "mechanical": apply({ Wraith: 2, Eidolon: 2, Threnody: -1 }); break;
+        case "social": apply({ Threnody: 4, Eidolon: -1 }); break;
+        case "abstract": apply({ Eidolon: 4, Chimera: -1 }); break;
+        case "physical": apply({ Chimera: 4, Eidolon: -1 }); break;
       }
 
       switch (val("threat_response")) {
-        case "fight":     scores.Aegis += 2; scores.Chimera += 1; break;
-        case "flee":      scores.Wraith += 2; break;
-        case "negotiate": scores.Threnody += 2; break;
-        case "hyperfocus":scores.Eidolon += 1; scores.Wraith += 1; break;
-        case "freeze":    scores.Eidolon += 1; break;
+        case "freeze": apply({ Eidolon: 1, Chimera: -1, Wraith: -1 }); break;
+        case "flee": apply({ Wraith: 4, Aegis: -1 }); break;
+        case "fight": apply({ Aegis: 3, Chimera: 2, Threnody: -1 }); break;
+        case "negotiate": apply({ Threnody: 4, Chimera: -1 }); break;
+        case "hyperfocus": apply({ Eidolon: 3, Wraith: 1, Threnody: -1 }); break;
       }
 
       switch (val("danger_axis")) {
-        case "slow":       scores.Aegis += 1; scores.Wraith += 1; break;
-        case "uninformed": scores.Eidolon += 2; break;
+        case "slow": apply({ Wraith: 2, Aegis: 1, Eidolon: -1 }); break;
+        case "uninformed": apply({ Eidolon: 4, Wraith: -1, Chimera: -1 }); break;
       }
 
       switch (val("crisis_default")) {
-        case "lead":    scores.Aegis += 1; scores.Threnody += 1; break;
-        case "support": scores.Aegis += 1; break;
-        case "solo":    scores.Wraith += 2; break;
-        case "observe": scores.Eidolon += 2; break;
-        case "adapt":   scores.Chimera += 2; break;
+        case "lead": apply({ Aegis: 3, Threnody: 1 }); break;
+        case "support": apply({ Aegis: 2, Threnody: 1, Wraith: -1 }); break;
+        case "solo": apply({ Wraith: 4, Threnody: -2 }); break;
+        case "observe": apply({ Eidolon: 4, Chimera: -1 }); break;
+        case "adapt": apply({ Chimera: 3, Wraith: 1, Eidolon: -1 }); break;
+      }
+
+      switch (val("env_role")) {
+        case "coordinator": apply({ Aegis: 2, Threnody: 2, Wraith: -1 }); break;
+        case "specialist": apply({ Wraith: 2, Chimera: 1, Threnody: -1 }); break;
+        case "analyst": apply({ Eidolon: 4, Chimera: -1 }); break;
+        case "liaison": apply({ Threnody: 4, Wraith: -1 }); break;
+        case "independent": apply({ Wraith: 3, Chimera: 1, Threnody: -2 }); break;
+      }
+
+      switch (val("access_denied")) {
+        case "comply": apply({ Aegis: 2, Wraith: -1 }); break;
+        case "escalate": apply({ Aegis: 1, Chimera: 2, Threnody: -1 }); break;
+        case "alternate": apply({ Wraith: 4, Aegis: -1 }); break;
+        case "clarify": apply({ Eidolon: 4, Chimera: -1 }); break;
+        case "persuade": apply({ Threnody: 4, Wraith: -1 }); break;
+      }
+
+      switch (val("scan_first")) {
+        case "exits": apply({ Wraith: 3, Aegis: 1 }); break;
+        case "people": apply({ Threnody: 3, Wraith: 1 }); break;
+        case "systems": apply({ Eidolon: 3, Wraith: 1 }); break;
+        case "anomalies": apply({ Eidolon: 4 }); break;
+        case "resources": apply({ Chimera: 3, Wraith: 1 }); break;
+      }
+
+      switch (val("recognition_type")) {
+        case "reliable": apply({ Aegis: 3, Chimera: -1 }); break;
+        case "precise": apply({ Eidolon: 4, Threnody: -1 }); break;
+        case "effective": apply({ Chimera: 3, Wraith: 1 }); break;
+        case "influential": apply({ Threnody: 4, Eidolon: -1 }); break;
+        case "unreadable": apply({ Wraith: 4, Threnody: -2 }); break;
+      }
+
+      switch (val("incomplete_brief")) {
+        case "act_now": apply({ Wraith: 2, Chimera: 1, Eidolon: -1 }); break;
+        case "verify": apply({ Eidolon: 4, Wraith: -1 }); break;
+        case "split": apply({ Threnody: 2, Aegis: 2 }); break;
+        case "improvise": apply({ Chimera: 3, Wraith: 1 }); break;
+        case "refuse": apply({ Aegis: 2, Eidolon: 1, Chimera: -1 }); break;
+      }
+
+      switch (val("unstable_colleague")) {
+        case "contain": apply({ Aegis: 3, Chimera: 1 }); break;
+        case "separate": apply({ Wraith: 3, Aegis: 1 }); break;
+        case "read": apply({ Eidolon: 4 }); break;
+        case "talk": apply({ Threnody: 4 }); break;
+        case "match": apply({ Chimera: 4, Threnody: -1 }); break;
+      }
+
+      switch (val("unknown_asset")) {
+        case "discipline": apply({ Aegis: 4, Chimera: -1 }); break;
+        case "stealth": apply({ Wraith: 4, Aegis: -1 }); break;
+        case "insight": apply({ Eidolon: 4 }); break;
+        case "adaptability": apply({ Chimera: 4, Eidolon: -1 }); break;
+        case "rapport": apply({ Threnody: 4 }); break;
+      }
+
+      switch (val("effective_when")) {
+        case "holding_line": apply({ Aegis: 4 }); break;
+        case "unnoticed": apply({ Wraith: 4 }); break;
+        case "solving": apply({ Eidolon: 4 }); break;
+        case "surviving": apply({ Chimera: 4 }); break;
+        case "aligning": apply({ Threnody: 4 }); break;
+      }
+
+      switch (val("ambiguity_view")) {
+        case "risk": apply({ Aegis: 2, Eidolon: 2 }); break;
+        case "cover": apply({ Wraith: 4 }); break;
+        case "signal": apply({ Eidolon: 4 }); break;
+        case "test": apply({ Chimera: 4 }); break;
+        case "space": apply({ Threnody: 4 }); break;
+      }
+
+      switch (val("panic_notice")) {
+        case "procedure": apply({ Aegis: 4 }); break;
+        case "blindspot": apply({ Wraith: 4 }); break;
+        case "pattern_shift": apply({ Eidolon: 4 }); break;
+        case "weakness": apply({ Chimera: 4 }); break;
+        case "group_mood": apply({ Threnody: 4 }); break;
+      }
+
+      switch (val("failure_bother")) {
+        case "duty": apply({ Aegis: 4 }); break;
+        case "exposure": apply({ Wraith: 4 }); break;
+        case "misread": apply({ Eidolon: 4 }); break;
+        case "collapse": apply({ Chimera: 4 }); break;
+        case "betrayal": apply({ Threnody: 4 }); break;
+      }
+
+      switch (val("attention_return")) {
+        case "responsibility": apply({ Aegis: 4 }); break;
+        case "opportunity": apply({ Wraith: 4 }); break;
+        case "meaning": apply({ Eidolon: 4 }); break;
+        case "survival": apply({ Chimera: 4 }); break;
+        case "relationships": apply({ Threnody: 4 }); break;
+      }
+
+      switch (val("missing_notice")) {
+        case "nobody": apply({ Wraith: 2, Threnody: -1 }); break;
+        case "employer": apply({ Aegis: 1, Threnody: 1 }); break;
+        case "family": apply({ Aegis: 2, Threnody: 1 }); break;
+        case "friend": apply({ Threnody: 2, Aegis: 1 }); break;
+        case "public": apply({ Threnody: 2, Wraith: 1 }); break;
+        case "legal": apply({ Aegis: 1, Wraith: 1, Eidolon: 1 }); break;
       }
 
       switch (val("protect_default")) {
-        case "strangers": scores.Threnody += 2; scores.Aegis += 1; break;
         case "kids":
-        case "elderly":   scores.Aegis += 2; break;
-        case "friends":   scores.Aegis += 1; scores.Threnody += 1; break;
-        case "coworkers": scores.Threnody += 1; break;
-        case "none":      scores.Wraith += 1; scores.Chimera += 1; break;
+        case "elderly":
+          apply({ Aegis: 4, Chimera: -1 }); break;
+        case "friends":
+          apply({ Aegis: 2, Threnody: 2 }); break;
+        case "coworkers":
+          apply({ Threnody: 2, Aegis: 1 }); break;
+        case "strangers":
+          apply({ Threnody: 3, Aegis: 2, Wraith: -1 }); break;
+        case "none":
+          apply({ Wraith: 2, Chimera: 2, Threnody: -2 }); break;
       }
 
       switch (val("distrust_default")) {
-        case "authority": scores.Wraith += 2; break;
-        case "corps":     scores.Wraith += 1; scores.Eidolon += 1; break;
-        case "everyone":  scores.Wraith += 1; scores.Eidolon += 1; break;
-        case "noone":     scores.Aegis += 1; scores.Threnody += 1; break;
+        case "authority": apply({ Wraith: 3, Aegis: -1 }); break;
+        case "corps": apply({ Wraith: 2, Eidolon: 1 }); break;
+        case "media": apply({ Eidolon: 1, Wraith: 1 }); break;
+        case "activists": apply({ Aegis: 1, Chimera: 1 }); break;
+        case "everyone": apply({ Wraith: 2, Eidolon: 2, Threnody: -2 }); break;
+        case "noone": apply({ Aegis: 2, Threnody: 2, Wraith: -1 }); break;
       }
 
       const lie   = val("eth_lie");
       const harm  = val("eth_harm");
       const trade = val("eth_trade");
 
-      if (lie === "depends") scores.Threnody += 1;
-      if (lie === "yes")     scores.Wraith += 1;
+      if (lie === "yes") apply({ Wraith: 2, Threnody: 1, Aegis: -1 });
+      if (lie === "no") apply({ Aegis: 2, Wraith: -1 });
+      if (lie === "depends") apply({ Eidolon: 1, Threnody: 1 });
 
-      if (harm === "yes")     scores.Chimera += 2;
-      if (harm === "depends") scores.Aegis += 1;
+      if (harm === "yes") apply({ Chimera: 4, Aegis: -1 });
+      if (harm === "no") apply({ Threnody: 2, Aegis: 1, Chimera: -2 });
+      if (harm === "depends") apply({ Aegis: 1, Eidolon: 1, Chimera: 1 });
 
-      if (trade === "yes") { scores.Wraith += 1; scores.Eidolon += 1; }
-      if (trade === "no")    scores.Aegis += 2;
+      if (trade === "yes") apply({ Eidolon: 2, Wraith: 1, Threnody: -1 });
+      if (trade === "no") apply({ Aegis: 3, Threnody: 1, Eidolon: -1 });
+      if (trade === "depends") apply({ Eidolon: 1, Threnody: 1 });
 
       switch (val("eth_line")) {
-        case "abandon":  scores.Aegis += 2; break;
-        case "betrayal": scores.Threnody += 2; break;
-        case "torture":  scores.Aegis += 1; scores.Threnody += 1; break;
-        case "unarmed":  scores.Aegis += 1; break;
-        case "none":     scores.Chimera += 2; break;
+        case "torture": apply({ Aegis: 2, Threnody: 1, Chimera: -1 }); break;
+        case "betrayal": apply({ Threnody: 4, Wraith: -1 }); break;
+        case "abandon": apply({ Aegis: 4, Wraith: -1 }); break;
+        case "unarmed": apply({ Aegis: 3, Threnody: 1, Chimera: -1 }); break;
+        case "theft": apply({ Threnody: 1, Aegis: 1, Wraith: -1 }); break;
+        case "none": apply({ Chimera: 3, Wraith: 1, Aegis: -1, Threnody: -1 }); break;
       }
 
       switch (val("advantage")) {
-        case "cover":     scores.Aegis += 2; break;
-        case "speed":     scores.Wraith += 2; break;
-        case "info":      scores.Eidolon += 2; break;
-        case "influence": scores.Threnody += 2; break;
-        case "force":     scores.Chimera += 2; break;
+        case "cover": apply({ Aegis: 4, Chimera: -1 }); break;
+        case "speed": apply({ Wraith: 4, Aegis: -1 }); break;
+        case "info": apply({ Eidolon: 4, Chimera: -1 }); break;
+        case "influence": apply({ Threnody: 4, Wraith: -1 }); break;
+        case "force": apply({ Chimera: 4, Eidolon: -1 }); break;
+      }
+
+      const hidden = val("hidden_skill").toLowerCase();
+      if (hidden) {
+        if (/(repair|fix|maintenance|tool|hardware|lock|wire|bypass|pick|tinker)/.test(hidden)) apply({ Wraith: 1 });
+        if (/(notice|pattern|analy|research|memory|observe|forensic|diagnos|model)/.test(hidden)) apply({ Eidolon: 1 });
+        if (/(mediate|convince|de-escalat|listen|network|translate|negotia|rapport)/.test(hidden)) apply({ Threnody: 1 });
+        if (/(carry|endure|survive|pain|grit|stamina|tough|push)/.test(hidden)) apply({ Chimera: 1 });
+        if (/(protect|organize|stabilize|triage|shield|reliable|support|anchor)/.test(hidden)) apply({ Aegis: 1 });
+      }
+
+      for (const k of Object.keys(scores)) {
+        scores[k] = Math.max(0, scores[k]);
       }
 
       return scores;
     }
 
-    function clamp(x, lo, hi){ return Math.max(lo, Math.min(hi, x)); }
+    function clamp(x, lo, hi){
+      return Math.max(lo, Math.min(hi, x));
+    }
+
+    function isAllZero(scores) {
+      return Object.values(scores).every(v => v === 0);
+    }
+
+    function renderPending() {
+      heroName.textContent = "Pending";
+      heroScore.textContent = "Score: —";
+      heroIcon.innerHTML = "";
+      heroMeta.textContent = "Complete the form and click “Auto-score” to generate a profile.";
+      grid.innerHTML = "";
+    }
 
     function render(scores) {
+      if (isAllZero(scores)) {
+        renderPending();
+        return;
+      }
+
       const entries = Object.entries(scores).sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]));
       const [topName, topScore] = entries[0];
+      const secondScore = entries[1] ? entries[1][1] : 0;
+      const spread = topScore - secondScore;
 
-      // Hero
+      let confidence = "Low differentiation";
+      if (spread >= 8) confidence = "High differentiation";
+      else if (spread >= 4) confidence = "Moderate differentiation";
+
       heroName.textContent = topName;
       heroScore.textContent = `Score: ${topScore}`;
       heroIcon.innerHTML = ICON[topName] || "";
-      heroMeta.textContent = `Ranked #1 of ${entries.length}`;
+      heroMeta.textContent = `${confidence} • Ranked #1 of ${entries.length}`;
 
-      // Minis
       grid.innerHTML = "";
-      const max = Math.max(1, topScore); // avoid division by zero
+      const max = Math.max(1, topScore);
+
       for (let i = 1; i < entries.length; i++){
         const [name, score] = entries[i];
-
-        // scale by relative score, with sane bounds
-        const rel = score / max;                 // 0..1
-        const scale = clamp(0.86 + rel*0.20, 0.86, 1.06); // subtle sizing
+        const rel = score / max;
+        const scale = clamp(0.90 + rel * 0.12, 0.90, 1.02);
 
         const card = document.createElement("div");
         card.className = "miniCard";
@@ -1024,15 +1425,14 @@
         icon.innerHTML = ICON[name] || "";
 
         card.appendChild(s);
-        //card.appendChild(title);
+        card.appendChild(title);
         card.appendChild(icon);
         grid.appendChild(card);
       }
     }
 
     function scoreAndRender() {
-      const scores = computeScores();
-      render(scores);
+      render(computeScores());
     }
 
     document.getElementById("btnScore").addEventListener("click", scoreAndRender);
@@ -1044,14 +1444,11 @@
 
     document.getElementById("btnClear").addEventListener("click", () => {
       form.reset();
-      render({Aegis:0,Wraith:0,Eidolon:0,Chimera:0,Threnody:0});
-      heroMeta.textContent = "Complete the form and click “Auto-score”.";
+      renderPending();
     });
 
-    // Initial render
-    render({Aegis:0,Wraith:0,Eidolon:0,Chimera:0,Threnody:0});
+    renderPending();
   })();
   </script>
 </body>
 </html>
-
