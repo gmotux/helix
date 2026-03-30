@@ -346,24 +346,32 @@
 
     .badgeSheet{
       display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 360px));
+      gap: 18px;
       place-items:center;
       padding: 8px 0 22px;
     }
 
     .eventBadge{
-      width: min(100%, 860px);
+      width: min(100%, 360px);
+      aspect-ratio: 85.6 / 53.98;
+      min-height: 0;
       position: relative;
       overflow: hidden;
-      border-radius: 26px;
+      border-radius: 18px;
       border: 1px solid var(--kb-line);
       background:
-        radial-gradient(420px 220px at 100% 0%, color-mix(in oklab, var(--kb-accent2) 14%, transparent), transparent 70%),
-        radial-gradient(360px 220px at 0% 100%, color-mix(in oklab, var(--kb-accent) 14%, transparent), transparent 70%),
+        radial-gradient(360px 220px at 100% 0%, color-mix(in oklab, var(--kb-accent2) 10%, transparent), transparent 72%),
+        radial-gradient(280px 180px at 0% 100%, color-mix(in oklab, var(--kb-accent) 10%, transparent), transparent 74%),
         linear-gradient(145deg,
-          color-mix(in oklab, var(--kb-paper) 96%, transparent),
-          color-mix(in oklab, var(--kb-paper) 90%, var(--kb-accent2))
+          color-mix(in oklab, var(--kb-paper) 97%, transparent),
+          color-mix(in oklab, var(--kb-paper) 93%, var(--kb-accent2))
         );
       box-shadow: var(--shadow);
+    }
+
+    .eventBadge::before{
+      content:none;
     }
 
     .eventBadge::after{
@@ -379,29 +387,32 @@
     .eventBadgeInner{
       position:relative;
       z-index:1;
-      padding: 20px;
-      display:grid;
-      gap:16px;
+      height:100%;
+      padding: 14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
 
     .badgeTop{
       display:flex;
-      gap:14px;
       justify-content:space-between;
-      align-items:flex-start;
-      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
     }
 
     .badgeBrand{
       display:flex;
-      gap:14px;
+      gap:10px;
       align-items:center;
+      min-width:0;
+      flex:1;
     }
 
     .badgeMark{
-      width:56px;
-      height:56px;
-      border-radius: 18px;
+      width:36px;
+      height:36px;
+      border-radius: 12px;
       display:grid;
       place-items:center;
       border: 1px solid color-mix(in oklab, var(--kb-line) 70%, transparent);
@@ -411,7 +422,7 @@
 
     .badgeBrand h4{
       margin:0;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 900;
       letter-spacing: .02em;
     }
@@ -419,52 +430,45 @@
     .badgeBrand p{
       margin: 4px 0 0;
       color: var(--kb-muted);
-      font-size: 12px;
+      font-size: 9px;
       font-weight: 650;
-    }
-
-    .badgePills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:flex-end;
     }
 
     .badgePill{
       border: 1px solid var(--kb-line);
       border-radius: 999px;
-      padding: 7px 12px;
+      padding: 6px 12px;
       background: color-mix(in oklab, var(--kb-paper) 88%, transparent);
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: .08em;
       text-transform: uppercase;
       font-weight: 900;
       color: var(--kb-muted);
+      white-space: nowrap;
     }
 
-    .badgeMain{
+    .eventBadgeFront .badgeMain{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding-top: 8px;
+      border-top: 1px solid color-mix(in oklab, var(--kb-line) 82%, transparent);
+    }
+
+    .badgeIdentityRow{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:16px;
-      align-items:stretch;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap:10px;
+      align-items:center;
     }
 
-    .badgeIdentity,
-    .badgeTrack,
-    .badgeQrBlock,
-    .badgeFooterCopy{
-      border: 1px solid var(--kb-line);
-      border-radius: 22px;
-      background: color-mix(in oklab, var(--kb-paper) 92%, transparent);
-      box-shadow: var(--shadow2);
-    }
-
-    .badgeIdentity{
-      padding: 18px;
+    .badgeIdentityText{
+      min-width:0;
     }
 
     .badgeFieldLabel{
-      font-size: 11px;
+      font-size: 9px;
       font-weight: 900;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -472,37 +476,38 @@
     }
 
     .badgeFullName{
-      margin-top: 10px;
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.05;
+      margin-top: 6px;
+      font-size: clamp(19px, 2.8vw, 25px);
+      line-height: 1.02;
       font-weight: 950;
       letter-spacing: -.02em;
+      text-wrap: balance;
     }
 
     .badgeSubline{
-      margin-top: 8px;
+      margin-top: 3px;
       color: var(--kb-muted);
-      font-size: 13px;
+      font-size: 10px;
       font-weight: 700;
     }
 
     .badgeMetaGrid{
-      margin-top: 18px;
+      margin-top: 4px;
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:12px;
+      gap:8px;
     }
 
     .badgeMetaItem{
-      padding: 12px 13px;
-      border-radius: 16px;
+      padding: 8px 10px;
+      border-radius: 14px;
       border: 1px solid color-mix(in oklab, var(--kb-line) 88%, transparent);
-      background: color-mix(in oklab, var(--kb-paper) 82%, transparent);
+      background: color-mix(in oklab, var(--kb-paper) 90%, transparent);
     }
 
     .badgeMetaItem span{
       display:block;
-      font-size: 10px;
+      font-size: 8px;
       font-weight: 900;
       letter-spacing: .10em;
       text-transform: uppercase;
@@ -511,43 +516,29 @@
 
     .badgeMetaItem strong{
       display:block;
-      margin-top: 6px;
-      font-size: 13px;
-      line-height: 1.35;
+      margin-top: 4px;
+      font-size: 11px;
+      line-height: 1.25;
     }
 
-    .badgeTrack{
-      padding: 18px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:14px;
-      text-align:center;
-      background:
-        linear-gradient(155deg,
-          color-mix(in oklab, var(--kb-accent2) 14%, var(--kb-paper)),
-          color-mix(in oklab, var(--kb-accent) 12%, var(--kb-paper))
-        );
-    }
-
-    .badgeTrackChip{
-      border-radius: 999px;
-      padding: 7px 12px;
+    .badgeMetaSequence strong{
+      font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
       font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-      color: var(--kb-accent2);
-      background: color-mix(in oklab, var(--kb-paper) 82%, transparent);
-      border: 1px solid color-mix(in oklab, var(--kb-line) 70%, transparent);
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+
+    .badgeMarkerBlock{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
     }
 
     .badgeIconFrame{
-      width: min(100%, 210px);
+      width: 58px;
       aspect-ratio: 1 / 1;
-      padding: 22px;
-      border-radius: 24px;
+      padding: 7px;
+      border-radius: 14px;
       display:grid;
       place-items:center;
       border: 1px solid color-mix(in oklab, var(--kb-line) 78%, transparent);
@@ -560,55 +551,32 @@
       display:block;
     }
 
-    .badgeTrackValue{
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: .04em;
-    }
-
-    .badgeTrackLabel{
-      margin:0;
-      font-size: 12px;
-      color: var(--kb-muted);
-      font-weight: 700;
-      line-height: 1.5;
-      max-width: 250px;
+    .eventBadgeBack .badgeTop{
+      padding-bottom: 8px;
+      border-bottom: 1px solid color-mix(in oklab, var(--kb-line) 82%, transparent);
     }
 
     .badgeBottom{
       display:grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap:16px;
+      grid-template-columns: minmax(0, 1fr) 124px;
+      gap:8px;
       align-items:stretch;
+      flex:1;
     }
 
     .badgeQrBlock{
-      padding: 18px;
       display:flex;
       flex-direction:column;
-      align-items:center;
-      gap:12px;
-      text-align:center;
-    }
-
-    .badgeQrTitle{
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-      color: var(--kb-muted);
+      align-items:flex-start;
+      justify-content:center;
+      min-width:0;
     }
 
     .badgeQrMount{
-      width: min(100%, 256px);
+      width: 132px;
       aspect-ratio: 1 / 1;
-      padding: 14px;
-      border-radius: 22px;
       display:grid;
       place-items:center;
-      background:#fff;
-      border: 1px solid color-mix(in oklab, var(--kb-line) 82%, transparent);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
     }
 
     .badgeQrMount svg{
@@ -618,38 +586,20 @@
     }
 
     .badgeQrHint{
-      margin:0;
-      color: var(--kb-muted);
-      font-size: 12px;
-      line-height: 1.5;
-      font-weight: 650;
+      display:none;
     }
 
     .badgeFooterCopy{
-      padding: 18px;
+      padding: 0;
       display:flex;
       flex-direction:column;
-      justify-content:space-between;
-      gap:14px;
-      background:
-        linear-gradient(145deg,
-          color-mix(in oklab, var(--kb-paper) 90%, transparent),
-          color-mix(in oklab, var(--kb-paper) 82%, var(--kb-accent))
-        );
-    }
-
-    .badgeInstruction{
-      margin:0;
-      font-size: 22px;
-      line-height: 1.2;
-      font-weight: 950;
-      letter-spacing: -.02em;
+      gap:6px;
     }
 
     .badgeWarning{
       margin:0;
-      font-size: 13px;
-      line-height: 1.5;
+      font-size: 8px;
+      line-height: 1.25;
       color: var(--kb-warn);
       font-weight: 700;
     }
@@ -657,9 +607,18 @@
     .badgeFine{
       margin:0;
       color: var(--kb-muted);
-      font-size: 12px;
-      line-height: 1.6;
+      font-size: 8px;
+      line-height: 1.25;
       font-weight: 650;
+    }
+
+    .eventBadgeBack .badgeFooterCopy{
+      justify-content:center;
+      min-width:0;
+    }
+
+    .eventBadgeBack .badgeMetaGrid{
+      grid-template-columns: 1fr;
     }
 
     .affinityWrap{
@@ -671,8 +630,17 @@
 
     @media (max-width: 760px){
       .affinityWrap{ grid-template-columns: 1fr; }
-      .intakeLayout, .stageBanner, .badgeMain, .badgeBottom, .badgeMetaGrid{ grid-template-columns: 1fr; }
-      .badgePills{ justify-content:flex-start; }
+      .intakeLayout, .stageBanner, .badgeMetaGrid{ grid-template-columns: 1fr; }
+      .badgeTop{
+        flex-direction:column;
+        align-items:stretch;
+      }
+      .badgeBottom{
+        grid-template-columns: 1fr;
+      }
+      .badgeSheet{ grid-template-columns: 1fr; }
+      .eventBadge{ width: min(100%, 420px); aspect-ratio: 85.6 / 53.98; }
+      .badgeQrMount{ width: min(100%, 180px); }
     }
 
     .affinityHero{
@@ -822,6 +790,7 @@
     }
 
     @media print{
+      @page{ size: A4 landscape; margin: 10mm; }
       body{ background:#fff; color:#000; }
       .controls{ display:none !important; }
       header, .badgeStageIntro{ display:none !important; }
@@ -830,9 +799,27 @@
       header{ background:none; }
       main{ padding:0; }
       .section, .q, .miniCard, .heroCard, .eventBadge{ box-shadow:none; }
-      .badgeSheet{ padding:0; }
-      .eventBadge{ border: 1px solid #0004; border-radius: 18px; }
-      .eventBadgeInner{ padding: 18px; }
+      .badgeSheet{
+        padding:0;
+        grid-template-columns: repeat(2, 85.6mm);
+        gap: 6mm;
+        justify-content:center;
+        align-items:start;
+      }
+      .eventBadge{
+        width: 85.6mm;
+        height: 53.98mm;
+        aspect-ratio: auto;
+        min-height: auto;
+        border: 1px solid #0004;
+      }
+      .badgeBottom{
+        grid-template-columns: minmax(0, 1fr) 31.5mm;
+        gap: 1.9mm;
+      }
+      .badgeQrMount{
+        width: 31.4mm;
+      }
       input, textarea, select{ border: 1px solid #0006; }
       .watermark{ color:#0007; }
     }
@@ -1512,20 +1499,20 @@
                     Application submitted. The attendee credential below is ready for printing and onsite check-in.
                   </p>
                   <p class="stageCopy">
-                    The QR code encodes the complete application record as JSON so it can be reviewed later without exposing the full questionnaire on the badge itself.
+                    Print this credential at full scale and keep it visible during arrival, routing, and summit access.
                   </p>
                 </div>
 
                 <div class="q">
                   <div class="qlabel">Badge handling</div>
-                  <div class="help">Print at 100% scale for the clearest QR scan. Keep the credential visible while onsite.</div>
+                  <div class="help">Print at 100% scale for the clearest check-in scan. Keep the credential visible while onsite.</div>
                   <div class="smallnote">Use “Return to Questionnaire” if you want to revise answers before printing.</div>
                 </div>
               </div>
             </div>
 
             <div class="badgeSheet">
-              <div class="eventBadge" id="eventBadge">
+              <div class="eventBadge eventBadgeFront" id="eventBadge">
                 <div class="eventBadgeInner">
                   <div class="badgeTop">
                     <div class="badgeBrand">
@@ -1541,58 +1528,67 @@
                         <p>HELIX Summit Attendee Credential</p>
                       </div>
                     </div>
-
-                    <div class="badgePills">
-                      <div class="badgePill">Event: HELIX Summit</div>
-                      <div class="badgePill" id="badgeStatusPill">Status: Submitted</div>
-                    </div>
                   </div>
 
                   <div class="badgeMain">
-                    <div class="badgeIdentity">
-                      <div class="badgeFieldLabel">Attendee</div>
-                      <div class="badgeFullName" id="badgeFullName">Pending attendee</div>
-                      <div class="badgeSubline" id="badgeSubline">Preferred name and routing details will appear here.</div>
+                    <div class="badgeIdentityRow">
+                      <div class="badgeIdentityText">
+                        <div class="badgeFieldLabel">Attendee</div>
+                        <div class="badgeFullName" id="badgeFullName">Pending attendee</div>
+                        <div class="badgeSubline" id="badgeSubline">Preferred name and routing details will appear here.</div>
+                      </div>
 
-                      <div class="badgeMetaGrid">
-                        <div class="badgeMetaItem">
-                          <span>Attendee ID</span>
-                          <strong id="badgeId">—</strong>
-                        </div>
-                        <div class="badgeMetaItem">
-                          <span>Residence</span>
-                          <strong id="badgeResidence">—</strong>
-                        </div>
-                        <div class="badgeMetaItem">
-                          <span>Referral</span>
-                          <strong id="badgeReferral">—</strong>
-                        </div>
-                        <div class="badgeMetaItem">
-                          <span>Issued</span>
-                          <strong id="badgeIssued">—</strong>
-                        </div>
+                      <div class="badgeMarkerBlock">
+                        <div class="badgeIconFrame badgeMarkerIcon" id="badgeAffinityIcon" aria-hidden="true"></div>
                       </div>
                     </div>
 
-                    <div class="badgeTrack">
-                      <div class="badgeTrackChip">Primary Affinity</div>
-                      <div class="badgeIconFrame" id="badgeAffinityIcon" aria-hidden="true"></div>
-                      <div class="badgeTrackValue" id="badgeAffinityName">Pending</div>
-                      <p class="badgeTrackLabel">Internal response marker assigned from the submitted Candidate Experience Questionnaire.</p>
+                    <div class="badgeMetaGrid">
+                      <div class="badgeMetaItem">
+                        <span>Attendee ID</span>
+                        <strong id="badgeId">—</strong>
+                      </div>
+                      <div class="badgeMetaItem">
+                        <span>Issued</span>
+                        <strong id="badgeIssued">—</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="eventBadge eventBadgeBack" id="eventBadgeBack">
+                <div class="eventBadgeInner">
+                  <div class="badgeTop">
+                    <div class="badgeBrand">
+                      <div class="badgeMark" aria-hidden="true">
+                        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13 2.2c5.96 0 10.8 4.84 10.8 10.8S18.96 23.8 13 23.8 2.2 18.96 2.2 13 7.04 2.2 13 2.2Z" stroke="rgba(255,255,255,.90)" stroke-width="1.8"/>
+                          <path d="M7.2 15.2c2.2-5.6 9.4-7.6 11.6-2.2" stroke="rgba(255,255,255,.90)" stroke-width="1.8" stroke-linecap="round"/>
+                          <path d="M8.6 10.6c2.8 1.0 6.0 5.2 7.6 7.0" stroke="rgba(255,255,255,.90)" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4>Kallisto Biomedical</h4>
+                        <p>HELIX Summit Check-In</p>
+                      </div>
                     </div>
                   </div>
 
                   <div class="badgeBottom">
                     <div class="badgeQrBlock">
-                      <div class="badgeQrTitle">Encoded Application Record</div>
                       <div class="badgeQrMount" id="badgeQrMount"></div>
-                      <p class="badgeQrHint" id="badgeQrHint">Scan to review the full questionnaire response JSON.</p>
+                      <p class="badgeQrHint" id="badgeQrHint" hidden>Present at reception.</p>
                     </div>
 
                     <div class="badgeFooterCopy">
-                      <p class="badgeInstruction">This credential must remain visible while onsite.</p>
-                      <p class="badgeWarning" id="badgeWarning">If the QR code fails to render, shorten long free-text answers before printing.</p>
-                      <p class="badgeFine">Kallisto Biomedical uses this credential for guest routing and check-in validation. The QR payload is generated locally from the submitted application and is not dependent on a remote service.</p>
+                      <div class="badgeMetaGrid">
+                        <div class="badgeMetaItem badgeMetaSequence">
+                          <span>STB-LZR</span>
+                          <strong id="badgeBackId">—</strong>
+                        </div>
+                      </div>
+                      <p class="badgeWarning" id="badgeWarning">Badge code unavailable. Return to the questionnaire and resubmit before printing.</p>
                     </div>
                   </div>
                 </div>
@@ -1634,15 +1630,12 @@
     const pageNote = document.getElementById("pageNote");
     const progressPill = document.getElementById("progressPill");
     const controlsNote = document.getElementById("controlsNote");
-    const badgeStatusPill = document.getElementById("badgeStatusPill");
     const badgeFullName = document.getElementById("badgeFullName");
     const badgeSubline = document.getElementById("badgeSubline");
     const badgeId = document.getElementById("badgeId");
-    const badgeResidence = document.getElementById("badgeResidence");
-    const badgeReferral = document.getElementById("badgeReferral");
     const badgeIssued = document.getElementById("badgeIssued");
+    const badgeBackId = document.getElementById("badgeBackId");
     const badgeAffinityIcon = document.getElementById("badgeAffinityIcon");
-    const badgeAffinityName = document.getElementById("badgeAffinityName");
     const badgeQrMount = document.getElementById("badgeQrMount");
     const badgeQrHint = document.getElementById("badgeQrHint");
     const badgeWarning = document.getElementById("badgeWarning");
@@ -1678,7 +1671,8 @@
     let persistTimer = null;
     let submissionMeta = {
       submittedAt: "",
-      badgeId: ""
+      badgeId: "",
+      stbLzr: ""
     };
 
     function val(name) {
@@ -2097,9 +2091,49 @@
 
     function buildBadgeId(profile, submittedAt) {
       const initials = `${val("name_given").charAt(0) || "X"}${val("name_family").charAt(0) || "X"}`.toUpperCase();
-      const affinityCode = (profile.primaryName || "GEN").slice(0, 3).toUpperCase();
       const digest = simpleHash([val("name_given"), val("name_family"), val("birth_place"), submittedAt].join("|"));
-      return `HX-${affinityCode}-${initials}-${digest}`;
+      return `HX-ATT-${initials}-${digest}`;
+    }
+
+    function geneSequenceFromSeed(seedText) {
+      const bases = ["A", "C", "G", "T"];
+      let state = 2166136261;
+
+      for (const char of seedText) {
+        state ^= char.charCodeAt(0);
+        state = Math.imul(state, 16777619) >>> 0;
+      }
+
+      const codons = [];
+      for (let i = 0; i < 3; i += 1) {
+        let codon = "";
+        for (let j = 0; j < 3; j += 1) {
+          state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
+          codon += bases[state & 3];
+        }
+        codons.push(codon);
+      }
+
+      return codons.join("-");
+    }
+
+    function generateGeneSequence() {
+      const bases = ["A", "C", "G", "T"];
+
+      if (window.crypto && typeof window.crypto.getRandomValues === "function") {
+        const bytes = new Uint8Array(9);
+        window.crypto.getRandomValues(bytes);
+
+        const codons = [];
+        for (let i = 0; i < 9; i += 3) {
+          codons.push(
+            `${bases[bytes[i] & 3]}${bases[bytes[i + 1] & 3]}${bases[bytes[i + 2] & 3]}`
+          );
+        }
+        return codons.join("-");
+      }
+
+      return geneSequenceFromSeed(`${Date.now()}|${Math.random()}`);
     }
 
     function summarizeScores(scores) {
@@ -2122,17 +2156,14 @@
     }
 
     function resetBadge() {
-      badgeStatusPill.textContent = "Status: Pending";
       badgeFullName.textContent = "Pending attendee";
-      badgeSubline.textContent = "Preferred name and routing details will appear here.";
+      badgeSubline.textContent = "HELIX Summit attendee credential";
       badgeId.textContent = "—";
-      badgeResidence.textContent = "—";
-      badgeReferral.textContent = "—";
+      badgeBackId.textContent = "—";
       badgeIssued.textContent = "—";
       badgeAffinityIcon.innerHTML = "";
-      badgeAffinityName.textContent = "Pending";
       badgeQrMount.innerHTML = "";
-      badgeQrHint.textContent = "Scan to review the full questionnaire response JSON.";
+      badgeQrHint.textContent = "Present at reception.";
       badgeWarning.hidden = true;
     }
 
@@ -2233,37 +2264,6 @@
       field.value = value;
     }
 
-    const QUESTION_LABEL_OVERRIDES = {
-      ack1: "Acknowledgment: I understand the event may involve unexpected conditions.",
-      ack2: "Acknowledgment: I consent to onsite biometric telemetry and access logging.",
-      ack3: "Acknowledgment: I understand movement may be restricted during safety protocols.",
-      ack4: "Acknowledgment: I agree to comply with staff instructions during emergencies.",
-      signature: "Signature",
-      date: "Date"
-    };
-
-    function getQuestionLabel(name) {
-      if (QUESTION_LABEL_OVERRIDES[name]) return QUESTION_LABEL_OVERRIDES[name];
-
-      const field = form.elements[name];
-      const element = field instanceof RadioNodeList ? field[0] : field;
-      if (!element) return name;
-
-      const q = element.closest(".q");
-      if (q) {
-        const label = q.querySelector(".qlabel");
-        if (label) return normalizeText(label.textContent);
-      }
-
-      const wrapper = element.parentElement;
-      if (wrapper) {
-        const help = wrapper.querySelector(":scope > .help");
-        if (help) return normalizeText(help.textContent);
-      }
-
-      return name;
-    }
-
     function getAnswerDisplay(name) {
       const field = form.elements[name];
       if (!field) return null;
@@ -2287,42 +2287,70 @@
       return value || null;
     }
 
+    function getAnswerValue(name) {
+      const field = form.elements[name];
+      if (!field) return null;
+
+      if (field instanceof RadioNodeList) {
+        const checked = Array.from(field).find(option => option.checked);
+        return checked ? checked.value : null;
+      }
+
+      if (field.type === "checkbox") {
+        return field.checked ? 1 : 0;
+      }
+
+      if (field.tagName === "SELECT") {
+        return field.value || null;
+      }
+
+      const value = (field.value || "").trim();
+      return value || null;
+    }
+
     function buildSubmissionRecord(profile) {
-      const responses = {};
+      const answers = {};
       const seen = new Set();
-      let responseCount = 0;
 
       for (const element of Array.from(form.elements)) {
         const name = fieldKey(element);
         if (!name || seen.has(name)) continue;
         seen.add(name);
-        const answer = getAnswerDisplay(name);
+        const answer = getAnswerValue(name);
         if (answer == null || answer === "") continue;
-        responses[getQuestionLabel(name)] = answer;
-        responseCount += 1;
+        answers[name] = answer;
       }
 
       return {
+        schema: "CEQ-3.12",
         company: "Kallisto Biomedical",
         event: "HELIX Summit",
         submittedAt: submissionMeta.submittedAt,
         attendeeId: submissionMeta.badgeId,
-        primaryAffinity: profile.primaryName,
-        affinityScores: profile.scores,
-        responseCount,
-        responses
+        stbLzr: submissionMeta.stbLzr,
+        affinity: {
+          primary: profile.primaryName,
+          scores: {
+            A: profile.scores.Aegis || 0,
+            W: profile.scores.Wraith || 0,
+            E: profile.scores.Eidolon || 0,
+            C: profile.scores.Chimera || 0,
+            T: profile.scores.Threnody || 0
+          }
+        },
+        answers
       };
     }
 
     function renderQrCode(payload) {
       badgeQrMount.innerHTML = "";
-      badgeQrHint.textContent = "Scan to review the full questionnaire response JSON.";
+      badgeQrHint.textContent = "Present this code at reception on arrival.";
       badgeWarning.hidden = true;
 
       if (typeof qrcode !== "function") {
-        badgeQrHint.textContent = "QR generation library unavailable on this deployment.";
+        badgeQrHint.textContent = "Badge code unavailable on this device.";
         badgeWarning.hidden = false;
-        badgeWarning.textContent = "The local QR generator script did not load.";
+        badgeWarning.textContent = "Reload this page and submit again before printing.";
         return;
       }
 
@@ -2330,11 +2358,11 @@
         const qr = qrcode(0, "L");
         qr.addData(payload, "Byte");
         qr.make();
-        badgeQrMount.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0 });
+        badgeQrMount.innerHTML = qr.createSvgTag({ cellSize: 6, margin: 4, scalable: true });
       } catch (_error) {
-        badgeQrHint.textContent = "QR payload exceeded the capacity of a single code.";
+        badgeQrHint.textContent = "Badge code unavailable for this submission.";
         badgeWarning.hidden = false;
-        badgeWarning.textContent = "Shorten long free-text answers before printing the badge.";
+        badgeWarning.textContent = "Reduce unusually long free-text entries and submit again.";
       }
     }
 
@@ -2342,21 +2370,17 @@
       const given = val("name_given") || "Pending";
       const family = val("name_family") || "Attendee";
       const preferred = val("name_preferred");
-      const residence = val("residence_place") || "Not provided";
-      const referral = getAnswerDisplay("referral_source") || "Not provided";
+      const occupation = normalizeText(val("occupation"));
       const subline = preferred
-        ? `Preferred name: ${preferred} • ${residence}`
-        : `Residence: ${residence}`;
+        ? `Preferred: ${preferred}`
+        : occupation || "HELIX Summit attendee";
 
-      badgeStatusPill.textContent = "Status: Submitted";
       badgeFullName.textContent = `${given} ${family}`.trim();
       badgeSubline.textContent = subline;
       badgeId.textContent = submissionMeta.badgeId || "—";
-      badgeResidence.textContent = residence;
-      badgeReferral.textContent = referral;
+      badgeBackId.textContent = submissionMeta.stbLzr || "—";
       badgeIssued.textContent = formatDisplayDate(submissionMeta.submittedAt);
       badgeAffinityIcon.innerHTML = ICON[profile.primaryName] || "";
-      badgeAffinityName.textContent = profile.primaryName;
 
       renderQrCode(JSON.stringify(buildSubmissionRecord(profile)));
     }
@@ -2451,7 +2475,7 @@
       if (!hasSubmitted) return;
 
       hasSubmitted = false;
-      submissionMeta = { submittedAt: "", badgeId: "" };
+      submissionMeta = { submittedAt: "", badgeId: "", stbLzr: "" };
       resetBadge();
     }
 
@@ -2467,7 +2491,8 @@
 
       submissionMeta = {
         submittedAt,
-        badgeId: buildBadgeId(profile, submittedAt)
+        badgeId: buildBadgeId(profile, submittedAt),
+        stbLzr: generateGeneSequence()
       };
       hasSubmitted = true;
 
@@ -2503,8 +2528,15 @@
         if (encodedState.meta && typeof encodedState.meta === "object") {
           submissionMeta = {
             submittedAt: encodedState.meta.submittedAt || "",
-            badgeId: encodedState.meta.badgeId || ""
+            badgeId: encodedState.meta.badgeId || "",
+            stbLzr: encodedState.meta.stbLzr || ""
           };
+        }
+
+        if (hasSubmitted && !submissionMeta.stbLzr) {
+          submissionMeta.stbLzr = geneSequenceFromSeed(
+            [submissionMeta.badgeId, submissionMeta.submittedAt, val("name_given"), val("name_family")].join("|")
+          );
         }
 
         if (encodedState.stage === "badge" && intakeIsComplete() && hasSubmitted) {
@@ -2546,7 +2578,7 @@
 
     btnClear.addEventListener("click", () => {
       hasSubmitted = false;
-      submissionMeta = { submittedAt: "", badgeId: "" };
+      submissionMeta = { submittedAt: "", badgeId: "", stbLzr: "" };
       form.reset();
       window.clearTimeout(persistTimer);
       activateStage("intake", { animate: false });

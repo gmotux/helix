@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kallisto Biomedical — GM Decoder</title>
+  <style>
+    :root{
+      --kb-ink:#0b1220;
+      --kb-paper:#ffffff;
+      --kb-muted:#5a677a;
+      --kb-line:#d9e1ee;
+      --kb-accent:#1fb6a6;
+      --kb-accent2:#2a5bd7;
+      --kb-warn:#b45309;
+      --kb-good:#0f766e;
+      --radius:16px;
+      --shadow:0 18px 40px rgba(11,18,32,.10);
+      --shadow2:0 6px 16px rgba(11,18,32,.08);
+      color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --kb-ink:#e9eef7;
+        --kb-paper:#0c1424;
+        --kb-muted:#a7b4c8;
+        --kb-line:#22304a;
+        --shadow:0 18px 40px rgba(0,0,0,.35);
+        --shadow2:0 6px 16px rgba(0,0,0,.25);
+        color-scheme: dark;
+      }
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 640px at 12% 10%, color-mix(in oklab, var(--kb-accent) 16%, transparent), transparent 58%),
+        radial-gradient(1000px 620px at 88% 0%, color-mix(in oklab, var(--kb-accent2) 12%, transparent), transparent 58%),
+        color-mix(in oklab, var(--kb-paper) 92%, #0000);
+      color:var(--kb-ink);
+    }
+
+    .wrap{
+      max-width: 1260px;
+      margin: 28px auto 40px;
+      padding: 0 18px;
+    }
+
+    .shell{
+      background: var(--kb-paper);
+      border: 1px solid var(--kb-line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    header{
+      position:relative;
+      padding: 22px 22px 18px;
+      border-bottom: 1px solid var(--kb-line);
+      background:
+        linear-gradient(135deg,
+          color-mix(in oklab, var(--kb-accent2) 14%, transparent),
+          color-mix(in oklab, var(--kb-accent) 12%, transparent)
+        );
+    }
+
+    .hdrRow{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      min-width: 280px;
+    }
+
+    .logo{
+      width:46px;
+      height:46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--kb-accent2), var(--kb-accent));
+      box-shadow: var(--shadow2);
+      display:grid;
+      place-items:center;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 50%, transparent);
+    }
+
+    .brand h1{
+      font-size: 18px;
+      margin:0;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: .2px;
+    }
+
+    .brand p{
+      margin: 3px 0 0;
+      color: var(--kb-muted);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .pillRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+
+    .pill{
+      border: 1px solid var(--kb-line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: color-mix(in oklab, var(--kb-paper) 88%, transparent);
+      backdrop-filter: blur(6px);
+      white-space: nowrap;
+      color: var(--kb-muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .titleBlock{
+      margin-top: 14px;
+      display:flex;
+      gap:16px;
+      justify-content:space-between;
+      align-items:flex-end;
+      flex-wrap:wrap;
+    }
+
+    .titleBlock h2{
+      margin:0;
+      font-size: 22px;
+      font-weight: 950;
+    }
+
+    .titleBlock p{
+      margin:4px 0 0;
+      max-width: 720px;
+      color: var(--kb-muted);
+      font-size: 13px;
+    }
+
+    main{
+      padding: 18px 22px 22px;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      gap:16px;
+      align-items:start;
+    }
+
+    .panel{
+      border: 1px solid var(--kb-line);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: color-mix(in oklab, var(--kb-paper) 92%, transparent);
+      box-shadow: var(--shadow2);
+    }
+
+    .panel h3{
+      margin:0 0 10px;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--kb-muted);
+      font-weight: 900;
+    }
+
+    .panelLead{
+      margin:0 0 12px;
+      color: var(--kb-muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .stack{
+      display:grid;
+      gap:12px;
+    }
+
+    .dropZone{
+      border: 1px dashed color-mix(in oklab, var(--kb-accent2) 40%, var(--kb-line));
+      border-radius: 14px;
+      padding: 18px 16px;
+      background:
+        linear-gradient(140deg,
+          color-mix(in oklab, var(--kb-accent2) 8%, var(--kb-paper)),
+          color-mix(in oklab, var(--kb-accent) 8%, var(--kb-paper))
+        );
+      text-align:center;
+      transition: border-color .15s ease, transform .15s ease, background .15s ease;
+    }
+
+    .dropZone.is-active{
+      border-color: color-mix(in oklab, var(--kb-accent2) 70%, var(--kb-line));
+      transform: translateY(-1px);
+    }
+
+    .dropZone strong{
+      display:block;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .dropZone p{
+      margin:0;
+      color: var(--kb-muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .fileLabel,
+    button{
+      appearance:none;
+      border: 1px solid var(--kb-line);
+      background: var(--kb-paper);
+      color: var(--kb-ink);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-weight: 800;
+      cursor:pointer;
+      box-shadow: var(--shadow2);
+      text-decoration:none;
+      font: inherit;
+    }
+
+    .fileLabel{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .primary{
+      border-color: color-mix(in oklab, var(--kb-accent2) 55%, var(--kb-line));
+      background: linear-gradient(135deg,
+        color-mix(in oklab, var(--kb-accent2) 18%, var(--kb-paper)),
+        color-mix(in oklab, var(--kb-accent) 16%, var(--kb-paper))
+      );
+    }
+
+    .muted{
+      background: color-mix(in oklab, var(--kb-paper) 94%, transparent);
+    }
+
+    .fileInput{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0, 0, 0, 0);
+      white-space:nowrap;
+      border:0;
+    }
+
+    textarea{
+      width:100%;
+      min-height: 220px;
+      resize: vertical;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 88%, #0000);
+      border-radius: 14px;
+      background: color-mix(in oklab, var(--kb-paper) 94%, transparent);
+      color: var(--kb-ink);
+      padding: 12px;
+      font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      outline:none;
+      transition: border .15s ease, box-shadow .15s ease;
+    }
+
+    textarea:focus{
+      border-color: color-mix(in oklab, var(--kb-accent2) 70%, var(--kb-line));
+      box-shadow: 0 0 0 4px color-mix(in oklab, var(--kb-accent2) 18%, transparent);
+    }
+
+    .smallNote{
+      font-size: 12px;
+      color: var(--kb-muted);
+      line-height: 1.45;
+    }
+
+    .status{
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--kb-line);
+      background: color-mix(in oklab, var(--kb-paper) 92%, transparent);
+      font-size: 12px;
+      line-height: 1.45;
+      color: var(--kb-muted);
+    }
+
+    .status.warn{
+      color: var(--kb-warn);
+      border-color: color-mix(in oklab, var(--kb-warn) 40%, var(--kb-line));
+      background: color-mix(in oklab, var(--kb-warn) 8%, var(--kb-paper));
+    }
+
+    .status.good{
+      color: var(--kb-good);
+      border-color: color-mix(in oklab, var(--kb-good) 40%, var(--kb-line));
+      background: color-mix(in oklab, var(--kb-good) 8%, var(--kb-paper));
+    }
+
+    .previewWrap{
+      border: 1px solid var(--kb-line);
+      border-radius: 14px;
+      padding: 10px;
+      background: color-mix(in oklab, var(--kb-paper) 94%, transparent);
+    }
+
+    .preview{
+      width:100%;
+      display:block;
+      border-radius: 10px;
+      max-height: 260px;
+      object-fit: contain;
+      background:
+        linear-gradient(135deg,
+          color-mix(in oklab, var(--kb-accent2) 5%, transparent),
+          color-mix(in oklab, var(--kb-accent) 5%, transparent)
+        );
+    }
+
+    .summaryGrid{
+      display:grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap:10px;
+    }
+
+    .summaryCard{
+      padding: 12px;
+      border: 1px solid var(--kb-line);
+      border-radius: 14px;
+      background: color-mix(in oklab, var(--kb-paper) 94%, transparent);
+    }
+
+    .summaryCard span{
+      display:block;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--kb-muted);
+      font-weight: 900;
+    }
+
+    .summaryCard strong{
+      display:block;
+      margin-top: 6px;
+      font-size: 15px;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    .affinityScores{
+      margin-top: 12px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .scorePill{
+      border: 1px solid var(--kb-line);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: color-mix(in oklab, var(--kb-paper) 94%, transparent);
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--kb-muted);
+    }
+
+    .answerGroups{
+      margin-top: 16px;
+      display:grid;
+      gap:14px;
+    }
+
+    .answerGroup{
+      border: 1px solid var(--kb-line);
+      border-radius: 16px;
+      background: color-mix(in oklab, var(--kb-paper) 94%, transparent);
+      overflow:hidden;
+    }
+
+    .answerGroupHeader{
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--kb-line);
+      background:
+        linear-gradient(145deg,
+          color-mix(in oklab, var(--kb-accent2) 8%, var(--kb-paper)),
+          color-mix(in oklab, var(--kb-accent) 7%, var(--kb-paper))
+        );
+      display:flex;
+      gap:10px;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .answerGroupHeader strong{
+      font-size: 15px;
+      letter-spacing: .1px;
+    }
+
+    .answerGroupHeader span{
+      color: var(--kb-muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .answerRows{
+      display:grid;
+    }
+
+    .answerRow{
+      display:grid;
+      grid-template-columns: minmax(220px, 340px) minmax(0, 1fr);
+      gap:12px;
+      padding: 12px 14px;
+      border-top: 1px solid var(--kb-line);
+      align-items:start;
+    }
+
+    .answerRow:first-child{
+      border-top: 0;
+    }
+
+    .answerLabel{
+      font-weight: 800;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .answerValue{
+      font-size: 13px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .answerMeta{
+      margin-top: 4px;
+      font: 11px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: var(--kb-muted);
+      word-break: break-word;
+    }
+
+    details{
+      margin-top: 16px;
+      border: 1px solid var(--kb-line);
+      border-radius: 16px;
+      background: color-mix(in oklab, var(--kb-paper) 94%, transparent);
+      overflow:hidden;
+    }
+
+    summary{
+      cursor:pointer;
+      padding: 12px 14px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--kb-muted);
+      font-size: 12px;
+    }
+
+    pre{
+      margin:0;
+      padding: 0 14px 14px;
+      overflow:auto;
+      font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: var(--kb-ink);
+    }
+
+    .emptyState{
+      min-height: 420px;
+      border: 1px dashed var(--kb-line);
+      border-radius: 18px;
+      display:grid;
+      place-items:center;
+      padding: 24px;
+      text-align:center;
+      background:
+        linear-gradient(145deg,
+          color-mix(in oklab, var(--kb-accent2) 6%, var(--kb-paper)),
+          color-mix(in oklab, var(--kb-accent) 6%, var(--kb-paper))
+        );
+      color: var(--kb-muted);
+    }
+
+    .emptyState strong{
+      display:block;
+      color: var(--kb-ink);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .hiddenCanvas{
+      display:none;
+    }
+
+    @media (max-width: 1100px){
+      .summaryGrid{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px){
+      .layout{
+        grid-template-columns: 1fr;
+      }
+
+      .summaryGrid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .answerRow{
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 620px){
+      .summaryGrid{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="shell">
+      <header>
+        <div class="hdrRow">
+          <div class="brand">
+            <div class="logo" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2.2c5.96 0 10.8 4.84 10.8 10.8S18.96 23.8 13 23.8 2.2 18.96 2.2 13 7.04 2.2 13 2.2Z" stroke="rgba(255,255,255,.90)" stroke-width="1.8"/>
+                <path d="M7.2 15.2c2.2-5.6 9.4-7.6 11.6-2.2" stroke="rgba(255,255,255,.90)" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M8.6 10.6c2.8 1.0 6.0 5.2 7.6 7.0" stroke="rgba(255,255,255,.90)" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h1>Kallisto Biomedical</h1>
+              <p>HELIX Summit GM Decoder</p>
+            </div>
+          </div>
+
+          <div class="pillRow">
+            <div class="pill">GM Review</div>
+            <div class="pill" id="schemaPill">Question Map: Loading</div>
+          </div>
+        </div>
+
+        <div class="titleBlock">
+          <div>
+            <h2>Application Decoder</h2>
+            <p>Upload a badge QR image or paste raw QR text to inspect a submitted record. Question labels are resolved from the live questionnaire page so new form fields remain reviewable.</p>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="layout">
+          <div class="stack">
+            <section class="panel">
+              <h3>QR Input</h3>
+              <p class="panelLead">Use an image from a printed badge, a screenshot, or paste the QR payload directly from a scanner app.</p>
+
+              <div class="stack">
+                <div class="dropZone" id="dropZone">
+                  <strong>Drop a QR image here</strong>
+                  <p>PNG, JPG, WEBP, or clipboard image. The page decodes locally in your browser.</p>
+                </div>
+
+                <div class="row">
+                  <label class="fileLabel primary" for="imageInput">Choose QR Image</label>
+                  <input class="fileInput" id="imageInput" type="file" accept="image/*" />
+                  <button type="button" class="muted" id="clearImage">Clear Image</button>
+                </div>
+
+                <div class="previewWrap" id="previewWrap" hidden>
+                  <img class="preview" id="previewImage" alt="Selected QR image preview" />
+                </div>
+
+                <div class="status" id="imageStatus">No image loaded.</div>
+              </div>
+            </section>
+
+            <section class="panel">
+              <h3>Raw QR Text</h3>
+              <div class="stack">
+                <textarea id="payloadInput" placeholder="Paste the QR payload here."></textarea>
+                <div class="row">
+                  <button type="button" class="primary" id="decodeText">Decode Payload</button>
+                  <button type="button" class="muted" id="clearAll">Clear All</button>
+                </div>
+                <div class="smallNote">If the browser cannot read an image automatically, scan the badge with a phone and paste the raw payload text here.</div>
+                <div class="status" id="decodeStatus">Ready.</div>
+              </div>
+            </section>
+          </div>
+
+          <div>
+            <section class="panel" id="resultPanel">
+              <h3>Decoded Record</h3>
+              <div id="resultBody" class="emptyState">
+                <div>
+                  <strong>No record decoded yet</strong>
+                  Upload a QR image or paste the QR text to inspect the submitted application.
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <canvas id="qrCanvas" class="hiddenCanvas"></canvas>
+
+  <script src="../vendor/jsqr.js"></script>
+  <script>
+  (function () {
+    const imageInput = document.getElementById("imageInput");
+    const clearImageBtn = document.getElementById("clearImage");
+    const clearAllBtn = document.getElementById("clearAll");
+    const decodeTextBtn = document.getElementById("decodeText");
+    const dropZone = document.getElementById("dropZone");
+    const previewWrap = document.getElementById("previewWrap");
+    const previewImage = document.getElementById("previewImage");
+    const payloadInput = document.getElementById("payloadInput");
+    const imageStatus = document.getElementById("imageStatus");
+    const decodeStatus = document.getElementById("decodeStatus");
+    const resultBody = document.getElementById("resultBody");
+    const schemaPill = document.getElementById("schemaPill");
+    const qrCanvas = document.getElementById("qrCanvas");
+    const qrContext = qrCanvas.getContext("2d", { willReadFrequently: true });
+
+    const state = {
+      questionMap: new Map(),
+      schemaReady: false,
+      schemaLoading: false,
+      schemaPromise: null,
+      imageUrl: "",
+      record: null
+    };
+
+    function cleanText(text) {
+      return (text || "")
+        .replace(/\u00a0/g, " ")
+        .replace(/\s*\*\s*/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function humanizeFieldName(name) {
+      return cleanText(String(name || "")
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, char => char.toUpperCase()));
+    }
+
+    function escapeHtml(text) {
+      return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function formatDate(value) {
+      if (!value) return "—";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return new Intl.DateTimeFormat("en", {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit"
+      }).format(date);
+    }
+
+    function setStatus(element, message, tone) {
+      element.textContent = message;
+      element.className = "status";
+      if (tone) element.classList.add(tone);
+    }
+
+    function stageLabelFromId(id) {
+      switch (id) {
+        case "intakeStage": return "Intake";
+        case "questionnaireStage": return "Assessment";
+        case "badgeStage": return "Badge";
+        default: return "Record";
+      }
+    }
+
+    function findInlinePrompt(control) {
+      const parent = control.parentElement;
+      if (!parent) return "";
+
+      let node = control.previousElementSibling;
+      while (node) {
+        if (node.classList.contains("help") || node.classList.contains("qlabel")) {
+          return cleanText(node.textContent);
+        }
+        node = node.previousElementSibling;
+      }
+
+      return "";
+    }
+
+    function resolvePrompt(control, q, fallbackLabel, kind) {
+      if (kind === "checkbox") {
+        const optionLabel = cleanText(control.closest("label")?.textContent || "");
+        if (optionLabel) return optionLabel;
+      }
+
+      const inlinePrompt = findInlinePrompt(control);
+      if (inlinePrompt) return inlinePrompt;
+
+      const groupLabel = cleanText(q.querySelector(".qlabel")?.textContent || "");
+      if (groupLabel) return groupLabel;
+
+      return fallbackLabel || humanizeFieldName(control.name);
+    }
+
+    function collectQuestionMap(doc) {
+      const map = new Map();
+      let order = 0;
+      const form = doc.getElementById("ceq");
+      if (!form) return map;
+
+      for (const stage of Array.from(form.querySelectorAll(".stage[id]"))) {
+        const stageName = stageLabelFromId(stage.id);
+        for (const section of Array.from(stage.querySelectorAll(".section"))) {
+          const sectionName = cleanText(section.querySelector("h3")?.textContent || stageName);
+
+          for (const q of Array.from(section.querySelectorAll(".q"))) {
+            const label = cleanText(q.querySelector(".qlabel")?.textContent || "");
+            const controls = Array.from(q.querySelectorAll("input[name], select[name], textarea[name]"));
+            const seen = new Set();
+
+            for (const control of controls) {
+              const name = control.name;
+              if (!name || seen.has(name)) continue;
+              seen.add(name);
+
+              const siblings = controls.filter(item => item.name === name);
+              const kind = control.type === "radio"
+                ? "radio"
+                : control.type === "checkbox"
+                  ? "checkbox"
+                  : control.tagName.toLowerCase();
+              const groupLabel = label || humanizeFieldName(name);
+              const prompt = resolvePrompt(control, q, groupLabel, kind);
+
+              const options = {};
+              if (kind === "select") {
+                for (const option of Array.from(control.options)) {
+                  if (!option.value) continue;
+                  options[option.value] = cleanText(option.textContent);
+                }
+              } else if (kind === "radio") {
+                for (const radio of siblings) {
+                  const optionLabel = cleanText(radio.closest("label")?.textContent || radio.value);
+                  options[radio.value] = optionLabel;
+                }
+              }
+
+              map.set(name, {
+                name,
+                order: order += 1,
+                label: prompt || groupLabel || humanizeFieldName(name),
+                groupLabel,
+                stage: stageName,
+                section: sectionName,
+                kind,
+                options
+              });
+            }
+          }
+        }
+      }
+
+      return map;
+    }
+
+    async function loadQuestionMap() {
+      if (state.schemaLoading && state.schemaPromise) {
+        return state.schemaPromise;
+      }
+
+      state.schemaLoading = true;
+      state.schemaPromise = (async () => {
+        try {
+          const response = await fetch("../index.html", { cache: "no-store" });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const html = await response.text();
+          const doc = new DOMParser().parseFromString(html, "text/html");
+          state.questionMap = collectQuestionMap(doc);
+          state.schemaReady = state.questionMap.size > 0;
+          schemaPill.textContent = state.schemaReady
+            ? `Question Map: ${state.questionMap.size} fields`
+            : "Question Map: Fallback";
+        } catch (_error) {
+          state.questionMap = new Map();
+          state.schemaReady = false;
+          schemaPill.textContent = "Question Map: Fallback";
+        } finally {
+          state.schemaLoading = false;
+          if (state.record) {
+            renderRecord(state.record);
+          }
+        }
+      })();
+
+      return state.schemaPromise;
+    }
+
+    function ensureQuestionMap() {
+      if (state.schemaReady) return Promise.resolve();
+      if (state.schemaPromise) return state.schemaPromise;
+      return loadQuestionMap();
+    }
+
+    function parsePayloadText(rawText) {
+      const trimmed = (rawText || "").trim();
+      if (!trimmed) throw new Error("Paste the QR payload or decode an image first.");
+
+      const candidates = [trimmed];
+      if (/%7B|%22/i.test(trimmed)) {
+        try {
+          candidates.push(decodeURIComponent(trimmed));
+        } catch (_error) {
+          // ignore
+        }
+      }
+
+      for (const candidate of candidates) {
+        try {
+          let parsed = JSON.parse(candidate);
+          if (typeof parsed === "string") parsed = JSON.parse(parsed);
+          if (parsed && typeof parsed === "object") return parsed;
+        } catch (_error) {
+          // try next candidate
+        }
+      }
+
+      throw new Error("The provided text is not valid JSON.");
+    }
+
+    function ensureRecordShape(record) {
+      if (!record || typeof record !== "object") {
+        throw new Error("The decoded payload is not an object.");
+      }
+
+      if (!record.answers || typeof record.answers !== "object") {
+        throw new Error("This QR payload does not contain an application answers record.");
+      }
+
+      return record;
+    }
+
+    function displayValue(meta, value) {
+      if (value == null || value === "") return "—";
+      if (meta && meta.kind === "checkbox") {
+        return value === 1 || value === "1" || value === true || value === "true" || value === "yes"
+          ? "Acknowledged"
+          : "Not acknowledged";
+      }
+      if (meta && meta.options && Object.prototype.hasOwnProperty.call(meta.options, String(value))) {
+        return meta.options[String(value)];
+      }
+      if (Array.isArray(value)) return value.join(", ");
+      if (typeof value === "object") return JSON.stringify(value);
+      return String(value);
+    }
+
+    function pushGroupedAnswer(groups, key, rawValue) {
+      const meta = state.questionMap.get(key);
+      const stage = meta ? meta.stage : "Unmapped";
+      const section = meta ? meta.section : "Unmapped fields";
+      const groupKey = `${stage}::${section}`;
+
+      if (!groups.has(groupKey)) {
+        groups.set(groupKey, {
+          stage,
+          section,
+          items: []
+        });
+      }
+
+      groups.get(groupKey).items.push({
+        key,
+        order: meta ? meta.order : Number.MAX_SAFE_INTEGER,
+        label: meta ? meta.label : humanizeFieldName(key),
+        context: meta && meta.groupLabel && meta.groupLabel !== meta.label ? meta.groupLabel : "",
+        value: displayValue(meta, rawValue),
+        raw: rawValue,
+        mapped: Boolean(meta)
+      });
+    }
+
+    function groupAnswers(record) {
+      const groups = new Map();
+      const answers = record.answers || {};
+      const seenKeys = new Set();
+
+      for (const [key, meta] of state.questionMap.entries()) {
+        if (meta.kind !== "checkbox") continue;
+        seenKeys.add(key);
+        pushGroupedAnswer(groups, key, Object.prototype.hasOwnProperty.call(answers, key) ? answers[key] : 0);
+      }
+
+      for (const [key, value] of Object.entries(answers)) {
+        if (seenKeys.has(key)) continue;
+        pushGroupedAnswer(groups, key, value);
+      }
+
+      return Array.from(groups.values())
+        .map(group => ({
+          ...group,
+          items: group.items.sort((a, b) => a.order - b.order || a.key.localeCompare(b.key))
+        }))
+        .sort((a, b) => a.items[0].order - b.items[0].order || a.section.localeCompare(b.section));
+    }
+
+    function renderSummary(record) {
+      const affinity = record.affinity || {};
+      const scores = affinity.scores || {};
+      const summaryCards = [
+        { label: "Schema", value: record.schema || "—" },
+        { label: "Submitted", value: formatDate(record.submittedAt) },
+        { label: "Attendee ID", value: record.attendeeId || "—" },
+        { label: "STB-LZR", value: record.stbLzr || "—" },
+        { label: "Affinity", value: affinity.primary || "—" }
+      ];
+
+      const scoreOrder = [
+        ["A", "Aegis"],
+        ["W", "Wraith"],
+        ["E", "Eidolon"],
+        ["C", "Chimera"],
+        ["T", "Threnody"]
+      ];
+
+      const scoresHtml = scoreOrder
+        .map(([key, label]) => `<div class="scorePill">${escapeHtml(label)}: ${escapeHtml(scores[key] ?? 0)}</div>`)
+        .join("");
+
+      return `
+        <div class="summaryGrid">
+          ${summaryCards.map(card => `
+            <div class="summaryCard">
+              <span>${escapeHtml(card.label)}</span>
+              <strong>${escapeHtml(card.value)}</strong>
+            </div>
+          `).join("")}
+        </div>
+        <div class="affinityScores">${scoresHtml}</div>
+      `;
+    }
+
+    function renderAnswers(record) {
+      const groups = groupAnswers(record);
+      if (!groups.length) {
+        return `<div class="emptyState"><div><strong>No answers found</strong>The decoded record did not include any questionnaire responses.</div></div>`;
+      }
+
+      return `
+        <div class="answerGroups">
+          ${groups.map(group => `
+            <section class="answerGroup">
+              <div class="answerGroupHeader">
+                <strong>${escapeHtml(group.section)}</strong>
+                <span>${escapeHtml(group.stage)}</span>
+              </div>
+              <div class="answerRows">
+                ${group.items.map(item => `
+                  <div class="answerRow">
+                    <div>
+                      <div class="answerLabel">${escapeHtml(item.label)}</div>
+                      ${item.context ? `<div class="answerMeta">${escapeHtml(item.context)}</div>` : ""}
+                    </div>
+                    <div class="answerValue">${escapeHtml(item.value)}</div>
+                  </div>
+                `).join("")}
+              </div>
+            </section>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderRecord(record) {
+      const company = record.company || "Kallisto Biomedical";
+      const event = record.event || "HELIX Summit";
+      resultBody.innerHTML = `
+        <div class="stack">
+          <div class="status good">Record decoded. ${escapeHtml(company)} / ${escapeHtml(event)}</div>
+          ${renderSummary(record)}
+          ${renderAnswers(record)}
+        </div>
+      `;
+    }
+
+    function resetPreview() {
+      if (state.imageUrl) {
+        URL.revokeObjectURL(state.imageUrl);
+        state.imageUrl = "";
+      }
+      previewImage.removeAttribute("src");
+      previewWrap.hidden = true;
+      imageInput.value = "";
+    }
+
+    function clearResults() {
+      state.record = null;
+      resultBody.innerHTML = `
+        <div class="emptyState">
+          <div>
+            <strong>No record decoded yet</strong>
+            Upload a QR image or paste the QR text to inspect the submitted application.
+          </div>
+        </div>
+      `;
+    }
+
+    function setPreview(file) {
+      if (state.imageUrl) URL.revokeObjectURL(state.imageUrl);
+      state.imageUrl = URL.createObjectURL(file);
+      previewImage.src = state.imageUrl;
+      previewWrap.hidden = false;
+    }
+
+    function fitDimensions(width, height, maxSide) {
+      const scale = Math.min(1, maxSide / Math.max(width, height));
+      return {
+        width: Math.max(1, Math.round(width * scale)),
+        height: Math.max(1, Math.round(height * scale))
+      };
+    }
+
+    async function decodeWithBarcodeDetector(source) {
+      if (!("BarcodeDetector" in window)) return null;
+
+      try {
+        const detector = new BarcodeDetector({ formats: ["qr_code"] });
+        const results = await detector.detect(source);
+        return results[0] && results[0].rawValue ? results[0].rawValue : null;
+      } catch (_error) {
+        return null;
+      }
+    }
+
+    function imageDataToThreshold(data) {
+      const thresholded = new Uint8ClampedArray(data.length);
+      for (let i = 0; i < data.length; i += 4) {
+        const luminance = 0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2];
+        const value = luminance > 150 ? 255 : 0;
+        thresholded[i] = value;
+        thresholded[i + 1] = value;
+        thresholded[i + 2] = value;
+        thresholded[i + 3] = data[i + 3];
+      }
+      return thresholded;
+    }
+
+    async function decodeImageFile(file) {
+      if (!file) return;
+
+      setPreview(file);
+      setStatus(imageStatus, "Decoding image...", "");
+
+      try {
+        const bitmap = await createImageBitmap(file);
+
+        const detectorValue = await decodeWithBarcodeDetector(bitmap);
+        if (detectorValue) {
+          payloadInput.value = detectorValue;
+          await handlePayloadDecode("QR image decoded.");
+          setStatus(imageStatus, "QR image decoded successfully.", "good");
+          return;
+        }
+
+        const fitted = fitDimensions(bitmap.width, bitmap.height, 1800);
+        qrCanvas.width = fitted.width;
+        qrCanvas.height = fitted.height;
+        qrContext.clearRect(0, 0, fitted.width, fitted.height);
+        qrContext.drawImage(bitmap, 0, 0, fitted.width, fitted.height);
+        const imageData = qrContext.getImageData(0, 0, fitted.width, fitted.height);
+
+        let code = window.jsQR(
+          imageData.data,
+          fitted.width,
+          fitted.height,
+          { inversionAttempts: "attemptBoth" }
+        );
+
+        if (!code) {
+          const thresholded = imageDataToThreshold(imageData.data);
+          code = window.jsQR(
+            thresholded,
+            fitted.width,
+            fitted.height,
+            { inversionAttempts: "attemptBoth" }
+          );
+        }
+
+        if (!code || !code.data) {
+          throw new Error("No QR code could be read from that image.");
+        }
+
+        payloadInput.value = code.data;
+        await handlePayloadDecode("QR image decoded.");
+        setStatus(imageStatus, "QR image decoded successfully.", "good");
+      } catch (error) {
+        setStatus(imageStatus, error.message || "Image decoding failed.", "warn");
+      }
+    }
+
+    async function handlePayloadDecode(successMessage) {
+      try {
+        await ensureQuestionMap();
+        if (!state.schemaReady) {
+          clearResults();
+          throw new Error("Question map unavailable. Open this decoder from the same hosted site as the questionnaire so prompts and answers can be resolved correctly.");
+        }
+        const record = ensureRecordShape(parsePayloadText(payloadInput.value));
+        state.record = record;
+        renderRecord(record);
+        setStatus(decodeStatus, successMessage, "good");
+      } catch (error) {
+        setStatus(decodeStatus, error.message || "Unable to decode payload.", "warn");
+      }
+    }
+
+    function clearAll() {
+      resetPreview();
+      payloadInput.value = "";
+      clearResults();
+      setStatus(imageStatus, "No image loaded.", "");
+      setStatus(decodeStatus, "Ready.", "");
+    }
+
+    function attachDropZone() {
+      ["dragenter", "dragover"].forEach(type => {
+        dropZone.addEventListener(type, event => {
+          event.preventDefault();
+          dropZone.classList.add("is-active");
+        });
+      });
+
+      ["dragleave", "drop"].forEach(type => {
+        dropZone.addEventListener(type, event => {
+          event.preventDefault();
+          dropZone.classList.remove("is-active");
+        });
+      });
+
+      dropZone.addEventListener("drop", event => {
+        const file = Array.from(event.dataTransfer.files || []).find(item => item.type.startsWith("image/"));
+        if (file) decodeImageFile(file);
+      });
+    }
+
+    function attachClipboardPaste() {
+      window.addEventListener("paste", event => {
+        const item = Array.from(event.clipboardData?.items || []).find(entry => entry.type.startsWith("image/"));
+        if (!item) return;
+        const file = item.getAsFile();
+        if (file) decodeImageFile(file);
+      });
+    }
+
+    imageInput.addEventListener("change", event => {
+      const file = event.target.files && event.target.files[0];
+      if (file) decodeImageFile(file);
+    });
+
+    clearImageBtn.addEventListener("click", () => {
+      resetPreview();
+      setStatus(imageStatus, "No image loaded.", "");
+    });
+
+    decodeTextBtn.addEventListener("click", async () => {
+      await handlePayloadDecode("Payload decoded.");
+    });
+
+    clearAllBtn.addEventListener("click", clearAll);
+
+    attachDropZone();
+    attachClipboardPaste();
+    ensureQuestionMap();
+  })();
+  </script>
+</body>
+</html>
