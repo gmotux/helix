@@ -147,7 +147,7 @@
     .q .qlabel{ font-size: 13px; font-weight: 800; margin:0 0 8px; letter-spacing:.1px; }
     .q .help{ font-size: 12px; color: var(--kb-muted); margin: -2px 0 8px; }
 
-    input[type="text"], textarea, select{
+    input[type="text"], input[type="email"], input[type="number"], textarea, select{
       width:100%;
       padding: 10px 10px;
       border: 1px solid color-mix(in oklab, var(--kb-line) 88%, #0000);
@@ -221,6 +221,447 @@
 
     .smallnote{ font-size: 12px; color: var(--kb-muted); font-weight: 650; }
 
+    .stage{
+      transition: opacity .34s ease, transform .34s ease, filter .34s ease;
+    }
+
+    .stage.is-hidden{
+      opacity:0;
+      transform: translateY(22px);
+      filter: blur(4px);
+    }
+
+    .stage.is-leaving{
+      opacity:0;
+      transform: translateY(-10px);
+      filter: blur(4px);
+      pointer-events:none;
+    }
+
+    .stage[hidden], .controls[hidden]{
+      display:none !important;
+    }
+
+    .intakeLayout{
+      display:grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 14px;
+      align-items:start;
+    }
+
+    .intakeAside{
+      background:
+        linear-gradient(160deg,
+          color-mix(in oklab, var(--kb-accent2) 8%, var(--kb-paper)),
+          color-mix(in oklab, var(--kb-accent) 10%, var(--kb-paper))
+        );
+    }
+
+    .stageLead{
+      margin:0;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--kb-ink);
+      font-weight: 650;
+    }
+
+    .stageCopy{
+      margin: 14px 0 0;
+      color: var(--kb-muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .stageRows{
+      display:grid;
+      gap:10px;
+      margin-top: 16px;
+    }
+
+    .stageRow{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 10px 12px;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 88%, transparent);
+      border-radius: 12px;
+      background: color-mix(in oklab, var(--kb-paper) 82%, transparent);
+    }
+
+    .stageTag{
+      flex: 0 0 auto;
+      min-width: 74px;
+      text-align:center;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--kb-accent2);
+      background: color-mix(in oklab, var(--kb-accent2) 12%, var(--kb-paper));
+      border: 1px solid color-mix(in oklab, var(--kb-accent2) 22%, var(--kb-line));
+    }
+
+    .stageRow span:last-child{
+      color: var(--kb-ink);
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+
+    .requiredMark{
+      color: var(--kb-accent2);
+      font-weight: 900;
+    }
+
+    .stageActions{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--kb-line);
+    }
+
+    .stageBanner{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      align-items:start;
+    }
+
+    .stageBannerCard{
+      padding: 12px;
+      border: 1px solid var(--kb-line);
+      border-radius: 12px;
+      background:
+        linear-gradient(150deg,
+          color-mix(in oklab, var(--kb-accent2) 10%, var(--kb-paper)),
+          color-mix(in oklab, var(--kb-accent) 8%, var(--kb-paper))
+        );
+    }
+
+    .badgeSheet{
+      display:grid;
+      place-items:center;
+      padding: 8px 0 22px;
+    }
+
+    .eventBadge{
+      width: min(100%, 860px);
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid var(--kb-line);
+      background:
+        radial-gradient(420px 220px at 100% 0%, color-mix(in oklab, var(--kb-accent2) 14%, transparent), transparent 70%),
+        radial-gradient(360px 220px at 0% 100%, color-mix(in oklab, var(--kb-accent) 14%, transparent), transparent 70%),
+        linear-gradient(145deg,
+          color-mix(in oklab, var(--kb-paper) 96%, transparent),
+          color-mix(in oklab, var(--kb-paper) 90%, var(--kb-accent2))
+        );
+      box-shadow: var(--shadow);
+    }
+
+    .eventBadge::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(120deg, transparent 0 46%, color-mix(in oklab, var(--kb-paper) 50%, transparent) 50%, transparent 54% 100%);
+      opacity:.32;
+    }
+
+    .eventBadgeInner{
+      position:relative;
+      z-index:1;
+      padding: 20px;
+      display:grid;
+      gap:16px;
+    }
+
+    .badgeTop{
+      display:flex;
+      gap:14px;
+      justify-content:space-between;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+
+    .badgeBrand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+
+    .badgeMark{
+      width:56px;
+      height:56px;
+      border-radius: 18px;
+      display:grid;
+      place-items:center;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 70%, transparent);
+      background: linear-gradient(135deg, var(--kb-accent2), var(--kb-accent));
+      box-shadow: var(--shadow2);
+    }
+
+    .badgeBrand h4{
+      margin:0;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: .02em;
+    }
+
+    .badgeBrand p{
+      margin: 4px 0 0;
+      color: var(--kb-muted);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .badgePills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:flex-end;
+    }
+
+    .badgePill{
+      border: 1px solid var(--kb-line);
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: color-mix(in oklab, var(--kb-paper) 88%, transparent);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: var(--kb-muted);
+    }
+
+    .badgeMain{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:stretch;
+    }
+
+    .badgeIdentity,
+    .badgeTrack,
+    .badgeQrBlock,
+    .badgeFooterCopy{
+      border: 1px solid var(--kb-line);
+      border-radius: 22px;
+      background: color-mix(in oklab, var(--kb-paper) 92%, transparent);
+      box-shadow: var(--shadow2);
+    }
+
+    .badgeIdentity{
+      padding: 18px;
+    }
+
+    .badgeFieldLabel{
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--kb-muted);
+    }
+
+    .badgeFullName{
+      margin-top: 10px;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.05;
+      font-weight: 950;
+      letter-spacing: -.02em;
+    }
+
+    .badgeSubline{
+      margin-top: 8px;
+      color: var(--kb-muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .badgeMetaGrid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+
+    .badgeMetaItem{
+      padding: 12px 13px;
+      border-radius: 16px;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 88%, transparent);
+      background: color-mix(in oklab, var(--kb-paper) 82%, transparent);
+    }
+
+    .badgeMetaItem span{
+      display:block;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--kb-muted);
+    }
+
+    .badgeMetaItem strong{
+      display:block;
+      margin-top: 6px;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .badgeTrack{
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      text-align:center;
+      background:
+        linear-gradient(155deg,
+          color-mix(in oklab, var(--kb-accent2) 14%, var(--kb-paper)),
+          color-mix(in oklab, var(--kb-accent) 12%, var(--kb-paper))
+        );
+    }
+
+    .badgeTrackChip{
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--kb-accent2);
+      background: color-mix(in oklab, var(--kb-paper) 82%, transparent);
+      border: 1px solid color-mix(in oklab, var(--kb-line) 70%, transparent);
+    }
+
+    .badgeIconFrame{
+      width: min(100%, 210px);
+      aspect-ratio: 1 / 1;
+      padding: 22px;
+      border-radius: 24px;
+      display:grid;
+      place-items:center;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 78%, transparent);
+      background: color-mix(in oklab, var(--kb-paper) 85%, transparent);
+    }
+
+    .badgeIconFrame svg{
+      width: 100%;
+      height: 100%;
+      display:block;
+    }
+
+    .badgeTrackValue{
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    .badgeTrackLabel{
+      margin:0;
+      font-size: 12px;
+      color: var(--kb-muted);
+      font-weight: 700;
+      line-height: 1.5;
+      max-width: 250px;
+    }
+
+    .badgeBottom{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:16px;
+      align-items:stretch;
+    }
+
+    .badgeQrBlock{
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      text-align:center;
+    }
+
+    .badgeQrTitle{
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--kb-muted);
+    }
+
+    .badgeQrMount{
+      width: min(100%, 256px);
+      aspect-ratio: 1 / 1;
+      padding: 14px;
+      border-radius: 22px;
+      display:grid;
+      place-items:center;
+      background:#fff;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 82%, transparent);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+    }
+
+    .badgeQrMount svg{
+      width: 100%;
+      height: 100%;
+      display:block;
+    }
+
+    .badgeQrHint{
+      margin:0;
+      color: var(--kb-muted);
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 650;
+    }
+
+    .badgeFooterCopy{
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:14px;
+      background:
+        linear-gradient(145deg,
+          color-mix(in oklab, var(--kb-paper) 90%, transparent),
+          color-mix(in oklab, var(--kb-paper) 82%, var(--kb-accent))
+        );
+    }
+
+    .badgeInstruction{
+      margin:0;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 950;
+      letter-spacing: -.02em;
+    }
+
+    .badgeWarning{
+      margin:0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--kb-warn);
+      font-weight: 700;
+    }
+
+    .badgeFine{
+      margin:0;
+      color: var(--kb-muted);
+      font-size: 12px;
+      line-height: 1.6;
+      font-weight: 650;
+    }
+
     .affinityWrap{
       display: grid;
       grid-template-columns: 1.2fr .8fr;
@@ -230,6 +671,8 @@
 
     @media (max-width: 760px){
       .affinityWrap{ grid-template-columns: 1fr; }
+      .intakeLayout, .stageBanner, .badgeMain, .badgeBottom, .badgeMetaGrid{ grid-template-columns: 1fr; }
+      .badgePills{ justify-content:flex-start; }
     }
 
     .affinityHero{
@@ -381,10 +824,15 @@
     @media print{
       body{ background:#fff; color:#000; }
       .controls{ display:none !important; }
+      header, .badgeStageIntro{ display:none !important; }
       .wrap{ margin:0; padding:0; max-width:none; }
       .card{ box-shadow:none; border:none; }
       header{ background:none; }
-      .section, .q, .miniCard, .heroCard{ box-shadow:none; }
+      main{ padding:0; }
+      .section, .q, .miniCard, .heroCard, .eventBadge{ box-shadow:none; }
+      .badgeSheet{ padding:0; }
+      .eventBadge{ border: 1px solid #0004; border-radius: 18px; }
+      .eventBadgeInner{ padding: 18px; }
       input, textarea, select{ border: 1px solid #0006; }
       .watermark{ color:#0007; }
     }
@@ -416,15 +864,16 @@
             <div class="pill">Event: HELIX Summit</div>
             <div class="pill">Form: CEQ</div>
             <div class="pill">Locale: Onsite</div>
+            <div class="pill" id="progressPill">Stage: Intake</div>
           </div>
         </div>
 
         <div class="titleblock">
           <div>
-            <h2>Candidate Intake</h2>
-            <p class="note">
-              Please complete this form for onsite safety planning and experience personalization. If uncertain, select the closest option.
-              Optional fields may be left blank.
+            <h2 id="pageTitle">Candidate Intake</h2>
+            <p class="note" id="pageNote">
+              Complete the registration fields below before the assessment portion of the Candidate Experience Questionnaire is released.
+              Responses support guest verification, onsite safety planning, and session routing.
             </p>
           </div>
           <div class="smallnote">This document may be printed for submission.</div>
@@ -434,71 +883,162 @@
       <main>
         <form id="ceq" autocomplete="off">
 
-          <div class="section">
-            <h3>Identity & Context</h3>
-            <div class="grid2">
-              <div class="q">
-                <div class="qlabel">Preferred name</div>
-                <input type="text" name="name_preferred" />
+          <div class="stage" id="intakeStage">
+            <div class="intakeLayout">
+              <div class="section intakeAside">
+                <h3>Admissions Review</h3>
+                <p class="stageLead">
+                  Kallisto Biomedical requires a brief identity and referral review before issuing access to the assessment module.
+                </p>
+                <div class="stageRows">
+                  <div class="stageRow">
+                    <span class="stageTag">Required</span>
+                    <span>Legal identity, age, residence, and place of birth are used for badge verification and onsite routing.</span>
+                  </div>
+                  <div class="stageRow">
+                    <span class="stageTag">Referral</span>
+                    <span>A referral source is mandatory for all candidates, including direct invitation pathways.</span>
+                  </div>
+                  <div class="stageRow">
+                    <span class="stageTag">Release</span>
+                    <span>Once registration is recorded, the candidate assessment will appear automatically on this page.</span>
+                  </div>
+                </div>
+                <p class="stageCopy">
+                  If you received your attendance request through an intermediary or discreet contact, select the nearest matching office below and add any code, initials, or context in the optional detail field.
+                </p>
               </div>
-              <div class="q">
-                <div class="qlabel">Age range</div>
-                <select name="age_range">
-                  <option value="">— Select —</option>
-                  <option value="u18">&lt;18</option>
-                  <option value="18_24">18–24</option>
-                  <option value="25_34">25–34</option>
-                  <option value="35_44">35–44</option>
-                  <option value="45_54">45–54</option>
-                  <option value="55p">55+</option>
-                </select>
+
+              <div class="section">
+                <h3>Identity & Context</h3>
+                <div class="grid2">
+                  <div class="q">
+                    <div class="qlabel">Given name <span class="requiredMark">*</span></div>
+                    <input type="text" name="name_given" autocomplete="given-name" required />
+                  </div>
+                  <div class="q">
+                    <div class="qlabel">Surname <span class="requiredMark">*</span></div>
+                    <input type="text" name="name_family" autocomplete="family-name" required />
+                  </div>
+                </div>
+
+                <div class="grid2" style="margin-top:12px;">
+                  <div class="q">
+                    <div class="qlabel">Preferred name</div>
+                    <input type="text" name="name_preferred" />
+                  </div>
+                  <div class="q">
+                    <div class="qlabel">Age <span class="requiredMark">*</span></div>
+                    <input type="number" name="age" min="18" max="120" inputmode="numeric" required />
+                  </div>
+                </div>
+
+                <div class="grid2" style="margin-top:12px;">
+                  <div class="q">
+                    <div class="qlabel">Place of residence <span class="requiredMark">*</span></div>
+                    <input type="text" name="residence_place" placeholder="City, region, country" required />
+                  </div>
+                  <div class="q">
+                    <div class="qlabel">Place of birth <span class="requiredMark">*</span></div>
+                    <input type="text" name="birth_place" placeholder="City, region, country" required />
+                  </div>
+                </div>
+
+                <div class="grid2" style="margin-top:12px;">
+                  <div class="q">
+                    <div class="qlabel">Occupation / role</div>
+                    <input type="text" name="occupation" />
+                  </div>
+                  <div class="q">
+                    <div class="qlabel">Professional or contact email</div>
+                    <input type="email" name="contact_email" autocomplete="email" />
+                  </div>
+                </div>
+
+                <div class="grid2" style="margin-top:12px;">
+                  <div class="q">
+                    <div class="qlabel">Reason for requesting attendance <span class="requiredMark">*</span></div>
+                    <select name="attend_reason" required>
+                      <option value="">— Select —</option>
+                      <option value="press">Media / documentary research</option>
+                      <option value="business">Industry / investment review</option>
+                      <option value="recruit">Recruitment / talent scouting</option>
+                      <option value="vendor">Vendor / technical services</option>
+                      <option value="academic">Clinical or academic observer</option>
+                      <option value="advocacy">Advocacy / policy interest</option>
+                      <option value="personal">Personal invitation or private interest</option>
+                      <option value="network">Networking or direct guest invitation</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="q">
+                    <div class="qlabel">Referral source <span class="requiredMark">*</span></div>
+                    <select name="referral_source" required>
+                      <option value="">— Select —</option>
+                      <option value="clinical_partnerships">Kallisto Clinical Partnerships</option>
+                      <option value="guest_office">HELIX Guest Office</option>
+                      <option value="special_programs">Special Programs Desk</option>
+                      <option value="cohort_liaison">Observational Cohort Liaison</option>
+                      <option value="partner_institution">Partner hospital / university contact</option>
+                      <option value="private_specialist">Private physician or specialist referral</option>
+                      <option value="direct_invitation">Direct invitation code</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="grid2" style="margin-top:12px;">
+                  <div class="q">
+                    <div class="qlabel">Referral detail or invitation code</div>
+                    <input type="text" name="referral_detail" />
+                  </div>
+                  <div class="q">
+                    <div class="qlabel">Do you know any personnel or attendees here?</div>
+                    <div class="choices">
+                      <label class="choice"><input type="radio" name="knows_someone" value="no"> No</label>
+                      <label class="choice"><input type="radio" name="knows_someone" value="yes"> Yes</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="q" style="margin-top:12px;">
+                  <div class="qlabel">If applicable, list the name or role of the person you know</div>
+                  <input type="text" name="knows_details" />
+                </div>
+
+                <div class="stageActions">
+                  <div class="smallnote">Fields marked with <span class="requiredMark">*</span> are required before the assessment can be released.</div>
+                  <button type="button" class="primary" id="btnContinue">Continue to Assessment</button>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="grid2" style="margin-top:12px;">
-              <div class="q">
-                <div class="qlabel">Occupation (plain language)</div>
-                <input type="text" name="occupation" />
+          <div class="stage" id="questionnaireStage" hidden>
+          <div class="section">
+            <h3>Assessment Release</h3>
+            <div class="stageBanner">
+              <div class="stageBannerCard">
+                <p class="stageLead">
+                  Registration details recorded. Continue with the response profile below to complete your Candidate Experience Questionnaire.
+                </p>
+                <p class="stageCopy">
+                  This section supports experience personalization and scenario planning. Select the closest response when a perfect option is not available.
+                </p>
               </div>
+
               <div class="q">
-                <div class="qlabel">Primary reason for attending</div>
-                <select name="attend_reason">
+                <div class="qlabel">If you could leave today with exactly one outcome, what would it be?</div>
+                <select name="one_outcome">
                   <option value="">— Select —</option>
-                  <option value="press">Press / story</option>
-                  <option value="business">Business / investment</option>
-                  <option value="recruit">Recruiting / hiring</option>
-                  <option value="vendor">Vendor / contractor</option>
-                  <option value="academic">Academic interest</option>
-                  <option value="advocacy">Advocacy / policy</option>
-                  <option value="personal">Personal interest</option>
-                  <option value="network">Invited / networking</option>
+                  <option value="clarity">Clarity / answers</option>
+                  <option value="access">Access / credentials</option>
+                  <option value="deal">A deal / funding</option>
+                  <option value="evidence">Documentation</option>
+                  <option value="safety">Personal safety</option>
+                  <option value="recognition">Recognition</option>
                   <option value="other">Other</option>
                 </select>
               </div>
-            </div>
-
-            <div class="q" style="margin-top:12px;">
-              <div class="qlabel">Do you know any personnel or attendees here?</div>
-              <div class="choices">
-                <label class="choice"><input type="radio" name="knows_someone" value="no"> No</label>
-                <label class="choice"><input type="radio" name="knows_someone" value="yes"> Yes</label>
-              </div>
-              <div class="help">Optional: name/role (if applicable)</div>
-              <input type="text" name="knows_details" />
-            </div>
-
-            <div class="q" style="margin-top:12px;">
-              <div class="qlabel">If you could leave today with exactly one outcome, what would it be?</div>
-              <select name="one_outcome">
-                <option value="">— Select —</option>
-                <option value="clarity">Clarity / answers</option>
-                <option value="access">Access / credentials</option>
-                <option value="deal">A deal / funding</option>
-                <option value="evidence">Documentation</option>
-                <option value="safety">Personal safety</option>
-                <option value="recognition">Recognition</option>
-                <option value="other">Other</option>
-              </select>
             </div>
           </div>
 
@@ -961,20 +1501,102 @@
             </div>
           </div>
 
-          <div class="section" id="affinitySection">
-            <h3>Response Profile</h3>
-            <div class="affinityWrap">
-              <div class="affinityHero">
-                <div class="heroCard" id="heroCard">
-                  <div class="badgeScore" id="heroScore">Score: —</div>
-                  <div class="heroTitle" id="heroName">Pending</div>
-                  <p class="heroSub">Primary response cluster inferred from selected answers.</p>
-                  <div class="iconLarge" id="heroIcon" aria-hidden="true"></div>
-                </div>
-                <div class="mutedLine" id="heroMeta">Complete the form and click “Auto-score” to generate a profile.</div>
-              </div>
+          </div>
 
-              <div class="affinityGrid" id="affinityGrid"></div>
+          <div class="stage" id="badgeStage" hidden>
+            <div class="section badgeStageIntro">
+              <h3>Credential Issued</h3>
+              <div class="stageBanner">
+                <div class="stageBannerCard">
+                  <p class="stageLead">
+                    Application submitted. The attendee credential below is ready for printing and onsite check-in.
+                  </p>
+                  <p class="stageCopy">
+                    The QR code encodes the complete application record as JSON so it can be reviewed later without exposing the full questionnaire on the badge itself.
+                  </p>
+                </div>
+
+                <div class="q">
+                  <div class="qlabel">Badge handling</div>
+                  <div class="help">Print at 100% scale for the clearest QR scan. Keep the credential visible while onsite.</div>
+                  <div class="smallnote">Use “Return to Questionnaire” if you want to revise answers before printing.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="badgeSheet">
+              <div class="eventBadge" id="eventBadge">
+                <div class="eventBadgeInner">
+                  <div class="badgeTop">
+                    <div class="badgeBrand">
+                      <div class="badgeMark" aria-hidden="true">
+                        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13 2.2c5.96 0 10.8 4.84 10.8 10.8S18.96 23.8 13 23.8 2.2 18.96 2.2 13 7.04 2.2 13 2.2Z" stroke="rgba(255,255,255,.90)" stroke-width="1.8"/>
+                          <path d="M7.2 15.2c2.2-5.6 9.4-7.6 11.6-2.2" stroke="rgba(255,255,255,.90)" stroke-width="1.8" stroke-linecap="round"/>
+                          <path d="M8.6 10.6c2.8 1.0 6.0 5.2 7.6 7.0" stroke="rgba(255,255,255,.90)" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4>Kallisto Biomedical</h4>
+                        <p>HELIX Summit Attendee Credential</p>
+                      </div>
+                    </div>
+
+                    <div class="badgePills">
+                      <div class="badgePill">Event: HELIX Summit</div>
+                      <div class="badgePill" id="badgeStatusPill">Status: Submitted</div>
+                    </div>
+                  </div>
+
+                  <div class="badgeMain">
+                    <div class="badgeIdentity">
+                      <div class="badgeFieldLabel">Attendee</div>
+                      <div class="badgeFullName" id="badgeFullName">Pending attendee</div>
+                      <div class="badgeSubline" id="badgeSubline">Preferred name and routing details will appear here.</div>
+
+                      <div class="badgeMetaGrid">
+                        <div class="badgeMetaItem">
+                          <span>Attendee ID</span>
+                          <strong id="badgeId">—</strong>
+                        </div>
+                        <div class="badgeMetaItem">
+                          <span>Residence</span>
+                          <strong id="badgeResidence">—</strong>
+                        </div>
+                        <div class="badgeMetaItem">
+                          <span>Referral</span>
+                          <strong id="badgeReferral">—</strong>
+                        </div>
+                        <div class="badgeMetaItem">
+                          <span>Issued</span>
+                          <strong id="badgeIssued">—</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="badgeTrack">
+                      <div class="badgeTrackChip">Primary Affinity</div>
+                      <div class="badgeIconFrame" id="badgeAffinityIcon" aria-hidden="true"></div>
+                      <div class="badgeTrackValue" id="badgeAffinityName">Pending</div>
+                      <p class="badgeTrackLabel">Internal response marker assigned from the submitted Candidate Experience Questionnaire.</p>
+                    </div>
+                  </div>
+
+                  <div class="badgeBottom">
+                    <div class="badgeQrBlock">
+                      <div class="badgeQrTitle">Encoded Application Record</div>
+                      <div class="badgeQrMount" id="badgeQrMount"></div>
+                      <p class="badgeQrHint" id="badgeQrHint">Scan to review the full questionnaire response JSON.</p>
+                    </div>
+
+                    <div class="badgeFooterCopy">
+                      <p class="badgeInstruction">This credential must remain visible while onsite.</p>
+                      <p class="badgeWarning" id="badgeWarning">If the QR code fails to render, shorten long free-text answers before printing.</p>
+                      <p class="badgeFine">Kallisto Biomedical uses this credential for guest routing and check-in validation. The QR payload is generated locally from the submitted application and is not dependent on a remote service.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -985,24 +1607,79 @@
 
   <div class="controls">
     <div class="controls-inner">
-      <div class="smallnote">For records or check-in, use “Print / Save as PDF”.</div>
+      <div class="smallnote" id="controlsNote">Assessment controls become available after intake is completed.</div>
       <div class="btnrow">
-        <button type="button" class="primary" id="btnScore">Auto-score</button>
-        <button type="button" id="btnPrint">Print / Save as PDF</button>
+        <button type="button" id="btnBack" hidden>Return to Questionnaire</button>
+        <button type="button" class="primary" id="btnSubmit">Submit Application</button>
+        <button type="button" id="btnPrint" hidden>Print Badge</button>
         <button type="button" class="danger" id="btnClear">Clear</button>
       </div>
     </div>
   </div>
 
+  <script src="vendor/qrcode.js"></script>
   <script>
   (function () {
     const form = document.getElementById("ceq");
+    const intakeStage = document.getElementById("intakeStage");
+    const questionnaireStage = document.getElementById("questionnaireStage");
+    const badgeStage = document.getElementById("badgeStage");
+    const controls = document.querySelector(".controls");
+    const btnContinue = document.getElementById("btnContinue");
+    const btnSubmit = document.getElementById("btnSubmit");
+    const btnBack = document.getElementById("btnBack");
+    const btnPrint = document.getElementById("btnPrint");
+    const btnClear = document.getElementById("btnClear");
+    const pageTitle = document.getElementById("pageTitle");
+    const pageNote = document.getElementById("pageNote");
+    const progressPill = document.getElementById("progressPill");
+    const controlsNote = document.getElementById("controlsNote");
+    const badgeStatusPill = document.getElementById("badgeStatusPill");
+    const badgeFullName = document.getElementById("badgeFullName");
+    const badgeSubline = document.getElementById("badgeSubline");
+    const badgeId = document.getElementById("badgeId");
+    const badgeResidence = document.getElementById("badgeResidence");
+    const badgeReferral = document.getElementById("badgeReferral");
+    const badgeIssued = document.getElementById("badgeIssued");
+    const badgeAffinityIcon = document.getElementById("badgeAffinityIcon");
+    const badgeAffinityName = document.getElementById("badgeAffinityName");
+    const badgeQrMount = document.getElementById("badgeQrMount");
+    const badgeQrHint = document.getElementById("badgeQrHint");
+    const badgeWarning = document.getElementById("badgeWarning");
 
-    const heroName = document.getElementById("heroName");
-    const heroScore = document.getElementById("heroScore");
-    const heroIcon = document.getElementById("heroIcon");
-    const heroMeta = document.getElementById("heroMeta");
-    const grid = document.getElementById("affinityGrid");
+    const STAGE_META = {
+      intake: {
+        title: "Candidate Intake",
+        note: "Complete the registration fields below before the assessment portion of the Candidate Experience Questionnaire is released. Responses support guest verification, onsite safety planning, and session routing.",
+        pill: "Stage: Intake"
+      },
+      questionnaire: {
+        title: "Candidate Experience Questionnaire",
+        note: "Identity and referral details have been recorded. Complete the assessment below, then submit the application to issue an onsite attendee credential.",
+        pill: "Stage: Assessment"
+      },
+      badge: {
+        title: "Attendee Credential",
+        note: "Application submitted. Review the generated badge, print it for the session, or return to the questionnaire if you need to revise the record.",
+        pill: "Stage: Credential"
+      }
+    };
+
+    const STAGES = {
+      intake: intakeStage,
+      questionnaire: questionnaireStage,
+      badge: badgeStage
+    };
+
+    const intakeFields = Array.from(intakeStage.querySelectorAll("input, select, textarea"));
+    let currentStage = "intake";
+    let hasSubmitted = false;
+    let isTransitioning = false;
+    let persistTimer = null;
+    let submissionMeta = {
+      submittedAt: "",
+      badgeId: ""
+    };
 
     function val(name) {
       const el = form.elements[name];
@@ -1384,90 +2061,511 @@
       return scores;
     }
 
-    function clamp(x, lo, hi){
-      return Math.max(lo, Math.min(hi, x));
-    }
-
     function isAllZero(scores) {
       return Object.values(scores).every(v => v === 0);
     }
 
-    function renderPending() {
-      heroName.textContent = "Pending";
-      heroScore.textContent = "Primary: Pending";
-      heroIcon.innerHTML = "";
-      heroMeta.textContent = "Complete the form and click “Auto-score” to generate a profile.";
-      grid.innerHTML = "";
+    function normalizeText(text) {
+      return (text || "")
+        .replace(/\s+/g, " ")
+        .replace(/\s*\*\s*/g, " ")
+        .trim();
     }
 
-    function render(scores) {
-      if (isAllZero(scores)) {
-        renderPending();
-        return;
+    function formatDisplayDate(iso) {
+      if (!iso) return "—";
+
+      const date = new Date(iso);
+      if (Number.isNaN(date.getTime())) return iso;
+
+      return new Intl.DateTimeFormat("en", {
+        year: "numeric",
+        month: "short",
+        day: "2-digit"
+      }).format(date);
+    }
+
+    function simpleHash(text) {
+      let hash = 0;
+
+      for (const char of text) {
+        hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
       }
 
-      const entries = Object.entries(scores).sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-      const [topName, topScore] = entries[0];
+      return hash.toString(36).toUpperCase().padStart(6, "0").slice(-6);
+    }
+
+    function buildBadgeId(profile, submittedAt) {
+      const initials = `${val("name_given").charAt(0) || "X"}${val("name_family").charAt(0) || "X"}`.toUpperCase();
+      const affinityCode = (profile.primaryName || "GEN").slice(0, 3).toUpperCase();
+      const digest = simpleHash([val("name_given"), val("name_family"), val("birth_place"), submittedAt].join("|"));
+      return `HX-${affinityCode}-${initials}-${digest}`;
+    }
+
+    function summarizeScores(scores) {
+      const entries = Object.entries(scores).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+      const [primaryName, primaryScore] = entries[0] || ["Pending", 0];
       const secondScore = entries[1] ? entries[1][1] : 0;
-      const spread = topScore - secondScore;
+      const spread = primaryScore - secondScore;
 
       let confidence = "Low differentiation";
       if (spread >= 8) confidence = "High differentiation";
       else if (spread >= 4) confidence = "Moderate differentiation";
 
-      heroName.textContent = topName;
-      heroScore.textContent = `Primary: ${topName} • Score: ${topScore}`;
-      heroIcon.innerHTML = ICON[topName] || "";
-      heroMeta.textContent = `${confidence} • Ranked #1 of ${entries.length}`;
+      return {
+        scores,
+        entries,
+        primaryName,
+        primaryScore,
+        confidence
+      };
+    }
 
-      grid.innerHTML = "";
-      const max = Math.max(1, topScore);
+    function resetBadge() {
+      badgeStatusPill.textContent = "Status: Pending";
+      badgeFullName.textContent = "Pending attendee";
+      badgeSubline.textContent = "Preferred name and routing details will appear here.";
+      badgeId.textContent = "—";
+      badgeResidence.textContent = "—";
+      badgeReferral.textContent = "—";
+      badgeIssued.textContent = "—";
+      badgeAffinityIcon.innerHTML = "";
+      badgeAffinityName.textContent = "Pending";
+      badgeQrMount.innerHTML = "";
+      badgeQrHint.textContent = "Scan to review the full questionnaire response JSON.";
+      badgeWarning.hidden = true;
+    }
 
-      for (let i = 1; i < entries.length; i++){
-        const [name, score] = entries[i];
-        const rel = score / max;
-        const scale = clamp(0.90 + rel * 0.12, 0.90, 1.02);
+    function fieldKey(element) {
+      return element.name || element.id || "";
+    }
 
-        const card = document.createElement("div");
-        card.className = "miniCard";
-        card.style.transform = `scale(${scale.toFixed(3)})`;
+    function encodeStatePayload(payload) {
+      const bytes = new TextEncoder().encode(JSON.stringify(payload));
+      let binary = "";
+      for (const byte of bytes) binary += String.fromCharCode(byte);
+      return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+    }
 
-        const s = document.createElement("div");
-        s.className = "miniScore";
-        s.textContent = `Score: ${score}`;
+    function decodeStatePayload(raw) {
+      if (!raw) return null;
 
-        const title = document.createElement("div");
-        title.className = "miniName";
-        title.textContent = name;
-
-        const icon = document.createElement("div");
-        icon.className = "iconMini";
-        icon.innerHTML = ICON[name] || "";
-
-        card.appendChild(s);
-        card.appendChild(title);
-        card.appendChild(icon);
-        grid.appendChild(card);
+      try {
+        const padded = raw.replace(/-/g, "+").replace(/_/g, "/");
+        const normalized = padded + "=".repeat((4 - padded.length % 4) % 4);
+        const binary = atob(normalized);
+        const bytes = Uint8Array.from(binary, char => char.charCodeAt(0));
+        return JSON.parse(new TextDecoder().decode(bytes));
+      } catch (_error) {
+        return null;
       }
     }
 
-    function scoreAndRender() {
-      render(computeScores());
+    function collectState() {
+      const fields = {};
+      const seen = new Set();
+
+      for (const element of Array.from(form.elements)) {
+        const name = fieldKey(element);
+        if (!name || seen.has(`${name}:${element.type || element.tagName}`)) continue;
+
+        if (element.type === "radio") {
+          if (seen.has(name)) continue;
+          seen.add(name);
+          const selected = form.elements[name];
+          if (selected instanceof RadioNodeList && selected.value) fields[name] = selected.value;
+          continue;
+        }
+
+        if (element.type === "checkbox") {
+          if (element.checked) fields[name] = "1";
+          continue;
+        }
+
+        const value = (element.value || "").trim();
+        if (value) fields[name] = value;
+      }
+
+      return {
+        stage: currentStage,
+        submitted: hasSubmitted,
+        meta: submissionMeta,
+        fields
+      };
     }
 
-    document.getElementById("btnScore").addEventListener("click", scoreAndRender);
+    function hasMeaningfulState(state) {
+      return Object.keys(state.fields).length > 0 || state.stage !== "intake" || state.submitted;
+    }
 
-    document.getElementById("btnPrint").addEventListener("click", () => {
-      scoreAndRender();
+    function persistState() {
+      const state = collectState();
+      const params = new URLSearchParams();
+
+      if (hasMeaningfulState(state)) {
+        params.set("state", encodeStatePayload(state));
+      }
+
+      const query = params.toString();
+      const next = query ? `${window.location.pathname}?${query}` : window.location.pathname;
+      window.history.replaceState(null, "", next);
+    }
+
+    function schedulePersist() {
+      window.clearTimeout(persistTimer);
+      persistTimer = window.setTimeout(persistState, 120);
+    }
+
+    function setFieldValue(name, value) {
+      const field = form.elements[name];
+      if (!field) return;
+
+      if (field instanceof RadioNodeList) {
+        for (const option of Array.from(field)) option.checked = option.value === value;
+        return;
+      }
+
+      if (field.type === "checkbox") {
+        field.checked = value === "1" || value === "true" || value === "yes";
+        return;
+      }
+
+      field.value = value;
+    }
+
+    const QUESTION_LABEL_OVERRIDES = {
+      ack1: "Acknowledgment: I understand the event may involve unexpected conditions.",
+      ack2: "Acknowledgment: I consent to onsite biometric telemetry and access logging.",
+      ack3: "Acknowledgment: I understand movement may be restricted during safety protocols.",
+      ack4: "Acknowledgment: I agree to comply with staff instructions during emergencies.",
+      signature: "Signature",
+      date: "Date"
+    };
+
+    function getQuestionLabel(name) {
+      if (QUESTION_LABEL_OVERRIDES[name]) return QUESTION_LABEL_OVERRIDES[name];
+
+      const field = form.elements[name];
+      const element = field instanceof RadioNodeList ? field[0] : field;
+      if (!element) return name;
+
+      const q = element.closest(".q");
+      if (q) {
+        const label = q.querySelector(".qlabel");
+        if (label) return normalizeText(label.textContent);
+      }
+
+      const wrapper = element.parentElement;
+      if (wrapper) {
+        const help = wrapper.querySelector(":scope > .help");
+        if (help) return normalizeText(help.textContent);
+      }
+
+      return name;
+    }
+
+    function getAnswerDisplay(name) {
+      const field = form.elements[name];
+      if (!field) return null;
+
+      if (field instanceof RadioNodeList) {
+        const checked = Array.from(field).find(option => option.checked);
+        return checked ? normalizeText(checked.closest("label")?.textContent || checked.value) : null;
+      }
+
+      if (field.type === "checkbox") {
+        return field.checked;
+      }
+
+      if (field.tagName === "SELECT") {
+        if (!field.value) return null;
+        const option = field.options[field.selectedIndex];
+        return option ? normalizeText(option.textContent) : null;
+      }
+
+      const value = (field.value || "").trim();
+      return value || null;
+    }
+
+    function buildSubmissionRecord(profile) {
+      const responses = {};
+      const seen = new Set();
+      let responseCount = 0;
+
+      for (const element of Array.from(form.elements)) {
+        const name = fieldKey(element);
+        if (!name || seen.has(name)) continue;
+        seen.add(name);
+        const answer = getAnswerDisplay(name);
+        if (answer == null || answer === "") continue;
+        responses[getQuestionLabel(name)] = answer;
+        responseCount += 1;
+      }
+
+      return {
+        company: "Kallisto Biomedical",
+        event: "HELIX Summit",
+        submittedAt: submissionMeta.submittedAt,
+        attendeeId: submissionMeta.badgeId,
+        primaryAffinity: profile.primaryName,
+        affinityScores: profile.scores,
+        responseCount,
+        responses
+      };
+    }
+
+    function renderQrCode(payload) {
+      badgeQrMount.innerHTML = "";
+      badgeQrHint.textContent = "Scan to review the full questionnaire response JSON.";
+      badgeWarning.hidden = true;
+
+      if (typeof qrcode !== "function") {
+        badgeQrHint.textContent = "QR generation library unavailable on this deployment.";
+        badgeWarning.hidden = false;
+        badgeWarning.textContent = "The local QR generator script did not load.";
+        return;
+      }
+
+      try {
+        const qr = qrcode(0, "L");
+        qr.addData(payload, "Byte");
+        qr.make();
+        badgeQrMount.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0 });
+      } catch (_error) {
+        badgeQrHint.textContent = "QR payload exceeded the capacity of a single code.";
+        badgeWarning.hidden = false;
+        badgeWarning.textContent = "Shorten long free-text answers before printing the badge.";
+      }
+    }
+
+    function renderBadge(profile) {
+      const given = val("name_given") || "Pending";
+      const family = val("name_family") || "Attendee";
+      const preferred = val("name_preferred");
+      const residence = val("residence_place") || "Not provided";
+      const referral = getAnswerDisplay("referral_source") || "Not provided";
+      const subline = preferred
+        ? `Preferred name: ${preferred} • ${residence}`
+        : `Residence: ${residence}`;
+
+      badgeStatusPill.textContent = "Status: Submitted";
+      badgeFullName.textContent = `${given} ${family}`.trim();
+      badgeSubline.textContent = subline;
+      badgeId.textContent = submissionMeta.badgeId || "—";
+      badgeResidence.textContent = residence;
+      badgeReferral.textContent = referral;
+      badgeIssued.textContent = formatDisplayDate(submissionMeta.submittedAt);
+      badgeAffinityIcon.innerHTML = ICON[profile.primaryName] || "";
+      badgeAffinityName.textContent = profile.primaryName;
+
+      renderQrCode(JSON.stringify(buildSubmissionRecord(profile)));
+    }
+
+    function applyStageMeta(stage) {
+      const meta = STAGE_META[stage];
+      pageTitle.textContent = meta.title;
+      pageNote.textContent = meta.note;
+      progressPill.textContent = meta.pill;
+    }
+
+    function syncControls(stage) {
+      controls.hidden = stage === "intake";
+      btnSubmit.hidden = stage !== "questionnaire";
+      btnPrint.hidden = stage !== "badge";
+      btnBack.hidden = stage !== "badge";
+
+      if (stage === "questionnaire") {
+        controlsNote.textContent = "Submit the application to issue the attendee badge.";
+      } else if (stage === "badge") {
+        controlsNote.textContent = "Review the badge and print once the QR code renders clearly.";
+      } else {
+        controlsNote.textContent = "Assessment controls become available after intake is completed.";
+      }
+    }
+
+    function focusFirstField(stageEl) {
+      const target = stageEl.querySelector("input, select, textarea");
+      if (target) target.focus({ preventScroll: true });
+    }
+
+    function activateStage(stage, options = {}) {
+      const { animate = false, focus = true } = options;
+      const incoming = STAGES[stage];
+      const outgoing = STAGES[currentStage];
+
+      if (!incoming || isTransitioning) return;
+
+      currentStage = stage;
+      applyStageMeta(stage);
+      syncControls(stage);
+      document.body.dataset.stage = stage;
+
+      if (!animate || incoming === outgoing) {
+        for (const [key, element] of Object.entries(STAGES)) {
+          element.hidden = key !== stage;
+          element.classList.remove("is-hidden", "is-leaving");
+        }
+        if (focus) focusFirstField(incoming);
+        persistState();
+        return;
+      }
+
+      isTransitioning = true;
+      outgoing.classList.add("is-leaving");
+
+      window.setTimeout(() => {
+        outgoing.hidden = true;
+        outgoing.classList.remove("is-leaving");
+
+        incoming.hidden = false;
+        incoming.classList.add("is-hidden");
+
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            incoming.classList.remove("is-hidden");
+            if (focus) focusFirstField(incoming);
+          });
+        });
+
+        persistState();
+        isTransitioning = false;
+      }, 280);
+    }
+
+    function validateIntake() {
+      for (const field of intakeFields) {
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          field.focus();
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function intakeIsComplete() {
+      return intakeFields.every(field => field.checkValidity());
+    }
+
+    function invalidateSubmission() {
+      if (!hasSubmitted) return;
+
+      hasSubmitted = false;
+      submissionMeta = { submittedAt: "", badgeId: "" };
+      resetBadge();
+    }
+
+    function submitApplication() {
+      const scores = computeScores();
+      if (isAllZero(scores)) {
+        controlsNote.textContent = "Complete enough assessment responses to generate an affinity before submitting.";
+        return;
+      }
+
+      const profile = summarizeScores(scores);
+      const submittedAt = new Date().toISOString();
+
+      submissionMeta = {
+        submittedAt,
+        badgeId: buildBadgeId(profile, submittedAt)
+      };
+      hasSubmitted = true;
+
+      renderBadge(profile);
+      activateStage("badge", { animate: true, focus: false });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function restoreLegacyState(params) {
+      for (const [name, value] of params.entries()) {
+        if (name === "stage" || name === "scored" || name === "state") continue;
+        setFieldValue(name, value);
+      }
+
+      hasSubmitted = false;
+
+      return params.get("stage") === "questionnaire" && intakeIsComplete()
+        ? "questionnaire"
+        : "intake";
+    }
+
+    function restoreState() {
+      const params = new URLSearchParams(window.location.search);
+      const encodedState = decodeStatePayload(params.get("state"));
+      let requestedStage = "intake";
+
+      if (encodedState && encodedState.fields && typeof encodedState.fields === "object") {
+        for (const [name, value] of Object.entries(encodedState.fields)) {
+          setFieldValue(name, String(value));
+        }
+
+        hasSubmitted = encodedState.submitted === true || encodedState.scored === true;
+        if (encodedState.meta && typeof encodedState.meta === "object") {
+          submissionMeta = {
+            submittedAt: encodedState.meta.submittedAt || "",
+            badgeId: encodedState.meta.badgeId || ""
+          };
+        }
+
+        if (encodedState.stage === "badge" && intakeIsComplete() && hasSubmitted) {
+          requestedStage = "badge";
+        } else if (encodedState.stage === "questionnaire" && intakeIsComplete()) {
+          requestedStage = "questionnaire";
+        } else {
+          requestedStage = "intake";
+        }
+      } else {
+        requestedStage = restoreLegacyState(params);
+      }
+
+      activateStage(requestedStage, { animate: false, focus: false });
+
+      if (requestedStage === "badge" && hasSubmitted) {
+        renderBadge(summarizeScores(computeScores()));
+      } else {
+        resetBadge();
+      }
+    }
+
+    btnContinue.addEventListener("click", () => {
+      if (!validateIntake()) return;
+      activateStage("questionnaire", { animate: true });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    btnSubmit.addEventListener("click", submitApplication);
+
+    btnBack.addEventListener("click", () => {
+      activateStage("questionnaire", { animate: true });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    btnPrint.addEventListener("click", () => {
       window.print();
     });
 
-    document.getElementById("btnClear").addEventListener("click", () => {
+    btnClear.addEventListener("click", () => {
+      hasSubmitted = false;
+      submissionMeta = { submittedAt: "", badgeId: "" };
       form.reset();
-      renderPending();
+      window.clearTimeout(persistTimer);
+      activateStage("intake", { animate: false });
+      resetBadge();
+      persistState();
     });
 
-    renderPending();
+    form.addEventListener("input", () => {
+      if (currentStage !== "badge") invalidateSubmission();
+      schedulePersist();
+    });
+
+    form.addEventListener("change", () => {
+      if (currentStage !== "badge") invalidateSubmission();
+      schedulePersist();
+    });
+
+    resetBadge();
+    restoreState();
   })();
   </script>
 </body>
