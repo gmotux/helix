@@ -221,6 +221,23 @@
 
     .smallnote{ font-size: 12px; color: var(--kb-muted); font-weight: 650; }
 
+    .utilityLink{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 88%, transparent);
+      background: color-mix(in oklab, var(--kb-paper) 84%, transparent);
+      color: var(--kb-ink);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-decoration:none;
+      white-space:nowrap;
+      box-shadow: var(--shadow2);
+    }
+
     .stage{
       transition: opacity .34s ease, transform .34s ease, filter .34s ease;
     }
@@ -238,7 +255,7 @@
       pointer-events:none;
     }
 
-    .stage[hidden], .controls[hidden]{
+    [hidden], .stage[hidden], .controls[hidden]{
       display:none !important;
     }
 
@@ -247,6 +264,190 @@
       grid-template-columns: .82fr 1.18fr;
       gap: 14px;
       align-items:start;
+    }
+
+    .backstoryLayout{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      align-items:start;
+    }
+
+    .backstoryAside{
+      background:
+        linear-gradient(160deg,
+          color-mix(in oklab, var(--kb-accent2) 8%, var(--kb-paper)),
+          color-mix(in oklab, var(--kb-accent) 11%, var(--kb-paper))
+        );
+    }
+
+    .backstoryField{
+      min-height: 320px;
+      font: 13px/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .prepOverlay{
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display:grid;
+      place-items:center;
+      padding: 22px;
+      background: rgba(8, 16, 28, .58);
+      backdrop-filter: blur(10px);
+    }
+
+    .prepDialog{
+      width: min(1080px, 100%);
+      max-height: calc(100vh - 44px);
+      overflow:auto;
+      padding: 0;
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid color-mix(in oklab, var(--kb-line) 90%, transparent);
+      background: color-mix(in oklab, var(--kb-paper) 96%, transparent);
+      box-shadow: 0 26px 70px rgba(8, 16, 28, .22);
+    }
+
+    .prepHead{
+      display:block;
+      padding: 20px 22px 0;
+    }
+
+    .prepHead h3{
+      margin:0;
+      color: var(--kb-ink);
+      font-size: 31px;
+      line-height: 1.2;
+      letter-spacing: .1px;
+      text-transform:none;
+    }
+
+    .prepHead p{
+      margin: 6px 0 0;
+      color: var(--kb-muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .prepHeroCopy{
+      margin-top: 10px;
+      color: var(--kb-ink);
+      max-width: none;
+    }
+
+    .prepHeroCopy p{
+      margin: 0;
+      color: var(--kb-ink);
+      font: 21px/1.72 Georgia, "Times New Roman", serif;
+    }
+
+    .prepHeroCopy p + p{
+      margin-top: 14px;
+    }
+
+    .prepBody{
+      padding: 14px 22px 22px;
+    }
+
+    .prepActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+
+    .backstoryAside .stageRows{
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .backstoryAside .stageRow{
+      height: 100%;
+      padding: 12px;
+      flex-direction: column;
+    }
+
+    .backstoryAside .stageTag{
+      min-width: 0;
+    }
+
+    .invitationLayout{
+      display:grid;
+      grid-template-columns: .96fr 1.04fr;
+      gap: 14px;
+      align-items:start;
+    }
+
+    .invitationAside{
+      background:
+        linear-gradient(160deg,
+          color-mix(in oklab, var(--kb-accent2) 9%, var(--kb-paper)),
+          color-mix(in oklab, var(--kb-accent) 12%, var(--kb-paper))
+        );
+    }
+
+    .inviteTitle{
+      margin:0;
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: .1px;
+    }
+
+    .inviteKicker{
+      margin: 0 0 10px;
+      color: var(--kb-accent2);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .inviteCard{
+      padding: 14px;
+      border: 1px solid var(--kb-line);
+      border-radius: 14px;
+      background: color-mix(in oklab, var(--kb-paper) 90%, transparent);
+    }
+
+    .inviteList{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--kb-ink);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .inviteList li + li{
+      margin-top: 6px;
+    }
+
+    .inviteAcknowledge{
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--kb-line);
+    }
+
+    .inviteConsent{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 12px;
+      border: 1px solid color-mix(in oklab, var(--kb-line) 90%, transparent);
+      border-radius: 12px;
+      background: color-mix(in oklab, var(--kb-paper) 90%, transparent);
+    }
+
+    .inviteConsent input{
+      transform: translateY(2px);
+      margin: 0;
+    }
+
+    .inviteConsent span{
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--kb-ink);
+      font-weight: 650;
     }
 
     .intakeAside{
@@ -630,7 +831,8 @@
 
     @media (max-width: 760px){
       .affinityWrap{ grid-template-columns: 1fr; }
-      .intakeLayout, .stageBanner, .badgeMetaGrid{ grid-template-columns: 1fr; }
+      .backstoryLayout, .intakeLayout, .invitationLayout, .stageBanner, .badgeMetaGrid{ grid-template-columns: 1fr; }
+      .backstoryAside .stageRows{ grid-template-columns: 1fr; }
       .badgeTop{
         flex-direction:column;
         align-items:stretch;
@@ -851,26 +1053,80 @@
             <div class="pill">Event: HELIX Summit</div>
             <div class="pill">Form: CEQ</div>
             <div class="pill">Locale: Onsite</div>
-            <div class="pill" id="progressPill">Stage: Intake</div>
+            <div class="pill" id="progressPill">Stage: Invitation</div>
           </div>
         </div>
 
         <div class="titleblock">
           <div>
-            <h2 id="pageTitle">Candidate Intake</h2>
+            <h2 id="pageTitle">Closed Candidate Track</h2>
             <p class="note" id="pageNote">
-              Complete the registration fields below before the assessment portion of the Candidate Experience Questionnaire is released.
-              Responses support guest verification, onsite safety planning, and session routing.
+              Review the access notice below before identity intake and assessment materials are released.
+              Closed-track participation includes verification, baseline screening, and restricted summit access.
             </p>
           </div>
-          <div class="smallnote">This document may be printed for submission.</div>
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <a class="utilityLink" href="#character-notes">Character Setup</a>
+            <div class="smallnote">This document may be printed for submission.</div>
+          </div>
         </div>
       </header>
 
       <main>
         <form id="ceq" autocomplete="off">
+          <div class="stage" id="invitationStage" hidden>
+            <div class="invitationLayout">
+              <div class="section invitationAside">
+                <div class="inviteKicker">Issued by Kallisto Biomedical</div>
+                <h3 class="inviteTitle">HELIX Summit Closed Candidate Track</h3>
+                <p class="stageLead" style="margin-top:12px;">
+                  This non-transferable invitation grants cleared access to a restricted participant program conducted in parallel with the public HELIX Summit in Boston, Massachusetts.
+                </p>
+                <div class="stageRows">
+                  <div class="stageRow">
+                    <span class="stageTag">Cleared</span>
+                    <span>Your invitation has been approved for restricted demonstrations, private briefings, and controlled candidate routing not available through standard summit admission.</span>
+                  </div>
+                  <div class="stageRow">
+                    <span class="stageTag">Review</span>
+                    <span>Your access tier includes private specialist review, nonpublic evaluation pathways, and priority consideration for follow-up programs and introductions.</span>
+                  </div>
+                  <div class="stageRow">
+                    <span class="stageTag">Allocation</span>
+                    <span>Closed-track recipients are assigned individually reviewed allocations. If declined, this allocation is withdrawn and not automatically reissued.</span>
+                  </div>
+                </div>
+              </div>
 
-          <div class="stage" id="intakeStage">
+              <div class="section">
+                <h3>Access Notice</h3>
+                <div class="inviteCard">
+                  <p class="stageLead">
+                    You have been identified for possible inclusion in a restricted HELIX candidate program. Prior referral and review materials satisfy threshold requirements for closed-track evaluation. Participation is confidential and subject to event safety, participant verification, and program compliance requirements.
+                  </p>
+                  <ul class="inviteList">
+                    <li>Access to the closed track requires identity verification and baseline screening.</li>
+                    <li>Subsequent disclosures must be complete and truthful to the best of your knowledge.</li>
+                    <li>False, incomplete, or misleading disclosures may result in immediate revocation of access, removal from the event, referral to sponsoring institutions, forfeiture of closed-track benefits, and any other remedies available under applicable law, contractual obligation, or program compliance policy.</li>
+                  </ul>
+
+                  <div class="inviteAcknowledge">
+                    <div class="inviteConsent">
+                      <input type="checkbox" id="invitationConsent" name="invitation_consent" />
+                      <span>I confirm that I am the intended recipient of this invitation and consent to candidate verification, baseline screening, confidentiality controls, and truthful disclosure requirements as a condition of closed-track access.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stageActions">
+                  <div class="smallnote">Closed-track intake is released only after acknowledgment is recorded.</div>
+                  <button type="button" class="primary" id="btnAcceptInvitation">Proceed to Candidate Intake</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stage" id="intakeStage" hidden>
             <div class="intakeLayout">
               <div class="section intakeAside">
                 <h3>Admissions Review</h3>
@@ -1608,7 +1864,65 @@
         <button type="button" id="btnBack" hidden>Return to Questionnaire</button>
         <button type="button" class="primary" id="btnSubmit">Submit Application</button>
         <button type="button" id="btnPrint" hidden>Print Badge</button>
+        <button type="button" id="btnExportPacket" hidden>Export Character Packet</button>
         <button type="button" class="danger" id="btnClear">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="prepOverlay" id="prepOverlay" hidden>
+    <div class="prepDialog">
+      <div class="prepHead">
+        <div>
+          <h3>Welcome to The Gloaming Line</h3>
+          <div class="prepHeroCopy">
+            <p>Your Session 0 begins in Boston, April 2026. Your character has agreed to enter a restricted clinical program being run during HELIX week at Kallisto Biomedical's facilities. They are not walking into this blindly by accident; they had a reason to say yes, and that reason needs to matter.</p>
+            <p>Before you continue, decide what your character thinks this invitation means. Is it money, treatment, leverage, access, prestige, obligation, fear, a favor, a private lead, or a chance they cannot afford to lose? Decide who they care about, what they are hiding, what they stand to lose, and what they hope Boston will give them.</p>
+            <p>Write whatever helps you inhabit them. Then, when the forms appear, answer everything in character. Do not optimize. Do not answer like a player trying to beat a quiz. Answer like someone making real choices with limited time, incomplete context, and something personal at stake.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="prepBody">
+        <div class="backstoryLayout">
+          <div class="section backstoryAside">
+            <h3>Before You Begin</h3>
+            <p class="stageLead">
+              Decide why your character accepted this invitation, what they hope to gain from it, and what personal ties or unresolved pressures they carry into Boston.
+            </p>
+            <div class="stageRows">
+              <div class="stageRow">
+                <span class="stageTag">Reason</span>
+                <span>Give them a strong reason to say yes: money, treatment, leverage, access, loyalty, fear, ambition, curiosity, or duty.</span>
+              </div>
+              <div class="stageRow">
+                <span class="stageTag">Ties</span>
+                <span>Add people, obligations, secrets, and weak points that could matter later once events begin to spiral.</span>
+              </div>
+              <div class="stageRow">
+                <span class="stageTag">Mindset</span>
+                <span>When the forms appear, lock the spreadsheet goblin in a drawer and answer like your character is under bright lights, mild pressure, and very limited patience.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Character Backstory</h3>
+            <div class="help" style="margin:0 0 8px;">Write as much as you need.</div>
+            <textarea
+              class="backstoryField"
+              id="characterBackstory"
+              spellcheck="true"
+              placeholder="Write or paste your character's background here. Useful material includes profession, relationships, debts, obligations, secrets, prior trauma, the reason they accepted the invitation, and what they expect to gain from it."></textarea>
+
+            <div class="stageActions">
+              <div class="smallnote">Fill this in, then continue to the invitation.</div>
+              <div class="prepActions">
+                <button type="button" class="primary" id="btnContinuePrep">Continue to Invitation</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1617,14 +1931,20 @@
   <script>
   (function () {
     const form = document.getElementById("ceq");
+    const prepOverlay = document.getElementById("prepOverlay");
+    const characterBackstory = document.getElementById("characterBackstory");
+    const btnContinuePrep = document.getElementById("btnContinuePrep");
+    const invitationStage = document.getElementById("invitationStage");
     const intakeStage = document.getElementById("intakeStage");
     const questionnaireStage = document.getElementById("questionnaireStage");
     const badgeStage = document.getElementById("badgeStage");
     const controls = document.querySelector(".controls");
+    const btnAcceptInvitation = document.getElementById("btnAcceptInvitation");
     const btnContinue = document.getElementById("btnContinue");
     const btnSubmit = document.getElementById("btnSubmit");
     const btnBack = document.getElementById("btnBack");
     const btnPrint = document.getElementById("btnPrint");
+    const btnExportPacket = document.getElementById("btnExportPacket");
     const btnClear = document.getElementById("btnClear");
     const pageTitle = document.getElementById("pageTitle");
     const pageNote = document.getElementById("pageNote");
@@ -1639,8 +1959,17 @@
     const badgeQrMount = document.getElementById("badgeQrMount");
     const badgeQrHint = document.getElementById("badgeQrHint");
     const badgeWarning = document.getElementById("badgeWarning");
+    const invitationConsent = document.getElementById("invitationConsent");
+    const PREP_HASH = "#character-notes";
+    const BACKSTORY_STORAGE_KEY = `helix:${window.location.pathname}:character-backstory`;
+    const PREP_DISMISSED_KEY = `helix:${window.location.pathname}:prep-dismissed`;
 
     const STAGE_META = {
+      invitation: {
+        title: "Closed Candidate Track",
+        note: "Review the access notice below before identity intake and assessment materials are released. Closed-track participation includes verification, baseline screening, and restricted summit access.",
+        pill: "Stage: Invitation"
+      },
       intake: {
         title: "Candidate Intake",
         note: "Complete the registration fields below before the assessment portion of the Candidate Experience Questionnaire is released. Responses support guest verification, onsite safety planning, and session routing.",
@@ -1659,13 +1988,14 @@
     };
 
     const STAGES = {
+      invitation: invitationStage,
       intake: intakeStage,
       questionnaire: questionnaireStage,
       badge: badgeStage
     };
 
     const intakeFields = Array.from(intakeStage.querySelectorAll("input, select, textarea"));
-    let currentStage = "intake";
+    let currentStage = "invitation";
     let hasSubmitted = false;
     let isTransitioning = false;
     let persistTimer = null;
@@ -1754,6 +2084,262 @@
 
     function zeroScores() {
       return { Aegis: 0, Wraith: 0, Eidolon: 0, Chimera: 0, Threnody: 0 };
+    }
+
+    function loadCharacterBackstory() {
+      try {
+        const stored = window.localStorage.getItem(BACKSTORY_STORAGE_KEY);
+        if (stored != null) characterBackstory.value = stored;
+      } catch (_error) {
+        // ignore local storage failures
+      }
+    }
+
+    function persistCharacterBackstory() {
+      try {
+        const value = characterBackstory.value || "";
+        if (value) window.localStorage.setItem(BACKSTORY_STORAGE_KEY, value);
+        else window.localStorage.removeItem(BACKSTORY_STORAGE_KEY);
+      } catch (_error) {
+        // ignore local storage failures
+      }
+    }
+
+    function markPrepDismissed() {
+      try {
+        window.sessionStorage.setItem(PREP_DISMISSED_KEY, "1");
+      } catch (_error) {
+        // ignore session storage failures
+      }
+    }
+
+    function clearPrepDismissed() {
+      try {
+        window.sessionStorage.removeItem(PREP_DISMISSED_KEY);
+      } catch (_error) {
+        // ignore session storage failures
+      }
+    }
+
+    function isPrepDismissed() {
+      try {
+        return window.sessionStorage.getItem(PREP_DISMISSED_KEY) === "1";
+      } catch (_error) {
+        return false;
+      }
+    }
+
+    function openPrepOverlay() {
+      prepOverlay.hidden = false;
+      characterBackstory.focus({ preventScroll: true });
+    }
+
+    function closePrepOverlay() {
+      markPrepDismissed();
+      prepOverlay.hidden = true;
+      if (window.location.hash === PREP_HASH) {
+        const next = `${window.location.pathname}${window.location.search}`;
+        window.history.replaceState(null, "", next);
+      }
+    }
+
+    function syncPrepOverlay() {
+      if (window.location.hash === PREP_HASH) {
+        openPrepOverlay();
+        return;
+      }
+
+      if (!isPrepDismissed()) {
+        openPrepOverlay();
+        return;
+      }
+
+      prepOverlay.hidden = true;
+    }
+
+    function escapeHtml(text) {
+      return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function slugify(text) {
+      const slug = normalizeText(text)
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+
+      return slug || "attendee";
+    }
+
+    function buildPacketUrl() {
+      const state = collectState();
+      const url = new URL(window.location.href);
+      url.hash = "";
+      url.search = "";
+
+      if (hasMeaningfulState(state)) {
+        url.searchParams.set("state", encodeStatePayload(state));
+      }
+
+      return url.toString();
+    }
+
+    function buildCharacterPacketHtml() {
+      const fullName = `${val("name_given")} ${val("name_family")}`.trim() || "Pending attendee";
+      const packetUrl = buildPacketUrl();
+      const backstory = (characterBackstory.value || "").trim();
+
+      return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Character Packet - ${escapeHtml(fullName)}</title>
+  <style>
+    :root{
+      color-scheme: light;
+      --ink:#152233;
+      --muted:#5c6876;
+      --line:#d7dde6;
+      --surface:#f6f7fa;
+      --panel:#ffffff;
+      --accent:#8f2330;
+      --accent-2:#cc9d6f;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      padding:32px;
+      font:16px/1.55 Georgia, "Times New Roman", serif;
+      color:var(--ink);
+      background:linear-gradient(180deg,#eef1f6 0%,#f8f9fb 100%);
+    }
+    .packet{
+      max-width:980px;
+      margin:0 auto;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 24px 64px rgba(17,25,39,.12);
+    }
+    .packet-head{
+      padding:32px 36px 26px;
+      background:
+        radial-gradient(circle at top right, rgba(204,157,111,.18), transparent 32%),
+        linear-gradient(145deg,#182431 0%,#223244 58%,#8f2330 140%);
+      color:#f6f3ef;
+    }
+    .packet-kicker{
+      margin:0 0 10px;
+      font:700 12px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      opacity:.78;
+    }
+    .packet-head h1{
+      margin:0;
+      font-size:34px;
+      line-height:1.1;
+    }
+    .packet-sub{
+      margin:10px 0 0;
+      color:rgba(246,243,239,.86);
+      font-size:17px;
+    }
+    .packet-body{
+      padding:28px 36px 36px;
+    }
+    .packet-section + .packet-section{
+      margin-top:26px;
+    }
+    .packet-section h2{
+      margin:0 0 14px;
+      font:700 18px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.03em;
+      color:var(--accent);
+    }
+    .packet-link{
+      display:block;
+      padding:14px 16px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:12px;
+      color:#17395b;
+      text-decoration:none;
+      overflow-wrap:anywhere;
+    }
+    .packet-link:hover{
+      border-color:var(--accent-2);
+    }
+    .packet-copy{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .packet-backstory{
+      padding:16px 18px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:12px;
+      white-space:pre-wrap;
+    }
+    @media print{
+      body{
+        padding:0;
+        background:#fff;
+      }
+      .packet{
+        max-width:none;
+        border:none;
+        border-radius:0;
+        box-shadow:none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="packet">
+    <header class="packet-head">
+      <div class="packet-kicker">Character Packet</div>
+      <h1>${escapeHtml(fullName)}</h1>
+      <p class="packet-sub">Backstory handoff and direct questionnaire link.</p>
+    </header>
+
+    <div class="packet-body">
+      <section class="packet-section">
+        <h2>Questionnaire Link</h2>
+        <a class="packet-link" href="${escapeHtml(packetUrl)}">${escapeHtml(packetUrl)}</a>
+        <p class="packet-copy">Open this link to review the questionnaire exactly as it was submitted.</p>
+      </section>
+
+      <section class="packet-section">
+        <h2>Character Backstory</h2>
+        <div class="packet-backstory">${escapeHtml(backstory || "No backstory text provided.")}</div>
+      </section>
+    </div>
+  </article>
+</body>
+</html>`;
+    }
+
+    function exportCharacterPacket() {
+      const html = buildCharacterPacketHtml();
+      const fullName = `${val("name_given")} ${val("name_family")}`.trim();
+      const filename = `character-packet-${slugify(fullName)}.html`;
+      const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = filename;
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
     }
 
     function computeScores() {
@@ -2393,18 +2979,25 @@
     }
 
     function syncControls(stage) {
-      controls.hidden = stage === "intake";
+      controls.hidden = stage === "invitation" || stage === "intake";
       btnSubmit.hidden = stage !== "questionnaire";
       btnPrint.hidden = stage !== "badge";
-      btnBack.hidden = stage !== "badge";
+      btnExportPacket.hidden = stage !== "badge";
+      btnBack.hidden = stage !== "questionnaire" && stage !== "badge";
 
       if (stage === "questionnaire") {
-        controlsNote.textContent = "Submit the application to issue the attendee badge.";
+        btnBack.textContent = "Return to Intake";
+        controlsNote.textContent = "Review the intake if needed, or submit the application to issue the attendee badge.";
       } else if (stage === "badge") {
+        btnBack.textContent = "Return to Questionnaire";
         controlsNote.textContent = "Review the badge and print once the QR code renders clearly.";
       } else {
         controlsNote.textContent = "Assessment controls become available after intake is completed.";
       }
+    }
+
+    function invitationAccepted() {
+      return invitationConsent.checked;
     }
 
     function focusFirstField(stageEl) {
@@ -2511,13 +3104,15 @@
 
       return params.get("stage") === "questionnaire" && intakeIsComplete()
         ? "questionnaire"
-        : "intake";
+        : intakeIsComplete()
+          ? "intake"
+          : "invitation";
     }
 
     function restoreState() {
       const params = new URLSearchParams(window.location.search);
       const encodedState = decodeStatePayload(params.get("state"));
-      let requestedStage = "intake";
+      let requestedStage = "invitation";
 
       if (encodedState && encodedState.fields && typeof encodedState.fields === "object") {
         for (const [name, value] of Object.entries(encodedState.fields)) {
@@ -2543,8 +3138,10 @@
           requestedStage = "badge";
         } else if (encodedState.stage === "questionnaire" && intakeIsComplete()) {
           requestedStage = "questionnaire";
-        } else {
+        } else if (encodedState.stage === "intake" && invitationAccepted()) {
           requestedStage = "intake";
+        } else {
+          requestedStage = "invitation";
         }
       } else {
         requestedStage = restoreLegacyState(params);
@@ -2559,6 +3156,15 @@
       }
     }
 
+    btnAcceptInvitation.addEventListener("click", () => {
+      if (!invitationAccepted()) {
+        invitationConsent.focus();
+        return;
+      }
+      activateStage("intake", { animate: true });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
     btnContinue.addEventListener("click", () => {
       if (!validateIntake()) return;
       activateStage("questionnaire", { animate: true });
@@ -2568,7 +3174,8 @@
     btnSubmit.addEventListener("click", submitApplication);
 
     btnBack.addEventListener("click", () => {
-      activateStage("questionnaire", { animate: true });
+      const targetStage = currentStage === "badge" ? "questionnaire" : "intake";
+      activateStage(targetStage, { animate: true });
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
@@ -2576,12 +3183,14 @@
       window.print();
     });
 
+    btnExportPacket.addEventListener("click", exportCharacterPacket);
+
     btnClear.addEventListener("click", () => {
       hasSubmitted = false;
       submissionMeta = { submittedAt: "", badgeId: "", stbLzr: "" };
       form.reset();
       window.clearTimeout(persistTimer);
-      activateStage("intake", { animate: false });
+      activateStage("invitation", { animate: false });
       resetBadge();
       persistState();
     });
@@ -2591,13 +3200,19 @@
       schedulePersist();
     });
 
+    characterBackstory.addEventListener("input", persistCharacterBackstory);
+    btnContinuePrep.addEventListener("click", closePrepOverlay);
+    window.addEventListener("hashchange", syncPrepOverlay);
+
     form.addEventListener("change", () => {
       if (currentStage !== "badge") invalidateSubmission();
       schedulePersist();
     });
 
     resetBadge();
+    loadCharacterBackstory();
     restoreState();
+    syncPrepOverlay();
   })();
   </script>
 </body>
