@@ -1,0 +1,1305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Gloaming Line — Character Sheet</title>
+  <style>
+    :root{
+      color-scheme: light;
+      --bg:#eef2f0;
+      --paper:#fffdf8;
+      --ink:#18212b;
+      --muted:#667180;
+      --line:#d7d6cf;
+      --accent:#1d5c73;
+      --accent-2:#986f38;
+      --accent-3:#325a47;
+      --danger:#8e2e2e;
+      --shadow:0 18px 38px rgba(18,27,34,.10);
+      --shadow-soft:0 8px 18px rgba(18,27,34,.07);
+      --radius:18px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      color:var(--ink);
+      font:15px/1.45 "Avenir Next","Segoe UI",sans-serif;
+      background:
+        radial-gradient(900px 520px at 0% 0%, rgba(29,92,115,.10), transparent 58%),
+        radial-gradient(780px 540px at 100% 0%, rgba(152,111,56,.10), transparent 54%),
+        linear-gradient(180deg, #edf1ef 0%, #f7f8f4 100%);
+    }
+
+    .wrap{
+      width:min(1360px, calc(100% - 28px));
+      margin:24px auto 40px;
+    }
+
+    .topbar{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      justify-content:space-between;
+      margin-bottom:14px;
+      padding:20px 22px;
+      border:1px solid rgba(24,33,43,.08);
+      border-radius:24px;
+      background:
+        linear-gradient(140deg, rgba(255,255,255,.90), rgba(250,248,241,.96)),
+        var(--paper);
+      box-shadow:var(--shadow);
+    }
+
+    .eyebrow{
+      margin:0 0 8px;
+      color:var(--accent);
+      font:800 12px/1.1 "Avenir Next","Segoe UI",sans-serif;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    h1,h2,h3,p{
+      margin:0;
+    }
+
+    h1{
+      font:700 36px/1.02 "Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+      letter-spacing:.01em;
+    }
+
+    .lead{
+      max-width:760px;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .statusRail{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:flex-start;
+    }
+
+    .chip{
+      padding:7px 11px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.84);
+      color:var(--muted);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      margin-top:12px;
+    }
+
+    .btn,
+    .btn:visited{
+      appearance:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:42px;
+      padding:0 14px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      color:var(--ink);
+      text-decoration:none;
+      font:800 13px/1 "Avenir Next","Segoe UI",sans-serif;
+      letter-spacing:.03em;
+      cursor:pointer;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .btn.primary{
+      border-color:color-mix(in srgb, var(--accent-2) 58%, var(--line));
+      background:linear-gradient(135deg, rgba(248,178,76,.34), rgba(204,132,40,.28)), #fff6e8;
+    }
+
+    .btn.warn{
+      border-color:color-mix(in srgb, var(--danger) 35%, var(--line));
+    }
+
+    .btn:hover{
+      filter:brightness(1.02);
+    }
+
+    .sheet{
+      display:grid;
+      grid-template-columns:repeat(12, minmax(0, 1fr));
+      gap:14px;
+      align-items:start;
+    }
+
+    .panel{
+      padding:16px 16px 18px;
+      border:1px solid rgba(24,33,43,.08);
+      border-radius:22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(252,250,244,.98)),
+        var(--paper);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .panel h2{
+      margin-bottom:12px;
+      font:700 20px/1.08 "Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+    }
+
+    .panelNote{
+      margin:-6px 0 12px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .span-12{ grid-column:span 12; }
+    .span-9{ grid-column:span 9; }
+    .span-8{ grid-column:span 8; }
+    .span-7{ grid-column:span 7; }
+    .span-6{ grid-column:span 6; }
+    .span-5{ grid-column:span 5; }
+    .span-4{ grid-column:span 4; }
+    .span-3{ grid-column:span 3; }
+
+    .pairedBand{
+      grid-column:span 12;
+      display:grid;
+      grid-template-columns:minmax(250px, .92fr) minmax(0, 2.08fr);
+      gap:14px;
+      align-items:stretch;
+    }
+
+    .pairedBand.roleSkillBand{
+      grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .combatStack{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      min-height:100%;
+    }
+
+    .combatStack .checksPanel{
+      display:flex;
+      flex:1 1 auto;
+      flex-direction:column;
+    }
+
+    .fieldGrid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:12px;
+    }
+
+    .field{
+      display:grid;
+      gap:6px;
+    }
+
+    .field.wide{
+      grid-column:span 2;
+    }
+
+    .label{
+      color:var(--muted);
+      font:800 11px/1.2 "Avenir Next","Segoe UI",sans-serif;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea{
+      width:100%;
+      padding:11px 12px;
+      border:1px solid color-mix(in srgb, var(--line) 86%, #ffffff);
+      border-radius:14px;
+      background:#fff;
+      color:var(--ink);
+      font:600 14px/1.3 "Avenir Next","Segoe UI",sans-serif;
+      transition:border-color .15s ease, box-shadow .15s ease;
+      outline:none;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:color-mix(in srgb, var(--accent) 52%, var(--line));
+      box-shadow:0 0 0 4px rgba(29,92,115,.12);
+    }
+
+    .toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-height:46px;
+      padding:0 14px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      font-weight:700;
+    }
+
+    .toggle input{
+      width:18px;
+      height:18px;
+      margin:0;
+    }
+
+    .abilityGrid{
+      display:grid;
+      gap:10px;
+    }
+
+    .abilityCard{
+      display:grid;
+      grid-template-columns:74px minmax(0, 1fr);
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+    }
+
+    .abilityBadge{
+      display:grid;
+      place-items:center;
+      gap:3px;
+      min-height:88px;
+      border:1px solid color-mix(in srgb, var(--accent) 16%, var(--line));
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(29,92,115,.08), rgba(152,111,56,.06));
+      text-align:center;
+    }
+
+    .abilityBadge strong{
+      font:800 13px/1 "Avenir Next","Segoe UI",sans-serif;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .abilityBadge span{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .abilityScore{
+      display:grid;
+      gap:8px;
+    }
+
+    .modifier{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#faf8f2;
+      color:var(--accent);
+      font:800 18px/1 "Avenir Next","Segoe UI",sans-serif;
+    }
+
+    .statGrid{
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0, 1fr));
+      gap:10px;
+      margin-bottom:14px;
+    }
+
+    .statCard{
+      display:grid;
+      gap:6px;
+      padding:12px 12px 13px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+
+    .statCard .label{
+      font-size:10px;
+    }
+
+    .statValue{
+      font:800 26px/1 "Avenir Next","Segoe UI",sans-serif;
+      color:var(--accent);
+    }
+
+    .healthGrid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .subpanel{
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+
+    .subpanel + .subpanel{
+      margin-top:12px;
+    }
+
+    .subpanel h3{
+      margin:0 0 10px;
+      color:var(--accent-3);
+      font:800 12px/1.1 "Avenir Next","Segoe UI",sans-serif;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .meterRow{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+    }
+
+    .meterRow.three{
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+    }
+
+    .bonusList{
+      display:grid;
+      gap:8px;
+    }
+
+    .bonusRow{
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) 86px 76px;
+      gap:10px;
+      align-items:center;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .bonusRow .minor{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .bonusRow select,
+    .bonusRow input[type="checkbox"]{
+      margin:0;
+    }
+
+    .bonusScore{
+      justify-self:end;
+      min-width:62px;
+      text-align:center;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#faf8f2;
+      font:800 16px/1 "Avenir Next","Segoe UI",sans-serif;
+      color:var(--accent);
+    }
+
+    .saveToggle{
+      justify-self:center;
+    }
+
+    .saveToggle input{
+      width:18px;
+      height:18px;
+    }
+
+    .tableWrap{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:620px;
+    }
+
+    th, td{
+      padding:10px 10px;
+      border-top:1px solid var(--line);
+      vertical-align:top;
+    }
+
+    thead th{
+      border-top:0;
+      background:#f8f4ec;
+      color:var(--muted);
+      font:800 11px/1.2 "Avenir Next","Segoe UI",sans-serif;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      text-align:left;
+    }
+
+    td input,
+    td select,
+    td textarea{
+      min-width:0;
+      margin:0;
+    }
+
+    td textarea{
+      min-height:80px;
+    }
+
+    .twoCol{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
+    }
+
+    .tripleCol{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:12px;
+    }
+
+    .coins{
+      display:grid;
+      grid-template-columns:repeat(6, minmax(0, 1fr));
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .coinTile{
+      display:grid;
+      gap:6px;
+      padding:10px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .coinTile.total{
+      background:linear-gradient(180deg, rgba(29,92,115,.08), rgba(152,111,56,.07));
+    }
+
+    .spellHeader{
+      display:grid;
+      grid-template-columns:repeat(6, minmax(0, 1fr));
+      gap:12px;
+      margin-bottom:12px;
+    }
+
+    .spellbook{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
+    }
+
+    .spellCard{
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+
+    .spellCardHead{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      justify-content:space-between;
+      margin-bottom:10px;
+    }
+
+    .spellCardHead h3{
+      margin:0;
+      color:var(--accent);
+      font:700 18px/1.08 "Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+    }
+
+    .roleplayPanel .twoCol{
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+
+    .roleplayPanel textarea{
+      min-height:118px;
+    }
+
+    .checksPanel .bonusList{
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+    }
+
+    .checksPanel .bonusList{
+      flex:1 1 auto;
+      align-content:start;
+    }
+
+    .checksPanel .bonusRow{
+      grid-template-columns:minmax(0, 1fr) 48px 58px;
+      min-height:76px;
+    }
+
+    .checksPanel .bonusScore{
+      min-width:0;
+      width:100%;
+    }
+
+    .skillsPanel .bonusList{
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+    }
+
+    .skillsPanel .bonusRow{
+      grid-template-columns:minmax(0, 1fr) 82px 62px;
+      min-height:0;
+      padding:8px 10px;
+    }
+
+    .skillsPanel .bonusScore{
+      min-width:0;
+      width:100%;
+    }
+
+    .featuresPanel{
+      align-self:stretch;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .featuresPanel textarea{
+      flex:1 1 auto;
+      min-height:0;
+    }
+
+    .slotGrid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    [hidden]{
+      display:none !important;
+    }
+
+    @media (max-width: 1180px){
+      .span-9,
+      .span-8,
+      .span-7,
+      .span-6,
+      .span-5,
+      .span-4,
+      .span-3{
+        grid-column:span 12;
+      }
+
+      .fieldGrid,
+      .pairedBand,
+      .spellHeader,
+      .coins,
+      .statGrid,
+      .healthGrid,
+      .twoCol,
+      .tripleCol,
+      .spellbook{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+
+      .pairedBand,
+      .pairedBand.roleSkillBand{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 760px){
+      .wrap{
+        width:min(100%, calc(100% - 16px));
+        margin:16px auto 24px;
+      }
+
+      .topbar{
+        padding:16px;
+      }
+
+      .fieldGrid,
+      .spellHeader,
+      .coins,
+      .statGrid,
+      .healthGrid,
+      .twoCol,
+      .tripleCol,
+      .spellbook,
+      .meterRow,
+      .meterRow.three{
+        grid-template-columns:1fr;
+      }
+
+      .field.wide{
+        grid-column:auto;
+      }
+
+      .bonusRow{
+        grid-template-columns:minmax(0, 1fr) 74px 68px;
+      }
+
+      .checksPanel .bonusList{
+        grid-template-columns:1fr;
+      }
+
+      .checksPanel .bonusRow{
+        grid-template-columns:minmax(0, 1fr) 74px 68px;
+        min-height:0;
+      }
+
+      .skillsPanel .bonusList{
+        grid-template-columns:1fr;
+      }
+
+      .skillsPanel .bonusRow{
+        grid-template-columns:minmax(0, 1fr) 74px 68px;
+      }
+    }
+
+    @media print{
+      body{
+        background:#fff;
+      }
+
+      .wrap{
+        width:100%;
+        margin:0;
+      }
+
+      .topbar{
+        box-shadow:none;
+      }
+
+      .actions{
+        display:none;
+      }
+
+      .panel{
+        break-inside:avoid;
+        box-shadow:none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">The Gloaming Line</p>
+        <h1>Character Sheet</h1>
+        <p class="lead">Fill this as your character, save as you go, and continue when you are ready.</p>
+      </div>
+
+      <div>
+        <div class="statusRail">
+          <span class="chip">5e-Compatible</span>
+          <span class="chip">Printable</span>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn" id="btnPrint">Print</button>
+          <button type="button" class="btn warn" id="btnReset">Clear Sheet</button>
+          <a class="btn primary" href="./">Continue to Onboarding</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="sheet">
+      <section class="panel span-12">
+        <p class="eyebrow">Identity</p>
+        <h2>Character Summary</h2>
+        <div class="fieldGrid">
+          <label class="field wide">
+            <span class="label">Character Name</span>
+            <input type="text" data-path="meta.characterName" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span class="label">Class</span>
+            <input type="text" data-path="meta.className" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span class="label">Subclass</span>
+            <input type="text" data-path="meta.subclass" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span class="label">Level</span>
+            <input type="number" min="1" max="20" step="1" data-path="meta.level" data-cast="number" />
+          </label>
+          <label class="field">
+            <span class="label">Background</span>
+            <input type="text" data-path="meta.background" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span class="label">Race / Species</span>
+            <input type="text" data-path="meta.race" autocomplete="off" />
+          </label>
+          <label class="field wide">
+            <span class="label">Player Name</span>
+            <input type="text" data-path="meta.playerName" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span class="label">Inspiration</span>
+            <span class="toggle"><input type="checkbox" data-path="inspiration" data-cast="boolean" /></span>
+          </label>
+        </div>
+      </section>
+
+      <div class="pairedBand">
+        <section class="panel">
+          <p class="eyebrow">Core</p>
+          <h2>Ability Scores</h2>
+          <div class="abilityGrid" id="abilityGrid"></div>
+        </section>
+
+        <div class="combatStack">
+          <section class="panel">
+            <p class="eyebrow">Combat</p>
+            <h2>Core Combat And Survival</h2>
+            <p class="panelNote">Spell Save DC and Spell Attack are calculated when you fill the Spellcasting section below.</p>
+
+            <div class="statGrid">
+              <div class="statCard">
+                <span class="label">Proficiency Bonus</span>
+                <div class="statValue" id="proficiencyBonusDisplay">+2</div>
+              </div>
+              <div class="statCard">
+                <span class="label">Initiative</span>
+                <div class="statValue" id="initiativeTotalDisplay">+0</div>
+              </div>
+              <div class="statCard">
+                <span class="label">Passive Perception</span>
+                <div class="statValue" id="passivePerceptionDisplay">10</div>
+              </div>
+              <div class="statCard">
+                <span class="label">Spell Save DC</span>
+                <div class="statValue" id="spellSaveDcDisplay">—</div>
+              </div>
+              <div class="statCard">
+                <span class="label">Spell Attack</span>
+                <div class="statValue" id="spellAttackBonusDisplay">—</div>
+              </div>
+            </div>
+
+            <div class="twoCol">
+              <div class="subpanel">
+                <h3>Vitals</h3>
+                <div class="fieldGrid">
+                  <label class="field">
+                    <span class="label">Armor Class</span>
+                    <input type="number" min="0" step="1" data-path="combat.armorClass" data-cast="number" />
+                  </label>
+                  <label class="field">
+                    <span class="label">Initiative Misc.</span>
+                    <input type="number" step="1" data-path="combat.initiativeBonus" data-cast="number" />
+                  </label>
+                  <label class="field">
+                    <span class="label">Speed</span>
+                    <input type="text" data-path="combat.speed" placeholder="30 ft." />
+                  </label>
+                  <label class="field">
+                    <span class="label">Hit Dice</span>
+                    <input type="text" data-path="combat.hitDice" placeholder="1d8" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="subpanel">
+                <h3>Hit Points</h3>
+                <div class="meterRow three">
+                  <label class="field">
+                    <span class="label">Max</span>
+                    <input type="number" min="0" step="1" data-path="combat.hpMax" data-cast="number" />
+                  </label>
+                  <label class="field">
+                    <span class="label">Current</span>
+                    <input type="number" min="0" step="1" data-path="combat.hpCurrent" data-cast="number" />
+                  </label>
+                  <label class="field">
+                    <span class="label">Temp</span>
+                    <input type="number" min="0" step="1" data-path="combat.hpTemp" data-cast="number" />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="healthGrid">
+              <div class="subpanel">
+                <h3>Death Saves</h3>
+                <div class="meterRow">
+                  <label class="field">
+                    <span class="label">Successes</span>
+                    <input type="number" min="0" max="3" step="1" data-path="combat.deathSuccesses" data-cast="number" />
+                  </label>
+                  <label class="field">
+                    <span class="label">Failures</span>
+                    <input type="number" min="0" max="3" step="1" data-path="combat.deathFailures" data-cast="number" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="subpanel">
+                <h3>Weapons & Armor</h3>
+                <textarea data-path="weaponsArmor" placeholder="Armor, weapons, shields, ammunition, or protection details."></textarea>
+              </div>
+
+              <div class="subpanel">
+                <h3>Tools & Languages</h3>
+                <textarea data-path="toolsLanguages" placeholder="Tool proficiencies, languages, kits, instruments, or vehicles."></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel checksPanel">
+            <p class="eyebrow">Checks</p>
+            <h2>Saving Throws</h2>
+            <p class="panelNote">Saving throws use a single proficiency toggle.</p>
+            <div class="bonusList" id="saveList"></div>
+          </section>
+        </div>
+      </div>
+
+      <div class="pairedBand roleSkillBand">
+        <section class="panel roleplayPanel">
+          <p class="eyebrow">Roleplay</p>
+          <h2>Personality</h2>
+          <div class="twoCol">
+            <label class="field">
+              <span class="label">Personality Traits</span>
+              <textarea data-path="personality.traits"></textarea>
+            </label>
+            <label class="field">
+              <span class="label">Ideals</span>
+              <textarea data-path="personality.ideals"></textarea>
+            </label>
+            <label class="field">
+              <span class="label">Bonds</span>
+              <textarea data-path="personality.bonds"></textarea>
+            </label>
+            <label class="field">
+              <span class="label">Flaws</span>
+              <textarea data-path="personality.flaws"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel skillsPanel">
+          <p class="eyebrow">Skills</p>
+          <h2>Skill Proficiencies</h2>
+          <p class="panelNote">Set each skill to none, proficient, or expertise.</p>
+          <div class="bonusList" id="skillList"></div>
+        </section>
+      </div>
+
+      <section class="panel span-6">
+        <p class="eyebrow">Offense</p>
+        <h2>Attacks And Spellcasting</h2>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Attack Bonus</th>
+                <th>Damage / Type</th>
+              </tr>
+            </thead>
+            <tbody id="attackRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel span-6 featuresPanel">
+        <p class="eyebrow">Class</p>
+        <h2>Features And Traits</h2>
+        <textarea data-path="featuresTraits" placeholder="Features, traits, feats, class resources, racial traits, or other rules text."></textarea>
+      </section>
+
+      <section class="panel span-12">
+        <p class="eyebrow">Inventory</p>
+        <h2>Equipment And Treasure</h2>
+
+        <div class="coins">
+          <label class="coinTile">
+            <span class="label">CP</span>
+            <input type="number" min="0" step="1" data-path="currency.cp" data-cast="number" />
+          </label>
+          <label class="coinTile">
+            <span class="label">SP</span>
+            <input type="number" min="0" step="1" data-path="currency.sp" data-cast="number" />
+          </label>
+          <label class="coinTile">
+            <span class="label">EP</span>
+            <input type="number" min="0" step="1" data-path="currency.ep" data-cast="number" />
+          </label>
+          <label class="coinTile">
+            <span class="label">GP</span>
+            <input type="number" min="0" step="1" data-path="currency.gp" data-cast="number" />
+          </label>
+          <label class="coinTile">
+            <span class="label">PP</span>
+            <input type="number" min="0" step="1" data-path="currency.pp" data-cast="number" />
+          </label>
+          <div class="coinTile total">
+            <span class="label">Listed Weight</span>
+            <div class="statValue" id="listedWeightDisplay">0</div>
+          </div>
+        </div>
+
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:80px;">Qty</th>
+                <th>Item</th>
+                <th style="width:140px;">Cost</th>
+                <th style="width:140px;">Weight</th>
+              </tr>
+            </thead>
+            <tbody id="equipmentRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel span-12">
+        <p class="eyebrow">Magic</p>
+        <h2>Spellcasting</h2>
+
+        <div class="spellHeader">
+          <label class="field">
+            <span class="label">Spellcasting Class</span>
+            <input type="text" data-path="spellcasting.className" />
+          </label>
+          <label class="field">
+            <span class="label">Spellcasting Ability</span>
+            <select data-path="spellcasting.ability">
+              <option value="">None</option>
+              <option value="str">STR</option>
+              <option value="dex">DEX</option>
+              <option value="con">CON</option>
+              <option value="int">INT</option>
+              <option value="wis">WIS</option>
+              <option value="cha">CHA</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="label">Save DC Override</span>
+            <input type="number" min="0" step="1" data-path="spellcasting.saveDcOverride" data-cast="number-or-empty" />
+          </label>
+          <label class="field">
+            <span class="label">Attack Bonus Override</span>
+            <input type="number" step="1" data-path="spellcasting.attackBonusOverride" data-cast="number-or-empty" />
+          </label>
+          <div class="coinTile total">
+            <span class="label">Active Save DC</span>
+            <div class="statValue" id="spellSaveDcLarge">—</div>
+          </div>
+          <div class="coinTile total">
+            <span class="label">Active Attack Bonus</span>
+            <div class="statValue" id="spellAttackBonusLarge">—</div>
+          </div>
+        </div>
+
+        <div class="spellbook" id="spellbookGrid"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="vendor/character-sheet-shared.js"></script>
+  <script>
+  (function () {
+    const Sheet = window.HELIX_CHARACTER_SHEET;
+    const abilityGrid = document.getElementById("abilityGrid");
+    const saveList = document.getElementById("saveList");
+    const skillList = document.getElementById("skillList");
+    const attackRows = document.getElementById("attackRows");
+    const equipmentRows = document.getElementById("equipmentRows");
+    const spellbookGrid = document.getElementById("spellbookGrid");
+    const btnPrint = document.getElementById("btnPrint");
+    const btnReset = document.getElementById("btnReset");
+    const proficiencyBonusDisplay = document.getElementById("proficiencyBonusDisplay");
+    const initiativeTotalDisplay = document.getElementById("initiativeTotalDisplay");
+    const passivePerceptionDisplay = document.getElementById("passivePerceptionDisplay");
+    const spellSaveDcDisplay = document.getElementById("spellSaveDcDisplay");
+    const spellAttackBonusDisplay = document.getElementById("spellAttackBonusDisplay");
+    const spellSaveDcLarge = document.getElementById("spellSaveDcLarge");
+    const spellAttackBonusLarge = document.getElementById("spellAttackBonusLarge");
+    const listedWeightDisplay = document.getElementById("listedWeightDisplay");
+
+    let data = Sheet.load();
+    let saveTimer = null;
+
+    function getByPath(target, path) {
+      return path.split(".").reduce(function (value, part) {
+        return value == null ? value : value[part];
+      }, target);
+    }
+
+    function setByPath(target, path, value) {
+      const parts = path.split(".");
+      let cursor = target;
+
+      for (let index = 0; index < parts.length - 1; index += 1) {
+        cursor = cursor[parts[index]];
+      }
+
+      cursor[parts[parts.length - 1]] = value;
+    }
+
+    function signed(value) {
+      return value >= 0 ? `+${value}` : `${value}`;
+    }
+
+    function fieldValue(element) {
+      const cast = element.dataset.cast || "string";
+
+      if (cast === "boolean") return element.checked;
+      if (cast === "number") return element.value === "" ? "" : Number(element.value);
+      if (cast === "number-or-empty") return element.value === "" ? "" : Number(element.value);
+      return element.value;
+    }
+
+    function queueSave() {
+      window.clearTimeout(saveTimer);
+      saveTimer = window.setTimeout(function () {
+        data = Sheet.save(data);
+      }, 120);
+    }
+
+    function refreshComputed() {
+      const normalized = Sheet.normalizeData(data);
+      const hasSpellSetup = Boolean(
+        normalized.spellcasting.ability ||
+        normalized.spellcasting.className ||
+        normalized.spellcasting.saveDcOverride !== "" ||
+        normalized.spellcasting.attackBonusOverride !== ""
+      );
+
+      proficiencyBonusDisplay.textContent = signed(Sheet.proficiencyBonus(normalized.meta.level));
+      initiativeTotalDisplay.textContent = signed(Sheet.initiativeTotal(normalized));
+      passivePerceptionDisplay.textContent = String(Sheet.passivePerception(normalized));
+
+      const spellDc = Sheet.spellSaveDc(normalized);
+      const spellAttack = Sheet.spellAttackBonus(normalized);
+      spellSaveDcDisplay.textContent = hasSpellSetup ? String(spellDc) : "—";
+      spellAttackBonusDisplay.textContent = hasSpellSetup ? signed(spellAttack) : "—";
+      spellSaveDcLarge.textContent = hasSpellSetup ? String(spellDc) : "—";
+      spellAttackBonusLarge.textContent = hasSpellSetup ? signed(spellAttack) : "—";
+      listedWeightDisplay.textContent = String(Sheet.totalEquipmentWeight(normalized));
+
+      for (const ability of Sheet.ABILITIES) {
+        const modNode = document.querySelector(`[data-mod-for="${ability.key}"]`);
+        if (modNode) modNode.textContent = signed(Sheet.abilityModifier(normalized.abilities[ability.key]));
+
+        const input = document.querySelector(`[data-path="abilities.${ability.key}"]`);
+        if (input) input.value = normalized.abilities[ability.key];
+      }
+
+      for (const ability of Sheet.ABILITIES) {
+        const bonusNode = document.querySelector(`[data-save-bonus="${ability.key}"]`);
+        if (bonusNode) bonusNode.textContent = signed(Sheet.savingThrowBonus(normalized, ability.key));
+      }
+
+      for (const skill of Sheet.SKILLS) {
+        const bonusNode = document.querySelector(`[data-skill-bonus="${skill.key}"]`);
+        if (bonusNode) bonusNode.textContent = signed(Sheet.skillBonus(normalized, skill.key));
+      }
+    }
+
+    function hydrateFields() {
+      for (const element of document.querySelectorAll("[data-path]")) {
+        const value = getByPath(data, element.dataset.path);
+
+        if (element.type === "checkbox") {
+          element.checked = Boolean(value);
+        } else if (element.tagName === "SELECT") {
+          element.value = value == null ? "" : String(value);
+        } else {
+          element.value = value == null ? "" : String(value);
+        }
+      }
+    }
+
+    function renderAbilityCards() {
+      for (const ability of Sheet.ABILITIES) {
+        const card = document.createElement("article");
+        card.className = "abilityCard";
+        card.innerHTML = `
+          <div class="abilityBadge">
+            <strong>${ability.short}</strong>
+            <span>${ability.label}</span>
+          </div>
+          <div class="abilityScore">
+            <label class="field">
+              <span class="label">Score</span>
+              <input type="number" min="1" max="30" step="1" data-path="abilities.${ability.key}" data-cast="number" />
+            </label>
+            <div class="modifier" data-mod-for="${ability.key}">+0</div>
+          </div>
+        `;
+        abilityGrid.appendChild(card);
+      }
+    }
+
+    function renderSavingThrows() {
+      for (const ability of Sheet.ABILITIES) {
+        const row = document.createElement("div");
+        row.className = "bonusRow";
+        row.innerHTML = `
+          <div>
+            <strong>${ability.label}</strong>
+            <div class="minor">${ability.short}</div>
+          </div>
+          <label class="saveToggle"><input type="checkbox" data-path="saves.${ability.key}" data-cast="boolean" /></label>
+          <div class="bonusScore" data-save-bonus="${ability.key}">+0</div>
+        `;
+        saveList.appendChild(row);
+      }
+    }
+
+    function renderSkills() {
+      for (const skill of Sheet.SKILLS) {
+        const row = document.createElement("div");
+        row.className = "bonusRow";
+        row.innerHTML = `
+          <div>
+            <strong>${skill.label}</strong>
+            <div class="minor">${skill.ability.toUpperCase()}</div>
+          </div>
+          <select data-path="skills.${skill.key}" data-cast="number">
+            <option value="0">None</option>
+            <option value="1">Prof.</option>
+            <option value="2">Expert.</option>
+          </select>
+          <div class="bonusScore" data-skill-bonus="${skill.key}">+0</div>
+        `;
+        skillList.appendChild(row);
+      }
+    }
+
+    function renderAttacks() {
+      for (let index = 0; index < Sheet.ATTACK_ROWS; index += 1) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><input type="text" data-path="attacks.${index}.name" /></td>
+          <td><input type="text" data-path="attacks.${index}.bonus" placeholder="+5" /></td>
+          <td><input type="text" data-path="attacks.${index}.damage" placeholder="1d8+3 slashing" /></td>
+        `;
+        attackRows.appendChild(row);
+      }
+    }
+
+    function renderEquipment() {
+      for (let index = 0; index < Sheet.EQUIPMENT_ROWS; index += 1) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><input type="number" min="0" step="1" data-path="equipment.${index}.qty" data-cast="number-or-empty" /></td>
+          <td><input type="text" data-path="equipment.${index}.item" /></td>
+          <td><input type="text" data-path="equipment.${index}.cost" /></td>
+          <td><input type="number" min="0" step="0.1" data-path="equipment.${index}.weight" data-cast="number-or-empty" /></td>
+        `;
+        equipmentRows.appendChild(row);
+      }
+    }
+
+    function renderSpellbook() {
+      for (const level of Sheet.SPELL_LEVELS) {
+        const card = document.createElement("article");
+        card.className = "spellCard";
+
+        const slotControls = level.slots ? `
+          <div class="slotGrid">
+            <label class="field">
+              <span class="label">Max Slots</span>
+              <input type="number" min="0" step="1" data-path="spellcasting.levels.${level.key}.maxSlots" data-cast="number-or-empty" />
+            </label>
+            <label class="field">
+              <span class="label">Used Slots</span>
+              <input type="number" min="0" step="1" data-path="spellcasting.levels.${level.key}.usedSlots" data-cast="number-or-empty" />
+            </label>
+          </div>
+        ` : "";
+
+        card.innerHTML = `
+          <div class="spellCardHead">
+            <h3>${level.label}</h3>
+          </div>
+          ${slotControls}
+          <label class="field">
+            <span class="label">Spells</span>
+            <textarea data-path="spellcasting.levels.${level.key}.spells" placeholder="List spells here, one per line if you prefer."></textarea>
+          </label>
+        `;
+        spellbookGrid.appendChild(card);
+      }
+    }
+
+    function initialize() {
+      renderAbilityCards();
+      renderSavingThrows();
+      renderSkills();
+      renderAttacks();
+      renderEquipment();
+      renderSpellbook();
+      hydrateFields();
+      refreshComputed();
+    }
+
+    document.addEventListener("input", function (event) {
+      const target = event.target;
+      if (!(target instanceof HTMLElement) || !target.matches("[data-path]")) return;
+
+      setByPath(data, target.dataset.path, fieldValue(target));
+      refreshComputed();
+      queueSave();
+    });
+
+    document.addEventListener("change", function (event) {
+      const target = event.target;
+      if (!(target instanceof HTMLElement) || !target.matches("[data-path]")) return;
+
+      setByPath(data, target.dataset.path, fieldValue(target));
+      refreshComputed();
+      queueSave();
+    });
+
+    btnPrint.addEventListener("click", function () {
+      window.print();
+    });
+
+    btnReset.addEventListener("click", function () {
+      if (!window.confirm("Clear the character sheet on this browser?")) return;
+      data = Sheet.defaultData();
+      Sheet.save(data);
+      hydrateFields();
+      refreshComputed();
+    });
+
+    initialize();
+  })();
+  </script>
+</body>
+</html>

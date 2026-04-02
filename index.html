@@ -1071,6 +1071,7 @@
             </p>
           </div>
           <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <a class="utilityLink" href="sheet.html">Character Sheet</a>
             <a class="utilityLink" href="#character-notes">Character Setup</a>
             <div class="smallnote">This document may be printed for submission.</div>
           </div>
@@ -1885,7 +1886,7 @@
         <div>
           <h3>Welcome to The Gloaming Line</h3>
           <div class="prepHeroCopy">
-            <p>Your Session 0 begins in Boston, April 2026. Your character has agreed to enter a restricted clinical program being run during HELIX week at Kallisto Biomedical's facilities. They are not walking into this blindly by accident; they had a reason to say yes, and that reason needs to matter.</p>
+            <p>Your Session 0 begins in Boston MA, USA, April 2026. Your character has agreed to enter a restricted clinical program being run during HELIX week at Kallisto Biomedical's facilities. They are not walking into this blindly by accident; they had a reason to say yes, and that reason needs to matter.</p>
             <p>Before you continue, decide what your character thinks this invitation means. Is it money, treatment, leverage, access, prestige, obligation, fear, a favor, a private lead, or a chance they cannot afford to lose? Decide who they care about, what they are hiding, what they stand to lose, and what they hope Boston will give them.</p>
             <p>Write whatever helps you inhabit them. Then, when the forms appear, answer everything in character. Do not optimize. Do not answer like a player trying to beat a quiz. Answer like someone making real choices with limited time, incomplete context, and something personal at stake.</p>
           </div>
@@ -1927,6 +1928,7 @@
             <div class="stageActions">
               <div class="smallnote">Fill this in, then continue to the invitation.</div>
               <div class="prepActions">
+                <a class="utilityLink" href="sheet.html">Open Character Sheet</a>
                 <button type="button" class="primary" id="btnContinuePrep">Continue to Invitation</button>
               </div>
             </div>
@@ -1936,9 +1938,11 @@
     </div>
   </div>
 
+  <script src="vendor/character-sheet-shared.js"></script>
   <script src="vendor/qrcode.js"></script>
   <script>
   (function () {
+    const CharacterSheet = window.HELIX_CHARACTER_SHEET || null;
     const form = document.getElementById("ceq");
     const prepOverlay = document.getElementById("prepOverlay");
     const characterBackstory = document.getElementById("characterBackstory");
@@ -2197,10 +2201,289 @@
       return url.toString();
     }
 
+    function formatPacketInline(value) {
+      const text = value == null ? "" : String(value).trim();
+      return escapeHtml(text || "—");
+    }
+
+    function formatPacketBlock(value) {
+      const text = value == null ? "" : String(value).trim();
+      return text ? escapeHtml(text).replace(/\n/g, "<br>") : "—";
+    }
+
+    function signedPacketNumber(value) {
+      const numeric = Number(value);
+      if (!Number.isFinite(numeric)) return "—";
+      return numeric >= 0 ? `+${numeric}` : `${numeric}`;
+    }
+
+    function packetRowHasContent(row) {
+      return Object.values(row || {}).some(value => String(value || "").trim() !== "");
+    }
+
+    function characterSheetHasContent(sheetData) {
+      if (!CharacterSheet || !sheetData) return false;
+      return JSON.stringify(CharacterSheet.normalizeData(sheetData)) !== JSON.stringify(CharacterSheet.defaultData());
+    }
+
+    function buildCharacterSheetSnapshotHtml(sheetData) {
+      if (!CharacterSheet) {
+        return `
+      <section class="packet-section">
+        <h2>Character Sheet</h2>
+        <p class="packet-copy">Character sheet data was unavailable on this device.</p>
+      </section>`;
+      }
+
+      if (!characterSheetHasContent(sheetData)) {
+        return `
+      <section class="packet-section">
+        <h2>Character Sheet</h2>
+        <p class="packet-copy">No saved character sheet was found for this browser.</p>
+      </section>`;
+      }
+
+      const normalized = CharacterSheet.normalizeData(sheetData);
+      const proficiency = CharacterSheet.proficiencyBonus(normalized.meta.level);
+      const hasSpellSetup = Boolean(
+        normalized.spellcasting.ability ||
+        normalized.spellcasting.className ||
+        normalized.spellcasting.saveDcOverride !== "" ||
+        normalized.spellcasting.attackBonusOverride !== ""
+      );
+      const spellDc = CharacterSheet.spellSaveDc(normalized);
+      const spellAttack = CharacterSheet.spellAttackBonus(normalized);
+
+      const summaryFields = [
+        ...CharacterSheet.META_FIELDS.map(field => ({
+          label: field.label,
+          value: normalized.meta[field.key]
+        })),
+        { label: "Inspiration", value: normalized.inspiration ? "Yes" : "No" }
+      ].map(entry => `
+          <div class="packetSheetField">
+            <span>${escapeHtml(entry.label)}</span>
+            <strong>${formatPacketInline(entry.value)}</strong>
+          </div>
+        `).join("");
+
+      const abilityCards = CharacterSheet.ABILITIES.map(ability => `
+          <div class="packetAbilityCard">
+            <span>${ability.short}</span>
+            <strong>${formatPacketInline(normalized.abilities[ability.key])}</strong>
+            <em>${signedPacketNumber(CharacterSheet.abilityModifier(normalized.abilities[ability.key]))}</em>
+          </div>
+        `).join("");
+
+      const combatFields = [
+        { label: "Proficiency Bonus", value: signedPacketNumber(proficiency) },
+        { label: "Armor Class", value: formatPacketInline(normalized.combat.armorClass) },
+        { label: "Initiative", value: signedPacketNumber(CharacterSheet.initiativeTotal(normalized)) },
+        { label: "Speed", value: formatPacketInline(normalized.combat.speed) },
+        { label: "Passive Perception", value: formatPacketInline(CharacterSheet.passivePerception(normalized)) },
+        { label: "Hit Dice", value: formatPacketInline(normalized.combat.hitDice) },
+        { label: "HP Max", value: formatPacketInline(normalized.combat.hpMax) },
+        { label: "HP Current", value: formatPacketInline(normalized.combat.hpCurrent) },
+        { label: "HP Temp", value: formatPacketInline(normalized.combat.hpTemp) },
+        { label: "Death Saves", value: `${formatPacketInline(normalized.combat.deathSuccesses)} / ${formatPacketInline(normalized.combat.deathFailures)}` },
+        { label: "Spell Save DC", value: hasSpellSetup ? String(spellDc) : "—" },
+        { label: "Spell Attack", value: hasSpellSetup ? signedPacketNumber(spellAttack) : "—" }
+      ].map(entry => `
+          <div class="packetSheetField">
+            <span>${escapeHtml(entry.label)}</span>
+            <strong>${entry.value}</strong>
+          </div>
+        `).join("");
+
+      const saveRows = CharacterSheet.ABILITIES.map(ability => `
+            <div class="packetListRow">
+              <span>${ability.label}</span>
+              <em>${normalized.saves[ability.key] ? "Proficient" : "Base"}</em>
+              <strong>${signedPacketNumber(CharacterSheet.savingThrowBonus(normalized, ability.key))}</strong>
+            </div>
+          `).join("");
+
+      const proficiencyLabel = ["None", "Proficient", "Expertise"];
+      const skillRows = CharacterSheet.SKILLS.map(skill => `
+            <div class="packetListRow">
+              <span>${escapeHtml(skill.label)}</span>
+              <em>${escapeHtml(proficiencyLabel[normalized.skills[skill.key]] || "None")}</em>
+              <strong>${signedPacketNumber(CharacterSheet.skillBonus(normalized, skill.key))}</strong>
+            </div>
+          `).join("");
+
+      const personalityFields = CharacterSheet.PERSONALITY_FIELDS.map(field => `
+          <div class="packetSheetBlock">
+            <h4>${escapeHtml(field.label)}</h4>
+            <div class="packetSheetText">${formatPacketBlock(normalized.personality[field.key])}</div>
+          </div>
+        `).join("");
+
+      const attacks = normalized.attacks.filter(packetRowHasContent);
+      const attackRows = (attacks.length ? attacks : [{ name: "—", bonus: "—", damage: "No attacks recorded." }]).map(attack => `
+            <tr>
+              <td>${formatPacketInline(attack.name)}</td>
+              <td>${formatPacketInline(attack.bonus)}</td>
+              <td>${formatPacketInline(attack.damage)}</td>
+            </tr>
+          `).join("");
+
+      const equipment = normalized.equipment.filter(packetRowHasContent);
+      const equipmentRows = (equipment.length ? equipment : [{ qty: "—", item: "No equipment recorded.", cost: "—", weight: "—" }]).map(item => `
+            <tr>
+              <td>${formatPacketInline(item.qty)}</td>
+              <td>${formatPacketInline(item.item)}</td>
+              <td>${formatPacketInline(item.cost)}</td>
+              <td>${formatPacketInline(item.weight)}</td>
+            </tr>
+          `).join("");
+
+      const currencyFields = Object.entries(normalized.currency).map(([key, value]) => `
+          <div class="packetCoin">
+            <span>${escapeHtml(key.toUpperCase())}</span>
+            <strong>${formatPacketInline(value)}</strong>
+          </div>
+        `).join("");
+
+      const spellCards = CharacterSheet.SPELL_LEVELS.map(level => {
+        const entry = normalized.spellcasting.levels[level.key];
+        const hasContent = String(entry.spells || "").trim() !== "" ||
+          String(entry.maxSlots || "").trim() !== "" ||
+          String(entry.usedSlots || "").trim() !== "";
+
+        if (!hasContent) return "";
+
+        return `
+          <div class="packetSpellCard">
+            <h4>${escapeHtml(level.label)}</h4>
+            ${level.slots ? `
+              <div class="packetSpellSlots">
+                <span>Max ${formatPacketInline(entry.maxSlots)}</span>
+                <span>Used ${formatPacketInline(entry.usedSlots)}</span>
+              </div>` : ""}
+            <div class="packetSheetText">${formatPacketBlock(entry.spells)}</div>
+          </div>
+        `;
+      }).filter(Boolean).join("");
+
+      return `
+      <section class="packet-section">
+        <h2>Character Sheet</h2>
+
+        <div class="packetSheet">
+          <div class="packetSheetGroup">
+            <h3>Summary</h3>
+            <div class="packetSheetGrid packetSheetSummary">${summaryFields}</div>
+          </div>
+
+          <div class="packetSheetGroup">
+            <h3>Abilities</h3>
+            <div class="packetAbilityGrid">${abilityCards}</div>
+          </div>
+
+          <div class="packetSheetGroup">
+            <h3>Combat</h3>
+            <div class="packetSheetGrid packetSheetCombat">${combatFields}</div>
+          </div>
+
+          <div class="packetSheetColumns">
+            <div class="packetSheetGroup">
+              <h3>Saving Throws</h3>
+              <div class="packetList">${saveRows}</div>
+            </div>
+            <div class="packetSheetGroup">
+              <h3>Skills</h3>
+              <div class="packetList">${skillRows}</div>
+            </div>
+          </div>
+
+          <div class="packetSheetGroup">
+            <h3>Personality</h3>
+            <div class="packetSheetGrid packetSheetPersonality">${personalityFields}</div>
+          </div>
+
+          <div class="packetSheetColumns">
+            <div class="packetSheetGroup">
+              <h3>Attacks & Spellcasting</h3>
+              <div class="packetTableWrap">
+                <table class="packetTable">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Attack Bonus</th>
+                      <th>Damage / Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>${attackRows}</tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="packetSheetGroup">
+              <h3>Traits & Proficiencies</h3>
+              <div class="packetSheetGrid packetSheetTraits">
+                <div class="packetSheetBlock">
+                  <h4>Weapons & Armor</h4>
+                  <div class="packetSheetText">${formatPacketBlock(normalized.weaponsArmor)}</div>
+                </div>
+                <div class="packetSheetBlock">
+                  <h4>Tools & Languages</h4>
+                  <div class="packetSheetText">${formatPacketBlock(normalized.toolsLanguages)}</div>
+                </div>
+                <div class="packetSheetBlock">
+                  <h4>Features & Traits</h4>
+                  <div class="packetSheetText">${formatPacketBlock(normalized.featuresTraits)}</div>
+                </div>
+                <div class="packetSheetBlock">
+                  <h4>Spellcasting Setup</h4>
+                  <div class="packetSheetText">
+                    Class: ${formatPacketInline(normalized.spellcasting.className)}<br>
+                    Ability: ${formatPacketInline(normalized.spellcasting.ability ? normalized.spellcasting.ability.toUpperCase() : "")}<br>
+                    Save DC: ${hasSpellSetup ? String(spellDc) : "—"}<br>
+                    Attack Bonus: ${hasSpellSetup ? signedPacketNumber(spellAttack) : "—"}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="packetSheetGroup">
+            <h3>Equipment & Treasure</h3>
+            <div class="packetCoins">${currencyFields}
+              <div class="packetCoin packetCoinWide">
+                <span>Listed Weight</span>
+                <strong>${formatPacketInline(CharacterSheet.totalEquipmentWeight(normalized))}</strong>
+              </div>
+            </div>
+            <div class="packetTableWrap">
+              <table class="packetTable">
+                <thead>
+                  <tr>
+                    <th>Qty</th>
+                    <th>Item</th>
+                    <th>Cost</th>
+                    <th>Weight</th>
+                  </tr>
+                </thead>
+                <tbody>${equipmentRows}</tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="packetSheetGroup">
+            <h3>Spellbook</h3>
+            ${spellCards ? `<div class="packetSpellGrid">${spellCards}</div>` : `<p class="packet-copy">No spells recorded.</p>`}
+          </div>
+        </div>
+      </section>`;
+    }
+
     function buildCharacterPacketHtml() {
       const fullName = `${val("name_given")} ${val("name_family")}`.trim() || "Pending attendee";
       const packetUrl = buildPacketUrl();
       const backstory = (characterBackstory.value || "").trim();
+      const sheetData = CharacterSheet ? CharacterSheet.load(window.location.pathname) : null;
+      const sheetSnapshot = buildCharacterSheetSnapshotHtml(sheetData);
 
       return `<!doctype html>
 <html lang="en">
@@ -2297,6 +2580,200 @@
       border-radius:12px;
       white-space:pre-wrap;
     }
+    .packetSheet{
+      display:grid;
+      gap:20px;
+    }
+    .packetSheetGroup h3{
+      margin:0 0 12px;
+      color:#223244;
+      font:700 16px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.03em;
+    }
+    .packetSheetGrid{
+      display:grid;
+      gap:10px;
+    }
+    .packetSheetSummary{
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+    }
+    .packetSheetCombat{
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+    }
+    .packetSheetPersonality,
+    .packetSheetTraits{
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+    .packetSheetField,
+    .packetSheetBlock,
+    .packetAbilityCard,
+    .packetCoin,
+    .packetSpellCard{
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:var(--surface);
+    }
+    .packetSheetField{
+      padding:12px 14px;
+      display:grid;
+      gap:6px;
+    }
+    .packetSheetField span,
+    .packetCoin span{
+      color:var(--muted);
+      font:700 11px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+    .packetSheetField strong,
+    .packetCoin strong{
+      font:700 16px/1.2 ui-sans-serif,system-ui,sans-serif;
+      color:var(--ink);
+    }
+    .packetAbilityGrid{
+      display:grid;
+      grid-template-columns:repeat(6, minmax(0, 1fr));
+      gap:10px;
+    }
+    .packetAbilityCard{
+      padding:14px 12px;
+      display:grid;
+      gap:8px;
+      text-align:center;
+    }
+    .packetAbilityCard span{
+      color:var(--muted);
+      font:800 11px/1 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .packetAbilityCard strong{
+      font:800 24px/1 ui-sans-serif,system-ui,sans-serif;
+      color:var(--ink);
+    }
+    .packetAbilityCard em{
+      color:#17395b;
+      font-style:normal;
+      font-weight:800;
+    }
+    .packetSheetColumns{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:16px;
+    }
+    .packetList{
+      display:grid;
+      gap:8px;
+    }
+    .packetListRow{
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) auto auto;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:var(--surface);
+    }
+    .packetListRow span{
+      font-weight:700;
+    }
+    .packetListRow em{
+      color:var(--muted);
+      font-style:normal;
+      font-size:13px;
+    }
+    .packetListRow strong{
+      color:#17395b;
+    }
+    .packetSheetBlock{
+      padding:14px;
+    }
+    .packetSheetBlock h4,
+    .packetSpellCard h4{
+      margin:0 0 10px;
+      color:#223244;
+      font:700 13px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .packetSheetText{
+      color:var(--ink);
+      white-space:normal;
+      line-height:1.55;
+    }
+    .packetTableWrap{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:var(--surface);
+    }
+    .packetTable{
+      width:100%;
+      min-width:560px;
+      border-collapse:collapse;
+    }
+    .packetTable th,
+    .packetTable td{
+      padding:10px 12px;
+      border-top:1px solid var(--line);
+      text-align:left;
+    }
+    .packetTable th{
+      border-top:0;
+      background:#eef2f7;
+      color:var(--muted);
+      font:700 11px/1.2 ui-sans-serif,system-ui,sans-serif;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+    .packetCoins{
+      display:grid;
+      grid-template-columns:repeat(6, minmax(0, 1fr));
+      gap:10px;
+      margin-bottom:12px;
+    }
+    .packetCoin{
+      padding:12px 14px;
+      display:grid;
+      gap:6px;
+    }
+    .packetCoinWide{
+      grid-column:span 2;
+      background:#eef4fb;
+    }
+    .packetSpellGrid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
+    }
+    .packetSpellCard{
+      padding:14px;
+    }
+    .packetSpellSlots{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+    }
+    @media (max-width: 920px){
+      .packetSheetSummary,
+      .packetSheetCombat,
+      .packetSheetPersonality,
+      .packetSheetTraits,
+      .packetSheetColumns,
+      .packetCoins,
+      .packetSpellGrid,
+      .packetAbilityGrid{
+        grid-template-columns:1fr;
+      }
+      .packetCoinWide{
+        grid-column:auto;
+      }
+    }
     @media print{
       body{
         padding:0;
@@ -2330,6 +2807,8 @@
         <h2>Character Backstory</h2>
         <div class="packet-backstory">${escapeHtml(backstory || "No backstory text provided.")}</div>
       </section>
+
+      ${sheetSnapshot}
     </div>
   </article>
 </body>
