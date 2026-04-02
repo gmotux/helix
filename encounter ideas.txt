@@ -1,0 +1,23 @@
+Tests
+----------------------
+1. Unending spawns that aggro aggresive players. Ignore or CC to win.
+2. Spellslot transfer mechanic (sin transfer). Protect a ritual caster from spawns and give them sin.
+3. Underground 50x50 island (the incinerator). surrounded by lava. every round 1d4 spawns (combine with "1"). loot everywhere. players need to climb up a chain.
+4. Scenario: Damage Control (Inspired by ThorukDuckSlayer)
+    Objective: Minimize the damage to a town/area/populace by a nigh-unstoppable force.
+    Setup: "[A] Tarrasque (or your own kaiju) is rampaging, the party efforts to hurt it mean nothing. Their goal is to limit the damage - distract the beast and lure it away." Note: this could be any sort of destructive force, so long as it can react to/be guided by stimuli provided by the player characters.
+    In Play: Perhaps there is something in the town that is luring the cause of destruction to the town, and it needs to be moved out to pull the creature away. Or a damage threshold needs to be reached within one round to distract it enough to target the party instead. Maybe creating land barriers to slow/stop the advance of the creature (imagine what would be needed to create difficult terrain for a Tarrasque).
+    Ancillary Skill Checks: Depending on the threat you could have anything from Animal Handling to Arcana here to understand the nature of the threat and how to divert it.
+5.Scenario: Stop the Spell
+    Objective: The evil wizard is completing a ritual that will cast a miles-wide "Power Word Kill" spell, thus sacrificing enough lives to kick off the apocalypse. You can kill the wizard, but any method of stopping them from enacting this ritual will suffice (pulling them off of the pedestal, restraining them, etc... just keep in mind that any temporary effect can just lead to the wizard resuming the ritual if they break free).
+    Setup: The party begins at the entrance of the ritual chamber. The place is in ruins so broken columns and rough terrain abound. The encounter begins with the evil wizard beginning the ritual and summoning a group of zombies between them and the players.
+    In Play: At the top of every round 2d4 zombies spawn around the players. Additionally at the top of every round a line of necrotic fire crosses in front of/behind the wizard. When completed it will look like a 5-pointed star and the spell will be complete (objective failed, the party dies). This necrotic fire functions as a modified Wall of Fire spell that deals necrotic damage instead of fire, and also makes it harder to attack/approach the wizard.
+    Ancillary Skill Checks: Any rough terrain bypassing could be handled with Acrobatics checks, as well as any abilities to navigate over/through the fire. 
+
+Boss fights
+-------------
+Replicator*
+At 75%, he splits into 3 replicator clones which may or may not (unsure) aggro randomly on group members. At 25%, they each split into 4 spider droids. The basic strategy is to burn the boss, and then burn the 3 replicators one at a time.
+Darth Malgus(khun clan member - lightning affiliate)
+He has a huge pushback, so position accordingly. He can leap to players far away that have aggro and if you are close, he will occasionally jump in the air and land, hitting everyone around him for moderate damage. He casts an ability called Doubt which targets a player at random. After a short time, the target will be hit with an 8 second stun. Once it expires, the rest of the party is force choked for a good 15 seconds and the target is left to fight Malgus alone. Healers can heal through it, DPS should kite in a circle and tanks can likely take him without issue. At 50% health and 20% health, he casts Unlimited Power with a 2-3 second cast time. The group will wipe if it isn’t interrupted. At 10% health, he stops taking damage and casts Force Lighting until the group wipes or he dies. Burn him quickly.
+

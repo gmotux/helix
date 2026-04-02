@@ -1,0 +1,1959 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HELIX Reference</title>
+  <style>
+    :root{
+      --bg:#edf2f6;
+      --panel:#fbfdff;
+      --ink:#101923;
+      --muted:#5b6876;
+      --line:#d5dde7;
+      --teal:#177f79;
+      --blue:#214a97;
+      --shadow:0 10px 28px rgba(10,24,40,.08);
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 460px at 0% 0%, rgba(23,127,121,.08), transparent 60%),
+        radial-gradient(920px 520px at 100% 0%, rgba(33,74,151,.07), transparent 60%),
+        var(--bg);
+      color:var(--ink);
+      font:14px/1.45 Arial, Helvetica, sans-serif;
+    }
+
+    .wrap{
+      width:min(1120px, calc(100% - 28px));
+      margin:20px auto 28px;
+    }
+
+    .topbar{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:12px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:linear-gradient(135deg, rgba(33,74,151,.08), rgba(23,127,121,.07)), var(--panel);
+      box-shadow:var(--shadow);
+    }
+
+    h1,h2,h3,p{
+      margin:0;
+    }
+
+    h1{
+      font-size:24px;
+      line-height:1.1;
+    }
+
+    .sub{
+      margin-top:4px;
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .tagRow{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .tag{
+      padding:5px 9px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.78);
+      color:var(--muted);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12, minmax(0, 1fr));
+      gap:12px;
+    }
+
+    .panel{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--panel);
+      box-shadow:var(--shadow);
+      padding:14px 16px;
+    }
+
+    .span-12{ grid-column:span 12; }
+    .span-8{ grid-column:span 8; }
+    .span-6{ grid-column:span 6; }
+    .span-4{ grid-column:span 4; }
+
+    .eyebrow{
+      margin-bottom:8px;
+      color:var(--teal);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    h2{
+      margin-bottom:10px;
+      font-size:18px;
+      line-height:1.15;
+    }
+
+    h3{
+      margin-bottom:8px;
+      font-size:13px;
+      line-height:1.2;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--blue);
+    }
+
+    .keyline{
+      display:grid;
+      gap:8px;
+    }
+
+    .kv{
+      display:grid;
+      grid-template-columns:150px minmax(0, 1fr);
+      gap:10px;
+      align-items:start;
+      padding-top:8px;
+      border-top:1px solid var(--line);
+    }
+
+    .kv:first-child{
+      padding-top:0;
+      border-top:0;
+    }
+
+    .k{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .v{
+      color:var(--ink);
+    }
+
+    .cols{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:10px;
+    }
+
+    .box{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 11px;
+      background:#fff;
+    }
+
+    .box p + p{
+      margin-top:6px;
+    }
+
+    ul{
+      margin:0;
+      padding-left:18px;
+    }
+
+    li + li{
+      margin-top:6px;
+    }
+
+    .npc{
+      display:grid;
+      gap:8px;
+    }
+
+    .npcCard{
+      border-top:1px solid var(--line);
+      padding-top:8px;
+    }
+
+    .npcCard:first-child{
+      border-top:0;
+      padding-top:0;
+    }
+
+    .npcHead{
+      display:flex;
+      gap:10px;
+      align-items:baseline;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-bottom:4px;
+    }
+
+    .role{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .panelLead{
+      margin-bottom:12px;
+      color:var(--muted);
+    }
+
+    .sourceLinks{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .sourceLinks a{
+      color:var(--blue);
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .sourceLinks a:hover{
+      text-decoration:underline;
+    }
+
+    .rosterGrid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+    }
+
+    .staffCard{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 11px;
+      background:#fff;
+      transition:border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+      scroll-margin-top:20px;
+    }
+
+    .staffCard p + p{
+      margin-top:4px;
+    }
+
+    .staffCard.is-focus,
+    .staffCard:target{
+      border-color:var(--blue);
+      box-shadow:0 0 0 3px rgba(33,74,151,.14);
+      transform:translateY(-1px);
+    }
+
+    .roomDeck{
+      display:grid;
+      gap:12px;
+    }
+
+    .roomGroup{
+      border-top:1px solid var(--line);
+      padding-top:10px;
+    }
+
+    .roomGroup:first-child{
+      border-top:0;
+      padding-top:0;
+    }
+
+    .roomGroup h3{
+      margin-bottom:6px;
+    }
+
+    .roomLinks{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .roomLink{
+      appearance:none;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:6px 10px;
+      background:#fff;
+      color:var(--blue);
+      font:700 12px/1 Arial, Helvetica, sans-serif;
+      cursor:pointer;
+      box-shadow:var(--shadow2);
+    }
+
+    .roomLink:hover{
+      border-color:var(--blue);
+      transform:translateY(-1px);
+    }
+
+    .roomLink.is-focus,
+    .roomLink:target{
+      border-color:var(--blue);
+      box-shadow:0 0 0 3px rgba(33,74,151,.14);
+      transform:translateY(-1px);
+    }
+
+    .roomLink.area{
+      color:var(--teal);
+    }
+
+    dialog.roomDialog{
+      width:min(760px, calc(100% - 28px));
+      max-width:760px;
+      border:0;
+      padding:0;
+      border-radius:20px;
+      box-shadow:0 24px 64px rgba(10,24,40,.28);
+      overflow:hidden;
+    }
+
+    dialog.roomDialog::backdrop{
+      background:rgba(10,24,40,.42);
+      backdrop-filter:blur(4px);
+    }
+
+    .dialogInner{
+      padding:16px 18px 18px;
+      background:var(--panel);
+    }
+
+    .dialogTop{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      justify-content:space-between;
+      margin-bottom:12px;
+    }
+
+    .dialogTop h3{
+      margin-bottom:4px;
+      font-size:18px;
+      color:var(--ink);
+      letter-spacing:.02em;
+      text-transform:none;
+    }
+
+    .dialogMeta{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .dialogClose{
+      appearance:none;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--ink);
+      border-radius:12px;
+      padding:8px 10px;
+      font:700 12px/1 Arial, Helvetica, sans-serif;
+      cursor:pointer;
+    }
+
+    .dialogGrid{
+      display:grid;
+      gap:10px;
+    }
+
+    .detailBlock{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:11px 12px;
+      background:#fff;
+    }
+
+    .detailBlock h4{
+      margin:0 0 6px;
+      color:var(--blue);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .detailBlock ul{
+      margin:0;
+      padding-left:18px;
+    }
+
+    .detailBlock li + li{
+      margin-top:5px;
+    }
+
+    .npcJump{
+      color:var(--blue);
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .npcJump:hover{
+      text-decoration:underline;
+    }
+
+    .roomJump{
+      color:var(--blue);
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .roomJump:hover{
+      text-decoration:underline;
+    }
+
+    .floorMapRoot{
+      margin-bottom:14px;
+    }
+
+    .mapGuide{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .mapGuide strong{
+      color:var(--ink);
+    }
+
+    .floorMapShell{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(245,249,252,.98));
+      padding:12px;
+      overflow:hidden;
+    }
+
+    .floorMapFigure{
+      position:relative;
+      margin:0;
+      border-radius:12px;
+      background:#fff;
+      box-shadow:inset 0 0 0 1px rgba(16,25,35,.06);
+    }
+
+    .floorMapImage{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:12px;
+    }
+
+    .floorMapLayer{
+      position:absolute;
+      inset:0;
+    }
+
+    .floorHotspot{
+      position:absolute;
+      left:calc(var(--x) * 1%);
+      top:calc(var(--y) * 1%);
+      width:calc(var(--w) * 1%);
+      height:calc(var(--h) * 1%);
+      border:1px solid transparent;
+      border-radius:8px;
+      background:transparent;
+      cursor:pointer;
+      transition:border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
+    }
+
+    .floorHotspot:hover{
+      border-color:rgba(33,74,151,.42);
+      background:rgba(33,74,151,.08);
+    }
+
+    .floorHotspot.area:hover{
+      border-color:rgba(23,127,121,.46);
+      background:rgba(23,127,121,.08);
+    }
+
+    .floorHotspot.is-focus{
+      border-color:rgba(33,74,151,.82);
+      background:rgba(33,74,151,.12);
+      box-shadow:0 0 0 2px rgba(33,74,151,.16);
+    }
+
+    .floorHotspot.area.is-focus{
+      border-color:rgba(23,127,121,.82);
+      background:rgba(23,127,121,.12);
+      box-shadow:0 0 0 2px rgba(23,127,121,.16);
+    }
+
+    .staffChips{
+      position:absolute;
+      left:4px;
+      right:4px;
+      bottom:4px;
+      display:flex;
+      gap:4px;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+      align-items:flex-end;
+      pointer-events:none;
+    }
+
+    .staffChip{
+      display:inline-flex;
+      align-items:center;
+      min-height:18px;
+      max-width:100%;
+      padding:2px 5px;
+      border:1px solid rgba(33,74,151,.22);
+      border-radius:999px;
+      background:rgba(255,255,255,.94);
+      color:var(--blue);
+      font:700 9px/1 Arial, Helvetica, sans-serif;
+      letter-spacing:.03em;
+      text-decoration:none;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      pointer-events:auto;
+    }
+
+    .staffChip.more{
+      border-color:rgba(16,25,35,.12);
+      color:var(--muted);
+    }
+
+    .staffChip:hover{
+      border-color:rgba(33,74,151,.44);
+      text-decoration:none;
+    }
+
+    .floorLegend{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .legendTag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 8px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      color:var(--muted);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+
+    .legendSwatch{
+      width:12px;
+      height:12px;
+      border-radius:4px;
+      background:rgba(33,74,151,.12);
+      border:1px solid rgba(33,74,151,.34);
+    }
+
+    .legendSwatch.area{
+      background:rgba(23,127,121,.1);
+      border-color:rgba(23,127,121,.34);
+    }
+
+    .legendSwatch.chip{
+      width:auto;
+      min-width:12px;
+      padding:0 4px;
+      border-radius:999px;
+      background:#fff;
+      color:var(--blue);
+      font:700 9px/12px Arial, Helvetica, sans-serif;
+      text-align:center;
+    }
+
+    @media (max-width: 920px){
+      .span-8,
+      .span-6,
+      .span-4{
+        grid-column:span 12;
+      }
+
+      .cols{
+        grid-template-columns:1fr;
+      }
+
+      .kv{
+        grid-template-columns:1fr;
+        gap:4px;
+      }
+
+      .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .tagRow{
+        justify-content:flex-start;
+      }
+
+      .rosterGrid{
+        grid-template-columns:1fr;
+      }
+
+      .floorMapShell{
+        padding:8px;
+      }
+
+      .staffChip{
+        font-size:8px;
+        padding:2px 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="topbar">
+      <div>
+        <h1>HELIX Reference</h1>
+        <p class="sub">Kallisto Biomedical dossier</p>
+      </div>
+      <div class="tagRow">
+        <span class="tag">Disaster medicine</span>
+        <span class="tag">Continuity planning</span>
+        <span class="tag">Human adaptation</span>
+        <span class="tag">Internal fracture</span>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="panel span-8">
+        <div class="eyebrow">Identity</div>
+        <h2>Kallisto Biomedical</h2>
+        <div class="keyline">
+          <div class="kv">
+            <div class="k">Public Face</div>
+            <div class="v">A premium biomedical firm focused on adaptive therapies, emergency response bioengineering, resilience systems, neural recovery, and clinical innovation.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Real Nature</div>
+            <div class="v">A convergence platform joining disaster medicine, municipal continuity planning, private capital, black-budget biosystems work, and post-human theory under one institution.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Core Premise</div>
+            <div class="v">Conventional institutions and conventional human physiology are not sufficient for the urban crises Kallisto believes are already emerging.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Method</div>
+            <div class="v">Selective consent, compartmentalization, aggressive field testing, and emergency logic that permits irreversible intervention.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel span-4">
+        <div class="eyebrow">Practical Read</div>
+        <h2>Institutional Tone</h2>
+        <ul>
+          <li>Clinical rather than theatrical.</li>
+          <li>Sincere about survival, ruthless about tradeoffs.</li>
+          <li>Capable of care and exploitation at the same time.</li>
+          <li>Internally divided, never fully unified.</li>
+        </ul>
+      </section>
+
+      <section class="panel span-12">
+        <div class="eyebrow">Motivations</div>
+        <div class="cols">
+          <article class="box">
+            <h3>Institutional Goal</h3>
+            <p>Build continuity tools for systemic collapse: medical, civic, and biological.</p>
+            <p>Profit matters, but survival legitimacy matters more.</p>
+          </article>
+          <article class="box">
+            <h3>Fear</h3>
+            <p>That the coming crises will outpace law, medicine, and infrastructure before anyone is willing to act.</p>
+          </article>
+          <article class="box">
+            <h3>Blind Spot</h3>
+            <p>Belief that being early, secretive, and smarter than everyone else justifies crossing thresholds no public institution could survive politically.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel span-12">
+        <div class="eyebrow">Internal Structure</div>
+        <div class="cols">
+          <article class="box">
+            <h3>Preservationists</h3>
+            <p>Keep institutions functional.</p>
+            <p>Use biotech as shield, stabilizer, and continuity instrument.</p>
+            <p>Willing to authorize extreme measures if collapse appears imminent.</p>
+          </article>
+          <article class="box">
+            <h3>Adaptationists</h3>
+            <p>Change humans fast enough to survive new conditions.</p>
+            <p>View baseline humanity as too fragile for the environment ahead.</p>
+            <p>Sound brutally practical rather than openly cruel.</p>
+          </article>
+          <article class="box">
+            <h3>Transcendents</h3>
+            <p>Engineer a successor state of human life.</p>
+            <p>View the crisis as proof that inherited humanity is an obsolete base model.</p>
+            <p>Most likely to embrace irreversible transformation as desirable.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel span-6">
+        <div class="eyebrow">Primary Theater</div>
+        <h2>Boston Operational Core</h2>
+        <div class="keyline">
+          <div class="kv">
+            <div class="k">Helix Tower</div>
+            <div class="v">Seaport District, Boston. Public-facing summit venue, executive floors, donor relations, and demonstration spaces.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Orpheus Annex</div>
+            <div class="v">Longwood Medical Area, Boston. Restricted wet-lab and recovery complex embedded near the city's hospital and research corridor.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel span-6">
+        <div class="eyebrow">External Network</div>
+        <h2>Global Operational Footprint</h2>
+        <div class="keyline">
+          <div class="kv">
+            <div class="k">London</div>
+            <div class="v">Canary Wharf. Regulatory, legal, and donor relations hub tied to European health and security partners.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Geneva</div>
+            <div class="v">Right-bank international district. Policy office shaping ethics language, humanitarian access, and cross-border legitimacy.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Singapore</div>
+            <div class="v">One-North biotech corridor. Supply-chain analytics, cold-chain routing, procurement, and manufacturing coordination.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Reykjavik</div>
+            <div class="v">Harbor research zone. Remote biostorage, continuity archive, and low-profile genomic vaulting outside major population density.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Nairobi</div>
+            <div class="v">Upper Hill. Field epidemiology, crisis medicine training, and deployment planning for unstable urban environments.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Sydney</div>
+            <div class="v">Macquarie Park. Neural recovery, trauma rehab, and long-cycle subject monitoring.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Dubai</div>
+            <div class="v">Dubai Healthcare City. Finance, sovereign partnerships, discreet capital movement, and deniable procurement.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel span-6">
+        <div class="eyebrow">Important NPCs</div>
+        <h2>Kallisto Figures</h2>
+        <div class="npc">
+          <article class="npcCard">
+            <div class="npcHead">
+              <h3>Dr. Elara Voss</h3>
+              <div class="role">Chief Executive Officer</div>
+            </div>
+            <p>Public architect of Kallisto’s legitimacy. Calm, immaculate, and impossible to read under pressure.</p>
+            <p>Drive: prove that political caution kills more people than radical intervention.</p>
+          </article>
+
+          <article class="npcCard">
+            <div class="npcHead">
+              <h3>Dr. Ilias Vale</h3>
+              <div class="role">Director of Adaptive Systems</div>
+            </div>
+            <p>Leading Adaptationist voice. Brilliant, direct, and unsettlingly honest about acceptable loss.</p>
+            <p>Drive: produce survivable humans before the environment makes the argument for him.</p>
+          </article>
+
+          <article class="npcCard">
+            <div class="npcHead">
+              <h3>Maris Chen</h3>
+              <div class="role">Continuity Operations Lead</div>
+            </div>
+            <p>Former municipal emergency planner folded into Kallisto’s command structure.</p>
+            <p>Drive: preserve order long enough that something worth saving remains.</p>
+          </article>
+
+          <article class="npcCard">
+            <div class="npcHead">
+              <h3>Dr. Sabine Orlov</h3>
+              <div class="role">Director of Clinical Ethics</div>
+            </div>
+            <p>Public ethics lead, regulator-facing witness, and internal architect of Kallisto's consent language.</p>
+            <p>Drive: keep radical programs politically survivable by deciding which truths can be disclosed and which cannot.</p>
+          </article>
+
+          <article class="npcCard">
+            <div class="npcHead">
+              <h3>Captain Nia Serrat</h3>
+              <div class="role">Site Security Commander</div>
+            </div>
+            <p>Runs physical security, transport corridors, and sensitive containment responses.</p>
+            <p>Drive: keep the institution intact even when leadership stops agreeing on what intact means.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel span-12">
+        <div class="eyebrow">Session 0</div>
+        <h2>Ignition Model</h2>
+        <div class="keyline">
+          <div class="kv">
+            <div class="k">Public Layer</div>
+            <div class="v">HELIX week is a real Boston summit for donors, hospital partners, regulators, investors, and selected clinicians. The public event exists mainly as cover, traffic, and legitimacy.</div>
+          </div>
+          <div class="kv">
+            <div class="k">PC Rule</div>
+            <div class="v">The PCs are not a shared keynote audience by default. Each one intersects Kallisto through a private lane: consult, screening, site visit, briefing, audit, recruitment conversation, covert tasking, or personal lead.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Ignition Time</div>
+            <div class="v">The ignition occurs at Friday, 14:23 Boston time. It happens whether the PCs are in Helix Tower, Orpheus Annex, a car, a side meeting, or already walking away.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Solo Format</div>
+            <div class="v">Each Session 0 is a solo prelude ending five to fifteen minutes before 14:23. Session 1 starts with every PC at that exact timestamp, each in a different Boston location tied to their own lane.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Common Shape</div>
+            <div class="v">Approach, private contact, one suspicious detail, one human interaction that matters, one decision point, then ignition. The prelude gives motive and context, not party assembly.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Kallisto Need</div>
+            <div class="v">Kallisto does not need all PCs in one room. It only needs them in contact with its systems, staff, facilities, or trigger environment by 14:23.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel span-12">
+        <div class="eyebrow">Backstory Lanes</div>
+        <h2>Ways A PC Can Be Near Kallisto At 14:23</h2>
+        <div class="cols">
+          <article class="box">
+            <h3>Intelligence</h3>
+            <p><strong>Sponsor:</strong> agency handler, contractor, or private intelligence cutout.</p>
+            <p><strong>Offer:</strong> consultant cover, access, expense account, target package.</p>
+            <p><strong>Kallisto Interest:</strong> field-medicine, disaster-response, or security-relevant profile.</p>
+          </article>
+          <article class="box">
+            <h3>Medical</h3>
+            <p><strong>Sponsor:</strong> physician referral, hospital contact, specialist recruiter.</p>
+            <p><strong>Offer:</strong> treatment review, diagnostic access, closed clinical consult.</p>
+            <p><strong>Kallisto Interest:</strong> history, symptoms, or practice area that fits a monitored cohort.</p>
+          </article>
+          <article class="box">
+            <h3>Corporate</h3>
+            <p><strong>Sponsor:</strong> investor, insurer, procurement office, legal team.</p>
+            <p><strong>Offer:</strong> due diligence, partner review, access to restricted program economics.</p>
+            <p><strong>Kallisto Interest:</strong> money, approvals, liability cover, or supply leverage.</p>
+          </article>
+          <article class="box">
+            <h3>Security</h3>
+            <p><strong>Sponsor:</strong> security contractor, municipal contact, veteran network.</p>
+            <p><strong>Offer:</strong> transport audit, site hardening consult, protective assignment.</p>
+            <p><strong>Kallisto Interest:</strong> reliable operational asset near sensitive rooms, people, or cargo.</p>
+          </article>
+          <article class="box">
+            <h3>Personal</h3>
+            <p><strong>Sponsor:</strong> family link, missing person lead, mentor, former patient, old colleague.</p>
+            <p><strong>Offer:</strong> private meeting, answers, access to someone or something withheld.</p>
+            <p><strong>Kallisto Interest:</strong> relationship chain intersects a watched subject, leak, or prior incident.</p>
+          </article>
+          <article class="box">
+            <h3>Academic</h3>
+            <p><strong>Sponsor:</strong> grant body, lab director, publication contact, peer network.</p>
+            <p><strong>Offer:</strong> restricted data, collaboration, publication priority, access to unpublished work.</p>
+            <p><strong>Kallisto Interest:</strong> domain expertise and credibility with outside institutions.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel span-6">
+        <div class="eyebrow">Character Tie-In</div>
+        <h2>Four Required Answers</h2>
+        <div class="keyline">
+          <div class="kv">
+            <div class="k">Sponsor</div>
+            <div class="v">Who put the PC near Kallisto.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Offer</div>
+            <div class="v">What the PC was promised in exchange for showing up.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Hidden Aim</div>
+            <div class="v">What the PC actually wants before the ignition happens.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Kallisto Interest</div>
+            <div class="v">Why Kallisto allowed that PC into its orbit at all.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel span-6">
+        <div class="eyebrow">Example Hook</div>
+        <h2>CIA Combat Doctor</h2>
+        <div class="keyline">
+          <div class="kv">
+            <div class="k">Sponsor</div>
+            <div class="v">CIA medical liaison through a contractor cutout.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Offer</div>
+            <div class="v">Trauma-systems consultant cover with access to a restricted resilience program review.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Hidden Aim</div>
+            <div class="v">Observe, document, identify live assets, and exfiltrate evidence if possible.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Kallisto Interest</div>
+            <div class="v">Credible disaster-medicine background, operational composure, and a profile useful to adaptation screening.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel span-12">
+        <div class="eyebrow">Deviation Handling</div>
+        <h2>If Players Refuse The Planned Path</h2>
+        <div class="keyline">
+          <div class="kv">
+            <div class="k">Walk Out Early</div>
+            <div class="v">Let them. The ignition still lands at 14:23 and catches them in transit, on the street, or near the waterfront.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Refuse Exams</div>
+            <div class="v">Reroute them into a meeting, hospitality hold, private consult, or observation room. They do not need to complete the same procedure as everyone else.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Never Reach Helix Tower</div>
+            <div class="v">Move their lane to Orpheus Annex, a hotel meeting room, a port transfer, a rideshare handoff, or a surveillance post near Kallisto traffic.</div>
+          </div>
+          <div class="kv">
+            <div class="k">Go Loud</div>
+            <div class="v">Security pressure rises, but the main consequence is location change, not campaign derailment. The 14:23 ignition remains fixed.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel span-4">
+        <div class="eyebrow">Floorplan Basis</div>
+        <h2>Building A</h2>
+        <div class="keyline">
+          <div class="kv">
+            <div class="k">Real Plan</div>
+            <div class="v">
+              Based on the real JOINN Innovation Park Building A first and second floor plans.
+              <div class="sourceLinks">
+                <a href="https://www.joinnparks.com/floorplan.html?b=A&f=1" target="_blank" rel="noreferrer">Building A 1/F</a>
+                <a href="https://www.joinnparks.com/floorplan.html?b=A&f=2" target="_blank" rel="noreferrer">Building A 2/F</a>
+                <a href="https://www.joinnparks.com/floorplan.html" target="_blank" rel="noreferrer">Campus map</a>
+              </div>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="k">1/F Use</div>
+            <div class="v">Arrival, check-in, conference start, filtering, admin support, and first-contact observation.</div>
+          </div>
+          <div class="kv">
+            <div class="k">2/F Use</div>
+            <div class="v">Personalized tests, physician consults, sample handling, sensory workups, and quiet rerouting of selected candidates.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel span-8">
+        <div class="eyebrow">Named Staff</div>
+        <h2>Building A Pre-Ignition Roster</h2>
+        <p class="panelLead">These are the faces likely to recur across both floors before the ignition event. Room popups reference them directly.</p>
+        <div id="buildingARoster" class="rosterGrid"></div>
+      </section>
+
+      <section class="panel span-12">
+        <div class="eyebrow">Building A 1/F</div>
+        <h2>Arrival and Conference Floor</h2>
+        <p class="panelLead">Room 195 is the public start point for the closed-track group. Click any room number or shared area to open contents, NPCs, and visible pre-ignition details.</p>
+        <div id="buildingAFirstMap" class="floorMapRoot"></div>
+        <div id="buildingAFirst" class="roomDeck"></div>
+      </section>
+
+      <section class="panel span-12">
+        <div class="eyebrow">Building A 2/F</div>
+        <h2>Personalized Testing Floor</h2>
+        <p class="panelLead">After the opening briefing, selected candidates are routed upstairs for short individualized screens, consults, and instrument-based baselines.</p>
+        <div id="buildingASecondMap" class="floorMapRoot"></div>
+        <div id="buildingASecond" class="roomDeck"></div>
+      </section>
+    </div>
+  </div>
+
+  <dialog class="roomDialog" id="roomDialog">
+    <div class="dialogInner">
+      <div class="dialogTop">
+        <div>
+          <div class="dialogMeta" id="roomDialogMeta">Building A</div>
+          <h3 id="roomDialogTitle">Room</h3>
+        </div>
+        <button type="button" class="dialogClose" id="roomDialogClose">Close</button>
+      </div>
+      <div class="dialogGrid">
+        <section class="detailBlock">
+          <h4>Function</h4>
+          <p id="roomDialogFunction"></p>
+        </section>
+        <section class="detailBlock">
+          <h4>Visible Contents</h4>
+          <ul id="roomDialogVisible"></ul>
+        </section>
+        <section class="detailBlock">
+          <h4>Present NPCs</h4>
+          <ul id="roomDialogNpcs"></ul>
+        </section>
+        <section class="detailBlock">
+          <h4>Pre-Ignition Texture</h4>
+          <ul id="roomDialogTexture"></ul>
+        </section>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+  (function () {
+    const buildingARoster = [
+      { name: "Dr. Mara Kessler", role: "Closed Track Director", base: "Room 195, Room 207, and Room 240", note: "Runs the scripted welcome, approves reroutes, and keeps the event sounding clinical instead of theatrical." },
+      { name: "Owen Pike", role: "Floor Operations Coordinator", base: "Room 140, 103 Corridor, and 193 Corridor", note: "Owns the paper maps, radio traffic, and room timing; the person everyone asks when something drifts off schedule." },
+      { name: "Talia Reed", role: "Candidate Experience Lead", base: "Main Entrance and Link", note: "Warm, efficient, and deeply practiced at making controlled spaces feel voluntary." },
+      { name: "June Park", role: "Partnership Liaison", base: "Room 106, Room 107, and Room 240", note: "Handles important guests, private referrals, and anyone who needs to feel courted rather than screened." },
+      { name: "Farah Nabil", role: "Routing Scheduler", base: "Room 114, Room 136, Room 161-A, and Room 193-C", note: "Maintains the room map, sequence timing, and the quiet art of making reroutes feel routine." },
+      { name: "Victor Haldane", role: "Security Lead", base: "Room 199, Room 299, and 220 Corridor", note: "Handles the floor teams quietly, prefers rerouting to confrontation, notices people who notice too much." },
+      { name: "Naomi Varga", role: "Access Control Officer", base: "Elevator, Link, Stair, and Elevator 2/F", note: "Badge scanner, guest list memory, and the first person to clock an unauthorized movement pattern." },
+      { name: "Dominic Shaw", role: "Executive Protection Contractor", base: "Room 107, Room 199, and Link Void", note: "Looks like quiet hospitality until he moves, then everyone remembers he is there for containment." },
+      { name: "Hester Quinn", role: "AV Producer", base: "Room 195, Room 197, and Room 207", note: "Keeps presentations smooth, screens synced, and microphones live; never seems hurried even when she is." },
+      { name: "Daniel Chao", role: "Records and Archive Manager", base: "188 Library and 188 Office", note: "Controls print packets, old floor binders, and anything that should look boring until someone reads it closely." },
+      { name: "Greta Solheim", role: "Participant Care Liaison", base: "Room 154, Room 186, Room 260B, and Room 215-C", note: "Handles discomfort, panic, dietary problems, and the human consequences of a day built by clinicians." },
+      { name: "Ruth Adjei", role: "Compliance Counsel", base: "Room 146, Room 236A, and Room 221-D", note: "Explains what consent language does and does not mean without ever sounding defensive." },
+      { name: "Simone Bell", role: "Intake Nurse", base: "Room 158, Room 266, and Room 260A", note: "First-line medical check, steady hands, practical voice, more humane than the program deserves." },
+      { name: "Caleb Wren", role: "Phlebotomy Tech", base: "Room 248A, Room 261-A, and Room 235-A", note: "Fast at blood draws, labels everything twice, jokes only when a subject looks close to bolting." },
+      { name: "Dr. Anika Sorrell", role: "Baseline Physiology Lead", base: "Room 214A, Room 260A, and Room 206", note: "Treats every body as a system to be measured, not a person to be reassured." },
+      { name: "Dr. Dev Patel", role: "Neurocognitive Lead", base: "Room 207, Room 224, Room 230, and Room 219-B", note: "Runs the cleanest cognitive scripts on the floor and hates when people improvise around his tests." },
+      { name: "Dr. Selene Ward", role: "Sensory Systems Lead", base: "Room 258A, Room 258B, Room 210, and Room 219-A", note: "Ocular, vestibular, and stimulus-response specialist; precise, charming, and unnerving if watched too long." },
+      { name: "Dr. Micah Trask", role: "Stress Response Lead", base: "Room 214, Room 221-A, Room 215-D, and Room 282", note: "Studies decision drift under pressure and asks questions that feel harmless until the third answer." },
+      { name: "Yvette Cole", role: "Behavioral Interviewer", base: "Room 214, Room 234, Room 266, and Room 193-A", note: "Soft voice, sharp memory, and a habit of making people answer the same truth from three angles." },
+      { name: "Priya Nand", role: "Data Systems Analyst", base: "Room 193-A, Room 193-C, Room 293-B, and Room 293-C", note: "Owns the live dashboards, wearable telemetry ingest, and most of the unexplained screen traffic." },
+      { name: "Kenji Sato", role: "Instrument Engineer", base: "Room 197, Room 297, and Bridge", note: "Keeps the fragile gear alive and watches everyone else touch it with visible contempt." },
+      { name: "Eli Navarro", role: "Runner and Logistics Float", base: "Room 150, Link, Room 161-C, and Room 235-D", note: "Moves packets, coolers, chargers, and people; knows more room-to-room gossip than anyone else." },
+      { name: "Mateo Rojas", role: "Facilities Engineer", base: "Room 160, Bridge, and Room 138", note: "Power, climate control, service access, locked closets, and all the things nobody notices until they fail." },
+      { name: "Marta Ibarra", role: "Custodial Lead", base: "Restrooms 1/F, Restrooms 2/F, and 193 Corridor", note: "Always present at the edges, hears everything, and is better at reading the building than the researchers are." }
+    ];
+
+    const buildingAFloors = [
+      {
+        container: "buildingAFirst",
+        floor: "Building A 1/F",
+        groups: [
+          {
+            title: "Arrival and Shared Areas",
+            rooms: [
+              {
+                label: "Main Entrance",
+                area: true,
+                title: "Main Entrance",
+                function: "Primary closed-track arrival point. Everyone funnels through here before being allowed into the link or redirected to a private room.",
+                visible: ["Glass vestibule doors, branded standees, soft queue stanchions, badge printer, two tablets on slim check-in stands.", "A discreet dome camera over the inner door and a side credenza with lanyards, water, and disposable masks."],
+                npcs: ["Talia Reed, two guest-services temps, one contract guard, and a rotating late-arrival trickle of invitees."],
+                texture: ["The politeness is deliberate and slightly over-tuned; names are checked twice, but no one says why.", "People with unusual referrals are peeled aside with the phrase 'one small verification step'." ]
+              },
+              {
+                label: "Link",
+                area: true,
+                title: "Link",
+                function: "Transitional lobby between the entrance and the core of Building A. It absorbs waiting guests and masks who is being routed where.",
+                visible: ["Benches, tall planters, three schedule screens, a narrow coffee cart in the morning, and directional vinyl on the floor.", "Candidates can see the elevator, the entrance behind them, and enough movement to feel watched without finding the watcher."],
+                npcs: ["Naomi Varga at the access point, Eli Navarro drifting through, and 3-8 attendees waiting for room calls."],
+                texture: ["The screens loop HELIX branding, room assignments, and occasional red 'routing update' banners that appear and disappear quickly.", "It feels like a place built to keep people calm while separating them." ]
+              },
+              {
+                label: "Elevator",
+                area: true,
+                title: "Elevator",
+                function: "Controlled vertical movement between the conference floor and the testing floor.",
+                visible: ["Clean car interior, card-reader override panel, small ceiling camera, and a floor placard listing only approved stops.", "A laminated emergency procedure card that mentions 'candidate movement interruption' rather than ordinary evacuation language."],
+                npcs: ["Naomi Varga or a silent floor guard, plus whichever candidates have just been called upstairs."],
+                texture: ["The elevator is how attendees are quietly split from the group without making it feel like detention.", "Security notices anyone who chooses the stairs instead." ]
+              },
+              {
+                label: "Stair",
+                area: true,
+                title: "Central Stairwell",
+                function: "The practical route for staff and the best place for overheard fragments once the floor gets busy.",
+                visible: ["Square stair core, campus photos on the landings, fresh paint smell, and a maintenance key box at the base.", "Plain enough to be ignored, which is what makes it useful."],
+                npcs: ["Owen Pike in transit, Eli Navarro cutting corners, occasional candidates who dislike waiting on elevators."],
+                texture: ["Staff assume stair users are impatient, not dangerous.", "It is one of the easiest places to catch an unfinished conversation." ]
+              },
+              {
+                label: "103 Corridor",
+                area: true,
+                title: "103 Corridor",
+                function: "North interior corridor that feeds the conference side, consult rooms, and clinical bullpen.",
+                visible: ["Low wayfinding plaques, flush wall speakers, and doors that open only long enough to flash instruments, folders, or worried expressions.", "A little too clean, with no personal clutter anywhere."],
+                npcs: ["Clinicians, scheduler staff, and candidates being told their next room is 'just ahead'."],
+                texture: ["This corridor feels like the public face of control: smooth, well lit, and deeply noncommittal.", "It is where people first notice that nobody seems to be improvising except the guests." ]
+              },
+              {
+                label: "161 Corridor",
+                area: true,
+                title: "161 Corridor",
+                function: "Quieter west-side corridor used for overflow waiting, care checks, and small reroutes.",
+                visible: ["Coat rack, umbrella stand, two crates of bottled water, clipboards on a side ledge, and one folding chair that never stays empty long.", "The noise level drops sharply compared with the link."],
+                npcs: ["Greta Solheim, Farah Nabil's temps, and candidates who need a moment before rejoining the schedule."],
+                texture: ["This is where staff park people who look uncertain, upset, or likely to ask harder questions.", "It feels compassionate and tactical at the same time." ]
+              },
+              {
+                label: "193 Corridor",
+                area: true,
+                title: "193 Corridor",
+                function: "Main internal spine connecting the open offices, conference wing, library, stair, elevator, and restrooms.",
+                visible: ["Traffic arrows on the floor, hidden ceiling cameras, a recessed fire cabinet, and a supply niche that never looks quite fully stocked.", "Nearly every major room on the floor opens onto this corridor."],
+                npcs: ["Almost everyone eventually: speakers, runners, clinicians, security, and redirected attendees."],
+                texture: ["If the floor has a pulse, it is here.", "Any sudden silence in this corridor will feel immediately wrong to the players." ]
+              },
+              {
+                label: "Restrooms 1/F",
+                area: true,
+                title: "1/F Restrooms",
+                function: "Ordinary restrooms that double as private breathing space when characters need a minute off the script.",
+                visible: ["Stocked counters, paper supplies piled too neatly, faint bleach smell, and Marta Ibarra's cart parked nearby at intervals.", "A mirror line long enough for whispered side conversations."],
+                npcs: ["Marta Ibarra, anxious guests, and the occasional staff member fixing their expression before going back out."],
+                texture: ["One of the few places where the controlled tone cracks into muttered speculation.", "Good for a quick private exchange or a hidden item stash." ]
+              }
+            ]
+          },
+          {
+            title: "North Perimeter Rooms",
+            rooms: [
+              { label: "140", title: "Room 140", function: "Floor operations office and the paper brain of Building A.", visible: ["Wall map of the floor, radio charging dock, spare badge reels, printed rooming sheets, and an incident binder labeled only by color.", "One desk is always active even when Owen Pike is elsewhere."], npcs: ["Owen Pike, one operations temp, and whoever needs a fast answer without involving a doctor."], texture: ["If players want to understand the flow of the day, this is the most useful room to glimpse.", "Everything here says logistics, but the routing sheets are much more selective than a normal summit would require."] },
+              { label: "138", title: "Room 138", function: "Locked comms and patch closet too narrow to be comfortable for long.", visible: ["Server rack hum, UPS battery units, fiber patch panels, and a handwritten 'authorized access only' tag taped inside the frame.", "No guest-facing materials at all."], npcs: ["Usually empty; Priya Nand or Mateo Rojas enter with a keycard when a screen, printer, or badge station misbehaves."], texture: ["A good sign that the floor has more technical infrastructure than the invitation language admits.", "Even from the corridor, the room sounds alive."] },
+              { label: "136A", title: "Room 136A", function: "Referral verification room for private invitations, physician handoffs, and quiet sponsor calls.", visible: ["Desk phone, intake folders, referral ledger, and a desktop scanner for printed letters or codes.", "The chair placement keeps the guest facing the door, not the staff member."], npcs: ["Ruth Adjei or a senior coordinator, plus one candidate at a time."], texture: ["This is where attendees learn whether Kallisto really expected them.", "Bad answers do not cause a scene here; they trigger rerouting."] },
+              { label: "136", title: "Room 136", function: "Badge correction and identity photo retake room.", visible: ["Portable backdrop, ring light, badge printer, barcode labels, and an open case of lanyard clips.", "Everything looks temporary but expensive."], npcs: ["Farah Nabil's scheduler, a guest-services temp, and candidates with mismatched paperwork or special handling."], texture: ["Perfectly mundane on the surface, which is why people underestimate how much data gets corrected here.", "One wrong printout can reveal what Kallisto already knows about a character."] },
+              { label: "130", title: "Room 130", function: "Partner liaison room for hospital contacts, academic observers, and anyone arriving under institutional cover.", visible: ["MOU packets, business card tray, stylized Boston map, and a muted monitor cycling partner logos.", "A coffee service set for exactly four people."], npcs: ["June Park or a partner-relations staffer with one outside guest."], texture: ["This room sells legitimacy.", "It is also where outside professionals are quietly reminded how much access they do not actually have."] },
+              { label: "126", title: "Room 126", function: "Recruitment and talent review office used for high-value invitees who think they are here for opportunity.", visible: ["Clean table, portfolio folders, thin laptops, and a wall monitor showing staff bios and follow-up pathways.", "No medical gear in sight."], npcs: ["A recruiter, one candidate, and occasionally Mara Kessler making a quick personal appearance."], texture: ["One of the easiest rooms to keep a suspicious PC calm.", "Everything here says career advancement while the rest of the building says clinical filtering."] },
+              { label: "122", title: "Room 122", function: "Program questions and concern handling room.", visible: ["Disclosure packets, spare pens, tissues, water carafe, and a standing sign that says 'participant support'.", "The chairs are soft on purpose."], npcs: ["Ruth Adjei, Greta Solheim, or anyone trying to defuse resistance before it becomes refusal."], texture: ["This is the room for 'I did not sign up for this' conversations.", "The answers are legally careful and emotionally rehearsed."] },
+              { label: "116", title: "Room 116", function: "Private physician consult room for attendees arriving on specialist referral or carrying real medical leverage.", visible: ["Exam stool, diagnostic tablet, blood-pressure cuff, pulse oximeter, and a locked lower cabinet.", "Clinical but not fully equipped for procedures."], npcs: ["Dr. Anika Sorrell or a contracted physician, one candidate at a time."], texture: ["This room gives Kallisto its best claim to legitimacy.", "It is also where a PC can realize their file is much thicker than they expected."] },
+              { label: "114", title: "Room 114", function: "Scheduling and route control node for the whole first floor.", visible: ["Magnet board with room numbers, printed name strips, radio headset, and a paper list of 'priority reroutes'.", "No one leaves documents face-down here."], npcs: ["Farah Nabil and one assistant."], texture: ["This room explains how people vanish from the public track without drama.", "A glance at the board can reveal which rooms matter most today."] },
+              { label: "110", title: "Room 110", function: "On-call clinician hot desk and overflow exam room.", visible: ["Laptop on a rolling cart, disposable gloves, ear thermometer, saline, and a folded privacy screen.", "It can become medical fast, but it is not a full treatment room."], npcs: ["Simone Bell or another nurse on standby."], texture: ["The floor wants to look prepared without looking alarming.", "This room is the compromise."] },
+              { label: "106", title: "Room 106", function: "Sponsor liaison hold for people arriving through private channels and wanting quiet before the main room.", visible: ["Two lounge chairs, bottled water, a silent screen with HELIX branding, and an envelope tray keyed by last name.", "The room is meant to calm high-status guests."], npcs: ["June Park, a donor-side escort, or one carefully managed visitor."], texture: ["Useful for meeting a patron, handler, or referral source before the wider event begins.", "It also creates the feeling that the character is expected."] },
+              { label: "102", title: "Room 102", function: "East-end VIP arrival hold and fallback private meeting room.", visible: ["Leather chairs, sideboard, frosted-glass door panel, and a single red-tab folder left on the table more often than it should be.", "Minimal branding compared with the rest of the floor."], npcs: ["Mara Kessler, June Park, or a physician referral whose presence should not mix with the main group yet."], texture: ["This room is where a PC can be made to feel singularly chosen.", "It is also a good place to discover that someone else's arrival matters more than your own."] }
+            ]
+          },
+          {
+            title: "West and South Support Rooms",
+            rooms: [
+              { label: "146", title: "Room 146", function: "Compliance and disclosure review room.", visible: ["Stacked consent packets, signature tabs, legal pad, and a shred bin already half full.", "The table is arranged for persuasion, not comfort."], npcs: ["Ruth Adjei and one guest at a time."], texture: ["If a player pushes on legality, this room becomes relevant fast.", "The language here is careful enough to be unsettling."] },
+              { label: "150", title: "Room 150", function: "Personal belongings room and temporary locker check.", visible: ["Numbered bins, zip pouches for electronics, claim tickets, and a shelf of items staff did not want on candidates during screening.", "Every returned item is logged."], npcs: ["Eli Navarro and one temp managing intake flow."], texture: ["A PC who hates surrendering gear will remember this room.", "It is also a quiet place to hide something inside someone else's property chain."] },
+              { label: "154", title: "Room 154", function: "Participant care and accommodation room for panic, accessibility needs, food issues, or private objections.", visible: ["Soft chairs, granola bars, tea, tissues, extra blankets, and a laminated accommodations checklist.", "It feels more humane than most of the floor."], npcs: ["Greta Solheim and whoever needs reassuring."], texture: ["Greta can earn real trust here.", "This room is where a skeptical player may first hear a staff member admit the day is not normal."] },
+              { label: "158", title: "Room 158", function: "Medical standby room for simple checks or immediate response if a guest faints, spikes blood pressure, or reacts badly to a procedure.", visible: ["Crash cart, AED, disposable basins, vitals monitor, and a locked fridge drawer.", "Clearly medical, though staff try not to parade it."], npcs: ["Simone Bell, a float nurse, and occasionally Caleb Wren."], texture: ["The fact that this room exists tells careful players more than the invitation did.", "It is also one of the safer rooms once things start going wrong."] },
+              { label: "160", title: "Room 160", function: "Facilities reserve and emergency supply room.", visible: ["Flashlights, extension reels, spare filters, boxed PPE, maintenance tags, and a wall key cabinet.", "Nothing glamorous; all of it useful."], npcs: ["Mateo Rojas, a maintenance assistant, or Victor Haldane checking fallback supplies."], texture: ["A strong scavenging room once the event turns.", "Before ignition it just looks like backstage logistics."] },
+              { label: "186", title: "Room 186", function: "Quiet decompression room for people who need privacy before returning to the program.", visible: ["One sofa, white-noise machine, water pitcher, a small plant, and a paper sign that says 'Take five minutes if needed'.", "No monitor, no branding-heavy visuals."], npcs: ["Greta Solheim, a shaken candidate, or no one at all."], texture: ["Good for private conversations and character-to-character disclosures.", "Staff use this room to keep distress out of public view."] },
+              { label: "188 Office", title: "Room 188 Office", function: "Records correction, print support, and packet restaging office.", visible: ["Network printer, toner boxes, spare folders, badge stock, and an 'archive hold' tray on the desk.", "Much more paper lives here than the public-facing brand suggests."], npcs: ["Daniel Chao and one print-room assistant."], texture: ["If a character wants a folder, list, or stray page, this is one of the best rooms on the floor.", "Daniel notices missing paper quickly."] },
+              { label: "188 Library", title: "Room 188 Library", function: "Curated reading lounge used to soften waiting time and quietly shape how attendees think about the program.", visible: ["Shelves of biotech journals, city resilience white papers, donor books, campus histories, and low seating between bookcases.", "A locked cabinet near the rear shelves holds material that is not meant for casual browsing."], npcs: ["Daniel Chao, a quiet observer, and a few early arrivals trying to look composed."], texture: ["This room is ideal for a clue that looks boring until read closely.", "It is also where a player can notice that Kallisto's public reading stack has a very specific obsession with continuity failure."] }
+            ]
+          },
+          {
+            title: "Interior Work Areas",
+            rooms: [
+              { label: "129-A", title: "Room 129-A", function: "Small document rescan booth for referrals, signatures, and badge mismatches.", visible: ["Scanner, webcam, stack of privacy covers, and one rolling stool.", "Barely large enough for two people."], npcs: ["A temp or Farah Nabil with one attendee."], texture: ["A good room for a short, tense question because nobody can comfortably perform in it.", "Anyone routed here feels singled out."] },
+              { label: "129-B", title: "Room 129-B", function: "Secondary screening booth used when security or legal wants a private follow-up without escalating publicly.", visible: ["Plain table, one recorder dock, metal tray for pocket contents, and a wall hook for coats or bags.", "No decoration at all."], npcs: ["Victor Haldane, Naomi Varga, or a delegate from their team."], texture: ["This is the room where 'just one more clarification' stops sounding voluntary.", "It is still polite enough that an anxious guest may talk too much."] },
+              { label: "161-A", title: "Room 161-A", function: "Referral check workstation at the northwest corner of the candidate-services bullpen.", visible: ["Referral folders, verification spreadsheet, two desk phones, and color stickers matching the routing board in Room 114.", "A pencil cup full of pens from different hospital systems."], npcs: ["Farah Nabil or a senior scheduler, plus one anxious temp."], texture: ["One of the easiest places to learn who arrived through which channel.", "The staff here know which referrals are real before anyone else does."] },
+              { label: "161-B", title: "Room 161-B", function: "Badge-prep and photo-correction overflow desk.", visible: ["Lanyards, barcode sleeves, badge blanks, a spare webcam, and a small heat-sealer for laminated inserts.", "The desk is neat because errors are expensive."], npcs: ["A guest-services temp and Eli Navarro dropping corrected materials."], texture: ["Looks harmless, but it is another place where identities get normalized into Kallisto's system.", "Lost, replaced, or altered badges all pass through here."] },
+              { label: "161-C", title: "Room 161-C", function: "Escort assignment and runner dispatch bay.", visible: ["Radio dock, internal phone list, sticky notes with room pairs, and transport vouchers clipped to a board.", "This bay is always half-standing, half-sitting."], npcs: ["Eli Navarro, a runner, or Farah's second assistant."], texture: ["Good room for learning who is moving people manually rather than trusting the public schedule.", "The escort notes reveal which attendees are considered delicate, important, or risky."] },
+              { label: "161-D", title: "Room 161-D", function: "Overflow data-entry and check-back desk for late arrivals or corrected paperwork.", visible: ["Spare keyboard, intake stacks, privacy sleeves, and an inbox marked 'retry'.", "The least glamorous but most revealing desk in the west bullpen."], npcs: ["One scheduler temp and whoever drew the short straw on administrative cleanup."], texture: ["Any referral problem that is not dramatic ends up here.", "A PC could find proof that somebody's paperwork was rebuilt, not received."] },
+              { label: "181-A", title: "Room 181-A", function: "Hospitality staging bay for water, snacks, blankets, and small comforts used to keep guests compliant.", visible: ["Protein bars, water crates, tissues, paper cups, and a blanket stack tucked under the desk.", "Looks like kindness and logistics at once."], npcs: ["Greta Solheim or a candidate-services temp."], texture: ["This bay exists because the day is expected to wear people down.", "A small but real sign that Kallisto knows the program is more taxing than it admits."] },
+              { label: "181-B", title: "Room 181-B", function: "Candidate hold desk for quiet waiting and follow-up instructions.", visible: ["Clipboards, room-call slips, notepads, and a tray of temporary routing cards.", "The chair is placed to face the corridor, not the desk."], npcs: ["A scheduler and one or two guests in short-term limbo."], texture: ["The bay makes holding people feel procedural, not punitive.", "Useful for overhearing who has been delayed, promoted, or pulled aside."] },
+              { label: "181-C", title: "Room 181-C", function: "Ground transport and onward-travel coordination bay.", visible: ["Rideshare printouts, hotel shuttle list, black-car confirmations, and a folded street map of the campus.", "This desk knows how people leave before people themselves do."], npcs: ["Eli Navarro or a transport temp."], texture: ["Good for post-event logistics, but also for noticing that some departures were planned in advance.", "There may already be a car assigned to someone who has not agreed to go anywhere."] },
+              { label: "181-D", title: "Room 181-D", function: "Overflow storage for coats, bags, spare badge bundles, and misdirected property.", visible: ["Rolling garment rack, lost-property tray, evidence-style pouches for electronics, and a stack of unlabeled tote bags.", "More storage than a normal summit would need."], npcs: ["Usually unattended for a few minutes at a time, which makes it tempting."], texture: ["If something needs to disappear briefly, this bay can plausibly do it.", "Also a believable place for a PC to stash or recover contraband."] },
+              { label: "103-A", title: "Room 103-A", function: "Telemetry-band fitting station at the north edge of the clinical bullpen.", visible: ["Wearable bands, alcohol wipes, extra straps, and a tray of barcoded tags.", "A screen beside the desk confirms each unit as it comes online."], npcs: ["Simone Bell's team or Priya Nand's assistant."], texture: ["A soft entry point into the program's more invasive layer.", "Staff attach the device as if it were routine, which makes it land harder."] },
+              { label: "103-B", title: "Room 103-B", function: "Tablet issue and questionnaire-confirmation bay.", visible: ["Charged tablets, privacy covers, stylus cups, and a bin marked 'wipe and return'.", "A small printer spits confirmation slips when everything matches."], npcs: ["A clinical assistant and candidates who finished the front-end forms but still need confirmation."], texture: ["One more place where the building politely converts a person into a data record.", "A mismatch here can redirect someone instantly."] },
+              { label: "103-C", title: "Room 103-C", function: "Note transcription and packet assembly desk.", visible: ["Stacked charts, sticky flags, label printer, consent folders, and highlighters color-coded by room family.", "The desk is built for fast hands."], npcs: ["One admin aide and anyone helping Hester or Priya catch up."], texture: ["Paper still matters here despite all the screens.", "A PC who sees the color coding can start understanding the hidden structure of the day."] },
+              { label: "103-D", title: "Room 103-D", function: "Vitals overflow station and quick-check desk.", visible: ["Portable BP unit, pulse oximeter, thermometer dock, and a stool that keeps getting pulled between tasks.", "The station can go from idle to urgent in seconds."], npcs: ["Simone Bell or a float nurse."], texture: ["This bay makes the whole floor feel one notch more medical than the invitation promised.", "Useful place to notice that Kallisto expected someone to need immediate checks."] },
+              { label: "193-A", title: "Room 193-A", function: "Observation desk for immediate post-room notes.", visible: ["Watch timer, behavioral check sheet, half-drunk coffee, and a monitor showing room transitions in real time.", "The staff here are usually looking at people, not screens."], npcs: ["Yvette Cole, Priya Nand, or a behavioral aide."], texture: ["Guests coming out of Room 195 often pass this desk before they realize they are being scored.", "A strong room for making subtle staff reactions matter."] },
+              { label: "193-B", title: "Room 193-B", function: "Specimen courier handoff bay.", visible: ["Sample cooler, chain-of-custody forms, and a locked transit pouch waiting for pickup.", "Small enough that every object looks important."], npcs: ["Caleb Wren, Eli Navarro, or a courier with a timed handoff."], texture: ["A practical clue point if the players start following where samples go.", "Even before ignition, the chain-of-custody language feels heavy."] },
+              { label: "193-C", title: "Room 193-C", function: "Route-adjustment bay for last-minute changes after Room 195 or private consults.", visible: ["Dry-erase room grid, printed alternates, and a stack of cards labeled only by letter and time.", "This bay changes faster than any other desk on the floor."], npcs: ["Farah Nabil or one scheduler under obvious pressure."], texture: ["The place where the script quietly bends.", "A player can learn a lot just by seeing whose name keeps moving."] },
+              { label: "193-D", title: "Room 193-D", function: "Sealed packet prep and handoff desk for materials not meant to circulate openly.", visible: ["Red-tab envelopes, opaque sleeves, tamper tape, and a pen chained to the desktop.", "No decorative clutter, no idle paper."], npcs: ["Daniel Chao, Priya Nand, or someone trusted enough to move restricted packets."], texture: ["If the campaign needs a folder that matters, this bay can plausibly birth it.", "The desk looks procedural, but everyone handles it with extra care."] }
+            ]
+          },
+          {
+            title: "Conference Wing",
+            rooms: [
+              { label: "195", title: "Room 195", function: "Closed-track conference room and the scripted public beginning of the HELIX candidate experience.", visible: ["Forty chairs in shallow rows, lectern, twin wall screens, ceiling speakers, water service, and a slim branded backdrop.", "The slide deck is polished, donor-safe, and full of words like resilience, adaptive response, and continuity."], npcs: ["Dr. Mara Kessler, Hester Quinn, Owen Pike, one visible security rover, and the invited candidate group."], texture: ["This room is meant to feel prestigious before it feels invasive.", "A side screen occasionally flashes room reassignments and coded candidate routing in a format only staff are meant to understand."] },
+              { label: "107", title: "Room 107", function: "Speaker green room and private holding room for senior guests or controlled one-on-one conversations.", visible: ["Garment rack, bottled water, mirror, makeup kit, spare clicker, and a folder tray keyed to speakers and special invitees.", "Its door sits close enough to Room 195 to move people in and out without spectacle."], npcs: ["June Park, Dr. Mara Kessler, Dominic Shaw, or one specially handled attendee."], texture: ["Useful for pulling one PC aside without alarming the rest.", "It feels polished enough that most people still read it as hospitality, not control."] },
+              { label: "197", title: "Room 197", function: "AV and instrument service closet.", visible: ["Rack units, media switcher, signal meters, radio chargers, projector spares, and a locked technician case.", "The crosshatched service bay above it is clearly technical infrastructure even if the floorplan does not label it."], npcs: ["Hester Quinn and Kenji Sato, usually one at a time."], texture: ["If a player wants to know what the screens are really doing, this room matters.", "It also gives you a believable place for a strange audio tone or sudden synchronization glitch before ignition."] },
+              { label: "199", title: "Room 199", function: "Security observation and floor-watch room.", visible: ["Live camera feeds, access logs, floor roster, sealed drawer, lockbox, and a spare tablet showing badge pings.", "The room is small, which makes everyone inside seem more intense."], npcs: ["Victor Haldane, Naomi Varga, and one security analyst on rotation."], texture: ["This is the quiet coercive center of the first floor.", "If the PCs do something unpredictable, this room notices first."] }
+            ]
+          }
+        ]
+      },
+      {
+        container: "buildingASecond",
+        floor: "Building A 2/F",
+        groups: [
+          {
+            title: "Upper Shared Areas",
+            rooms: [
+              {
+                label: "Main Entrance 2/F",
+                area: true,
+                title: "Main Entrance 2/F",
+                function: "Secondary upper landing used for discreet senior arrivals and occasional equipment transfers without passing through the main first-floor queue.",
+                visible: ["Quiet upper vestibule, clean sightline into the link void, and almost no decorative clutter.", "Its emptiness feels intentional."],
+                npcs: ["Rarely staffed full-time; Naomi Varga or Victor Haldane's people receive specific arrivals here."],
+                texture: ["Good place for a PC to notice that some attendees are not moving through the same flow as everyone else.", "Because it is underused, any fresh activity here stands out immediately."] 
+              },
+              {
+                label: "Link Void",
+                area: true,
+                title: "Link Open to Below",
+                function: "Open overlook above the first-floor link, giving the second floor a strangely theatrical sense of surveillance and exposure.",
+                visible: ["Banner rigging, sightline down to the first-floor seating and screens, and a low rail that turns the space into a controlled overlook.", "Sound drifts up in fragments."],
+                npcs: ["Candidates pausing to orient themselves, Naomi's float staff, and anyone wanting a visual read on the crowd below."],
+                texture: ["Standing here makes the building feel designed as a viewing instrument.", "A player can see how easily selected people could be tracked floor-to-floor."] 
+              },
+              {
+                label: "Bridge",
+                area: true,
+                title: "Bridge",
+                function: "Restricted connector used for equipment, senior staff movement, and anything the program prefers not to route through the public link.",
+                visible: ["Badge reader, narrow windows, clean utility flooring, and rolling cases parked just out of casual sight.", "No public signage beyond an emergency egress marker."],
+                npcs: ["Mateo Rojas, Kenji Sato, one guard, and the occasional executive movement the candidates are not meant to register."],
+                texture: ["This is a natural future escape route or mystery vector.", "Before ignition it simply reads as an off-limits convenience passage."] 
+              },
+              {
+                label: "Elevator 2/F",
+                area: true,
+                title: "Elevator 2/F Landing",
+                function: "Staging point where candidates arrive upstairs and are peeled into testing clusters.",
+                visible: ["Wall signage listing room numbers, a slim cart of disposable slippers and masks, and a mounted occupancy tablet.", "Two directions feel possible, but the staff always tell you which one is yours."],
+                npcs: ["Naomi Varga, a scheduler, and rotating staff escorting candidates into rooms."],
+                texture: ["Good place to see multiple testing routes cross without ever fully mixing.", "This landing feels more procedural and less performative than the first floor."] 
+              },
+              {
+                label: "Stair 2/F",
+                area: true,
+                title: "Second-Floor Stair Landing",
+                function: "Staff-preferred access point and the least mediated way onto the testing floor.",
+                visible: ["Concrete landing, steel rail, a code sheet clipped inside a frame, and a cleaning sign never quite moved out of the way.", "No welcome language at all."],
+                npcs: ["Eli Navarro, clinicians moving fast, and the rare candidate who rejects being escorted."],
+                texture: ["The difference in tone between stair and elevator is noticeable.", "This landing feels like backstage."] 
+              },
+              {
+                label: "219 Corridor",
+                area: true,
+                title: "219 Corridor",
+                function: "North testing hall serving the upper row of consult and assessment rooms.",
+                visible: ["Neutral doors, subtle room labels, one clipboard station, and no decorative materials beyond compliance signage.", "The hall is long enough that people at opposite ends stop feeling connected."],
+                npcs: ["Dr. Dev Patel's team, Dr. Selene Ward's team, and candidates waiting to be called."],
+                texture: ["The floor gets quieter here because people start hearing their own breathing.", "This hall makes the second floor feel clinical even before anyone sees equipment."] 
+              },
+              {
+                label: "261 Corridor",
+                area: true,
+                title: "261 Corridor",
+                function: "West-side hall feeding prep rooms, sample handling, and initial physical assessment spaces.",
+                visible: ["Supply carts, sharps bin transit, a linen hamper, and a rolling stool abandoned against the wall.", "The corridor is narrower and more utilitarian than the north hall."],
+                npcs: ["Caleb Wren, Simone Bell, Greta Solheim, and candidates who are not sure whether they are still in a summit at all."],
+                texture: ["The smell of alcohol prep, latex, and chilled storage is strongest here.", "This corridor does the least to hide the medical nature of the day."] 
+              },
+              {
+                label: "293 Corridor",
+                area: true,
+                title: "293 Corridor",
+                function: "South interior spine for lower consult rooms and the exit path from several test stations.",
+                visible: ["Closed doors in a row, one rolling vitals stand, and small label trays outside rooms for rapid reassignment.", "Good acoustics for hearing snippets through thin walls."],
+                npcs: ["Micah Trask's staff, Priya Nand, and whichever candidates are leaving rooms more rattled than they entered."],
+                texture: ["This corridor feels like the aftermath side of the floor.", "You come here after something has already been measured."] 
+              },
+              {
+                label: "220 Corridor",
+                area: true,
+                title: "220 Corridor",
+                function: "Short east-side corridor serving the second conference room and adjacent secure rooms.",
+                visible: ["Card-reader, tighter camera coverage, and cleaner walls with far less incidental clutter.", "The east end feels more controlled than the west."],
+                npcs: ["Victor Haldane, Kenji Sato, Mara Kessler, or a carefully escorted candidate."],
+                texture: ["If the second floor has an executive nerve pocket, it starts here.", "People notice when they are sent down this corridor."] 
+              },
+              {
+                label: "Restrooms 2/F",
+                area: true,
+                title: "2/F Restrooms",
+                function: "The only obvious mundane space on an otherwise procedural floor.",
+                visible: ["Stocked counters, paper supplies, mirror line, and Marta Ibarra's cart wedged into a corner at intervals.", "A little less polished than the first-floor pair."],
+                npcs: ["Marta Ibarra, uneasy candidates, and staff regrouping between test blocks."],
+                texture: ["One of the best spaces upstairs for a player to hear what another attendee actually thinks is happening.", "The sinks and mirrors make it easy to notice tremor, dilation, or sudden pallor."] 
+              }
+            ]
+          },
+          {
+            title: "North Perimeter Test Rooms",
+            rooms: [
+              { label: "240", title: "Room 240", function: "Senior consult suite and fallback private meeting room for candidates treated as unusually important.", visible: ["Conference table for four, physician tablet dock, privacy screen, and a locked leather folio left on the credenza.", "More executive than medical in tone."], npcs: ["Dr. Mara Kessler, June Park, or a physician specialist with one guest."], texture: ["This room makes selectees feel exceptional before they understand why.", "It is also a good place for a manipulative one-on-one reveal."] },
+              { label: "236A", title: "Room 236A", function: "Re-consent and disclosure clarification room for anyone whose profile triggers extra paperwork.", visible: ["Marked forms, signature flags, secure shred bin, and a small recorder dock used only if conversations get sensitive.", "No decorative material, only process."], npcs: ["Ruth Adjei and one candidate at a time."], texture: ["One of the cleanest ways to turn a suspicious player into an investigative player.", "If someone asks the wrong right question, the answers here will be too careful."] },
+              { label: "234", title: "Room 234", function: "Dossier review room for case history, occupational pattern, and off-record context gathering.", visible: ["Thin folders, interview notes, a muted tablet, and a whiteboard with erased names that still leave ghost traces.", "The chair arrangement favors disclosure over confrontation."], npcs: ["A behavioral interviewer, Yvette Cole, or Dr. Dev Patel."], texture: ["Looks like a calm professional interview room; functions like a sorting mechanism.", "Good room for a PC to realize the interviewer already knows part of the answer."] },
+              { label: "230A", title: "Room 230A", function: "Digital survey booth for quick-response questionnaires and baseline cognitive self-report.", visible: ["Privacy monitor, headphones, response pad, and a side bin of sanitized styluses.", "The room is almost too small to think comfortably in."], npcs: ["One candidate alone, with a scheduler checking start and end times."], texture: ["Feels mundane until the questions get strangely specific.", "A player can come out of this room already uneasy without any overt horror."] },
+              { label: "230", title: "Room 230", function: "Motor sequencing and fine dexterity room.", visible: ["Pegboard rig, timed assembly tray, tablet camera, and a marked chair position taped onto the floor.", "Everything can be reset in under a minute."], npcs: ["Dr. Dev Patel, an assistant, and one candidate."], texture: ["The test seems ordinary until the staff care too much about very small deviations.", "Excellent place to foreshadow that they are looking for compatibility rather than competence."] },
+              { label: "224", title: "Room 224", function: "Auditory pattern and instruction-processing room.", visible: ["Headphones, splitter amp, low-latency monitor, response keypad, and acoustic wall panels.", "No windows, which makes the room feel more controlled than it first appears."], npcs: ["Dr. Dev Patel or an audio-tech assistant with one candidate."], texture: ["A natural place to seed a tone, phrase, or pattern that matters later.", "The room already feels one step away from conditioning."] },
+              { label: "214A", title: "Room 214A", function: "Physician sign-off room for quick clinical interpretation and escalation decisions.", visible: ["Exam table, charting tablet, stethoscope, disposable gowns, and a small locked cabinet for samples or meds.", "The cleanest formal medical room on the north side."], npcs: ["Dr. Anika Sorrell and one nurse."], texture: ["This room is where staff decide whether someone keeps moving or gets quietly sidelined.", "Players will feel that judgment happening even if nobody says it out loud."] },
+              { label: "214", title: "Room 214", function: "Private psychological interview room.", visible: ["Two comfortable chairs, one sharper chair, tabletop recorder dock, tissues, and a small clock angled only toward the interviewer.", "Nothing in the room looks medical; everything looks intentional."], npcs: ["Dr. Micah Trask or Yvette Cole with one candidate."], texture: ["The questions here sound harmless until they start circling the same pressure points from different angles.", "A very good room for character backstory to become actionable."] },
+              { label: "210", title: "Room 210", function: "Reaction-time and guided stimulus-response room.", visible: ["Light panel, hand sensors, standing mark on the floor, and a laptop feeding live timings to the analyst station.", "Cables are tucked away but still visible enough to feel clinical."], npcs: ["Dr. Selene Ward, one technician, and one candidate."], texture: ["The atmosphere is brisk and efficient, almost athletic.", "A player may not mind this room until staff react to a result with too much interest."] },
+              { label: "206", title: "Room 206", function: "Autonomic monitoring room for resting heart rate, skin conductance, and quiet observation.", visible: ["Recliner, leads, soft lamp, quiet monitor, and blackout shades half-drawn.", "Much dimmer than surrounding spaces."], npcs: ["Dr. Anika Sorrell or a nurse monitoring readouts."], texture: ["This room feels restful, which makes it dangerous for perception.", "A PC can notice that 'baseline' does not mean unimportant."] },
+              { label: "202", title: "Room 202", function: "Executive observation hold for high-priority subjects or people whose results need private discussion.", visible: ["Two chairs, opaque folder tray, locked tablet dock, and a wall screen that is usually dark until someone important enters.", "Sparse, expensive, and not meant for waiting long."], npcs: ["Mara Kessler, Victor Haldane, or no one until the room is suddenly needed."], texture: ["Good room for a chosen-one feeling that still reads corporate rather than mystical.", "If a PC ends up here, they will know they have been reclassified."] }
+            ]
+          },
+          {
+            title: "West and South Assessment Rooms",
+            rooms: [
+              { label: "248A", title: "Room 248A", function: "Phlebotomy and sample draw room.", visible: ["Draw chair, tourniquets, labeled vacutainers, sharps container, and a small refrigerated carrier by the wall.", "Very little effort has been made to disguise the room's purpose."], npcs: ["Caleb Wren and one nurse."], texture: ["A strong reality-check room for any player still imagining a normal summit.", "Caleb's casual competence can keep it grounded rather than melodramatic."] },
+              { label: "258A", title: "Room 258A", function: "Vestibular balance and orientation room.", visible: ["Foam mat, balance rail, metronome speaker, motion markers, and a tablet mounted at eye level.", "Enough empty floor to make people self-conscious."], npcs: ["Dr. Selene Ward and one assistant."], texture: ["Good room for controlled unease without overt danger.", "The instructions can feel oddly rehearsed, like they have been used on many more people than the program admits."] },
+              { label: "258B", title: "Room 258B", function: "Ocular response and pupil-reflex room.", visible: ["Adjustable exam chair, handheld light, lens kit, infrared eye tracker, and blackout curtain.", "The room is cool and very still."], npcs: ["Dr. Selene Ward or an eye-tech assistant."], texture: ["A natural place to insert a disturbing but plausible visual anomaly.", "Staff attention to unusual dilation can be played very hard here."] },
+              { label: "260A", title: "Room 260A", function: "Physical exam room for baseline vitals, lungs, reflexes, and general medical sign-off.", visible: ["Exam table, gown hooks, reflex hammer, BP unit, and disposable drape packs.", "Conventional medicine, cleanly presented."], npcs: ["Dr. Anika Sorrell and Simone Bell."], texture: ["This room keeps the whole floor believable.", "Because it is so ordinary, it can hide an extraordinary line of questioning."] },
+              { label: "260B", title: "Room 260B", function: "Recovery lounge for candidates who need water, time, or a softer handoff after a test block.", visible: ["Recliner, crackers, electrolyte packets, blankets, and a clipboard titled 'post-screen observations'.", "A little more humane than the rest of the floor."], npcs: ["Greta Solheim, a care assistant, and one candidate at a time."], texture: ["Good for confessions, speculation, or the first hints that someone already feels wrong.", "Because it is a comfort room, people lower their guard here."] },
+              { label: "266", title: "Room 266", function: "Personal intake interview room used before a more specific clinical or behavioral station.", visible: ["Table, two chairs, small recorder dock, and a profile sheet clipped to a hard board.", "The room looks administrative but leads into medical routing."], npcs: ["Simone Bell, a scheduler, or Yvette Cole."], texture: ["Useful for grounding a PC in their own cover story before pushing them deeper.", "A lie told here will ripple."] },
+              { label: "270", title: "Room 270", function: "Occupational history review room.", visible: ["Notepad, laptop, printed role taxonomy sheet, and a wall clock set slightly fast.", "Nothing about the room suggests how much meaning staff will pull from mundane jobs."], npcs: ["A behavioral interviewer or Dev Patel's team."], texture: ["A perfect room to make a character's profession matter mechanically and narratively.", "It should feel like an HR conversation with the wrong stakes."] },
+              { label: "274", title: "Room 274", function: "Medication, allergy, implant, and dependency cross-check room.", visible: ["Checklist forms, med-reference binder, allergy cards, and a tray for empty medication packaging if a candidate brought any.", "Orderly and quietly invasive."], npcs: ["Simone Bell or a clinical coordinator."], texture: ["The room explains why the questionnaire asked what it asked.", "A strong place for a player to wonder what combinations the staff are screening for."] },
+              { label: "278", title: "Room 278", function: "Lifestyle pressure and logistics interview room.", visible: ["Interview pad, dependency matrix sheet, transit map, and a side folder labeled 'continuity factors'.", "The decor is almost nonexistent."], npcs: ["Micah Trask's team or an operations interviewer."], texture: ["This is where money, family, obligation, and desperation become usable variables.", "It feels less like medicine and more like profiling."] },
+              { label: "282", title: "Room 282", function: "Stress inventory and provocation-prep room.", visible: ["Headphones, simple stress scale cards, breathing sensor, and a blank screen waiting for a selected scenario.", "The room is bare because the test is internal."], npcs: ["Dr. Micah Trask and one assistant."], texture: ["Even before the actual stressor, candidates often leave this room unsettled.", "The questions can target exactly the kind of backstory material players invented on the intro page."] },
+              { label: "286", title: "Room 286", function: "Clinician interpretation hold for candidates whose test results need fast synthesis.", visible: ["Two laptops, printed readout tray, wall-mounted whiteboard, and a secure cart for pending files.", "No guest comforts at all."], npcs: ["Anika Sorrell, Priya Nand, or whichever lead needs a quiet read on a result."], texture: ["Players may never enter this room before ignition, but getting a look inside explains how seriously they are being sorted.", "If someone does enter, they should immediately feel discussed."] },
+              { label: "288", title: "Room 288", function: "Deviation follow-up and quiet security interview room.", visible: ["Plain table, one extra chair against the wall, evidence envelopes, and a small lockable drawer.", "Not overtly threatening, which is the point."], npcs: ["Victor Haldane, Naomi Varga, or a compliance rep."], texture: ["Used when a candidate refuses a test, asks the wrong question, or goes wandering.", "Still polite enough that players may walk in willingly once."] }
+            ]
+          },
+          {
+            title: "Testing Bullpens and East Suite",
+            rooms: [
+              { label: "261-A", title: "Room 261-A", function: "Wearable fitting bay for the first step of upstairs routing.", visible: ["Band straps, adhesive tabs, sanitizer, and a tray of already-paired devices waiting by candidate number.", "A small monitor confirms signal quality in green or amber."], npcs: ["Caleb Wren's assistant or a nurse tech."], texture: ["A gentle procedural room that still turns the body into hardware.", "The pairing list can reveal how far ahead the staff planned."] },
+              { label: "261-B", title: "Room 261-B", function: "Hydration and pretest waiting bay beside the west stair route.", visible: ["Water, electrolyte packets, crackers, folded blankets, and a clipboard titled 'ready to proceed'.", "Much calmer than the rooms around it."], npcs: ["Greta Solheim or one care assistant with whoever needs a pause."], texture: ["A convincing kindness point before the more invasive rooms.", "Players will trust this bay more than most of the floor."] },
+              { label: "235-A", title: "Room 235-A", function: "Specimen labeling bay for west-side draws and swabs.", visible: ["Barcoded labels, sealed tubes, chain forms, and a printer spitting IDs at regular intervals.", "Precision over comfort."], npcs: ["Caleb Wren or one lab aide."], texture: ["This bay makes the scope of the program feel larger than what the attendees can see.", "Every sample here is already destined somewhere else."] },
+              { label: "235-B", title: "Room 235-B", function: "Draw support bay that resets kits and stages the next subject.", visible: ["Needle trays, gloves, sharps box, and a cart arranged with almost military neatness.", "The room smells faintly of alcohol prep."], npcs: ["A phlebotomy assistant and Eli Navarro on pickup runs."], texture: ["Useful for showing how practiced the staff are.", "No one here behaves like today is unusual."] },
+              { label: "235-C", title: "Room 235-C", function: "Turnover and disinfection bay for west-side stations.", visible: ["Wipe bins, disposables, folded pads, and one checklist governing reset between candidates.", "Functional to the point of austerity."], npcs: ["Custodial support or a nurse tech between rooms."], texture: ["A reminder that the test floor expects constant throughput.", "One of the best places to smell the machinery of the day."] },
+              { label: "235-D", title: "Room 235-D", function: "Courier handoff and cold-chain staging bay.", visible: ["Insulated carrier, timed pickup log, small temp logger, and sealed bags marked only by code.", "Nothing personal remains attached to a sample once it reaches this bay."], npcs: ["Eli Navarro, Caleb Wren, or a courier arriving at the exact minute required."], texture: ["A very strong clue room if the players start following where bodies become data and then cargo.", "The codes here can imply a larger network beyond Building A."] },
+              { label: "219-A", title: "Room 219-A", function: "Gaze-tracking station for fixation, pursuit, and reaction mapping.", visible: ["Mounted eye tracker, chin rest, dark monitor hood, and a calibration board with tiny dots.", "The chair position is taped onto the floor."], npcs: ["Dr. Dev Patel's assistant or Dr. Selene Ward."], texture: ["This room feels overprecise in a way that makes people self-conscious.", "Good place for a subtle visual anomaly or a reaction that staff care about too much."] },
+              { label: "219-B", title: "Room 219-B", function: "Response-pad station for pattern speed and task-switch timing.", visible: ["Two-button response pads, timer display, headphones, and a screen full of simple shapes that stop feeling simple after a minute.", "Highly repeatable, which is exactly why staff trust it."], npcs: ["Dev Patel's team and one candidate."], texture: ["A believable test that can still feel wrong once the same task is repeated under tiny changes.", "The room rewards attentive players."] },
+              { label: "219-C", title: "Room 219-C", function: "Pattern-recognition booth for ambiguous audio-visual stimuli.", visible: ["Half-darkened workstation, headphones, grid cards, and a tablet where staff mark not just correct answers but speed and hesitation.", "The room is smaller than people expect."], npcs: ["A cognitive tech or Yvette Cole observing from the side."], texture: ["One of the easiest places to seed the idea that the program is testing resonance, not intelligence.", "The candidate leaves unsure what counted as the real answer."] },
+              { label: "293-B", title: "Room 293-B", function: "EMG and sensor-fit bay for muscle response capture.", visible: ["Electrode leads, skin prep pads, adhesive remover, and one monitor with live waveforms.", "The equipment looks expensive and a little improvised."], npcs: ["Priya Nand or an instrumentation aide."], texture: ["This room makes the body feel like a signal source.", "A perfect place for a result spike nobody can explain."] },
+              { label: "293-C", title: "Room 293-C", function: "Live data review desk for center-floor test streams.", visible: ["Three monitors, candidate timeline view, open spreadsheets, and one dashboard with metrics the players will not understand yet.", "There is always too much information on screen."], npcs: ["Priya Nand and whichever lead has come to sanity-check a result."], texture: ["One of the strongest proof points that all the stations are being correlated in real time.", "If a PC sees this desk, the day stops being compartmentalized."] },
+              { label: "293-D", title: "Room 293-D", function: "Quiet observation bay for cool-down and second-look review.", visible: ["Chair, pulse clip, paper observation sheet, and a small privacy divider making one person feel more isolated than sheltered.", "Minimal equipment but intense attention."], npcs: ["A nurse aide, Yvette Cole, or a candidate being watched after an unusual response."], texture: ["This bay is where staff pause to decide whether something they just saw matters.", "Excellent place for a player to notice that another attendee is being handled differently."] },
+              { label: "221-A", title: "Room 221-A", function: "Decision-tree interview pod focused on priorities under uncertainty.", visible: ["Tablet on stand, paper scenario cards, and a timer the candidate is not told to watch.", "The seating is close enough to feel intimate."], npcs: ["Micah Trask's team or Yvette Cole."], texture: ["The questions sound professional until they start mirroring a character's real pressure points.", "This pod can weaponize a backstory elegantly."] },
+              { label: "221-B", title: "Room 221-B", function: "Cooperative reasoning pod used for paired or hypothetical social decisions.", visible: ["Two chairs, scenario board, and a pile of case cards about triage, access, or trust.", "Built to sound like an ethics exercise, not a sort."], npcs: ["Micah Trask or a behavioral aide."], texture: ["A good place to expose whether a character defaults to alliance, manipulation, or withdrawal.", "The pod feels conversational until the scoring is obvious."] },
+              { label: "221-D", title: "Room 221-D", function: "Recall and contradiction follow-up pod for answers that did not line up across earlier rooms.", visible: ["Interview notes, highlighter marks, and a split-screen showing earlier timestamps.", "The room is designed for catching inconsistency."], npcs: ["Yvette Cole or Ruth Adjei when the contradiction matters."], texture: ["This pod can make a liar sweat without ever sounding accusatory.", "Also useful if a PC is telling multiple truths in different rooms."] },
+              { label: "215-A", title: "Room 215-A", function: "Motor-planning station using simple movements under shifting instructions.", visible: ["Floor markers, hand targets, metronome display, and a tablet camera pointed at the subject's whole body.", "Looks closer to physical therapy than research."], npcs: ["Dr. Micah Trask's aide or an instrument tech."], texture: ["Good place for a character with combat, dance, or sports background to shine in a way the staff care about.", "The room rewards embodied competence, not academic confidence."] },
+              { label: "215-C", title: "Room 215-C", function: "Reorientation and cool-down desk for candidates leaving the higher-pressure pods.", visible: ["Water, blank cards for notes, one floor map, and a checklist titled 'stable to continue'.", "This bay is the floor's soft landing on the east side."], npcs: ["Greta Solheim or a calm behavioral aide."], texture: ["A strong place for private player reflection before the next test.", "Because it is gentler, staff sometimes reveal more here than they mean to."] },
+              { label: "215-D", title: "Room 215-D", function: "Timed stress-response pod for short pressure bursts and decision recording.", visible: ["Timer panel, headphones, pulse clip, and a prompt screen with rapidly changing instructions.", "The pod is tidy and unsympathetic."], npcs: ["Dr. Micah Trask and one candidate."], texture: ["This room can push a character without ever becoming overt torture.", "A very good place to set up whose baseline starts to drift before ignition."] },
+              { label: "207", title: "Room 207", function: "Second-floor conference room for small-group orientation, post-briefing split, and selective debrief.", visible: ["Smaller seating block than Room 195, monitor wall, writable glass panel, and a tray of personalized packets set before specific chairs.", "This room feels less public and more surgical."], npcs: ["Dr. Mara Kessler, Dr. Dev Patel, Hester Quinn, and whichever subset of candidates has just been advanced upstairs."], texture: ["If Room 195 sells the program, Room 207 tells you you are in it.", "Ideal room for the first moment a player notices their group is being sorted by something deeper than logistics."] },
+              { label: "297", title: "Room 297", function: "Instrument cage and controlled storage room.", visible: ["Locked cabinets, rugged equipment cases, spare sensors, radio dock, and a log sheet clipped to the inside wall.", "Pure support infrastructure."], npcs: ["Kenji Sato and only the staff he trusts enough to let inside."], texture: ["Unimpressive until someone needs gear fast.", "A perfect room for missing device hooks or suspicious equipment labels."] },
+              { label: "299", title: "Room 299", function: "Security witness room and restricted follow-up office.", visible: ["Two chairs, secure drawer, paper incident forms, camera feed tablet, and a soft wall panel that deadens sound.", "Calmer than a holding room, colder than an office."], npcs: ["Victor Haldane, Naomi Varga, or a compliance rep waiting for a conversation they hope stays short."], texture: ["This room exists so nothing awkward has to happen in public.", "If a player is brought here before ignition, they will know the day just changed shape."] }
+            ]
+          }
+        ]
+      }
+    ];
+
+    function mapRect(label, x, y, w, h) {
+      return { label, x, y, w, h };
+    }
+
+    const floorMapData = new Map([
+      ["Building A 1/F", {
+        container: "buildingAFirstMap",
+        image: "https://www.joinnparks.com/info/img/floorplans/Building_A_First_Floor.jpg",
+        alt: "JOINN Innovation Park Building A first floor plan.",
+        hotspots: [
+          mapRect("Main Entrance", 1005, 176, 104, 114),
+          mapRect("Link", 929, 287, 193, 491),
+          mapRect("Elevator", 915, 348, 67, 109),
+          mapRect("Stair", 340, 388, 82, 190),
+          mapRect("103 Corridor", 141, 286, 721, 46),
+          mapRect("161 Corridor", 126, 332, 34, 257),
+          mapRect("193 Corridor", 145, 589, 720, 49),
+          mapRect("Restrooms 1/F", 668, 591, 194, 107),
+          mapRect("140", 14, 175, 111, 107),
+          mapRect("138", 126, 175, 38, 107),
+          mapRect("136A", 166, 175, 83, 107),
+          mapRect("136", 251, 175, 74, 107),
+          mapRect("130", 328, 175, 73, 107),
+          mapRect("126", 403, 175, 72, 107),
+          mapRect("122", 478, 175, 72, 107),
+          mapRect("116", 553, 175, 72, 107),
+          mapRect("114", 628, 175, 72, 107),
+          mapRect("110", 703, 175, 72, 107),
+          mapRect("106", 778, 175, 72, 107),
+          mapRect("102", 853, 175, 73, 107),
+          mapRect("146", 14, 283, 111, 81),
+          mapRect("150", 14, 365, 111, 70),
+          mapRect("154", 14, 436, 111, 73),
+          mapRect("158", 14, 510, 111, 79),
+          mapRect("160", 14, 590, 111, 108),
+          mapRect("186", 161, 590, 77, 108),
+          mapRect("188 Office", 239, 590, 76, 108),
+          mapRect("188 Library", 397, 590, 214, 108),
+          mapRect("129-A", 313, 332, 67, 57),
+          mapRect("129-B", 381, 332, 72, 57),
+          mapRect("161-A", 159, 332, 74, 57),
+          mapRect("161-B", 234, 332, 75, 57),
+          mapRect("161-C", 234, 390, 75, 67),
+          mapRect("161-D", 159, 390, 74, 67),
+          mapRect("181-A", 159, 458, 74, 64),
+          mapRect("181-B", 234, 458, 75, 64),
+          mapRect("181-C", 234, 523, 75, 67),
+          mapRect("181-D", 159, 523, 74, 67),
+          mapRect("103-A", 470, 332, 74, 57),
+          mapRect("103-B", 545, 332, 74, 57),
+          mapRect("103-C", 545, 390, 74, 67),
+          mapRect("103-D", 470, 390, 74, 67),
+          mapRect("193-A", 470, 458, 74, 64),
+          mapRect("193-B", 545, 458, 74, 64),
+          mapRect("193-C", 545, 523, 74, 67),
+          mapRect("193-D", 470, 523, 74, 67),
+          mapRect("195", 621, 332, 154, 259),
+          mapRect("107", 776, 332, 99, 139),
+          mapRect("197", 776, 472, 44, 58),
+          mapRect("199", 820, 472, 55, 118)
+        ]
+      }],
+      ["Building A 2/F", {
+        container: "buildingASecondMap",
+        image: "https://www.joinnparks.com/info/img/floorplans/Building_A_Second_Floor.jpg",
+        alt: "JOINN Innovation Park Building A second floor plan.",
+        hotspots: [
+          mapRect("Main Entrance 2/F", 1002, 176, 109, 116),
+          mapRect("Link Void", 925, 288, 188, 312),
+          mapRect("Bridge", 952, 598, 160, 185),
+          mapRect("Elevator 2/F", 915, 346, 72, 108),
+          mapRect("Stair 2/F", 321, 330, 137, 205),
+          mapRect("219 Corridor", 144, 286, 721, 46),
+          mapRect("261 Corridor", 126, 332, 34, 257),
+          mapRect("293 Corridor", 145, 589, 720, 49),
+          mapRect("220 Corridor", 875, 331, 35, 262),
+          mapRect("Restrooms 2/F", 668, 591, 193, 107),
+          mapRect("240", 14, 175, 111, 107),
+          mapRect("236A", 126, 175, 76, 107),
+          mapRect("234", 203, 175, 93, 107),
+          mapRect("230A", 297, 175, 75, 107),
+          mapRect("230", 373, 175, 70, 107),
+          mapRect("224", 444, 175, 73, 107),
+          mapRect("214A", 518, 175, 72, 107),
+          mapRect("214", 591, 175, 72, 107),
+          mapRect("210", 664, 175, 73, 107),
+          mapRect("206", 738, 175, 73, 107),
+          mapRect("202", 812, 175, 75, 107),
+          mapRect("248A", 14, 283, 111, 74),
+          mapRect("258A", 14, 358, 111, 68),
+          mapRect("258B", 14, 427, 111, 76),
+          mapRect("260A", 14, 504, 111, 81),
+          mapRect("260B", 14, 586, 111, 113),
+          mapRect("266", 159, 590, 76, 108),
+          mapRect("270", 236, 590, 76, 108),
+          mapRect("274", 313, 590, 76, 108),
+          mapRect("278", 390, 590, 76, 108),
+          mapRect("282", 467, 590, 76, 108),
+          mapRect("286", 544, 590, 76, 108),
+          mapRect("288", 621, 590, 76, 108),
+          mapRect("261-A", 159, 332, 75, 114),
+          mapRect("261-B", 234, 332, 75, 114),
+          mapRect("235-A", 159, 446, 75, 77),
+          mapRect("235-B", 234, 446, 75, 77),
+          mapRect("235-C", 234, 524, 75, 67),
+          mapRect("235-D", 159, 524, 75, 67),
+          mapRect("219-A", 469, 332, 75, 59),
+          mapRect("219-B", 544, 332, 75, 59),
+          mapRect("219-C", 469, 392, 75, 64),
+          mapRect("293-B", 469, 457, 75, 67),
+          mapRect("293-C", 544, 525, 75, 67),
+          mapRect("293-D", 469, 525, 75, 67),
+          mapRect("221-A", 620, 332, 75, 59),
+          mapRect("221-B", 696, 332, 75, 59),
+          mapRect("221-D", 620, 392, 75, 64),
+          mapRect("215-A", 620, 457, 75, 67),
+          mapRect("215-C", 696, 525, 75, 67),
+          mapRect("215-D", 620, 525, 75, 67),
+          mapRect("207", 772, 332, 103, 139),
+          mapRect("297", 772, 472, 44, 58),
+          mapRect("299", 816, 472, 59, 118)
+        ]
+      }]
+    ]);
+
+    const rosterRoot = document.getElementById("buildingARoster");
+    const roomDialog = document.getElementById("roomDialog");
+    const roomDialogMeta = document.getElementById("roomDialogMeta");
+    const roomDialogTitle = document.getElementById("roomDialogTitle");
+    const roomDialogFunction = document.getElementById("roomDialogFunction");
+    const roomDialogVisible = document.getElementById("roomDialogVisible");
+    const roomDialogNpcs = document.getElementById("roomDialogNpcs");
+    const roomDialogTexture = document.getElementById("roomDialogTexture");
+    const roomDialogClose = document.getElementById("roomDialogClose");
+    const rosterNames = buildingARoster.map(person => person.name).sort((a, b) => b.length - a.length);
+    const roomLookupByKey = new Map();
+    const preferredRoomKeyByLabel = new Map();
+    const roomButtonsByKey = new Map();
+    const roomHotspotsByKey = new Map();
+    const roomAliasEntries = [];
+    const roomAliasMap = new Map();
+    let focusedRosterCard = null;
+    let focusedRoomButton = null;
+    let focusedRoomHotspot = null;
+
+    function escapeRegExp(text) {
+      return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    function slugify(text) {
+      return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    }
+
+    for (const floor of buildingAFloors) {
+      floor.key = slugify(floor.floor);
+      for (const group of floor.groups) {
+        for (const room of group.rooms) {
+          room.key = `${floor.key}-${slugify(room.label)}`;
+          room.floorKey = floor.key;
+          roomLookupByKey.set(room.key, { floor, room });
+          if (!preferredRoomKeyByLabel.has(room.label)) {
+            preferredRoomKeyByLabel.set(room.label, room.key);
+          }
+        }
+      }
+    }
+
+    for (const [label, key] of preferredRoomKeyByLabel) {
+      roomAliasEntries.push({ phrase: label, key });
+      roomAliasMap.set(label, key);
+      if (/^\d/.test(label)) {
+        const phrase = `Room ${label}`;
+        roomAliasEntries.push({ phrase, key });
+        roomAliasMap.set(phrase, key);
+      }
+    }
+
+    roomAliasEntries.sort((a, b) => b.phrase.length - a.phrase.length);
+    const npcNamePattern = new RegExp(rosterNames.map(escapeRegExp).join("|"), "g");
+    const roomReferencePattern = new RegExp(roomAliasEntries.map(entry => escapeRegExp(entry.phrase)).join("|"), "g");
+    const namedOccupantsByRoom = new Map();
+
+    for (const person of buildingARoster) {
+      for (const key of extractRoomKeys(person.base)) {
+        if (!namedOccupantsByRoom.has(key)) namedOccupantsByRoom.set(key, []);
+        namedOccupantsByRoom.get(key).push(person.name);
+      }
+    }
+
+    function npcId(name) {
+      return `npc-${slugify(name)}`;
+    }
+
+    function roomButtonId(key) {
+      return `room-${key}`;
+    }
+
+    function roomHotspotId(key) {
+      return `map-${key}`;
+    }
+
+    function getRoomKey(labelOrKey) {
+      if (roomLookupByKey.has(labelOrKey)) return labelOrKey;
+      return preferredRoomKeyByLabel.get(labelOrKey) || null;
+    }
+
+    function extractRoomKeys(text) {
+      const keys = [];
+      if (!roomReferencePattern.source) return keys;
+      text.replace(roomReferencePattern, match => {
+        const key = roomAliasMap.get(match);
+        if (key && !keys.includes(key)) keys.push(key);
+        return match;
+      });
+      return keys;
+    }
+
+    function renderList(target, items) {
+      target.innerHTML = "";
+      for (const item of items) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        target.appendChild(li);
+      }
+    }
+
+    function pulseRoomButton(button) {
+      if (!button) return;
+      if (focusedRoomButton && focusedRoomButton !== button) {
+        focusedRoomButton.classList.remove("is-focus");
+      }
+      focusedRoomButton = button;
+      button.classList.add("is-focus");
+      window.setTimeout(() => {
+        button.classList.remove("is-focus");
+        if (focusedRoomButton === button) focusedRoomButton = null;
+      }, 2200);
+    }
+
+    function pulseRoomHotspot(hotspot) {
+      if (!hotspot) return;
+      if (focusedRoomHotspot && focusedRoomHotspot !== hotspot) {
+        focusedRoomHotspot.classList.remove("is-focus");
+      }
+      focusedRoomHotspot = hotspot;
+      hotspot.classList.add("is-focus");
+      window.setTimeout(() => {
+        hotspot.classList.remove("is-focus");
+        if (focusedRoomHotspot === hotspot) focusedRoomHotspot = null;
+      }, 2200);
+    }
+
+    function highlightRoomTargets(key) {
+      pulseRoomButton(roomButtonsByKey.get(key));
+      pulseRoomHotspot(roomHotspotsByKey.get(key));
+    }
+
+    function focusRosterCard(name) {
+      const card = document.getElementById(npcId(name));
+      if (!card) return;
+
+      if (focusedRosterCard && focusedRosterCard !== card) {
+        focusedRosterCard.classList.remove("is-focus");
+      }
+
+      focusedRosterCard = card;
+      card.classList.add("is-focus");
+      window.setTimeout(() => {
+        card.classList.remove("is-focus");
+        if (focusedRosterCard === card) focusedRosterCard = null;
+      }, 2200);
+
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      window.history.replaceState(null, "", `#${card.id}`);
+    }
+
+    function focusRoomButton(labelOrKey) {
+      const key = getRoomKey(labelOrKey);
+      if (!key) return;
+
+      const button = roomButtonsByKey.get(key);
+      if (!button) return;
+
+      highlightRoomTargets(key);
+      button.scrollIntoView({ behavior: "smooth", block: "center" });
+      window.history.replaceState(null, "", `#${button.id}`);
+    }
+
+    function appendRoomReferenceText(target, text) {
+      let lastIndex = 0;
+      let matched = false;
+
+      text.replace(roomReferencePattern, (match, offset) => {
+        matched = true;
+        if (offset > lastIndex) {
+          target.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
+        }
+
+        const key = roomAliasMap.get(match);
+        const link = document.createElement("a");
+        link.href = `#${roomButtonId(key)}`;
+        link.className = "roomJump";
+        link.textContent = match;
+        link.addEventListener("click", event => {
+          event.preventDefault();
+          focusRoomButton(key);
+        });
+        target.appendChild(link);
+        lastIndex = offset + match.length;
+        return match;
+      });
+
+      if (!matched) {
+        target.textContent = text;
+      } else if (lastIndex < text.length) {
+        target.appendChild(document.createTextNode(text.slice(lastIndex)));
+      }
+    }
+
+    function renderNpcList(target, items) {
+      target.innerHTML = "";
+
+      for (const item of items) {
+        const li = document.createElement("li");
+        let lastIndex = 0;
+        let matched = false;
+
+        item.replace(npcNamePattern, (match, offset) => {
+          matched = true;
+          if (offset > lastIndex) {
+            li.appendChild(document.createTextNode(item.slice(lastIndex, offset)));
+          }
+
+          const link = document.createElement("a");
+          link.href = `#${npcId(match)}`;
+          link.className = "npcJump";
+          link.textContent = match;
+          link.addEventListener("click", event => {
+            event.preventDefault();
+            roomDialog.close();
+            focusRosterCard(match);
+          });
+          li.appendChild(link);
+          lastIndex = offset + match.length;
+          return match;
+        });
+
+        if (!matched) {
+          li.textContent = item;
+        } else if (lastIndex < item.length) {
+          li.appendChild(document.createTextNode(item.slice(lastIndex)));
+        }
+
+        target.appendChild(li);
+      }
+    }
+
+    function openRoomDetail(floorLabel, room) {
+      highlightRoomTargets(room.key);
+      roomDialogMeta.textContent = floorLabel;
+      roomDialogTitle.textContent = room.title;
+      roomDialogFunction.textContent = room.function;
+      renderList(roomDialogVisible, room.visible);
+      renderNpcList(roomDialogNpcs, room.npcs);
+      renderList(roomDialogTexture, room.texture);
+      roomDialog.showModal();
+    }
+
+    function shortNpcName(name) {
+      return name.replace(/^Dr\.\s+/i, "").trim().split(/\s+/).pop();
+    }
+
+    function pct(value, total) {
+      return (value / total) * 100;
+    }
+
+    function renderFloorMaps() {
+      for (const floor of buildingAFloors) {
+        const config = floorMapData.get(floor.floor);
+        if (!config) continue;
+
+        const root = document.getElementById(config.container);
+        if (!root) continue;
+
+        const roomByLabel = new Map();
+        for (const group of floor.groups) {
+          for (const room of group.rooms) {
+            roomByLabel.set(room.label, room);
+          }
+        }
+
+        const guide = document.createElement("p");
+        guide.className = "mapGuide";
+        guide.innerHTML = "<strong>Plan overlay:</strong> click any room on the plan for contents. Blue chips mark named staff base rooms. Click a chip to jump to that NPC.";
+
+        const shell = document.createElement("div");
+        shell.className = "floorMapShell";
+
+        const figure = document.createElement("figure");
+        figure.className = "floorMapFigure";
+
+        const image = document.createElement("img");
+        image.className = "floorMapImage";
+        image.src = config.image;
+        image.alt = config.alt;
+
+        const layer = document.createElement("div");
+        layer.className = "floorMapLayer";
+
+        for (const spot of config.hotspots) {
+          const room = roomByLabel.get(spot.label);
+          if (!room) continue;
+
+          const button = document.createElement("div");
+          button.className = room.area ? "floorHotspot area" : "floorHotspot";
+          button.id = roomHotspotId(room.key);
+          button.title = room.title;
+          button.tabIndex = 0;
+          button.setAttribute("role", "button");
+          button.setAttribute("aria-label", `${floor.floor} ${room.title}`);
+          button.style.setProperty("--x", pct(spot.x, 1200));
+          button.style.setProperty("--y", pct(spot.y, 900));
+          button.style.setProperty("--w", pct(spot.w, 1200));
+          button.style.setProperty("--h", pct(spot.h, 900));
+          button.addEventListener("click", () => openRoomDetail(floor.floor, room));
+          button.addEventListener("keydown", event => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openRoomDetail(floor.floor, room);
+            }
+          });
+
+          const namedStaff = namedOccupantsByRoom.get(room.key) || [];
+          if (namedStaff.length) {
+            const chips = document.createElement("div");
+            chips.className = "staffChips";
+
+            for (const name of namedStaff.slice(0, 2)) {
+              const chip = document.createElement("a");
+              chip.href = `#${npcId(name)}`;
+              chip.className = "staffChip";
+              chip.title = name;
+              chip.textContent = shortNpcName(name);
+              chip.addEventListener("click", event => {
+                event.preventDefault();
+                event.stopPropagation();
+                focusRosterCard(name);
+              });
+              chips.appendChild(chip);
+            }
+
+            if (namedStaff.length > 2) {
+              const more = document.createElement("span");
+              more.className = "staffChip more";
+              more.textContent = `+${namedStaff.length - 2}`;
+              chips.appendChild(more);
+            }
+
+            button.appendChild(chips);
+          }
+
+          roomHotspotsByKey.set(room.key, button);
+          layer.appendChild(button);
+        }
+
+        figure.appendChild(image);
+        figure.appendChild(layer);
+        shell.appendChild(figure);
+
+        const legend = document.createElement("div");
+        legend.className = "floorLegend";
+        legend.innerHTML = `
+          <span class="legendTag"><span class="legendSwatch"></span>Room hit area</span>
+          <span class="legendTag"><span class="legendSwatch area"></span>Shared area</span>
+          <span class="legendTag"><span class="legendSwatch chip">NPC</span>Named staff chip</span>
+        `;
+        shell.appendChild(legend);
+
+        root.appendChild(guide);
+        root.appendChild(shell);
+      }
+    }
+
+    function renderRoster() {
+      for (const person of buildingARoster) {
+        const card = document.createElement("article");
+        card.className = "staffCard";
+        card.id = npcId(person.name);
+        const head = document.createElement("div");
+        head.className = "npcHead";
+        head.innerHTML = `<h3>${person.name}</h3><div class="role">${person.role}</div>`;
+
+        const base = document.createElement("p");
+        const strong = document.createElement("strong");
+        strong.textContent = "Base: ";
+        base.appendChild(strong);
+        appendRoomReferenceText(base, person.base);
+
+        const note = document.createElement("p");
+        note.textContent = person.note;
+
+        card.appendChild(head);
+        card.appendChild(base);
+        card.appendChild(note);
+        rosterRoot.appendChild(card);
+      }
+    }
+
+    function renderFloors() {
+      for (const floor of buildingAFloors) {
+        const root = document.getElementById(floor.container);
+        for (const group of floor.groups) {
+          const section = document.createElement("section");
+          section.className = "roomGroup";
+
+          const heading = document.createElement("h3");
+          heading.textContent = group.title;
+          section.appendChild(heading);
+
+          const links = document.createElement("div");
+          links.className = "roomLinks";
+
+          for (const room of group.rooms) {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = room.area ? "roomLink area" : "roomLink";
+            button.id = roomButtonId(room.key);
+            button.textContent = room.label;
+            button.addEventListener("click", () => openRoomDetail(floor.floor, room));
+            roomButtonsByKey.set(room.key, button);
+            links.appendChild(button);
+          }
+
+          section.appendChild(links);
+          root.appendChild(section);
+        }
+      }
+    }
+
+    function validateFloorMaps() {
+      for (const floor of buildingAFloors) {
+        const config = floorMapData.get(floor.floor);
+        if (!config) {
+          console.warn(`No floor map configured for ${floor.floor}`);
+          continue;
+        }
+
+        const mappedLabels = new Set(config.hotspots.map(spot => spot.label));
+        const missing = [];
+        for (const group of floor.groups) {
+          for (const room of group.rooms) {
+            if (!mappedLabels.has(room.label)) missing.push(room.label);
+          }
+        }
+        if (missing.length) {
+          console.warn(`Missing floor map hotspots for ${floor.floor}:`, missing);
+        }
+      }
+    }
+
+    roomDialogClose.addEventListener("click", () => roomDialog.close());
+    roomDialog.addEventListener("click", event => {
+      const rect = roomDialog.getBoundingClientRect();
+      const inside = rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
+      if (!inside) roomDialog.close();
+    });
+
+    renderRoster();
+    renderFloorMaps();
+    renderFloors();
+    validateFloorMaps();
+  })();
+  </script>
+</body>
+</html>
