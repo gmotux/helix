@@ -408,6 +408,12 @@
       color:#6b21c7;
     }
 
+    .roomLink.escape-critical{
+      border-color:rgba(173,31,31,.54);
+      background:rgba(173,31,31,.12);
+      color:#8f1e1e;
+    }
+
     dialog.roomDialog{
       width:min(760px, calc(100% - 28px));
       max-width:760px;
@@ -733,6 +739,12 @@
       background:rgba(138,43,226,.22);
     }
 
+    .floorHotspot.escape-critical{
+      border-color:rgba(32,152,82,.82);
+      background:rgba(34,197,94,.24);
+      box-shadow:inset 0 0 0 1px rgba(22,101,52,.12);
+    }
+
     .floorHotspot.area.is-focus{
       border-color:rgba(23,127,121,.82);
       background:rgba(23,127,121,.12);
@@ -799,6 +811,13 @@
       pointer-events:none;
     }
 
+    .staffChip.pcclue{
+      border-color:rgba(162,28,175,.34);
+      background:rgba(252,241,255,.96);
+      color:#8c1ca0;
+      pointer-events:none;
+    }
+
     .floorLegend{
       display:flex;
       gap:8px;
@@ -859,6 +878,16 @@
       border-color:rgba(152,111,56,.38);
     }
 
+    .legendSwatch.pcclue{
+      background:rgba(252,241,255,.98);
+      border-color:rgba(162,28,175,.38);
+    }
+
+    .legendSwatch.escape{
+      background:rgba(34,197,94,.24);
+      border-color:rgba(32,152,82,.78);
+    }
+
     .legendSwatch.chip{
       width:auto;
       min-width:12px;
@@ -868,6 +897,47 @@
       color:var(--blue);
       font:700 9px/12px Arial, Helvetica, sans-serif;
       text-align:center;
+    }
+
+    .stepList{
+      margin:0;
+      padding-left:20px;
+    }
+
+    .stepList li + li{
+      margin-top:8px;
+    }
+
+    .stepNote{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .bridgeDoorFigure{
+      margin:12px 0 0;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .bridgeDoorFigure svg{
+      display:block;
+      width:100%;
+      height:auto;
+      background:linear-gradient(180deg, #edf2f6, #dfe6ed);
+    }
+
+    .bridgeDoorFigure figcaption{
+      padding:10px 12px 12px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+      border-top:1px solid var(--line);
+      background:#fff;
     }
 
     @media (max-width: 920px){
@@ -1416,6 +1486,103 @@
             <p>The dust front, route lockdowns, and record-protection behavior are all part of one contingency chain rather than three unrelated surprises.</p>
           </article>
         </div>
+      </section>
+
+      <section class="panel span-12">
+        <div class="eyebrow">Bridge Exit</div>
+        <h2>How The Door Is Actually Opened</h2>
+        <p class="panelLead">Red room pills and green map boxes are part of the bridge-exit chain.</p>
+        <ol id="bridgeExitSteps" class="stepList"></ol>
+        <p id="bridgeExitNote" class="stepNote"></p>
+        <p id="bridgeExitDoorLook" class="stepNote"></p>
+        <figure class="bridgeDoorFigure">
+          <svg viewBox="0 0 720 420" role="img" aria-label="Concept sketch of the Building A bridge-end service door with manual release box.">
+            <defs>
+              <linearGradient id="wallGrad" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#edf2f6"/>
+                <stop offset="100%" stop-color="#d7e0e8"/>
+              </linearGradient>
+              <linearGradient id="doorGrad" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#95a3af"/>
+                <stop offset="100%" stop-color="#667684"/>
+              </linearGradient>
+              <linearGradient id="glassGrad" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#6f7b87"/>
+                <stop offset="100%" stop-color="#4d5761"/>
+              </linearGradient>
+              <pattern id="wired" width="14" height="14" patternUnits="userSpaceOnUse">
+                <path d="M 14 0 L 0 0 0 14" fill="none" stroke="rgba(215,225,232,.35)" stroke-width="1"/>
+              </pattern>
+              <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="rgba(16,25,35,.22)"/>
+              </filter>
+            </defs>
+
+            <rect x="0" y="0" width="720" height="420" fill="url(#wallGrad)"/>
+            <rect x="0" y="328" width="720" height="92" fill="#7e8a95"/>
+            <rect x="0" y="334" width="720" height="86" fill="#6e7b86"/>
+
+            <rect x="24" y="46" width="126" height="258" rx="8" fill="#d7e1e9" stroke="#b7c2cc"/>
+            <rect x="570" y="46" width="126" height="258" rx="8" fill="#d7e1e9" stroke="#b7c2cc"/>
+            <rect x="36" y="58" width="102" height="234" rx="6" fill="#515b65"/>
+            <rect x="582" y="58" width="102" height="234" rx="6" fill="#515b65"/>
+            <g opacity=".55">
+              <circle cx="82" cy="118" r="46" fill="#2b3138"/>
+              <circle cx="638" cy="104" r="54" fill="#2b3138"/>
+              <circle cx="621" cy="160" r="39" fill="#2b3138"/>
+              <circle cx="107" cy="171" r="36" fill="#2b3138"/>
+            </g>
+            <g opacity=".16">
+              <path d="M50 84 h78 M50 110 h86 M46 136 h74 M58 168 h72 M42 194 h88 M54 222 h70 M48 250 h82" stroke="#f2f6f9" stroke-width="3"/>
+              <path d="M594 78 h72 M586 108 h86 M590 138 h74 M598 164 h70 M584 196 h88 M600 226 h66 M590 254 h82" stroke="#f2f6f9" stroke-width="3"/>
+            </g>
+
+            <rect x="173" y="20" width="374" height="312" rx="10" fill="#bfc9d2" stroke="#96a5b3" filter="url(#shadowSoft)"/>
+            <rect x="189" y="38" width="342" height="276" rx="6" fill="#c8d1d8" stroke="#8795a1"/>
+            <rect x="206" y="56" width="150" height="240" rx="4" fill="url(#doorGrad)" stroke="#4e5b66"/>
+            <rect x="364" y="56" width="150" height="240" rx="4" fill="url(#doorGrad)" stroke="#4e5b66"/>
+            <rect x="353" y="56" width="14" height="240" fill="#545f69"/>
+            <rect x="242" y="96" width="78" height="44" rx="3" fill="url(#glassGrad)" stroke="#c8d4de"/>
+            <rect x="400" y="96" width="78" height="44" rx="3" fill="url(#glassGrad)" stroke="#c8d4de"/>
+            <rect x="242" y="96" width="78" height="44" rx="3" fill="url(#wired)"/>
+            <rect x="400" y="96" width="78" height="44" rx="3" fill="url(#wired)"/>
+            <rect x="232" y="184" width="98" height="14" rx="6" fill="#2c3339"/>
+            <rect x="390" y="184" width="98" height="14" rx="6" fill="#2c3339"/>
+            <rect x="262" y="61" width="34" height="12" rx="4" fill="#5a646f"/>
+            <rect x="419" y="61" width="34" height="12" rx="4" fill="#5a646f"/>
+            <rect x="275" y="73" width="8" height="30" rx="3" fill="#626d79"/>
+            <rect x="432" y="73" width="8" height="30" rx="3" fill="#626d79"/>
+            <rect x="224" y="304" width="272" height="10" fill="#4f5963"/>
+            <rect x="214" y="314" width="292" height="12" rx="2" fill="#59646f"/>
+
+            <rect x="168" y="118" width="42" height="66" rx="4" fill="#677582" stroke="#3f4c58"/>
+            <rect x="176" y="128" width="26" height="10" rx="2" fill="#a8b5bf"/>
+            <rect x="176" y="144" width="26" height="30" rx="2" fill="#3a444d"/>
+            <circle cx="186" cy="160" r="5" fill="#d54a3d"/>
+            <rect x="194" y="154" width="8" height="18" rx="3" fill="#d9b43a"/>
+
+            <rect x="122" y="260" width="72" height="58" rx="4" fill="#8a7660" stroke="#66533e"/>
+            <path d="M122 279 h72 M122 298 h72 M146 260 v58" stroke="#6a5842" stroke-width="2"/>
+
+            <g fill="#27415d" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">
+              <text x="50" y="28">Bridge glass</text>
+              <text x="252" y="88">Wired-glass strip</text>
+              <text x="226" y="178">Dead crash bar</text>
+              <text x="100" y="108">BRG-REL box</text>
+              <text x="78" y="352">Maintenance crate</text>
+            </g>
+            <g stroke="#27415d" stroke-width="2" fill="none">
+              <path d="M98 32 L 96 58"/>
+              <path d="M286 92 L 286 96"/>
+              <path d="M276 180 L 276 184"/>
+              <path d="M138 112 L 168 138"/>
+              <path d="M130 346 L 146 318"/>
+            </g>
+          </svg>
+          <figcaption>
+            Straight-on concept sketch of the bridge-end exit: concrete-framed double steel leaves, wired-glass vision strip, dead crash bars, opaque dust beyond the bridge glass, the maintenance crate used to hide the override, and the `BRG-REL / MANUAL` box on the left interior wall.
+          </figcaption>
+        </figure>
       </section>
 
       <section class="panel span-12">
@@ -1994,6 +2161,8 @@
         title: /^\d/.test(label) ? `Room ${label}` : label,
         encounter,
         area: false,
+        escapeCritical: false,
+        pcClue: null,
         serum: null,
         view: [],
         occupants: [],
@@ -2318,7 +2487,7 @@
               postRoom("Main Entrance", 1, { area: true, title: "Main Entrance", view: ["The outer glass is buried in moving black dust; lobby lighting is gone except for a penlight at the reception desk.", "Two guests lie by the stanchions and the polished floor is tracked with ash-black footprints leading back inside."], occupants: ["Talia Reed and two shaking attendees are crouched behind the check-in desk.", "One hollow attendee drags itself along the vestibule threshold whenever the dust pulses."], threat: ["Low encounter: 1 hollow attendee if the room gets loud.", "Opening the outer doors means immediate exposure to the dust barrier."], loot: ["Two working flashlights, bottled water, nitrile masks, spare lanyards, and a mostly intact arrival log.", "A brass interior-office key sits in the desk organizer."], clue: ["The arrival log marks six names with a black triangle and the note 'escort to OA hold if green'.", "A referral sheet in Julian Park's hand is countersigned 'M. Chen'."], anomaly: ["Dust on the exterior glass crawls sideways against gravity whenever someone says a full name aloud."], noise: ["Muffled impacts from outside; inside, every pause becomes unnaturally total silence."], exit: ["Good initial shelter. The fastest way deeper in is the Link; the fastest way out is into the dust."] }),
               postRoom("Link", 2, { area: true, title: "Link", view: ["The coffee cart is overturned, the schedule screens are dead mid-banner, and one bench has been shoved into a bad barricade.", "A frozen routing graphic still reads red on black: 'REROUTE IN PROGRESS'."], occupants: ["Two hollows circle the benches without leaving the room's center line.", "Eli Navarro may cut through here if the party clears it."], threat: ["Moderate encounter: 2 hollows if approached openly.", "The open floor makes stealth and cover poor."], loot: ["Bottled water, protein bars, a dead tablet, and a campus directory placard pulled off its stand."], clue: ["One dead screen still shows 'Cohort C -> OA-2 / priority follow' under the HELIX branding."], anomaly: ["Voices in the link sound half a beat late beneath the dead screens."], noise: ["A metal tapping repeats inside the elevator seam.", "Shuffling from Room 195 rolls into the space and then stops."], exit: ["West to 161 Corridor is quieter; east toward the conference wing is faster but far more exposed."] }),
               postRoom("Elevator", 0, { area: true, title: "Elevator", view: ["The doors are stuck open eight inches on a car jammed between floors, with dried blood drawn down the metal seam.", "The call panel is dead except for one impossible cycling floor number."], occupants: ["No living occupant. Something knocks once from above every minute or so."], threat: ["No fair fight here, but forcing the doors risks the shaft and may draw Naomi Varga from the upper landing."], loot: ["A service card clipped behind the emergency panel and one dead phone on the floor of the car."], clue: ["The elevator procedure placard mentions 'candidate movement interruption' instead of evacuation."], anomaly: ["The floor indicator keeps cycling 2-0-2 with no power source."], noise: ["A single metal tap from the shaft, then a long wait."], exit: ["Do not rely on the elevator. The stairwell is the only practical vertical route."] }),
-              postRoom("Stair", 1, { area: true, title: "Central Stairwell", view: ["Three bodies lie on the landing and one candidate with a broken ankle has crawled behind the half wall.", "A flashlight spins slowly in place where it was dropped."], occupants: ["Owen Pike passed through recently; his blood and route notes go both up and down.", "One stunned hollow lingers above the first turn if the party climbs loudly."], threat: ["Low encounter: 1 hollow on the upper turn if noise carries.", "The broken-ankle candidate becomes a complication if left screaming."], loot: ["Working flashlight, dead security radio, clipped room map, and a dropped badge on a yellow cord."], clue: ["Owen's torn route sheet circles 195, 207, and 293-C in heavy marker."], anomaly: ["Shadows on the campus photos lag slightly behind moving bodies."], noise: ["Something quick above, then stillness."], exit: ["Primary path upstairs and one of the only routes that is not currently under direct line of sight from a hostile room."] }),
+              postRoom("Stair", 1, { area: true, title: "Central Stairwell", view: ["Three bodies lie on the landing and one candidate with a broken ankle has crawled behind the half wall.", "A flashlight spins slowly in place where it was dropped."], occupants: ["Owen Pike passed through recently; his blood and route notes go both up and down.", "One stunned hollow lingers above the first turn if the party climbs loudly."], threat: ["Low encounter: 1 hollow on the upper turn if noise carries.", "The broken-ankle candidate becomes a complication if left screaming."], loot: ["Working flashlight, dead security radio, clipped room map, and a dropped badge on a yellow cord."], clue: ["Owen's torn route sheet circles 195, 207, and 293-C in heavy marker.", "Across the bottom margin he wrote: 'UP STAIR. BRIDGE MANUAL IF LIFT DEAD.'"], anomaly: ["Shadows on the campus photos lag slightly behind moving bodies."], noise: ["Something quick above, then stillness."], exit: ["Primary path upstairs and one of the only routes that is not currently under direct line of sight from a hostile room."] }),
               postRoom("103 Corridor", 1, { area: true, title: "103 Corridor", view: ["Several doors stand open just wide enough to show overturned stools, dropped folders, and one shoe in the middle of the hall.", "Three candidate badges lie in a straight line as if placed there."], occupants: ["A terrified hospital observer hides in Room 126 with the door cracked.", "A conference-room hollow may drift through after enough noise."], threat: ["Low encounter if the party lingers or shouts: 1 wandering hollow from the conference wing."], loot: ["Dropped tote bag with snack bars, a campus brochure, and one intact penlight."], clue: ["Colored tabs on the door frames match the back-side badge codes, not the public lanyard colors."], anomaly: ["Blood beads point north no matter how the floor slopes."], noise: ["Sobbing from one side room; glass ticking from another."], exit: ["Many side doors, poor concealment. Good corridor for short bursts, bad corridor for standing still."] }),
               postRoom("161 Corridor", 0, { area: true, title: "161 Corridor", view: ["Blankets, water crates, and one fallen chair make the west corridor feel like a shelter that never fully formed.", "The air is warmer here than it should be."], occupants: ["No active hostiles when first reached.", "One scheduler temp may be hiding near Room 181-B if coaxed out carefully."], threat: ["No active combat. This is one of the better first-floor pause points."], loot: ["Blankets, snack bars, paper cups, and a half-used first aid pouch."], clue: ["A handwritten note on the chair reads 'if 195 fails, move any green badges west'."], anomaly: ["The corridor is warm near the blanket stack and colder near living skin."], noise: ["Soft tapping from the storage bay and muffled voices that stop when listened for."], exit: ["Best west-side approach to the support rooms and a useful fallback path if the conference wing is still hot."] }),
               postRoom("193 Corridor", 2, { area: true, title: "193 Corridor", view: ["This hall took the first rush: bodies, packets, a toppled vitals stand, and a blood trail pulled toward the security room.", "Dead signage reflects like wet stone instead of plastic."], occupants: ["Marta Ibarra crosses it in short controlled bursts.", "One route-hollow patrols between Room 195 and Room 199."], threat: ["Moderate encounter: 1 route-hollow and 1 crawler if searched noisily."], loot: ["Floor binder, name strips, pens, and a dented flashlight rolling under a chair rail."], clue: ["A red-tab packet under the vitals stand is stamped 'E. Voss review only'.", "Several room-call slips use the phrase 'public cover completed'."], anomaly: ["The corridor speakers emit a subsonic thrum felt in teeth rather than heard."], noise: ["Dragging steps from the conference wing; occasional bathroom door thumps."], exit: ["Main artery to most ground-floor objectives, but it never stays quiet for long."] }),
@@ -2328,11 +2497,11 @@
           {
             title: "North Perimeter Rooms",
             rooms: [
-              postRoom("140", 0, { view: ["The operations office is lit by a battery lantern on the routing board and a trail of Owen Pike's blood between desk and door.", "Color-coded room strips still cover one wall like a dead subway map."], occupants: ["Owen Pike is here if the party reaches him before the stairwell swarm does."], threat: ["No active combat if Owen trusts the party. If followed, he will try to relocate rather than hold."], loot: ["Full floor maps, spare badges, a penlight, dead radios, and an incident binder keyed by color only."], clue: ["The reroute board links 195 -> 207 -> 293-C -> 202 and carries the note 'NS hold if deviation'.", "Several name strips were moved before the event, not after it."], anomaly: ["Pushpins tremble toward Room 195 whenever the floor goes quiet."], noise: ["Footsteps in the corridor sometimes stop outside the door and then vanish."], exit: ["Lockable and briefly defensible. One of the best early safe rooms if Owen is alive."] }),
+              postRoom("140", 0, { view: ["The operations office is lit by a battery lantern on the routing board and a trail of Owen Pike's blood between desk and door.", "Color-coded room strips still cover one wall like a dead subway map."], occupants: ["Owen Pike is here if the party reaches him before the stairwell swarm does."], threat: ["No active combat if Owen trusts the party. If followed, he will try to relocate rather than hold."], loot: ["Full floor maps, spare badges, a penlight, dead radios, and an incident binder keyed by color only."], clue: ["The reroute board links 195 -> 207 -> 293-C -> 202 and carries the note 'NS hold if deviation'.", "A grease-pencil note on Owen's map reads: 'BRIDGE OVERRIDE - INTERIOR WALL LEFT OF DOOR, BEHIND CRATE.'", "Below it: 'SERVICE KEY QUIET / PRY LOUD.'"], anomaly: ["Pushpins tremble toward Room 195 whenever the floor goes quiet."], noise: ["Footsteps in the corridor sometimes stop outside the door and then vanish."], exit: ["Lockable and briefly defensible. One of the best early safe rooms if Owen is alive."] }),
               postRoom("138", 0, { view: ["The patch closet is cramped, hot, and somehow still humming even though nothing with a processor should be alive.", "One UPS unit glows faint blue under a layer of dust."], occupants: ["No living occupant."], threat: ["No active fight, but the closet is a trap if something hears the party inside."], loot: ["Maintenance keycard, cable spool, dead comms headset, and a labeled fiber trunk."], clue: ["A print spool reads 'telemetry mirror / P. Nand / OA uplink failed'."], anomaly: ["Two loose fiber ends glow dull blue whenever someone bleeds nearby."], noise: ["A server-hum that should not exist and stops the moment the door opens wide."], exit: ["Dead-end utility room. Good for gear, bad for staying."] }),
               postRoom("136A", 0, { view: ["A referral clerk is dead over the ledger, one hand still jammed into the scanner lid.", "The room smells strongly of toner and ozone."], occupants: ["No living occupant."], threat: ["No active combat."], loot: ["Referral folders, sponsor letters, scanner power brick, and a sealed envelope marked with one of the PCs' surnames if useful."], clue: ["The ledger marks certain invitees as 'C-track confirmed before call'."], anomaly: ["Wax seals on the referral packets soften and re-form as if the page is breathing heat."], noise: ["Paper tremors whenever the dust wall outside surges."], exit: ["Single doorway; good for a quick search and immediate exit."] }),
               postRoom("136", 0, { view: ["Badge blanks and lanyard clips are scattered around a dead printer that keeps clicking without paper movement.", "Several photo retake shots are still drying on the counter."], occupants: ["No living occupant, though one temp may have died under the collapsed backdrop."], threat: ["No active combat unless the clicking draws a corridor threat."], loot: ["Badge printer batteries, barcode stock, extra lanyards, and a ring light that can be turned into glare cover."], clue: ["Corrected badges have a second internal code on the reverse in much smaller print than the public summit ID."], anomaly: ["Printed faces blur at the eyes if held under a flashlight too long."], noise: ["The printer clicks once every minute whether plugged in or not."], exit: ["Easy in and out, but little cover if something enters behind the party."] }),
-              postRoom("130", 0, { view: ["The coffee service is untouched beside a dead partner observer slumped over the Boston map.", "The room feels almost too polite compared with the corridor outside."], occupants: ["No living occupant."], threat: ["No active combat."], loot: ["Business cards, one good pair of dress shears, bottled water, and a leather folio."], clue: ["The folio references 'continuity partners' and blank transfer forms with the destination field redacted."], anomaly: ["The dark monitor glass beads with black droplets instead of normal condensation."], noise: ["One chair shifts a fraction whenever anyone says 'partner'."], exit: ["Calm room, but not especially useful beyond its papers."] }),
+              postRoom("130", 0, { pcClue: "Sean Erinn", view: ["The coffee service is untouched beside a dead partner observer slumped over the Boston map.", "The room feels almost too polite compared with the corridor outside."], occupants: ["No living occupant."], threat: ["No active combat."], loot: ["Business cards, one good pair of dress shears, bottled water, and a leather folio."], clue: ["The folio references 'continuity partners' and blank transfer forms with the destination field redacted.", "A clipped intake card reads: 'ERINN, Sean - city hall continuity cover acceptable. Remote accommodation maintain. Orange signet confirms visual match. Do not challenge employment history on 1/F.'"], anomaly: ["The dark monitor glass beads with black droplets instead of normal condensation."], noise: ["One chair shifts a fraction whenever anyone says 'partner'."], exit: ["Calm room, but not especially useful beyond its papers."] }),
               postRoom("126", 0, { view: ["Resume folders and recruiter bios are scattered under the table where someone hid badly.", "The dead monitor still catches the room in a way that makes it easy to miscount chairs at first glance."], occupants: ["One frightened candidate is hiding here if not already pulled out by noise elsewhere."], threat: ["No active combat unless the candidate panics and runs."], loot: ["Thin laptop, folders, pens, and a small lockbox with petty cash."], clue: ["A review list ranks disaster-medicine, logistics, and field-security backgrounds higher than academic prestige."], anomaly: ["Dust and emergency glare make the monitor glass hold a stubborn afterimage of the room's earlier seating pattern."], noise: ["Vent hiss keeps breaking into speech-like fragments without ever resolving into words."], exit: ["Potential survivor pickup point with only one obvious door."] }),
               postRoom("122", 0, { view: ["The support room looks untouched except for one chair knocked onto its side and the tissues soaked through at the top of the box.", "Water and disclosure packets still sit in neat stacks."], occupants: ["No living occupant."], threat: ["No active combat."], loot: ["Water, tissues, mild sedatives in a lockbox, disclosure packets, and soft blankets."], clue: ["The staff support script includes the line 'baseline distress is not disqualifying if response remains coherent'."], anomaly: ["The soft chairs creak as though someone keeps shifting weight in them."], noise: ["A very faint sobbing comes from nowhere identifiable."], exit: ["Quiet, enclosed, and useful for regrouping if the corridor is clear."] }),
               postRoom("116", 1, { view: ["A referred guest and a contracted physician both died trying to reach the door.", "The exam stool is tipped and one cabinet hangs open."], occupants: ["One candidate corpse reanimates slowly if the room is searched for more than a round or two."], threat: ["Low encounter: 1 slow-rising candidate hollow."], loot: ["Pulse oximeter, BP cuff, lab coat, disposable masks, and a locked lower cabinet with routine meds."], clue: ["One file is twice as thick as the rest and already includes blood type, old ocular scans, and a handwritten note: 'match history to response lane'."], anomaly: ["Monitor leads cling to skin and cloth without adhesive."], noise: ["A dead monitor gives one hollow heartbeat thump every thirty seconds."], exit: ["Single doorway and not much room to fight in. Better for quick medical scavenging than holding."] }),
@@ -2349,7 +2518,7 @@
               postRoom("150", 0, { view: ["Locker bins are spilled open and half the electronics were never checked back out.", "A courier bag has been dragged under the counter."], occupants: ["Eli Navarro may be here stuffing gear into his bag if the party reaches him before the Link becomes too hot."], threat: ["No active combat on first approach, but Eli may flee with useful items if startled."], loot: ["Pocket knives, phones that no longer work, coat check claims, zip pouches, and one usable multitool."], clue: ["Several checked bags belong to people who were never marked as having arrived in the public program."], anomaly: ["Evidence pouches fog from the inside."], noise: ["A rolling bin shifts every time the dust outside surges."], exit: ["Useful stash room, but loud to search."] }),
               postRoom("154", 0, { view: ["Greta turned the care room into a real shelter: blankets on the floor, tea gone cold, and two injured survivors under coats.", "The accommodations checklist is still clipped to the wall."], occupants: ["Greta Solheim and one or two frightened survivors."], threat: ["No active combat unless enemies are led here."], loot: ["Blankets, food bars, tea, water, and a few basic painkillers."], clue: ["Greta can name which rooms people were taken to before the event stopped pretending to be a program."], anomaly: ["The room grows warmer around the badly injured and colder around the dead just outside the door."], noise: ["Low human voices and occasional choking coughs."], exit: ["Best first-floor shelter if the party wants a human anchor point."] }),
               postRoom("158", 0, { view: ["Simon Bell has the crash cart open and is triaging by lantern light.", "Two bodies are covered with blankets against one wall."], occupants: ["Simon Bell and any wounded survivors the party or Greta have moved here."], threat: ["No active combat on first contact."], loot: ["Crash-cart meds, bandages, splints, AED, saline, and one working penlight."], clue: ["Simon can confirm that some people did not convulse first; they changed after a pause, as if waiting for something."], anomaly: ["The locked fridge drawer is cold enough to frost on the outside despite dead power."], noise: ["Metal cart wheels ticking gently as the floor settles."], exit: ["One of the best rooms in the building if the party needs immediate medical stabilization."] }),
-              postRoom("160", 0, { view: ["Supply crates have been ripped open in a hurry and Mateo's toolkit is spread across the floor like a diagram.", "Someone tried to choose everything useful in under a minute."], occupants: ["Mateo Rojas may regroup here between trips to the bridge."], threat: ["No active combat."], loot: ["Flashlights, PPE, duct tape, extension reels, maintenance tags, and a ring of service keys."], clue: ["Mateo can explain that the dust is worst at open exterior lines and seems to push hardest against glass, not concrete."], anomaly: ["Loose batteries feel warm but do nothing in complex devices."], noise: ["Air-handling groan from ducts that should be dead."], exit: ["Excellent supply room and one of the best places to plan a route."] }),
+              postRoom("160", 0, { view: ["Supply crates have been ripped open in a hurry and Mateo's toolkit is spread across the floor like a diagram.", "Someone tried to choose everything useful in under a minute."], occupants: ["Mateo Rojas may regroup here between trips to the bridge."], threat: ["No active combat."], loot: ["Flashlights, PPE, duct tape, extension reels, maintenance tags, a ring of service keys, a flat pry bar, and a compact ratchet set."], clue: ["Mateo can explain that the dust is worst at open exterior lines and seems to push hardest against glass, not concrete.", "One service tag on the ring is stamped: 'BRG-REL'.", "A taped maintenance note reads: 'Bridge faceplate opens by key. Emergency pry only under hard close.'"], anomaly: ["Loose batteries feel warm but do nothing in complex devices."], noise: ["Air-handling groan from ducts that should be dead."], exit: ["Excellent supply room and one of the best places to plan a route."] }),
               postRoom("186", 0, { view: ["The white-noise machine is dead, but the room still muffles sound as if it were on.", "A blanket lies on the floor where someone sat until they bled out."], occupants: ["No living occupant."], threat: ["No active combat."], loot: ["Water pitcher, blanket, plant pot, and one dropped silver lighter."], clue: ["A dying note on the floor says only 'they kept moving the same names upstairs'."], anomaly: ["The room's acoustic treatment throws whispers back with a warped delay that sounds uncomfortably like the speaker."], noise: ["Almost none until the delayed echo comes back off the soft walls."], exit: ["Good for quiet conversations, bad if the party hates being unnerved."] }),
               postRoom("188 Office", 0, { view: ["Daniel has dragged three archive trays into a barricade and is sitting behind them with a letter opener like a weapon.", "Printed packets are everywhere."], occupants: ["Daniel Chao if not relocated to the library."], threat: ["No active combat unless the party barges in hard enough for Daniel to think they are looters."], loot: ["Badge stock, folders, toner, archived packets, and a sharp letter opener."], clue: ["Daniel can identify which color tabs corresponded to 'not public' candidates before the event."], anomaly: ["A jammed printer keeps feeding blank pages with one black line down the center."], noise: ["Printer clicks and Daniel's breathing behind the trays."], exit: ["Barricadable, but cramped. Better for paper than fighting."] }),
               postRoom("188 Library", 0, { view: ["Books have been knocked down in one narrow path toward the locked cabinet at the back.", "Several volumes lie open to marked pages on urban continuity failure."], occupants: ["Daniel Chao may retreat here if driven out of the office."], threat: ["No active combat."], loot: ["Reference books, cabinet key if Daniel trusts the party, and a heavy brass bookend."], clue: ["One marked white paper links candidate compliance to 'continuity response lanes' without explaining the term.", "A marginal signature reads 'reviewed / I. Vale'."], anomaly: ["The rear cabinet glass fogs from the inside while the room stays dry."], noise: ["Pages turning one shelf over, even when no one is there."], exit: ["Good clue room and moderate cover, but shelves limit movement if attacked."] })
@@ -2398,9 +2567,9 @@
             rooms: [
               postRoom("Main Entrance 2/F", 0, { area: true, title: "Main Entrance 2/F", view: ["The upstairs arrival point is empty except for tipped side chairs and packets laid out for a group that never returned.", "Emergency strip lights paint everything in washed-out gray."], occupants: ["No living occupant."], threat: ["No active combat."], loot: ["Personalized packets, blank note cards, and a dead floor monitor remote."], clue: ["Each packet was laid before specific chairs, confirming the upstairs group was predetermined."], anomaly: ["The abandoned packets twitch when the stairwell door opens."], noise: ["Almost none until the elevator shaft knocks."], exit: ["Quiet staging zone just off the more dangerous east corridor."] }),
               postRoom("Link Void", 2, { area: true, title: "Link Void", view: ["The open void beyond the second-floor link is full of black dust pressing against the glass like a tide.", "One bench has been dragged into cover and abandoned."], occupants: ["Dominic Shaw may pass through here if disturbed from Room 107.", "One exhausted candidate corpse is wedged under the bench."], threat: ["Moderate to severe transit pressure: if Dominic is active, this space becomes lethal very quickly."], loot: ["Bench cushion, dropped packet, and one dead badge scanner."], clue: ["A packet under the bench reads 'Hold upstairs until second pass complete'."], anomaly: ["The dust outside moves in synchronized pulses with living heartbeats."], noise: ["Window flex, distant heavy steps, and the occasional scrape from Dominic's route."], exit: ["Fast but exposed route between the elevator side and the bridge side."] }),
-              postRoom("Bridge", 1, { area: true, title: "Bridge", view: ["The glass-sided bridge looks out into nothing but dust and shadow, with tool cases and one maintenance crate dragged into a half-barricade.", "Outside light is wrong: no sun, only diffuse gray-violet pressure."], occupants: ["Mateo Rojas and Kenji Sato may use the bridge as a moving fallback line."], threat: ["Low encounter pressure unless an upstairs threat is actively chasing the party."], loot: ["Tool case, cable cutters, flashlights, duct tape, and one respirator mask with a cracked seal."], clue: ["Mateo's chalk marks on the wall show which doors he thinks the dust pushes hardest against.", "Kenji notes that simple battery lights still work while anything smarter dies instantly."], anomaly: ["Dust shear outside the glass makes the opposite structure look as if it is sliding sideways when the building itself is still."], noise: ["Bridge glass sings softly when the dust outside surges."], exit: ["Best route between east and west upstairs once the elevator zone becomes unsafe."] }),
+              postRoom("Bridge", 1, { area: true, title: "Bridge", view: ["The glass-sided bridge looks out into nothing but dust and shadow, with tool cases and one maintenance crate dragged into a half-barricade.", "Outside light is wrong: no sun, only diffuse gray-violet pressure.", "The far end is sealed by a heavy brushed-steel double service door in a concrete frame, with a narrow wired-glass vision strip gone almost opaque under dust and a dead crash bar across the inside."], occupants: ["Mateo Rojas and Kenji Sato may use the bridge as a moving fallback line."], threat: ["Low encounter pressure unless an upstairs threat is actively chasing the party."], loot: ["Tool case, cable cutters, flashlights, duct tape, and one respirator mask with a cracked seal."], clue: ["Behind the maintenance crate, on the interior wall left of the door, sits a gray steel faceplate labeled: 'BRG-REL / MANUAL'.", "Printed directly beneath it: 'PULL RED PIN. HOLD YELLOW LEVER. TURN SQUARE SPINDLE 12X. SLIDE HOLD.'", "Mateo's chalk marks on the wall show which doors he thinks the dust pushes hardest against."], anomaly: ["Dust shear outside the glass makes the opposite structure look as if it is sliding sideways when the building itself is still."], noise: ["Bridge glass sings softly when the dust outside surges."], exit: ["To open the door: expose the BRG-REL box, open it by key or pry bar, pull the red pin, hold the yellow lever down, turn the square spindle 12 full turns, then slide the HOLD bolt before crossing."] }),
               postRoom("Elevator 2/F", 4, { area: true, title: "Elevator 2/F", view: ["The upper elevator landing is smeared with badge ribbon, blood, and one snapped scanner strap.", "The doors tremble against something inside or behind them."], occupants: ["Naomi Varga claims this landing like a checkpoint whenever movement crosses her line."], threat: ["Lethal encounter for level 1: Naomi is a fast gatekeeper rupture who punishes anyone trying to force the vertical route.", "She is beatable later; for now she is a route problem."], loot: ["If bypassed, her scanner harness and a bundle of priority-clearance badges."], clue: ["One priority badge is keyed to '299 / NS seal'."], anomaly: ["The dead floor indicator flashes access-denied red whenever a living person nears."], noise: ["Short burst steps and scanner chirps that have no power source."], exit: ["Avoid direct confrontation; use stair or bridge routes instead."] }),
-              postRoom("Stair 2/F", 1, { area: true, title: "2/F Stair Landing", view: ["The landing is spattered with blood and a handrail bent where someone fell into it hard.", "One flashlight hangs from the rail by its wrist loop."], occupants: ["No living occupant on first approach, though movement below and above can converge fast."], threat: ["Low encounter: a single stair-hollow may stumble through after noise."], loot: ["Flashlight, dropped badge, and one half-crumpled room packet."], clue: ["The room packet lists only initials and times, not names."], anomaly: ["Footsteps on the stair sometimes echo before they happen."], noise: ["Thumps below, then a delayed echo from above."], exit: ["Best vertical route once the party knows how to time movement between pulses."] }),
+              postRoom("Stair 2/F", 1, { area: true, title: "2/F Stair Landing", view: ["The landing is spattered with blood and a handrail bent where someone fell into it hard.", "One flashlight hangs from the rail by its wrist loop."], occupants: ["No living occupant on first approach, though movement below and above can converge fast."], threat: ["Low encounter: a single stair-hollow may stumble through after noise."], loot: ["Flashlight, dropped badge, and one half-crumpled room packet."], clue: ["The room packet lists only initials and times, not names.", "A staff pencil note on the back says: 'If lift dead, use bridge manual.'"], anomaly: ["Footsteps on the stair sometimes echo before they happen."], noise: ["Thumps below, then a delayed echo from above."], exit: ["Best vertical route once the party knows how to time movement between pulses."] }),
               postRoom("219 Corridor", 2, { area: true, title: "219 Corridor", view: ["Doors are shut tighter here, as if the upstairs staff knew how bad open rooms could get.", "One wall bears a black handprint that branches like capillaries."], occupants: ["No fixed occupant, but Selene and Dev's rooms influence this corridor heavily."], threat: ["Moderate encounter pressure: one fast threat can arrive from either end if the party stays visible too long."], loot: ["Dropped clipboard, disposable earplugs, and a cracked lens cap."], clue: ["Door cards here use internal labels like 'stimulus lane' and 'pupil lane' instead of departmental names."], anomaly: ["Acoustic paneling and dead speakers make footsteps arrive clipped and directionless, especially when the hall is quiet."], noise: ["Low tones, rapid taps, and one occasional sharp inhale from behind Room 224."], exit: ["Central north route; useful, but never comfortable."] }),
               postRoom("261 Corridor", 2, { area: true, title: "261 Corridor", view: ["This hall smells of alcohol prep, blood, and cold plastic. More than one body was dragged rather than carried here.", "Several closed doors are marked by hand with quick symbols."], occupants: ["Caleb's trail and Greta's route both touch this corridor."], threat: ["Moderate encounter pressure with multiple side rooms able to spill danger quickly."], loot: ["Abandoned vitals stand, gloves, and one intact rolling stool."], clue: ["The hand-marked symbols match the telemetry band colors from downstairs."], anomaly: ["The corridor feels warmer near closed supply doors and colder near open ones."], noise: ["Tube taps, crate shift, and one wet scrape from the west."], exit: ["Key west-side route upstairs; use it only if the party is ready to pivot fast."] }),
               postRoom("293 Corridor", 2, { area: true, title: "293 Corridor", view: ["Packets, observation sheets, and half-cleaned blood make the south hall look like someone tried to restore order for one impossible minute.", "The emergency lighting is dimmer here than anywhere else."], occupants: ["Pranav Nand and Yvette Cole both operate off this corridor if still active."], threat: ["Moderate encounter pressure: more social danger and hidden observation than direct melee, until it suddenly becomes both."], loot: ["Observation sheets, dead keypads, one intact clipboard, and a pocket flashlight dropped near 293-D."], clue: ["Multiple room labels in this hall have been manually overruled in pen, not by printed schedule."], anomaly: ["Repeated door spacing, low emergency light, and drifting dust make the far end look farther away than it really is."], noise: ["Soft voices from shut rooms, clipboard tap, one sharp breath behind a closed door."], exit: ["High-value clue corridor. Move deliberately, not quickly."] }),
@@ -2413,7 +2582,7 @@
             rooms: [
               postRoom("240", 1, { view: ["The senior consult suite looks preserved on purpose: chairs upright, folio closed, and one dropped glass only just now cracking under stress.", "Someone left in a hurry but not in panic."], occupants: ["No fixed occupant, though Mara Kessler used this room before shifting east."], threat: ["Low encounter pressure only; the danger here is what moving through 220 Corridor may bring."], loot: ["Locked leather folio, water glasses, and a physician tablet dock that no longer works."], clue: ["Inside the folio is a pre-printed consult order with 'continuity lane' handwritten over the original title.", "A page margin is initialed 'MC'."], anomaly: ["The table's polished surface reflects empty chairs as occupied."], noise: ["Glass ticking and the low bridge song through the wall."], exit: ["Quiet executive room with only one real exit."] }),
               postRoom("236A", 0, { view: ["Re-consent packets still sit in two neat piles beside Ruth Adjei's blood-dragged chair.", "The shred bin spilled only the pages that mattered."], occupants: ["No living occupant."], threat: ["No active combat."], loot: ["Signature tabs, secure shred scraps, consent packets, and Ruth's badge."], clue: ["A disclosure addendum references 'nonpublic risk if signal expression occurs' and bears Sebastian Orlov's signature block."], anomaly: ["Shredded strips try to settle back into one disclosure page and one routing form only."], noise: ["Recorder dock ticking, then stopping if anyone touches it."], exit: ["Clean clue room off a dangerous corridor."] }),
-              postRoom("234", 2, { view: ["Two chairs still face each other, but one is soaked through and the whiteboard has been wiped so hard the names left pressure marks.", "A notebook lies open to questions about obligation and secrecy."], occupants: ["Yvette Cole may be here, composed, dry-eyed, and still using the room like an interview space if the party reaches her before 214."], threat: ["Moderate social encounter: Yvette is human, controlled, and dangerous because she treats panic as usable information."], loot: ["Interview notes, fountain pen, recorder dock, and a hardbound notebook."], clue: ["Yvette's notes prove the same backstory details were tested in multiple rooms from different angles."], anomaly: ["The whiteboard only gives up its erased names when caught at a shallow angle under emergency light."], noise: ["A damaged recorder dock occasionally spits back one clipped question in Yvette's voice."], exit: ["Good scene room, but only if the party controls the threshold."] }),
+              postRoom("234", 2, { pcClue: "Sean Erinn", view: ["Two chairs still face each other, but one is soaked through and the whiteboard has been wiped so hard the names left pressure marks.", "A notebook lies open to questions about obligation and secrecy."], occupants: ["Yvette Cole may be here, composed, dry-eyed, and still using the room like an interview space if the party reaches her before 214."], threat: ["Moderate social encounter: Yvette is human, controlled, and dangerous because she treats panic as usable information."], loot: ["Interview notes, fountain pen, recorder dock, and a hardbound notebook."], clue: ["Yvette's notes prove the same backstory details were tested in multiple rooms from different angles.", "Tucked under the notebook: 'SE - ambition first. Alice Peters not in first pass. Jake / 10 only on withdrawal. CHMRA overlap unresolved; confirm before second pass.'"], anomaly: ["The whiteboard only gives up its erased names when caught at a shallow angle under emergency light."], noise: ["A damaged recorder dock occasionally spits back one clipped question in Yvette's voice."], exit: ["Good scene room, but only if the party controls the threshold."] }),
               postRoom("230A", 0, { view: ["The survey booth is too small, too dark, and still lit by the afterimage of its last screen prompt in the players' eyes.", "Styluses lie snapped in the tray."], occupants: ["No living occupant."], threat: ["No active combat."], loot: ["Response pad, headphones, privacy cover, and one intact stylus."], clue: ["The final frozen prompt asks 'Which request are you least likely to refuse?' with no branding anywhere on the screen template."], anomaly: ["Residual audio bleed catches fragments of the previous respondent badly enough to sound momentarily personal."], noise: ["A single digital click with no device left on."], exit: ["Harmless physically, harmful to composure."] }),
               postRoom("230", 1, { profiles: ["Motor Lurcher"], view: ["The pegboard test rig is splashed with blood and one handprint is still fresh on the timing tray.", "The camera stand faces an empty chair."], occupants: ["One motor-lurcher candidate may still be trapped under the table and lash out when disturbed."], threat: ["Low encounter: 1 confined motor-lurcher."], loot: ["Assembly tray pieces, camera arm, and a belt pouch with batteries for simple devices."], clue: ["The timing sheet cares more about recovery from instruction changes than about basic speed."], anomaly: ["Loose pegs rearrange themselves into the same three shapes after being scattered."], noise: ["Rapid clicking from the tray followed by nothing."], exit: ["Single test room with just enough space to circle once."] }),
               postRoom("224", 2, { view: ["The auditory room is dark, the headphones dangling, and a response keypad crushed under one heel mark.", "Acoustic panels make the room feel cut out from the rest of the building."], occupants: ["Dr. Dev Patel may be here or passing through, trying to isolate a residual test tone while writing over his own shaking notes."], threat: ["Moderate social encounter: Dev is exhausted, hyperfocused, and capable of bad decisions if he thinks the party will destroy evidence or waste time."], loot: ["Headphones, splitter amp, keypad, and an analyst notebook."], clue: ["The notebook uses the phrases 'resonance', 'anticipatory response', and 'not simple cognition' repeatedly.", "One page is stamped 'I. Vale review pending'."], anomaly: ["If everyone holds still, a thin residual tone leaks through the headphones or nearby ducting."], noise: ["One thin note under the party's own breathing."], exit: ["Excellent mystery room. Dangerous only if the party stays longer than its nerves allow."] }),
@@ -2463,8 +2632,8 @@
               postRoom("215-C", 0, { view: ["The cool-down desk still has water, note cards, and a 'stable to continue' checklist under a layer of black dust.", "A blanket has been left draped over the chair back."], occupants: ["No living occupant."], threat: ["No active combat."], loot: ["Water, note cards, one small floor map, and a blanket."], clue: ["The checklist implies some people were only allowed to proceed if they returned to a particular emotional baseline."], anomaly: ["Blank note cards take impressions from fingers like soft wax and then lose them."], noise: ["Very soft paper crackle."], exit: ["Good pause room if the hall outside is clear."] }),
               postRoom("215-D", 2, { view: ["The stress pod is still mid-sequence: prompt screen dead, pulse clip hanging, timer lights frozen in red.", "The room feels like it expected someone to break."], occupants: ["One half-transitioned candidate remains here, frozen until sudden motion wakes them."], threat: ["Moderate encounter: 1 unstable subject triggered by abrupt sound or movement."], loot: ["Pulse clip, timer panel, headphones, and stress scale cards."], clue: ["The pod was measuring short pressure bursts right before the building-wide event; the timing on the frozen panel is too close to 14:23 to be coincidence."], anomaly: ["Prompt instructions appear as afterimages on the dark screen when viewed from the side."], noise: ["Fast shallow breathing from someone not visibly moving."], exit: ["Can be bypassed if the party respects the trigger and moves slowly."] }),
               postRoom("207", 3, { view: ["The upstairs conference room holds the cleanest sign that the day had a second layer: personalized packets, marked chairs, and one table now converted into a command nest.", "A ring of disturbed chairs shows where people changed or fled."], occupants: ["Dr. Mara Kessler or Dr. Dev Patel may hold this room depending on route timing.", "Any conversation here feels like an encounter even before it becomes one."], threat: ["Serious encounter / negotiation room: the party may get answers here, but never the full truth and never safely.", "If Mara and Dev are both present, the room is more dangerous than its raw stats suggest."], loot: ["Personalized packets, writable glass notes, dead monitor remote, and one sealed drawer with private chair assignments."], clue: ["The chair packets prove certain attendees were expected upstairs before anything went visibly wrong.", "A marked glass panel references 'second pass', 'signal hold', and 'do not return to public floor'."], anomaly: ["One wall speaker keeps spitting back buffered fragments of recent speech whenever residual charge catches in the line."], noise: ["Dead-speaker hiss and a pen tapping the table in no visible hand."], exit: ["A major node room. Enter only if the party wants answers badly enough to risk being noticed."] }),
-              postRoom("297", 0, { view: ["Kenji's instrument cage is locked but not looted, with rugged cases stacked like a barricade and a handwritten maintenance tag on the door.", "This room looks boring until the party needs exactly what it contains."], occupants: ["Kenji Sato if he thinks the room can still be held."], threat: ["No active combat if Kenji is approached like a person and not a supply chest."], loot: ["Tool kits, rugged cases, simple meters, battery lanterns, and repair parts."], clue: ["Kenji can identify which devices were ordinary test gear and which were added later and never explained to him."], anomaly: ["Some instrument cases are colder inside than the room, even unopened."], noise: ["Case latches and Kenji's muttered insults."], exit: ["Very strong logistics room if Kenji stays alive and cooperative."] }),
-              postRoom("299", 0, { serum: "Attack", view: ["Victor Haldane made it to the witness room, locked the door, and died with a cracked ampoule case and one sealed syringe still in hand.", "The room is strangely untouched compared with the corridor outside."], occupants: ["No living occupant."], threat: ["No active combat in the room itself, but reaching it means crossing Naomi's east-corridor pressure zone."], loot: ["Prototype serum Cinder-3 in Victor's hand: on a successful DC 14 Constitution save, permanent +1 attack bonus; on a failure, no benefit and 1d4 poison damage.", "Victor's sidearm is absent, but his keyring, badge, and lockbox key remain."], clue: ["A sealed directive in the drawer carries Captain N. Serrat's name and orders east-side hold until further instruction.", "Another note says 'if building closure occurs before transfer, destroy public records first'."], anomaly: ["The acoustic wall panels kill echoes so completely that the room feels sealed off from the rest of the floor."], noise: ["None inside; all danger is in the corridor getting here."], exit: ["Reward room rather than fight room, but only if the party can survive the route in and out."] })
+              postRoom("297", 0, { view: ["Kenji's instrument cage is locked but not looted, with rugged cases stacked like a barricade and a handwritten maintenance tag on the door.", "This room looks boring until the party needs exactly what it contains."], occupants: ["Kenji Sato if he thinks the room can still be held."], threat: ["No active combat if Kenji is approached like a person and not a supply chest."], loot: ["Tool kits, rugged cases, simple meters, battery lanterns, repair parts, and a 3/8 ratchet with a square-drive socket already fitted."], clue: ["Kenji can identify which devices were ordinary test gear and which were added later and never explained to him.", "A note taped to the ratchet case reads: 'BRG-REL: keep lever down while cranking or the door rebinds.'", "Below it: '12 turns to full open. Slide HOLD before letting go.'"], anomaly: ["Some instrument cases are colder inside than the room, even unopened."], noise: ["Case latches and Kenji's muttered insults."], exit: ["Very strong logistics room if Kenji stays alive and cooperative."] }),
+              postRoom("299", 0, { serum: "Attack", view: ["Victor Haldane made it to the witness room, locked the door, and died with a cracked ampoule case and one sealed syringe still in hand.", "The room is strangely untouched compared with the corridor outside."], occupants: ["No living occupant."], threat: ["No active combat in the room itself, but reaching it means crossing Naomi's east-corridor pressure zone."], loot: ["Prototype serum Cinder-3 in Victor's hand: on a successful DC 14 Constitution save, permanent +1 attack bonus; on a failure, no benefit and 1d4 poison damage.", "Victor's sidearm is absent, but his keyring, badge, and lockbox key remain."], clue: ["A sealed directive in the drawer carries Captain N. Serrat's name and orders east-side hold until further instruction.", "Victor's brass key tag is stamped: 'BRG-REL'.", "A margin note on the directive reads: 'If hard close traps upstairs personnel: bridge manual, 12 turns, hold open.'"], anomaly: ["The acoustic wall panels kill echoes so completely that the room feels sealed off from the rest of the floor."], noise: ["None inside; all danger is in the corridor getting here."], exit: ["Reward room rather than fight room, but only if the party can survive the route in and out."] })
             ]
           }
         ]
@@ -2495,6 +2664,9 @@
     const roomDialogNpcs = document.getElementById("roomDialogNpcs");
     const roomDialogTexture = document.getElementById("roomDialogTexture");
     const roomDialogClose = document.getElementById("roomDialogClose");
+    const bridgeExitStepsRoot = document.getElementById("bridgeExitSteps");
+    const bridgeExitNote = document.getElementById("bridgeExitNote");
+    const bridgeExitDoorLook = document.getElementById("bridgeExitDoorLook");
     const roomLookupByKey = new Map();
     const preferredRoomKeyByLabel = new Map();
     const roomButtonsByKey = new Map();
@@ -3025,6 +3197,37 @@
       }
     }
 
+    const bridgeExitLabels = new Set([
+      "Stair",
+      "140",
+      "160",
+      "Stair 2/F",
+      "297",
+      "299",
+      "Bridge"
+    ]);
+
+    for (const floor of buildingAPostFloors) {
+      for (const group of floor.groups) {
+        for (const room of group.rooms) {
+          if (bridgeExitLabels.has(room.label)) {
+            room.escapeCritical = true;
+          }
+        }
+      }
+    }
+
+    const bridgeExitSteps = [
+      "Go to Room 140 and take Owen Pike's marked floor map, or get the same information directly from Owen Pike there. The useful note is: 'BRIDGE OVERRIDE - INTERIOR WALL LEFT OF DOOR, BEHIND CRATE.'",
+      "Take the service-key ring and pry tools from Room 160. If Room 160 is gone or Mateo is dead, Victor Haldane's BRG-REL keyring in Room 299 is the fallback.",
+      "Take the 3/8 ratchet or square-drive tool from Room 297. If Kenji is gone, the compact ratchet in Room 160 is enough.",
+      "Go up by Stair, then Stair 2/F. Do not waste time trying Elevator 2/F.",
+      "Reach Bridge and find the gray steel faceplate on the interior wall, left of the bridge door, behind the maintenance crate. The label on it is 'BRG-REL / MANUAL'.",
+      "Open the faceplate with the BRG-REL key. If they have no key, pry it open with the flat bar from Room 160. That is loud.",
+      "Inside the box, pull the red safety pin, hold the yellow lever down, and fit the ratchet onto the square spindle.",
+      "Turn the spindle 12 full turns, then slide the black HOLD bolt before letting go. If they do not set HOLD, the door starts closing again."
+    ];
+
     for (const [label, key] of postPreferredRoomKeyByLabel) {
       postRoomAliasEntries.push({ phrase: label, key });
       postRoomAliasMap.set(label, key);
@@ -3297,6 +3500,31 @@
       }
     }
 
+    function renderBridgeExitSequence() {
+      if (bridgeExitStepsRoot) {
+        bridgeExitStepsRoot.innerHTML = "";
+        for (const step of bridgeExitSteps) {
+          const li = document.createElement("li");
+          appendPostRoomReferenceText(li, step);
+          bridgeExitStepsRoot.appendChild(li);
+        }
+      }
+
+      if (bridgeExitNote) {
+        appendPostRoomReferenceText(
+          bridgeExitNote,
+          "At the table: one person can open the bridge in 3 rounds; with help it takes 2. Forcing the BRG-REL box instead of keying it is loud enough to pull pressure from nearby routes."
+        );
+      }
+
+      if (bridgeExitDoorLook) {
+        appendPostRoomReferenceText(
+          bridgeExitDoorLook,
+          "Door look: at Bridge, the far end is sealed by a heavy brushed-steel double service door set in a concrete frame, each leaf only a little wider than a person. A narrow wired-glass vision panel runs at eye level through both leaves, but the dust outside turns it into dark gray milk. The threshold is ribbed metal, the crash bar is dead, and the whole thing is cross-braced by a top-mounted closer and swollen rubber seals that make it look pressure-tight rather than welcoming. On the interior wall left of the door, half hidden behind the maintenance crate, sits the gray BRG-REL / MANUAL faceplate."
+        );
+      }
+    }
+
     function renderPostNpcList(target, items) {
       target.innerHTML = "";
 
@@ -3402,7 +3630,7 @@
 
         const guide = document.createElement("p");
         guide.className = "mapGuide";
-        guide.innerHTML = "<strong>Post-ignition overlay:</strong> blue to violet marks encounter pressure. Amber chips mark rare permanent-modifier serums. Click any room for survivors, loot, clues, anomalies, and exits.";
+        guide.innerHTML = "<strong>Post-ignition overlay:</strong> blue to violet marks encounter pressure. Green boxes mark the bridge-exit chain. Amber chips mark rare permanent-modifier serums. Violet chips marked PC-CLUE are character-specific hooks. Click any room for survivors, loot, clues, anomalies, and exits.";
 
         const shell = document.createElement("div");
         shell.className = "floorMapShell";
@@ -3426,6 +3654,9 @@
           button.className = room.area ? "floorHotspot area" : "floorHotspot";
           if (room.encounter > 0) {
             button.classList.add(`encounter-${room.encounter}`);
+          }
+          if (room.escapeCritical) {
+            button.classList.add("escape-critical");
           }
           button.id = postRoomHotspotId(room.key);
           button.title = room.title;
@@ -3481,6 +3712,22 @@
             serum.textContent = "SER";
             serum.title = `${room.serum} serum`;
             badges.appendChild(serum);
+            if (room.pcClue) {
+              const clue = document.createElement("span");
+              clue.className = "staffChip pcclue";
+              clue.textContent = "PC-CLUE";
+              clue.title = `PC clue: ${room.pcClue}`;
+              badges.appendChild(clue);
+            }
+            button.appendChild(badges);
+          } else if (room.pcClue) {
+            const badges = document.createElement("div");
+            badges.className = "mapBadges";
+            const clue = document.createElement("span");
+            clue.className = "staffChip pcclue";
+            clue.textContent = "PC-CLUE";
+            clue.title = `PC clue: ${room.pcClue}`;
+            badges.appendChild(clue);
             button.appendChild(badges);
           }
 
@@ -3499,7 +3746,9 @@
           <span class="legendTag"><span class="legendSwatch encounter-2"></span>Moderate</span>
           <span class="legendTag"><span class="legendSwatch encounter-3"></span>Serious</span>
           <span class="legendTag"><span class="legendSwatch encounter-4"></span>Lethal</span>
+          <span class="legendTag"><span class="legendSwatch escape"></span>Bridge Exit</span>
           <span class="legendTag"><span class="legendSwatch serum"></span>Serum</span>
+          <span class="legendTag"><span class="legendSwatch pcclue"></span>PC-Clue</span>
           <span class="legendTag"><span class="legendSwatch chip">NPC</span>Named occupant</span>
         `;
         shell.appendChild(legend);
@@ -3587,6 +3836,9 @@
             if (room.encounter > 0) {
               button.classList.add(`encounter-${room.encounter}`);
             }
+            if (room.escapeCritical) {
+              button.classList.add("escape-critical");
+            }
             button.id = postRoomButtonId(room.key);
             button.textContent = room.serum ? `${room.label} *` : room.label;
             button.addEventListener("click", () => openPostRoomDetail(floor.floor, room));
@@ -3642,6 +3894,7 @@
     renderFloors();
     validateFloorMaps();
     renderEncounterProfiles();
+    renderBridgeExitSequence();
     renderPostRoster();
     renderPostFloorMaps();
     renderPostFloors();
