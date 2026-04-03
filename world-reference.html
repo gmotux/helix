@@ -856,6 +856,18 @@
       pointer-events:none;
     }
 
+    .hostileMarkers{
+      position:absolute;
+      top:4px;
+      left:4px;
+      display:flex;
+      gap:4px;
+      flex-wrap:wrap;
+      align-items:flex-start;
+      max-width:calc(100% - 54px);
+      pointer-events:none;
+    }
+
     .staffChip{
       display:inline-flex;
       align-items:center;
@@ -897,6 +909,18 @@
       background:rgba(252,241,255,.96);
       color:#8c1ca0;
       pointer-events:none;
+    }
+
+    .staffChip.hostile{
+      border-color:rgba(127,29,29,.46);
+      background:rgba(185,28,28,.96);
+      color:#fff;
+      box-shadow:0 1px 4px rgba(127,29,29,.28);
+    }
+
+    .staffChip.hostile:hover{
+      border-color:rgba(127,29,29,.74);
+      background:rgba(153,27,27,.98);
     }
 
     .floorLegend{
@@ -962,6 +986,11 @@
     .legendSwatch.pcclue{
       background:rgba(252,241,255,.98);
       border-color:rgba(162,28,175,.38);
+    }
+
+    .legendSwatch.hostile{
+      background:rgba(185,28,28,.96);
+      border-color:rgba(127,29,29,.62);
     }
 
     .legendSwatch.escape{
@@ -2246,52 +2275,52 @@
           mapRect("Link", 929, 287, 193, 491),
           mapRect("Elevator", 915, 348, 67, 109),
           mapRect("Stair", 340, 388, 82, 190),
-          mapRect("103 Corridor", 141, 286, 721, 46),
-          mapRect("161 Corridor", 126, 332, 34, 257),
-          mapRect("193 Corridor", 145, 589, 720, 49),
+          mapRect("103 Corridor", 145, 289, 630, 40),
+          mapRect("161 Corridor", 126, 329, 33, 260),
+          mapRect("193 Corridor", 145, 551, 630, 38),
           mapRect("Restrooms 1/F", 668, 591, 194, 107),
-          mapRect("140", 14, 175, 111, 107),
-          mapRect("138", 126, 175, 38, 107),
-          mapRect("136A", 166, 175, 83, 107),
-          mapRect("136", 251, 175, 74, 107),
-          mapRect("130", 328, 175, 73, 107),
-          mapRect("126", 403, 175, 72, 107),
-          mapRect("122", 478, 175, 72, 107),
-          mapRect("116", 553, 175, 72, 107),
-          mapRect("114", 628, 175, 72, 107),
-          mapRect("110", 703, 175, 72, 107),
-          mapRect("106", 778, 175, 72, 107),
-          mapRect("102", 853, 175, 73, 107),
-          mapRect("146", 14, 283, 111, 81),
-          mapRect("150", 14, 365, 111, 70),
+          mapRect("140", 14, 175, 111, 114),
+          mapRect("138", 126, 175, 38, 114),
+          mapRect("136A", 166, 175, 83, 114),
+          mapRect("136", 251, 175, 74, 114),
+          mapRect("130", 328, 175, 73, 114),
+          mapRect("126", 403, 175, 72, 114),
+          mapRect("122", 478, 175, 72, 114),
+          mapRect("116", 553, 175, 72, 114),
+          mapRect("114", 628, 175, 72, 114),
+          mapRect("110", 703, 175, 72, 114),
+          mapRect("106", 778, 175, 72, 114),
+          mapRect("102", 853, 175, 73, 114),
+          mapRect("146", 14, 289, 111, 75),
+          mapRect("150", 14, 364, 111, 72),
           mapRect("154", 14, 436, 111, 73),
-          mapRect("158", 14, 510, 111, 79),
-          mapRect("160", 14, 590, 111, 108),
+          mapRect("158", 14, 509, 111, 80),
+          mapRect("160", 14, 589, 111, 109),
           mapRect("186", 161, 590, 77, 108),
           mapRect("188 Office", 239, 590, 76, 108),
           mapRect("188 Library", 397, 590, 214, 108),
-          mapRect("129-A", 313, 332, 67, 57),
-          mapRect("129-B", 381, 332, 72, 57),
-          mapRect("161-A", 159, 332, 74, 57),
-          mapRect("161-B", 234, 332, 75, 57),
-          mapRect("161-C", 234, 390, 75, 67),
-          mapRect("161-D", 159, 390, 74, 67),
-          mapRect("181-A", 159, 458, 74, 64),
-          mapRect("181-B", 234, 458, 75, 64),
-          mapRect("181-C", 234, 523, 75, 67),
-          mapRect("181-D", 159, 523, 74, 67),
-          mapRect("103-A", 470, 332, 74, 57),
-          mapRect("103-B", 545, 332, 74, 57),
-          mapRect("103-C", 545, 390, 74, 67),
-          mapRect("103-D", 470, 390, 74, 67),
-          mapRect("193-A", 470, 458, 74, 64),
-          mapRect("193-B", 545, 458, 74, 64),
-          mapRect("193-C", 545, 523, 74, 67),
-          mapRect("193-D", 470, 523, 74, 67),
-          mapRect("195", 621, 332, 154, 259),
-          mapRect("107", 776, 332, 99, 139),
-          mapRect("197", 776, 472, 44, 58),
-          mapRect("199", 820, 472, 55, 118)
+          mapRect("129-A", 310, 329, 72, 60),
+          mapRect("129-B", 382, 329, 72, 60),
+          mapRect("161-A", 159, 329, 76, 57),
+          mapRect("161-B", 235, 329, 75, 57),
+          mapRect("161-C", 235, 386, 75, 54),
+          mapRect("161-D", 159, 386, 76, 54),
+          mapRect("181-A", 159, 440, 76, 55),
+          mapRect("181-B", 235, 440, 75, 55),
+          mapRect("181-C", 235, 495, 75, 56),
+          mapRect("181-D", 159, 495, 76, 56),
+          mapRect("103-A", 469, 329, 75, 57),
+          mapRect("103-B", 544, 329, 76, 57),
+          mapRect("103-C", 544, 386, 76, 54),
+          mapRect("103-D", 469, 386, 75, 54),
+          mapRect("193-A", 469, 440, 75, 55),
+          mapRect("193-B", 544, 440, 76, 55),
+          mapRect("193-C", 544, 495, 76, 56),
+          mapRect("193-D", 469, 495, 75, 56),
+          mapRect("195", 620, 329, 155, 260),
+          mapRect("107", 775, 329, 100, 143),
+          mapRect("197", 775, 472, 45, 57),
+          mapRect("199", 820, 472, 55, 117)
         ]
       }],
       ["Building A 2/F", {
@@ -2303,56 +2332,56 @@
           mapRect("Link Void", 925, 288, 188, 312),
           mapRect("Bridge", 952, 598, 160, 185),
           mapRect("Elevator 2/F", 915, 346, 72, 108),
-          mapRect("Stair 2/F", 321, 330, 137, 205),
-          mapRect("219 Corridor", 144, 286, 721, 46),
-          mapRect("261 Corridor", 126, 332, 34, 257),
-          mapRect("293 Corridor", 145, 589, 720, 49),
-          mapRect("220 Corridor", 875, 331, 35, 262),
+          mapRect("Stair 2/F", 327, 329, 141, 253),
+          mapRect("219 Corridor", 126, 289, 749, 40),
+          mapRect("261 Corridor", 133, 332, 28, 219),
+          mapRect("293 Corridor", 145, 549, 730, 33),
+          mapRect("220 Corridor", 875, 329, 35, 253),
           mapRect("Restrooms 2/F", 668, 591, 193, 107),
-          mapRect("240", 14, 175, 111, 107),
+          mapRect("240", 14, 175, 111, 157),
           mapRect("236A", 126, 175, 76, 107),
           mapRect("234", 203, 175, 93, 107),
-          mapRect("230A", 297, 175, 75, 107),
-          mapRect("230", 373, 175, 70, 107),
-          mapRect("224", 444, 175, 73, 107),
-          mapRect("214A", 518, 175, 72, 107),
-          mapRect("214", 591, 175, 72, 107),
-          mapRect("210", 664, 175, 73, 107),
-          mapRect("206", 738, 175, 73, 107),
-          mapRect("202", 812, 175, 75, 107),
-          mapRect("248A", 14, 283, 111, 74),
-          mapRect("258A", 14, 358, 111, 68),
-          mapRect("258B", 14, 427, 111, 76),
-          mapRect("260A", 14, 504, 111, 81),
-          mapRect("260B", 14, 586, 111, 113),
-          mapRect("266", 159, 590, 76, 108),
-          mapRect("270", 236, 590, 76, 108),
-          mapRect("274", 313, 590, 76, 108),
-          mapRect("278", 390, 590, 76, 108),
-          mapRect("282", 467, 590, 76, 108),
-          mapRect("286", 544, 590, 76, 108),
-          mapRect("288", 621, 590, 76, 108),
-          mapRect("261-A", 159, 332, 75, 114),
-          mapRect("261-B", 234, 332, 75, 114),
-          mapRect("235-A", 159, 446, 75, 77),
-          mapRect("235-B", 234, 446, 75, 77),
-          mapRect("235-C", 234, 524, 75, 67),
-          mapRect("235-D", 159, 524, 75, 67),
-          mapRect("219-A", 469, 332, 75, 59),
-          mapRect("219-B", 544, 332, 75, 59),
-          mapRect("219-C", 469, 392, 75, 64),
-          mapRect("293-B", 469, 457, 75, 67),
-          mapRect("293-C", 544, 525, 75, 67),
-          mapRect("293-D", 469, 525, 75, 67),
-          mapRect("221-A", 620, 332, 75, 59),
-          mapRect("221-B", 696, 332, 75, 59),
-          mapRect("221-D", 620, 392, 75, 64),
-          mapRect("215-A", 620, 457, 75, 67),
-          mapRect("215-C", 696, 525, 75, 67),
-          mapRect("215-D", 620, 525, 75, 67),
-          mapRect("207", 772, 332, 103, 139),
-          mapRect("297", 772, 472, 44, 58),
-          mapRect("299", 816, 472, 59, 118)
+          mapRect("230A", 300, 175, 75, 107),
+          mapRect("230", 376, 175, 70, 107),
+          mapRect("224", 447, 175, 73, 107),
+          mapRect("214A", 521, 175, 72, 107),
+          mapRect("214", 594, 175, 72, 107),
+          mapRect("210", 667, 175, 73, 107),
+          mapRect("206", 741, 175, 73, 107),
+          mapRect("202", 815, 175, 72, 107),
+          mapRect("248A", 14, 332, 111, 75),
+          mapRect("258A", 14, 407, 111, 55),
+          mapRect("258B", 14, 462, 111, 80),
+          mapRect("260A", 14, 542, 111, 72),
+          mapRect("260B", 14, 614, 111, 85),
+          mapRect("266", 159, 582, 76, 116),
+          mapRect("270", 235, 582, 76, 116),
+          mapRect("274", 311, 582, 76, 116),
+          mapRect("278", 387, 582, 76, 116),
+          mapRect("282", 463, 582, 76, 116),
+          mapRect("286", 539, 582, 76, 116),
+          mapRect("288", 615, 582, 76, 116),
+          mapRect("261-A", 164, 332, 76, 110),
+          mapRect("261-B", 240, 332, 76, 110),
+          mapRect("235-A", 164, 442, 76, 55),
+          mapRect("235-B", 240, 442, 76, 55),
+          mapRect("235-C", 240, 497, 76, 54),
+          mapRect("235-D", 164, 497, 76, 54),
+          mapRect("219-A", 469, 329, 75, 111),
+          mapRect("219-B", 544, 329, 76, 55),
+          mapRect("219-C", 544, 384, 76, 56),
+          mapRect("293-B", 544, 440, 76, 55),
+          mapRect("293-C", 544, 495, 76, 56),
+          mapRect("293-D", 469, 440, 75, 111),
+          mapRect("221-A", 620, 329, 76, 55),
+          mapRect("221-B", 696, 329, 75, 111),
+          mapRect("221-D", 620, 384, 76, 56),
+          mapRect("215-A", 620, 440, 76, 55),
+          mapRect("215-C", 696, 440, 75, 111),
+          mapRect("215-D", 620, 495, 76, 56),
+          mapRect("207", 771, 329, 104, 143),
+          mapRect("297", 771, 472, 45, 56),
+          mapRect("299", 816, 472, 59, 110)
         ]
       }]
     ]);
@@ -3391,8 +3420,29 @@
       { name: "Cocooned Subject", pattern: /cocooned|half-awakened candidate|unstable subject/i },
       { name: "Crawler", pattern: /\bcrawler\b/i },
       { name: "Panicked Attendee", pattern: /panic violence|frightened candidate|badly shocked candidate|living attendee may be hiding|terrified candidate|lash out if startled/i },
-      { name: "Office Hollow", pattern: /\bhollow\b/i }
+      { name: "Office Hollow", pattern: /\bhollows?\b/i }
     ];
+    const nonHostileEncounterProfiles = new Set([
+      "Panicked Attendee"
+    ]);
+    const hostileMarkerLabelByProfile = new Map([
+      ["Office Hollow", "OH"],
+      ["Security Hollow", "SH"],
+      ["Crawler", "CR"],
+      ["Motor Lurcher", "ML"],
+      ["Stimulus Snatcher", "SS"],
+      ["Cocooned Subject", "CS"],
+      ["Farah Nabil, Route-Lurcher", "FAR"],
+      ["Naomi Varga, Gatekeeper Rupture", "NAO"],
+      ["Dominic Shaw, Interceptor Brute", "DOM"],
+      ["Caleb Wren, Blood-Draw Predator", "CAL"],
+      ["Dr. Selene Ward, Ocular Predator", "SEL"],
+      ["Dr. Mara Kessler, Signal Director", "MAR"],
+      ["Dr. Anika Sorrell, Clinical Awakened", "ANI"],
+      ["Dr. Dev Patel, Residual Listener", "DEV"],
+      ["Yvette Cole, Behavioral Interrogator", "YVE"],
+      ["Pranav Nand, Data-Desperate Survivor", "PRA"]
+    ]);
     const postRoomLookupByKey = new Map();
     const postPreferredRoomKeyByLabel = new Map();
     const postRoomButtonsByKey = new Map();
@@ -3653,6 +3703,14 @@
       return names;
     }
 
+    function deriveHostileProfiles(room) {
+      return deriveEncounterProfiles(room).filter(name => !nonHostileEncounterProfiles.has(name));
+    }
+
+    function hostileMarkerLabel(name) {
+      return hostileMarkerLabelByProfile.get(name) || name.split(/\s+/).slice(-1)[0].slice(0, 3).toUpperCase();
+    }
+
     function profileSummaryText(profile) {
       return profile.chips.filter(chip => /^(CR|AC|HP|SPD|ATK)/.test(chip)).slice(0, 4).join(" / ");
     }
@@ -3872,7 +3930,7 @@
 
         const guide = document.createElement("p");
         guide.className = "mapGuide";
-        guide.innerHTML = "<strong>Post-ignition overlay:</strong> blue to violet marks encounter pressure. Green boxes mark the bridge-exit chain. Amber chips mark rare permanent-modifier serums. Violet chips marked PC-CLUE are character-specific hooks. Click any room for survivors, loot, clues, anomalies, and exits.";
+        guide.innerHTML = "<strong>Post-ignition overlay:</strong> blue to violet marks encounter pressure. Red chips jump to hostile NPCs or threat types. Green boxes mark the bridge-exit chain. Amber chips mark rare permanent-modifier serums. Violet chips marked PC-CLUE are character-specific hooks. Click any room for survivors, loot, clues, anomalies, and exits.";
 
         const shell = document.createElement("div");
         shell.className = "floorMapShell";
@@ -3946,6 +4004,33 @@
             button.appendChild(chips);
           }
 
+          const hostileProfiles = deriveHostileProfiles(room);
+          if (hostileProfiles.length) {
+            const hostileMarkers = document.createElement("div");
+            hostileMarkers.className = "hostileMarkers";
+
+            for (const profileName of hostileProfiles) {
+              const marker = document.createElement("a");
+              const npcName = namedEncounterNpcByProfile.get(profileName);
+              marker.href = npcName ? `#${postNpcId(npcName)}` : `#${encounterProfileId(profileName)}`;
+              marker.className = "staffChip hostile";
+              marker.textContent = hostileMarkerLabel(profileName);
+              marker.title = npcName ? `${npcName} hostile marker` : `${profileName} hostile marker`;
+              marker.addEventListener("click", event => {
+                event.preventDefault();
+                event.stopPropagation();
+                if (npcName) {
+                  focusPostRosterCard(npcName);
+                } else {
+                  focusEncounterCard(profileName);
+                }
+              });
+              hostileMarkers.appendChild(marker);
+            }
+
+            button.appendChild(hostileMarkers);
+          }
+
           if (room.serum) {
             const badges = document.createElement("div");
             badges.className = "mapBadges";
@@ -3988,6 +4073,7 @@
           <span class="legendTag"><span class="legendSwatch encounter-2"></span>Moderate</span>
           <span class="legendTag"><span class="legendSwatch encounter-3"></span>Serious</span>
           <span class="legendTag"><span class="legendSwatch encounter-4"></span>Lethal</span>
+          <span class="legendTag"><span class="legendSwatch hostile"></span>Hostile Link</span>
           <span class="legendTag"><span class="legendSwatch escape"></span>Bridge Exit</span>
           <span class="legendTag"><span class="legendSwatch serum"></span>Serum</span>
           <span class="legendTag"><span class="legendSwatch pcclue"></span>PC-Clue</span>
