@@ -772,12 +772,6 @@
       background:rgba(23,127,121,.08);
     }
 
-    .floorHotspot.is-focus{
-      border-color:rgba(33,74,151,.82);
-      background:rgba(33,74,151,.12);
-      box-shadow:0 0 0 2px rgba(33,74,151,.16);
-    }
-
     .floorHotspot.encounter-1{
       border-color:rgba(59,130,246,.44);
       background:rgba(59,130,246,.12);
@@ -804,10 +798,38 @@
       box-shadow:inset 0 0 0 1px rgba(22,101,52,.12);
     }
 
+    .floorHotspot.is-focus{
+      z-index:3;
+      outline:3px solid rgba(255,255,255,.96);
+      outline-offset:0;
+      box-shadow:0 0 0 7px rgba(33,74,151,.52), 0 0 26px rgba(33,74,151,.38);
+    }
+
     .floorHotspot.area.is-focus{
-      border-color:rgba(23,127,121,.82);
-      background:rgba(23,127,121,.12);
-      box-shadow:0 0 0 2px rgba(23,127,121,.16);
+      z-index:3;
+      outline:3px solid rgba(255,255,255,.96);
+      outline-offset:0;
+      box-shadow:0 0 0 7px rgba(23,127,121,.52), 0 0 26px rgba(23,127,121,.38);
+    }
+
+    .floorHotspot.encounter-1.is-focus{
+      box-shadow:0 0 0 7px rgba(59,130,246,.58), 0 0 26px rgba(59,130,246,.42);
+    }
+
+    .floorHotspot.encounter-2.is-focus{
+      box-shadow:0 0 0 7px rgba(79,70,229,.58), 0 0 26px rgba(79,70,229,.42);
+    }
+
+    .floorHotspot.encounter-3.is-focus{
+      box-shadow:0 0 0 7px rgba(99,102,241,.62), 0 0 26px rgba(99,102,241,.46);
+    }
+
+    .floorHotspot.encounter-4.is-focus{
+      box-shadow:0 0 0 7px rgba(138,43,226,.66), 0 0 26px rgba(138,43,226,.5);
+    }
+
+    .floorHotspot.escape-critical.is-focus{
+      box-shadow:0 0 0 7px rgba(34,197,94,.62), 0 0 26px rgba(34,197,94,.42);
     }
 
     .staffChips{
@@ -3021,7 +3043,22 @@
       window.history.replaceState(null, "", `#${button.id}`);
     }
 
-    function appendRoomReferenceText(target, text) {
+    function focusRoomHotspotOnly(labelOrKey) {
+      const key = getRoomKey(labelOrKey);
+      if (!key) return;
+
+      const hotspot = roomHotspotsByKey.get(key);
+      if (!hotspot) {
+        focusRoomButton(key);
+        return;
+      }
+
+      pulseRoomHotspot(hotspot);
+      hotspot.scrollIntoView({ behavior: "smooth", block: "center" });
+      window.history.replaceState(null, "", `#${hotspot.id}`);
+    }
+
+    function appendRoomReferenceText(target, text, mode = "button") {
       let lastIndex = 0;
       let matched = false;
 
@@ -3033,12 +3070,17 @@
 
         const key = roomAliasMap.get(match);
         const link = document.createElement("a");
-        link.href = `#${roomButtonId(key)}`;
+        const useHotspot = mode === "hotspot";
+        link.href = useHotspot ? `#${roomHotspotId(key)}` : `#${roomButtonId(key)}`;
         link.className = "roomJump";
         link.textContent = match;
         link.addEventListener("click", event => {
           event.preventDefault();
-          focusRoomButton(key);
+          if (useHotspot) {
+            focusRoomHotspotOnly(key);
+          } else {
+            focusRoomButton(key);
+          }
         });
         target.appendChild(link);
         lastIndex = offset + match.length;
@@ -3230,7 +3272,7 @@
         const strong = document.createElement("strong");
         strong.textContent = "Base: ";
         base.appendChild(strong);
-        appendRoomReferenceText(base, person.base);
+        appendRoomReferenceText(base, person.base, "hotspot");
 
         const note = document.createElement("p");
         note.textContent = person.note;
@@ -3543,6 +3585,21 @@
       window.history.replaceState(null, "", `#${button.id}`);
     }
 
+    function focusPostRoomHotspotOnly(labelOrKey) {
+      const key = getPostRoomKey(labelOrKey);
+      if (!key) return;
+
+      const hotspot = postRoomHotspotsByKey.get(key);
+      if (!hotspot) {
+        focusPostRoomButton(key);
+        return;
+      }
+
+      pulsePostRoomHotspot(hotspot);
+      hotspot.scrollIntoView({ behavior: "smooth", block: "center" });
+      window.history.replaceState(null, "", `#${hotspot.id}`);
+    }
+
     function appendEncounterProfileLink(target, name, closeDialog = false) {
       const npcName = namedEncounterNpcByProfile.get(name);
       const href = npcName ? `#${postNpcId(npcName)}` : `#${encounterProfileId(name)}`;
@@ -3649,7 +3706,7 @@
       return body;
     }
 
-    function appendPostRoomReferenceText(target, text) {
+    function appendPostRoomReferenceText(target, text, mode = "button") {
       let lastIndex = 0;
       let matched = false;
 
@@ -3661,12 +3718,17 @@
 
         const key = postRoomAliasMap.get(match);
         const link = document.createElement("a");
-        link.href = `#${postRoomButtonId(key)}`;
+        const useHotspot = mode === "hotspot";
+        link.href = useHotspot ? `#${postRoomHotspotId(key)}` : `#${postRoomButtonId(key)}`;
         link.className = "roomJump";
         link.textContent = match;
         link.addEventListener("click", event => {
           event.preventDefault();
-          focusPostRoomButton(key);
+          if (useHotspot) {
+            focusPostRoomHotspotOnly(key);
+          } else {
+            focusPostRoomButton(key);
+          }
         });
         target.appendChild(link);
         lastIndex = offset + match.length;
@@ -3956,7 +4018,7 @@
         const currentStrong = document.createElement("strong");
         currentStrong.textContent = "Current: ";
         current.appendChild(currentStrong);
-        appendPostRoomReferenceText(current, person.current);
+        appendPostRoomReferenceText(current, person.current, "hotspot");
 
         const note = document.createElement("p");
         note.textContent = person.note;
