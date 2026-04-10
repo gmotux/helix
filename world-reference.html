@@ -1849,9 +1849,17 @@
             <p><strong>Sean:</strong> <span class="actionablePostRefs">130, 234, 240, 202</span>. Internal provisional file: <strong>Case-24</strong>.</p>
             <p><strong>18 Delta Doctor:</strong> <span class="actionablePostRefs">199 and 214A</span>. Internal provisional file: <strong>Case-12</strong>.</p>
             <p><strong>18 Delta Rogue:</strong> <span class="actionablePostRefs">150 and 288</span>. Internal provisional file: <strong>Case-29</strong>.</p>
-            <p><strong>SC-17 transcript pulls:</strong> <span class="actionablePostRefs">138, 130, 150, 195, 199</span>.</p>
+            <p><strong>Strongest case-file reads:</strong> <span class="actionablePostRefs">130, 150, 195, 199, 214A, 224, 234, 288</span>.</p>
             <p><strong>Note:</strong> each PC was already producing at least one retained outlier result before 14:23, which is why their later survival is consistent rather than lucky.</p>
             <p><strong>Result:</strong> every PC has a clean entry into the program without exposing the whole campaign too early.</p>
+          </article>
+          <article class="box">
+            <h3>SC-17 Spare Quotes</h3>
+            <p><strong>Bernard:</strong> "Singer, don't spend your best songs in these small rooms. Keep them for the bigger audience ahead."</p>
+            <p><strong>Sean:</strong> "Hold the doorway until the black-horned hexagon comes back in armor."</p>
+            <p><strong>18 Delta Doctor:</strong> "Doctor, the black-horned hexagon will save your savior."</p>
+            <p><strong>18 Delta Rogue:</strong> "When a hallway feels staged, believe it. Open from the hinge side, clear the second angle, and never let your chest be first through the dark."</p>
+            <p><strong>Use:</strong> off-book reserve lines only. They do not need to stay tied to any one room.</p>
           </article>
           <article class="box">
             <h3>Codon-Locked Serums</h3>
@@ -2129,6 +2137,10 @@
         <section class="detailBlock">
           <h4>Loot</h4>
           <ul id="roomDialogPostLoot"></ul>
+        </section>
+        <section class="detailBlock" id="roomDialogPostDiscoverBlock">
+          <h4>After Encounter</h4>
+          <ul id="roomDialogPostDiscover"></ul>
         </section>
         <section class="detailBlock">
           <h4>Found Text And GM Meaning</h4>
@@ -2626,6 +2638,7 @@
         threat: [],
         loot: [],
         clue: [],
+        discover: [],
         anomaly: [],
         noise: [],
         exit: []
@@ -4413,7 +4426,7 @@
         clue: [
           gmClue("Patch-printer strip", "telemetry mirror / P. Nand / OA uplink failed / local print preserve", "Building A was actively mirroring candidate data to Orpheus Annex when the link died."),
           gmClue("Rack sticker", "OA-SC-17 mirror only. Preserve local spool if remote drops.", "One specific Orpheus Annex source case had a dedicated mirrored telemetry line into Building A."),
-          gmClue("Dispatch strip", "SC-17 excerpt pulls -> 130 Cole prep / 150 Chen packet / 195 Todd referral / 199 Serrat receive", "Short transcript excerpts from the OA-SC-17 mirror were being clipped into four private 1/F packets before those people were moved upstairs.")
+          gmClue("Dispatch strip", "OA compare refresh -> 293-C review only / keep hard copy off public desks", "When the OA mirror line failed, sensitive compare material was rerouted upstairs for review instead of left in open first-floor packet handling.")
         ]
       },
       "136A": {
@@ -4430,9 +4443,9 @@
       },
       "130": {
         clue: [
-          gmClue("Escort card", "S. Erinn / Case-24 / route through 130. If transfer timing, export controls, or procurement authority comes up, move to Cole.", "Sean was being handled as a private institutional guest under provisional file Case-24 and screened for access, not courtesy."),
-          gmClue("Call slip", "After Cole, hold 240.", "Room 234 was only the first stop in Sean's private sequence."),
-          gmClue("SC-17 compare insert", "\"Hold the doorway until the black-horned hexagon comes back in armor.\"", "A transcript excerpt pulled from the OA-SC-17 mirror was inserted into Sean's 1/F packet before he ever went upstairs. It reads like impossible tactical advice meant specifically for him.")
+          gmClue("Escort card", "S. Erinn / Case-24 / continuity-office cover / route through 130. If guest asks what leaves site by hand, by car, or under sealed transfer, move to Cole.", "Sean was being handled as a private institutional guest under provisional file Case-24 and screened for how he thinks about controlled movement and authority, not for courtesy."),
+          gmClue("Partner note", "Public title adequate. Keep consult neutral until he chooses system, not biography.", "Staff were told not to challenge Sean's cover story. They wanted to see which operational topic he pursued on his own."),
+          gmClue("Call slip", "After Cole: 240 if composed. Do not return to keynote.", "Room 234 was only the first stop in Sean's private sequence, and once he entered it he was not meant to go back to the public track.")
         ]
       },
       "126": {
@@ -4478,9 +4491,9 @@
       },
       "150": {
         clue: [
-          gmClue("Sealed contractor envelope", "Case-29 stress-test walk authorized. No intercept unless east line touched, quiet rooms entered, or restricted packets exposed. - M.C.", "Marcus Chen brought the rogue PC in as a deliberate security variable under provisional file Case-29 and told staff to let it run for a while."),
-          gmClue("Issue slip", "No public badge unless requested. Contractor escort not required.", "The rogue PC was never meant to be processed like a normal guest."),
-          gmClue("SC-17 compare insert", "\"Red-team instructor, when a hallway feels staged, believe it. Open from the hinge side, clear the second angle, and never let your chest be first through the dark.\"", "Marcus Chen's packet for Case-29 included a transcript pull from the OA-SC-17 mirror. It sounds exactly like close-quarters survival doctrine aimed at the rogue PC.")
+          gmClue("Sealed contractor envelope", "Case-29 stress-test walk authorized. No intercept unless east line touched, quiet rooms entered, or protected packet exposed. Let him show you the soft seams. - M.C.", "Marcus Chen brought the rogue PC in as a deliberate security variable under provisional file Case-29 and told staff to measure what he noticed before they stopped him."),
+          gmClue("Issue slip", "No public badge. No escort unless requested. Record door choices, not conversation.", "The rogue PC was never meant to be processed like a normal guest. Staff were told his movement mattered more than what he said."),
+          gmClue("Margin note", "Former 18D close-quarters instructor. Expect hinge checks, corner clears, and handoff tests before social probing.", "Chen expected the rogue PC to read the building like a live security problem, not like a guest.")
         ]
       },
       "154": {
@@ -4551,14 +4564,14 @@
         clue: [
           gmClue("Seat insert", "B.E. / Case-31 / Todd referral / CRT / pull to 207 after opening block / return 195 if coherent.", "Bernard was never a normal keynote attendee. His private CRT path was prebuilt under provisional file Case-31."),
           gmClue("Attendance sheet", "Keep keynote short. Upstairs ready.", "The keynote block was only the public wrapper before selected people were moved upstairs."),
-          gmClue("SC-17 compare insert", "\"Singer, don't spend your best songs in these small rooms. Keep them for the bigger audience ahead.\"", "Bernard's 1/F referral packet already contained a quote pulled from the OA-SC-17 mirror. The line feels impossible, personal, and directly usable as survival advice.")
+          gmClue("Todd cover note", "History cluster: performance work / residual-image treatment / crowd response intact under strain. Patel to read live, not from paper.", "Todd's referral framed Bernard as a live-read subject whose performer habits and treatment history mattered more than a normal keynote intake summary.")
         ]
       },
       "199": {
         clue: [
           gmClue("Security access log", "2/F grant issued before badge print on six rows.", "Security already knew who would be allowed upstairs before ordinary check-in finished."),
-          gmClue("Serrat packet", "18D MED / Case-12 / private receive / bypass public queue / notify N. Serrat if subject asks about east transfer.", "The 18 Delta doctor PC was under special security handling tied directly to Serrat under provisional file Case-12."),
-          gmClue("SC-17 compare insert", "\"Doctor, the black-horned hexagon will save your savior.\"", "Serrat's private receive packet contained a transcript pull from the OA-SC-17 mirror. The line is short, impossible, and specific enough to matter later.")
+          gmClue("Serrat packet", "18D MED / Case-12 / private receive / bypass public queue / note whether subject checks casualties, exits, or supplies first / notify N. Serrat if subject asks about east transfer.", "The 18 Delta doctor PC was under special security handling tied directly to Serrat under provisional file Case-12, and staff were measuring whether she defaulted to medic behavior immediately."),
+          gmClue("Security margin note", "Do not meet her with uniforms first. She reads posture before rank.", "The security team expected the doctor PC to evaluate competence and threat before titles, which means Serrat's people already knew how she operated.")
         ]
       },
       "202": {
@@ -4586,6 +4599,7 @@
       "207": {
         clue: [
           gmClue("Blue folder cover", "CRT / Todd referral / B.E. / keynote return if coherent", "Todd genuinely placed Bernard into a private CRT sequence."),
+          gmClue("Patel prep card", "Start with cadence recall, crowd-read, and vocal strain. Skip chronology unless trust holds. Move 224 first.", "Patel built Bernard's session around music, performance, and crowd-read habits rather than a generic psychiatric intake."),
           gmClue("Patel tray card", "If they answer their name, separate and observe. If they keep venting, clear the room.", "Patel turned 207 into an improvised triage point for lucid versus unreachable survivors after 14:23.")
         ]
       },
@@ -4606,9 +4620,9 @@
       },
       "214A": {
         clue: [
-          gmClue("Physician brief", "Field trauma / military medical / occupational boundary likely.", "The 18 Delta doctor was identified as medically and operationally significant before the rupture."),
-          gmClue("Handwritten addendum", "If transfer language appears, record full reply and route to Serrat.", "Serrat's side of Kallisto was monitoring this doctor specifically."),
-          gmClue("Sorrell margin note", "Case-12: casualty branch resolved before full card reveal. Recovery line inside OA-SC-17 field-stable band.", "The 18 Delta doctor had already produced one retained pre-rupture anomaly result under provisional file Case-12.")
+          gmClue("Physician brief", "Case-12 / field trauma / military medical / keeps scanning exits during intake / occupational boundary likely.", "The 18 Delta doctor was identified as medically and operationally significant before the rupture, and Kallisto noticed she read rooms like a combat medic rather than a civilian patient."),
+          gmClue("Handwritten addendum", "If transfer language appears, record full reply and route to Serrat. If casualty count appears first, retain.", "Serrat's side of Kallisto was monitoring this doctor specifically to see whether she prioritized mission movement or triage under pressure."),
+          gmClue("Sorrell margin note", "Case-12 counted non-responders before sitting, corrected casualty order before full card reveal, and asked where kits were kept before disclosure close. Recovery line stayed inside OA-SC-17 field-stable band.", "The doctor PC had already produced one retained pre-rupture anomaly result by slipping into field-triage mode before the room had fully presented the scenario.")
         ]
       },
       "219-A": {
@@ -4618,7 +4632,7 @@
       },
       "224": {
         clue: [
-          gmClue("Patel worksheet", "Case-31 / B.E. catches harmonic rise 0.6 seconds early. Voice-led recall steadies pulse faster than silence. Retain raw audio in OA-SC-17 compare set.", "Bernard's CRT response under Case-31 already matched the same anomaly family Kallisto was benchmarking against the Annex source case."),
+          gmClue("Patel worksheet", "Case-31 / B.E. catches harmonic rise 0.6 seconds early, keeps four-count under thumb when stressed, and steadies faster under voice-led recall than silence. Retain raw audio in OA-SC-17 compare set.", "Bernard's performer habits were measurable and useful to Patel; under Case-31 he was already matching the same anomaly family Kallisto benchmarked against the Annex source case."),
           gmClue("Patel pencil note, 14:41", "Black breath hung longer after shouting. Dropped faster when he hummed.", "Patel learned one of the residue rules by direct observation after 14:23.")
         ]
       },
@@ -4629,14 +4643,14 @@
       },
       "234": {
         clue: [
-          gmClue("Yvette notebook", "Case-24 / S.E. steady through transport-loss and authority-failure prompts. Pulse line flat through final branch. Hold in OA-SC-17 decision band and watch for procurement vocabulary.", "Sean was not just calm; under Case-24 he was producing one of the statistical outlier patterns Kallisto retained against the Annex benchmark."),
+          gmClue("Yvette notebook", "Case-24 / S.E. stayed flat through transport-loss and authority-failure prompts. First visible change came on spouse / minor-dependent branch: hand to orange ring, voice clipped, asked timeline twice. Watch for procurement vocabulary, not resume language.", "Sean was not just calm; Kallisto saw that authority loss barely moved him, while family-risk language did. That made Case-24 both useful and hard to control."),
           gmClue("Whiteboard pressure marks", "if stable -> 240 -> 202 hold", "Sean's route was sequenced ahead of time if he stayed composed.")
         ]
       },
       "240": {
         clue: [
-          gmClue("Consult card", "S.E. / continuity-office cover accepted. Assess decision authority, transfer access, procurement familiarity.", "Sean's value to Kallisto lay in access and institutional utility, not his stated resume."),
-          gmClue("Retention review sheet", "Debt / spouse employment / licensing exposure / caregiver duty / outside offers. Update quarterly.", "Kallisto kept leverage files on its own people and high-value contacts.")
+          gmClue("Consult card", "Case-24 / public cover accepted. Do not press title. Assess authority response, closed-transfer familiarity, and whether he asks for inventory before people.", "Sean's value to Kallisto lay in access and institutional utility, not his stated resume. The consult was built to see how he thinks when restricted movement enters the room."),
+          gmClue("Retention review sheet", "No debt. Married. One minor dependent. Institutional language stronger than money. Family-interruption branch remains only reliable pressure point.", "Kallisto concluded Sean had almost no easy leverage except family, which is much more specific than a generic donor or staff file.")
         ]
       },
       "258A": {
@@ -4677,8 +4691,8 @@
       },
       "278": {
         clue: [
-          gmClue("Continuity factors tabs", "rent / family care / debt / legal exposure / employer leverage / who notices first if subject vanishes overnight", "Kallisto converted life pressures into a control model."),
-          gmClue("Dependency card", "Administers medication twice daily. No debt pressure. No legal leash. Caregiver window more reliable than institutional pressure.", "Bernard's medication duty was recognized as a stronger leverage point than money or law.")
+          gmClue("Continuity factors tabs", "rent / family care / debt / legal exposure / employer leverage / who notices first if subject misses evening window", "Kallisto converted life pressures into a control model built around practical consequences, not abstract psychology."),
+          gmClue("Dependency card", "Administers medication twice daily to dependent at home. No debt pressure. No legal leash. Missed evening window produced first visible break in calm.", "Bernard's strongest lever was responsibility, not money or law, and Kallisto had already measured that.")
         ]
       },
       "282": {
@@ -4697,7 +4711,7 @@
         clue: [
           gmClue("Envelope label", "Case-29 deviation. Do not move without Serrat hold.", "Security had already tagged the rogue PC as an off-script case requiring Serrat's authority under provisional file Case-29."),
           gmClue("Half-page note", "Former 18D close-quarters instructor. Watch hands, not answers. If he crosses Erinn, observe only. - M.C.", "Marcus Chen intentionally let the rogue PC interact with other selected lanes to see what happened."),
-          gmClue("Naomi incident note", "Case-29 mirrored two restricted turns before runner signal. No badge, no radio. Hold in OA-SC-17 route-anticipation file.", "The rogue PC had already produced a retained navigational anomaly before the rupture.")
+          gmClue("Naomi incident note", "Case-29 mirrored two restricted turns before runner signal, checked hinge side on both closed doors, and paused on the blind angle before entry. No badge, no radio. Hold in OA-SC-17 route-anticipation file.", "The rogue PC had already produced a retained navigational anomaly before the rupture, and the note captures exactly why staff could not dismiss it as ordinary tradecraft.")
         ]
       },
       "293-B": {
@@ -4824,10 +4838,252 @@
       }
     };
 
+    const buildingAPostEncounterYieldPatches = {
+      "Main Entrance": {
+        discover: [
+          "If Talia Reed survives and the threshold hollow is dropped quietly, she points the party to Room 106 and Room 102 as the last private-arrival rooms Julian Park was using.",
+          "Automatic find: the black-triangle arrival rows plus Julian Park's personal receive sheet, which turns the front desk from atmosphere into a real intake lead."
+        ]
+      },
+      "Link": {
+        discover: [
+          "If the center floor is reclaimed, Eli Navarro or the campus placard can tell the party the public crowd fed toward Room 195 while special pulls were peeled toward Room 114 and 161 Corridor.",
+          "Automatic find: the frozen reroute slide, which is the cleanest proof on the first floor that the keynote stream was only cover."
+        ]
+      },
+      "Stair": {
+        discover: [
+          "If the landing is secured and the broken-ankle survivor is calmed, they hand over Owen Pike's dropped route notes and point the party to Room 140.",
+          "Automatic find: the clipped map and yellow badge that make the upstairs route feel deliberate instead of guessed."
+        ]
+      },
+      "193 Corridor": {
+        discover: [
+          "If Marta Ibarra survives or the patrol is cleared, the party can gather the floor binder and pull-tags without being overrun.",
+          "Best next lead: Room 114 for the scheduler desk, Room 199 for security-side handling, or Room 207 if they want the first concrete upstairs destination."
+        ]
+      },
+      "116": {
+        discover: [
+          "After the slow-rising body is put down, the thick consult file is safe to read and carry.",
+          "Best next lead: Room 214 or Room 266, where prior history and live interview results were being turned into routing decisions."
+        ]
+      },
+      "114": {
+        discover: [
+          "If Farah Nabil is killed, pinned, or distracted long enough to search the desk, the party gets the master room list, scheduler passkey, and pink reroute slips for Room 207 and Room 214A.",
+          "This is the cleanest first-floor room for turning vague suspicion into exact upstairs destinations."
+        ]
+      },
+      "129-B": {
+        discover: [
+          "After the security temp is dropped, the review slips and held tray can be checked without taking a surprise hit in the booth.",
+          "Best next lead: Room 199, where the same workflow appears with real access logs and Serrat's packet handling."
+        ]
+      },
+      "161-C": {
+        discover: [
+          "If Farah's dispatch bay is searched under control, the escort slips give three usable outcomes: Room 207 for priority, west care through Room 154 or Room 158 for unstable people, and security notify for walk-outs.",
+          "The folded campus map here is worth taking; it turns this room into a movement tool, not just a clue stop."
+        ]
+      },
+      "181-D": {
+        discover: [
+          "If the crawler is cleared, the tote yields a prebuilt upstairs handoff kit with a direct pull to Room 207 and no waiting-area return.",
+          "This is a practical way to point cautious players back into the 2/F chain."
+        ]
+      },
+      "103-A": {
+        discover: [
+          "After the band-tagged hollow is put down, the rack can be handled safely and the pairing list becomes readable instead of bait.",
+          "Best next lead: Room 210 or Room 230A, the rooms that generated the 'if positive send' anomaly results the bands were assigned for."
+        ]
+      },
+      "195": {
+        discover: [
+          "If the conference room is reclaimed, the PCs can gather Bernard's yellow seat insert, Patel's green mark on the attendance sheet, and the dead guard's pistol in one pass.",
+          "Best next lead: Room 207 first, then Room 224 if they want to know what really happened to Bernard's closed-track path."
+        ]
+      },
+      "199": {
+        discover: [
+          "After the blind-corner security hollow is cleared, the access log, Serrat packet, and weak-battery tactical light are easy to recover.",
+          "Best next lead: Room 214A for the physician side of the same file, or Room 288 for the deviation-case security handling."
+        ]
+      },
+      "207": {
+        discover: [
+          "If Mara Kessler or Dev Patel is handled here, the blue folder and tray card tell the party who still answered their own name after 14:23 and who had to be cleared out.",
+          "Best next lead: Room 224 for the CRT evidence or Room 195 for the public wrapper around it."
+        ]
+      },
+      "206": {
+        discover: [
+          "If the room is searched after Room 224, the recovery sheet and Anika's pencil note give the first practical residue rule without any theorycraft.",
+          "Best next lead: Room 260A, Room 260B, or Room 293-C for other survivors who saw the same calm-versus-violent difference."
+        ]
+      },
+      "210": {
+        discover: [
+          "If the blue arc is capped and the snatcher is handled, the timing clipboard can be read safely instead of from the doorway.",
+          "Best next lead: Room 230A or Room 282 for more anticipatory results built on the same impossible timing pattern."
+        ]
+      },
+      "214A": {
+        discover: [
+          "If Anika Sorrell is subdued, bargained with, or driven off, the physician packet and tablet fragments identify Case-12 as both medically useful and watched by Serrat.",
+          "Best next lead: Room 199 for the security file, or Room 278 if the party wants to understand how Kallisto modeled personal leverage."
+        ]
+      },
+      "224": {
+        discover: [
+          "If Patel cooperates or the room is searched after he breaks, the worksheet, recovery ticket, and fresh residue note all come out together.",
+          "Best next lead: Room 206 for what happened immediately after the CRT pass, or back to Room 195 for where Bernard was returned."
+        ]
+      },
+      "234": {
+        discover: [
+          "If Yvette Cole is calmed, bargained with, or searched, her notebook and the erased whiteboard marks push the party cleanly to Room 240 and then Room 202.",
+          "This is Sean's route room. It should feel like a real handoff point, not just a stylish interview scene."
+        ]
+      },
+      "202": {
+        discover: [
+          "If Mara is bypassed or the executive hold is looted, the sealed transfer envelope points straight to OA West Gate and confirms Sean had a planned onward move.",
+          "Best next lead: Room 181-C for transport control, or the bridge chain if the party wants to leave A with one hard external destination in hand."
+        ]
+      },
+      "248A": {
+        discover: [
+          "If Caleb Wren is driven off, the insulated carrier and batch labels become readable instead of blood-slick scenery.",
+          "This is the first room that makes the party feel the cohort model physically: tubes and draw minutes prepared for a later Building B scan-and-hold process."
+        ]
+      },
+      "258B": {
+        discover: [
+          "If Naomi Varga is not fought blind, her ocular chart and route-anticipation file are the best proof that some people were reading the turn before the signal.",
+          "Best next lead: Room 288 for her deviation handling, or Room 293-C for the cross-room comparison grid."
+        ]
+      },
+      "288": {
+        discover: [
+          "If the room is secured, the deviation envelope and Marcus Chen note tell the party exactly who was allowed to drift across lanes and why.",
+          "Best next lead: Room 199 for Serrat's side of the same handling, or Room 130 if they want the beginning of Sean's private lane."
+        ]
+      },
+      "293-C": {
+        discover: [
+          "If Pranav Nand is protected long enough to speak, he gives the best live explanation in Building A of what makes rooms darken and what makes them clear.",
+          "Automatic find: the cross-room matrix and running sheet, which tie Room 206, 220 Corridor, and Naomi's active state together."
+        ]
+      }
+    };
+
+    const buildingBWestEncounterYieldPatches = {
+      "B Link": {
+        discover: [
+          "If the west-side threshold is taken, the escort slip becomes the first clean B-side instruction: C290 first, no mixing with resident staff.",
+          "Best next lead: C290 for receive or C288 for the packet rack that explains the whole west chain."
+        ]
+      },
+      "B Stair 2/F": {
+        discover: [
+          "If the landing is safe to search, the dead-tech warning about black venting can be taken without opening the party to a blind stair rush.",
+          "Best next lead: M205 if they want a living witness who can confirm that note was written after the rupture, not before it."
+        ]
+      },
+      "C288": {
+        discover: [
+          "If Dana Ko is dropped, the packet rack and grease-pencil notes give the whole west-side chain in one glance: C290 -> B282 -> B280 -> M202.",
+          "This is the cleanest first B-side routing room. It should turn Building B from maze to process."
+        ]
+      },
+      "C215": {
+        discover: [
+          "If Mina Okoye is cleared, the bench note and respirators show resident chemistry work was displaced to make room for restricted handling.",
+          "Best next lead: B282, where that restricted check becomes a live room instead of an office excuse."
+        ]
+      },
+      "B282": {
+        discover: [
+          "If the magnet room is made safe, the scan cover sheet and live-hazard note are easy to recover without fighting the room and the hostile at once.",
+          "Best next lead: B280 for draw-and-cold-hold, or M202 for east-side decision hold."
+        ]
+      },
+      "B280": {
+        discover: [
+          "If the bench horror is neutralized, Grant Hallett's transfer case, the cold rack, and the LZR match vial are all recoverable instead of room dressing.",
+          "Best next lead: M202 and M201, because this room proves material was prepared here but not authorized to leave here."
+        ]
+      },
+      "M204": {
+        discover: [
+          "After the office threat is cleared, the door schedule printout and Rafael Mendez retention envelope can be read together instead of as separate props.",
+          "Best next lead: M201 if the party wants the lockbox that actually held the pressure packets."
+        ]
+      },
+      "B266": {
+        discover: [
+          "If the cocoon is dealt with, the culture board proves Kallisto preserved active dangerous material for value instead of destroying it on sight.",
+          "Best next lead: M201 or B241, where that value turns into actual release control."
+        ]
+      },
+      "M202": {
+        discover: [
+          "If the hold room is cleared, the placard and the key tagged M201-B push the party directly toward M201 and then B241.",
+          "This room should read as the east-west pivot, not as another office with a chair in it."
+        ]
+      },
+      "C258": {
+        discover: [
+          "If the snatcher is beaten or lured clear of the bore, the nonmagnetic kit and clipboard line tie this room to dock-ready verification.",
+          "Best next lead: B241, then Loading Dock."
+        ]
+      },
+      "M201": {
+        discover: [
+          "After the security hollow drops, the release ledger and retention packets tell the party both what could leave this floor and who got squeezed to keep it moving.",
+          "Best next lead: B241 for warehouse verify, or Loading Dock for the last paper trail out."
+        ]
+      },
+      "B229": {
+        discover: [
+          "If the zigzag lane is won, the route card on the cart gives a practical contingency path into staging instead of leaving this room as a random fight.",
+          "Best next lead: B241."
+        ]
+      },
+      "B241.5B": {
+        discover: [
+          "If the alcove is searched under control, the manifest stubs show that released outside batches moved to lane 2 and then north gate after signoff.",
+          "Best next lead: B241 for the last warehouse check, then Loading Dock for the live manifest."
+        ]
+      },
+      "B241": {
+        discover: [
+          "If the warehouse is won, the whiteboard plus the locked freight case point straight to the dock and make the final east push feel earned.",
+          "This is the last clean prep room before Loading Dock."
+        ]
+      },
+      "East Stair 2/F": {
+        discover: [
+          "If the stair is cleared, the burn-manifests warning gives the party a security fallback they can actually use if they lose the dock.",
+          "Best next lead: Loading Dock while the paper trail is still present."
+        ]
+      },
+      "Loading Dock": {
+        discover: [
+          "If the dock is cleared or bypassed long enough for a real search, the manifest board gives North Gate Annex R-3 as the next actionable lead out of Building B.",
+          "Practical reward: bolt cutters, the remaining sidearm, and the only clear external route note on this floor."
+        ]
+      }
+    };
+
     applyRoomPatches(buildingAPostFloors, buildBlankCluePatches(buildingAPostFloors, bridgeLockedPatchLabels), bridgeLockedPatchLabels);
     applyRoomPatches(buildingBWestFloors, buildBlankCluePatches(buildingBWestFloors));
     applyRoomPatches(buildingAPostFloors, buildingAPostRoomPatchesCanonical, bridgeLockedPatchLabels);
     applyRoomPatches(buildingBWestFloors, buildingBWestRoomPatchesCanonical);
+    applyRoomPatches(buildingAPostFloors, buildingAPostEncounterYieldPatches, bridgeLockedPatchLabels);
+    applyRoomPatches(buildingBWestFloors, buildingBWestEncounterYieldPatches);
 
     const rareAnomalyRooms = new Set(["138", "197", "210", "258B"]);
     for (const floor of buildingAPostFloors) {
@@ -5412,6 +5668,8 @@
     const roomDialogPostOccupants = document.getElementById("roomDialogPostOccupants");
     const roomDialogPostThreat = document.getElementById("roomDialogPostThreat");
     const roomDialogPostLoot = document.getElementById("roomDialogPostLoot");
+    const roomDialogPostDiscover = document.getElementById("roomDialogPostDiscover");
+    const roomDialogPostDiscoverBlock = roomDialogPostDiscover.closest(".detailBlock");
     const roomDialogPostClue = document.getElementById("roomDialogPostClue");
     const roomDialogPostAnomaly = document.getElementById("roomDialogPostAnomaly");
     const roomDialogPostAnomalyBlock = roomDialogPostAnomaly.closest(".detailBlock");
@@ -5937,6 +6195,47 @@
       }
     }
 
+    function renderLinkedList(target, items, appendFn) {
+      target.innerHTML = "";
+      for (const item of items) {
+        const li = document.createElement("li");
+        appendFn(li, item);
+        target.appendChild(li);
+      }
+    }
+
+    function deriveEncounterDiscoveries(room) {
+      if (room.discover && room.discover.length) {
+        return room.discover;
+      }
+
+      if (!room.encounter || room.encounter <= 0) {
+        return [];
+      }
+
+      const items = [
+        "If the room is cleared, bypassed intelligently, or the survivor is calmed, the party gets a real search instead of only a glance under pressure."
+      ];
+
+      const normalizedClues = normalizePostClues(room.clue || []);
+      if (normalizedClues.length) {
+        const first = normalizedClues[0];
+        const parts = first.source
+          ? { source: first.source, text: first.read }
+          : splitClueReadParts(first.read);
+        const foundText = parts.text || first.read || "";
+        if (foundText) {
+          items.push(`Automatic find: ${foundText}`);
+        }
+      }
+
+      if (room.loot && room.loot.length) {
+        items.push(`Practical pickup: ${room.loot[0]}`);
+      }
+
+      return items.slice(0, 3);
+    }
+
     function renderBridgeExitSequence() {
       if (bridgeExitStepsRoot) {
         bridgeExitStepsRoot.innerHTML = "";
@@ -6024,6 +6323,13 @@
         roomDialogPostProfiles.innerHTML = "";
       }
       renderList(roomDialogPostLoot, room.loot);
+      const discoveries = deriveEncounterDiscoveries(room);
+      roomDialogPostDiscoverBlock.hidden = discoveries.length === 0;
+      if (discoveries.length) {
+        renderLinkedList(roomDialogPostDiscover, discoveries, appendPostRoomReferenceText);
+      } else {
+        roomDialogPostDiscover.innerHTML = "";
+      }
       renderPostClueList(roomDialogPostClue, room.clue);
       roomDialogPostAnomalyBlock.hidden = room.anomaly.length === 0;
       renderList(roomDialogPostAnomaly, room.anomaly);
@@ -6563,6 +6869,13 @@
         roomDialogPostProfiles.innerHTML = "";
       }
       renderList(roomDialogPostLoot, room.loot);
+      const discoveries = deriveEncounterDiscoveries(room);
+      roomDialogPostDiscoverBlock.hidden = discoveries.length === 0;
+      if (discoveries.length) {
+        renderLinkedList(roomDialogPostDiscover, discoveries, appendBWestRoomReferenceText);
+      } else {
+        roomDialogPostDiscover.innerHTML = "";
+      }
       renderBWestClueList(roomDialogPostClue, room.clue);
       roomDialogPostAnomalyBlock.hidden = room.anomaly.length === 0;
       renderList(roomDialogPostAnomaly, room.anomaly);
