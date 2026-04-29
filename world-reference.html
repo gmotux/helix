@@ -1817,6 +1817,43 @@
 
     const buildingAPostFloors = [];
 
+    const buildingAPostRoster = [];
+
+    const buildingAEncounterProfiles = [];
+
+    function mapRect(label, x, y, w, h) {
+      return { label, x, y, w, h };
+    }
+
+    function postRoom(label, encounter, data) {
+      return Object.assign({
+        label,
+        title: /^\d/.test(label) ? `Room ${label}` : label,
+        encounter,
+        area: false,
+        escapeCritical: false,
+        pcClue: null,
+        serum: null,
+        view: [],
+        occupants: [],
+        threat: [],
+        loot: [],
+        clue: [],
+        discover: [],
+        anomaly: [],
+        noise: [],
+        exit: []
+      }, data);
+    }
+
+    function clueItem(read, gm, source = "") {
+      return { source, read, gm, proves: gm };
+    }
+
+    function gmClue(source, read, gm) {
+      return { source, read, gm, proves: gm };
+    }
+
     const buildingBWestRoster = [
       { name: "Dr. Moira Vance (= Col. N. Serrat)", role: "Induction Facility Director — alias of Col. Serrat", state: "Off-site", stateClass: "absent", current: "Kallisto Main (Building A)", note: "Runs this facility under the Vance alias. Handwriting match between her diary (signed M. Vance) and her directive on Haldane's body in Kallisto 299 is the reveal. Not present during the rupture.", appearance: "Woman, mid 50s, 5'8\", controlled build; tailored charcoal, Kallisto lanyard in facility photographs." },
       { name: "Ms. Hannah Reeve", role: "Assistant Director", state: "Dead", stateClass: "dead", current: "Narrow Corridor A", note: "Ran Cohort 47 placement-interview day yesterday. Died in the corridor shortly after 14:23. Her working diary on her office desk reveals Vance's double-identity without naming Serrat.", appearance: "Woman, mid 30s, 5'7\", light build; cardigan, reading glasses around neck, comfortable shoes; body slumped against the corridor wall." },
@@ -2025,7 +2062,7 @@
     // Obsolete push call neutralized. Prior b2UpperPodRooms etc. arrays are orphaned.
 
     const buildingBWestMapData = new Map([
-      ["Building B 2/F West Side", {
+      ["Induction Facility — Bridge Arrival through Train Platform", {
         container: "buildingBWestMap",
         image: "gm/assets/building-b-2f.jpg",
         alt: "JOINN Innovation Park Building B second floor plan.",
@@ -3839,20 +3876,8 @@
       }
     }
 
-    const buildingAPostMapData = new Map([
-      ["Building A 1/F Post-Ignition", {
-        container: "buildingAPostFirstMap",
-        image: floorMapData.get("Building A 1/F").image,
-        alt: "JOINN Innovation Park Building A first floor plan after the ignition event.",
-        hotspots: floorMapData.get("Building A 1/F").hotspots
-      }],
-      ["Building A 2/F Post-Ignition", {
-        container: "buildingAPostSecondMap",
-        image: floorMapData.get("Building A 2/F").image,
-        alt: "JOINN Innovation Park Building A second floor plan after the ignition event.",
-        hotspots: floorMapData.get("Building A 2/F").hotspots
-      }]
-    ]);
+    const floorMapData = new Map();
+    const buildingAPostMapData = new Map();
 
     const rosterRoot = document.getElementById("buildingARoster");
     const roomDialog = document.getElementById("roomDialog");
