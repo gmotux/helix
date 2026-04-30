@@ -1846,7 +1846,7 @@
                 area: true,
                 title: "Main Hall (2/F)",
                 description: "The glass bridge from Building A terminates at a security vestibule along the north wall. Beyond the vestibule, a marble-floored hall opens south toward a wide staircase down to 1/F. Reception desk along the east wall beneath a Kallisto logo. Doors and openings radiate to the Lecture Room, Living Room, Private Study Room, Large Hall, and the corridors east to the library and admin wings.",
-                encounters: "Two desk-staff bodies in Kallisto lanyards behind the reception desk; one trainee's body at the foot of the staircase. Nothing actively hostile here. Loud activity in this hall pulls mist-broken from adjacent rooms within 1d4 rounds.",
+                encounters: "Two staff bodies behind the reception desk in Kallisto lanyards, plus one trainee body at the foot of the staircase. **No active encounter.** Loud activity in this hall pulls 1d4 **Zombies** (CR 1/4) in from the Lecture Room or Living Room within 1d4 rounds.",
                 loot: [
                   "Reception desk first-aid kit: bandages, two splints, two single-dose epinephrine pens.",
                   "A ring of badge-keyed master cards on the desk-staff body (opens green-badge doors throughout 2/F).",
@@ -1860,7 +1860,7 @@
                 area: true,
                 title: "Large Hall",
                 description: "A multipurpose hall with a raised stage at the east end and a recessed central pit two feet below the surrounding walkway. In the pit sits a caged display plinth holding a bronze sculpture of a falling figure, hair across the face. The cage lowers by a manual winch on the north wall. A red Kallisto keycard is visible on the pit floor under the cage.",
-                encounters: "Empty on first entry. The moment the keycard is taken: one mist-broken security lead steps out of the alcove behind the east stage, and within 1d4 rounds four cocooned trainees from the adjacent Art Room push in through the east door. HARD fight at level 5 — use the pit and the stage for cover.",
+                encounters: "Empty on first entry. The moment the keycard is lifted: 1\u00d7 **Wight** (CR 3) emerges from the alcove behind the east stage \u2014 a mist-broken Kallisto security lead. Within 1d4 rounds, 4\u00d7 **Ghoul** (CR 1) push through the Art Room door \u2014 cocooned trainees pulled from the next room's webs. Use the recessed pit and the stage as cover. Adjusted XP ~3,750 (HARD at level 5).",
                 loot: [
                   "Server-room override keycard (red Kallisto lanyard, labelled SRV-B / emergency override). Opens the locked door in the B1 Monitor Room.",
                   "On the security lead's body: a Kallisto security master lanyard (same access as the reception ring, plus blue-badge corridors)."
@@ -1872,7 +1872,7 @@
               postRoom("Lecture Room", 1, {
                 title: "Lecture Room",
                 description: "Tiered theatre seating about fifty in charcoal upholstery, facing a podium and a smartboard at the front. The smartboard runs on battery reserve and is frozen on yesterday's last slide: a slide titled \"Welcome to Day Three — Placement Interviews — Cohort 47.\" A trainee's body slumps across two of the front-row seats, notebook still open on the seatback tray.",
-                encounters: "One dead trainee in the front row, head down on the tray. Nothing else. Noise here travels to the Main Hall.",
+                encounters: "**No active encounter.** A single dead trainee in the front row, head down on a tray. Loud activity here travels back to the Main Hall (2/F).",
                 loot: [
                   "On the trainee: a Kallisto-issued candidate handbook, a name badge (cohort number 47-12), a wallet, a pen.",
                   "On the podium: a director's lecture notes folder (Reeve's handwriting), three fresh markers, a clicker remote."
@@ -1885,7 +1885,7 @@
               postRoom("Living Room", 1, {
                 title: "Living Room",
                 description: "Trainee lounge with two L-arranged sofas, a low coffee table with three half-empty mugs, a wall-mounted TV (dead), and a bar cupboard in the southeast corner. Large south-facing windows. A cardigan is draped over the back of an armchair near the window.",
-                encounters: "No bodies, no living occupants. Four crows have taken up roost on the south window ledges; they do not enter unless a window breaks. If glass shatters here, treat the four as a single swarm (CR 1/4) with a one-round delay before they push in.",
+                encounters: "**No active encounter.** Four crows roost on the south window ledges. If the glass shatters, treat the four as a single **Swarm of Ravens** (CR 1/4) \u2014 they push through the broken window with one round of delay. Adjusted XP 50 if engaged.",
                 loot: [
                   "In the bar cupboard: half-bottle of brandy, four sealed water bottles, a tin of biscuits.",
                   "On the coffee table: a Kallisto staff phone (no SIM, mostly drained, password-protected).",
@@ -1898,7 +1898,7 @@
               postRoom("Private Study Room", 2, {
                 title: "Private Study Room",
                 description: "A single-occupant study off the Main Hall — heavy desk, two wingback chairs, a small fireplace (cold), east-wall bookshelves. The mantelpiece holds a silver-framed group photograph: Kallisto senior staff at a 1990s retreat, perhaps a dozen people. Gideon March, then in his forties, stands near the centre. A younger Col. Serrat stands at his right shoulder, looking directly into the camera.",
-                encounters: "Four mid-level Kallisto staff, mist-broken, wandering the room in slow loops between the desk and the chairs. Cramped fight; use the furniture for cover. Moderate combat at level 5 (zombies x4).",
+                encounters: "2\u00d7 **Berserker** (CR 2) \u2014 mid-level Kallisto staff who were prepping the room for tomorrow's interviews when the rupture hit. They wander in slow loops between the desk and the wingback chairs. Cramped quarters; use the heavy desk and the chairs as cover. Adjusted XP ~1,350 (EASY-MEDIUM).",
                 loot: [
                   "Desk drawer: an unsent letter in Reeve's handwriting addressed to \"Dr. M. Vance, Kallisto Main\" (sealed, undated).",
                   "On the mantelpiece beside the photograph: a small black ceramic hexagonal token, no markings."
@@ -1915,29 +1915,35 @@
             rooms: [
               postRoom("Main Library", 0, {
                 title: "Main Library",
-                description: "Three walls of climate-controlled stacks, perhaps eight thousand volumes. Central reading island with two armchairs and a desk under a low pendant lamp. Study carrels along the south wall with dead monitors. Four oil-style reading lamps stand at the corners of the central island — real wicks under glass chimneys, currently unlit. A small freight lift recessed in the southeast corner is dead at the floor level.",
-                encounters: "Empty. No bodies, nothing alive.",
+                description: "Three walls of climate-controlled stacks running floor to ceiling, perhaps eight thousand volumes. The collection is private and idiosyncratic — Halder's accumulated obsessions across forty years, augmented by Vance over the past decade. The west wall is the institutional cover: medical and biological reference, full runs of major journals, and the Halder Foundation Annual Reports 1962 through 2025. The north wall is anthropology and ethnography of isolated communities — the inheritance from the original 1880s anthropologist whose papers founded the programme. The south wall is stranger: comparative mythology and folklore, longevity and ancestor-cult studies, ritual binding traditions, and a run of Cold War internal-security histories at the south end. One shelf is in Greek and the local Pindos-region histories of northern Greece. One shelf is in Russian, German, and French scientific journals. Central reading island with two armchairs, a reading desk under a low pendant lamp, and four oil-style lamps at the corners — real wicks under glass chimneys, currently unlit. A small freight lift recessed in the southeast corner is dead at the floor level.",
+                encounters: "**No active encounter.** Empty. The library reads as untouched.",
                 loot: [
                   "On the reading desk: a printed Induction Facility floor plan covering 2/F and 1/F. The basement levels are marked only as \"restricted — do not reproduce.\"",
-                  "On the northwest bench: a sealed encrypted USB drive in a Kallisto sleeve, labelled \"A — paired.\"",
-                  "Behind the reference desk: a working brass cigarette lighter, full."
+                  "On the northwest bench: a sealed encrypted USB drive in a Kallisto sleeve, labelled \"A — paired.\" Pairs with Drive B in the Private Study Room.",
+                  "Behind the reference desk: a working brass cigarette lighter, full.",
+                  "On the central reading desk, open and bookmarked: a volume titled \"Methods of Quiet Removal — Cold War Internal Security Practice 1949-1989\" (Halder Foundation private printing, 1991). Bookmark at the chapter on discreet termination of compromised insiders. Three more titles from the same shelf are stacked beside it, all on assassination protocols and counter-intelligence purges."
                 ],
                 clues: [
                   clueItem("One of the south-wall study carrels has a logged-in user session frozen on screen: \"m.vance — session expired April 13, 11:40.\" The lock screen displays Vance's portrait — a clinical staff photograph of Dr. Moira Vance, Director.", "If a PC has any image or sample of Col. Serrat's handwriting (from her directive on Haldane's body in Kallisto Main 299) and rolls Investigation DC 16 against this portrait, they recognise the woman as a younger Serrat. Vance is Serrat under an alias."),
-                  clueItem("The four oil-lamps on the reading island are wired through a draft-sensor in the ducting above the north wall: when all four are lit, the warm-air differential trips a solenoid in the bookcase along the north wall and a hidden door clicks open. Three of the lamps need wicks (the fourth still has one). Wicks are stocked in the Maintenance Room.", "Vance had a hidden access mechanism installed where any reader sitting in the room would look like a reader, not an intruder. Cold library = locked. Warm library = open. Lighting all four reveals the Small Library annex behind the north bookcase.")
+                  clueItem("The four oil-lamps on the reading island are wired through a draft-sensor in the ducting above the north wall: when all four are lit, the warm-air differential trips a solenoid in the bookcase along the north wall and a hidden door clicks open. Three of the lamps need wicks (the fourth still has one). Wicks are stocked in the Maintenance Room.", "Vance had a hidden access mechanism installed where any reader sitting in the room would look like a reader, not an intruder. Cold library = locked. Warm library = open. Lighting all four reveals the Small Library annex behind the north bookcase."),
+                  clueItem("The library's circulation log on a clipboard at the reference desk shows Vance has signed out four titles since 13 March, all on the same theme: assassination protocols and the procedural removal of compromised internal operatives. Marginal annotations in her hand are clinical, never personal. The most recent checkout is dated 12 April: \"Methods of Quiet Removal — chapter VII, internal subjects.\"", "Vance has been doing homework on assassination protocol for the past month. She is preparing to remove someone inside the programme. The work was procedural, not theoretical. The party should treat any compromised insider she has access to as in immediate danger — Vorshev fits the pattern she was preparing for, though Yates beat her to Haldane.")
                 ]
               }),
               postRoom("Small Library", 1, {
                 title: "Small Library",
-                description: "A reading annex hidden behind the Main Library's north bookcase. Two leather armchairs, a single reading lamp, one wall of older reference shelving. A square pillar rises from the centre of the floor — bookcases on three of its four faces, the fourth face plain wood.",
-                encounters: "Two Kallisto facility cleaners, mist-broken, were re-shelving when the rupture hit. Easy combat at level 5 (zombies x2).",
+                description: "A reading annex hidden behind the Main Library's north bookcase. Two leather armchairs, a single reading lamp, one wall of older reference shelving — the curated, private end of Halder's mind. Hand-bound monographs by Halder and Loew. A small dedicated shelf at the bottom holds four short academic papers by an A. Vorshev, dated 1995 through 1997. The original 1880s anthropologist's case-study notebooks are here, hand-bound and donor-tagged \"Halder Family Donation, 1962.\" One leather-bound volume of comparative theology occupies a place of honour on the central pillar's east face — read closely, it is about ancestor-cults and longevity bloodlines rather than gods. A 1960s travelogue of the Pindos region in Halder's own hand sits beside it, photographs taped between pages. A locked case at the bottom of the central shelf holds the Halder family's private photograph albums. The square pillar rises from the centre of the floor: bookcases on three of its four faces, the fourth face plain wood.",
+                encounters: "2× **Zombie** (CR 1/4) — Kallisto facility cleaners who were re-shelving when the rupture hit. Cramped between the central pillar and the south shelves. Adjusted XP ~150 (TRIVIAL at level 5).",
                 loot: [
                   "Southwest shelf: a small first-aid box and a sealed flashlight.",
-                  "Pillar's plain face, when pivoted: a small hollow holds a hardcover book — \"Kallisto Public History, Volume I\" — and a folded white card."
+                  "Pillar's plain face, when pivoted: a small hollow holds a hardcover book — \"Kallisto Public History, Volume I\" — and a folded white card.",
+                  "From the bottom shelf, four short academic papers by A. Vorshev: \"Notes on Viral-Fragment Binding in Eukaryotic Hosts\" (1995), \"On the Stability of Codon-Sequenced Carriers\" (1996), \"Cellular Memory and Containment\" (1996), and \"On the Persistence of Pre-Linguistic Bloodlines\" (1997). Hand-bound, single-author, no institutional affiliation listed.",
+                  "From the locked case at the bottom of the central shelf (Maintenance master key opens it): the Halder family's private photograph albums, 1920s through 1980s. The 1973 album is marked. It includes a paediatric clinic photograph: Halder seated in a treatment chair with a small group of children, age six to eleven. The eldest child has been circled in blue ballpoint with the marginal note \"E. — observe.\""
                 ],
                 clues: [
-                  clueItem("Kallisto Public History, Volume I, page 14: \"Kallisto Biomedical was established in 1977 by Dr. Gideon March, building on the earlier translational research of the Halder Foundation (1962–1977). The Halder Foundation itself emerged from a longer tradition of private medical philanthropy in the region — notably the trust established by the Halder family to support treatment of neurological disorders in the early twentieth century. Kallisto's work today is guided by the same principles that guided Dr. March's mentors: rigorous science, quiet service, institutional patience.\"", "The sanitised public history. Confirms the Halder Foundation → Kallisto lineage (1962 → 1977) and the March-as-founder framing. Says nothing about Project Chimera, S-0, the helix gene, or Vorshev's airborne programme. Useful for grounding the corporate cover story."),
-                  clueItem("The folded white card hidden with the book: a small white ceramic hexagonal token, machined precisely, weighing about an ounce. No markings.", "Pairs with the black token in the Private Study Room. White and black together fit two recesses in the Statue Room plinth on B2 — the plinth chamber holds the original 1977 Halder letter to Gideon March.")
+                  clueItem("Kallisto Public History, Volume I, page 14: \"Kallisto Biomedical was established in 1977 by Dr. Gideon March, building on the earlier translational research of the Halder Foundation (1962-1977). The Halder Foundation itself emerged from a longer tradition of private medical philanthropy in the region — notably the trust established by the Halder family to support treatment of neurological disorders in the early twentieth century. Kallisto's work today is guided by the same principles that guided Dr. March's mentors: rigorous science, quiet service, institutional patience.\"", "The sanitised public history. Confirms the Halder Foundation → Kallisto lineage (1962 → 1977) and the March-as-founder framing. Says nothing about Project Chimera, S-0, the helix gene, or Vorshev's airborne programme. Useful for grounding the corporate cover story."),
+                  clueItem("The folded white card hidden with the book: a small white ceramic hexagonal token, machined precisely, weighing about an ounce. No markings.", "Pairs with the black token in the Training Facility Entrance display. White and black together fit two recesses in the Statue Room plinth on B2 — the plinth chamber holds the original 1977 Halder letter to Gideon March."),
+                  clueItem("The four A. Vorshev papers on the bottom shelf, read together: a continuous research thread from 1995 through 1997. The 1996 paper on codon-sequenced carriers lays out, in academic language, the foundational theory of what would later become Kallisto's codon-locked serum line. The 1997 paper on pre-linguistic bloodlines cites Halder's 1971 monograph on cellular memory and references endogamous communities consistent with the Pindos enclave (though never named).", "Adrian Vorshev was already the programme's principal theorist on codon-locked carriers thirty years ago, while still in his mid-twenties. The papers being signed only \"A. Vorshev\" with no institutional affiliation is an early sign that the work was off-the-record from the beginning."),
+                  clueItem("The leather-bound \"comparative theology\" volume — title visible inside the cover: \"Ancestral Persistence in Endogamous Communities — A Comparative Study of Bloodline-Sacrament Traditions.\" Twentieth century, no publisher visible, hand-bound. A small library card stuck inside the back cover lists three borrowers across thirty years: \"E. Halder, repeated, 1968-1979,\" \"A. Yates, repeated, 1993-1997,\" \"A. Vorshev, single sitting, 1996.\" Halder annotated in pencil; Yates in fountain pen; Vorshev wrote in the margin once, on page 142, a single comment in his hand: \"sacrament is what failures call the work.\"", "This is the ideological seam of the programme. Halder, Yates, and Vorshev all read this book deeply across thirty years. Halder's annotations are scholarly. Yates's annotations are reverent — this is where the Listener cosmology was born. Vorshev's single marginal note dismisses Yates's reading. The three men encountered the same text and came away with three different worldviews — one researcher (Halder), one believer (Yates), one supremacist (Vorshev). The Pindos enclave's \"sacrament\" framing of the helix gene traces directly to this volume and to Yates's 1993-1997 reading.")
                 ]
               })
             ]
@@ -1948,7 +1954,7 @@
               postRoom("Director's Office", 2, {
                 title: "Director's Office (Vance)",
                 description: "Vance's working office, north-facing, walnut panelling. A heavy desk under the window, two visitor chairs, a corner cabinet, a Kallisto-branded coat-tree by the door. Vance's office coat hangs on the tree — charcoal blazer, Kallisto lanyard, a plastic clipboard tucked into the inner pocket.",
-                encounters: "Two of Vance's own administrative staff, mist-broken, between the desk and the cabinet. They were preparing tomorrow's briefing folders when the rupture hit. Moderate combat at level 5 (zombies x2 in confined space).",
+                encounters: "2\u00d7 **Cult Fanatic** (CR 2) \u2014 Vance's senior administrative staff. Years under her have left them more zealous than ordinary office workers should be; the rupture pushed that the rest of the way. They were preparing tomorrow's briefing folders. Concentrated near the corner cabinet. Adjusted XP ~1,350 (EASY-MEDIUM).",
                 loot: [
                   "Desk top drawer: Vance's working diary, leather-bound, personal handwriting. Covers the past month.",
                   "Lower drawer: a Kallisto-issued sidearm (loaded, twelve rounds, plus one spare magazine of twelve), a sealed bottle of clear liquid (unmarked), a passport in the name \"Moira Vance\" with a Kallisto Boston address.",
@@ -1963,7 +1969,7 @@
               postRoom("Assistant Director's Office", 1, {
                 title: "Assistant Director's Office (Reeve)",
                 description: "Smaller, brighter office than Vance's, east-facing. Reeve's desk faces the door. A working clock on the wall is stopped at 14:23. A single coat-tree, empty (Reeve's coat is on her body in Narrow Corridor A). A bulletin board behind the desk shows the day's interview schedule.",
-                encounters: "Empty. Reeve was out in the corridor when the rupture hit. Nothing else here.",
+                encounters: "**No active encounter.** Reeve was out in the corridor when the rupture hit. The clock on the wall is stopped at 14:23.",
                 loot: [
                   "Desk top drawer: Reeve's reading glasses, a half-eaten sandwich, a thermos of cold tea.",
                   "Side drawer: Reeve's working diary, recent two months. Plain office handwriting, not Vance-style.",
@@ -1977,7 +1983,7 @@
               postRoom("Private Corridor", 1, {
                 title: "Private Corridor",
                 description: "A short corridor running between the Director's Office, the Assistant Director's Office, and the Private Study Room. Wood-panelled walls, low warm lighting (dead). Carpet runner. A small framed Halder Foundation citation hangs at the far end — a 1979 grant award to a paediatric research project.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "On a small console table beside the citation: a glass vase, a pair of leather gloves, a passcard wallet (Kallisto floor-access only)."
                 ],
@@ -1993,7 +1999,7 @@
               postRoom("Art Corridor", 1, {
                 title: "Art Corridor",
                 description: "A long gallery corridor connecting the Library Wing to the Service Wing. Kallisto-commissioned art on both walls — abstract pieces, mostly, plus one black-and-white photograph series of the Halder Mansion at different times of day.",
-                encounters: "One mist-broken trainee, slumped against the wall, gets up if approached. Easy combat at level 5 (zombie x1).",
+                encounters: "1\u00d7 **Zombie** (CR 1/4) \u2014 a mist-broken trainee slumped against the wall, gets up if approached. Adjusted XP 50 (TRIVIAL).",
                 loot: [
                   "On the trainee's body: a Cohort 47 candidate badge (47-08), a wallet, a small steel pen.",
                   "Beneath one of the abstract paintings: a fallen brass plaque labelling the work as \"Untitled (1998).\""
@@ -2005,7 +2011,7 @@
               postRoom("Medicine Room", 0, {
                 title: "Medicine Room",
                 description: "A small clinical-supply room off the Service Wing. Locked cabinets line three walls, mostly intact. A working refrigerator on battery reserve hums quietly. A wall-mounted defibrillator, a wall clock stopped at 14:23, a sink.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "From the cabinets: a serious medical kit (4 healing potions equivalent — bandages, splints, antiseptic, sutures), six single-dose epinephrine pens, four single-dose anti-toxin pens.",
                   "From the refrigerator: two small clinical vials labelled with TGC- codes (codon-locked serums; see Serum Codon Mechanics). Codes: TGC-AAC and TGC-GTA.",
@@ -2018,7 +2024,7 @@
               postRoom("Old Laboratory", 1, {
                 title: "Old Laboratory (preserved)",
                 description: "A preserved historical laboratory, unused as working space for at least thirty years but kept clean by facility staff. Period equipment under glass — a 1960s-era centrifuge, glassware, a chalkboard with old equations. A small brass plaque identifies the room as \"The Halder Lab (1962–1977),\" preserved as Kallisto's institutional memorial.",
-                encounters: "One Halder Foundation curatorial assistant, mist-broken, was dusting display cases when the rupture hit. Easy combat at level 5 (zombie x1).",
+                encounters: "1\u00d7 **Zombie** (CR 1/4) \u2014 Halder Foundation curatorial assistant, still pushing her dust cart in slow circles. Adjusted XP 50 (TRIVIAL).",
                 loot: [
                   "From the assistant's cart: dusting cloths, a clipboard with the curator's checklist, a key ring (display-case keys).",
                   "Inside one display case (key on the body): an original 1962 Halder Foundation founding certificate, framed. Worth nothing in cash; significant as historical evidence."
@@ -2030,7 +2036,7 @@
               postRoom("Maintenance Room", 1, {
                 title: "Maintenance Room",
                 description: "Service room for the floor's facilities team. Tool-walls, a workbench, three uniform lockers, a wash sink. Smells of cleaning solvent and ozone. A clipboard on the wall lists work orders, most of them mundane (lights, plumbing, HVAC).",
-                encounters: "One Kallisto facility maintenance worker, mist-broken, between the workbench and the lockers. Easy combat at level 5 (zombie x1).",
+                encounters: "1\u00d7 **Berserker** (CR 2) \u2014 Kallisto facilities engineer, swinging a heavy spanner between the workbench and the lockers. Use the workbench as cover. Adjusted XP 450 (EASY).",
                 loot: [
                   "From the workbench: a full tool kit (wrench, pliers, screwdriver set, electrical tester), a heavy-duty flashlight, three rolls of duct tape.",
                   "From the wick supply drawer: a small box of fresh oil-lamp wicks (enough to relight all four lamps in the Main Library).",
@@ -2043,7 +2049,7 @@
               postRoom("Broadcast Room", 0, {
                 title: "Broadcast Room",
                 description: "A small internal-broadcast booth, glass-walled on one side. A microphone on a stand, a mixing console, a wall of pre-recorded announcements indexed in a plastic binder. Battery-reserve power keeps the console alive at low level.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "A working pair of broadcast headphones.",
                   "On the console: a cassette tape, unlabeled.",
@@ -2056,7 +2062,7 @@
               postRoom("Piano Bar", 1, {
                 title: "Piano Bar",
                 description: "A staff lounge attached to the Service Wing. Upright piano against the west wall, a small bar, four high tables, three stools. The piano lid is up; sheet music is spread across the rack. Bar shelves hold a modest collection of clear and amber bottles.",
-                encounters: "Two Kallisto staff, mist-broken, by the bar. They were on a late-shift coffee break when the rupture hit. Easy combat at level 5 (zombies x2).",
+                encounters: "2\u00d7 **Zombie** (CR 1/4) \u2014 Kallisto staff on a late-shift coffee break when the rupture hit, slumped against the bar. Adjusted XP ~150 (TRIVIAL).",
                 loot: [
                   "From the bar: three sealed bottles of spirits, a working corkscrew, a tin of crackers, two clean glasses.",
                   "On the piano rack: a sheet of music handwritten in pencil — three short bars, a fragment, no title."
@@ -2068,7 +2074,7 @@
               postRoom("Art Room", 2, {
                 title: "Art Room",
                 description: "A large gallery / exhibit space adjacent to the Large Hall. Sculpture pedestals, a stack of moving blankets in the corner, a half-built wooden crate intended for shipping a piece out. The east wall has a service door connecting to the Large Hall stage alcove.",
-                encounters: "Four mist-broken trainees, cocooned in soft fibrous masses against the north wall. They wake and detach if loud activity reaches the room (or are already loose if the Large Hall keycard has been taken). Moderate combat at level 5 (cocooned subjects x4).",
+                encounters: "4\u00d7 **Ghoul** (CR 1) \u2014 cocooned trainees in fibrous masses against the north wall. They detach and wake when loud activity reaches the room (or are already loose if the Large Hall keycard has been taken \u2014 these are the same four that spill into the Hall). Adjusted XP ~1,600 (EASY-MEDIUM).",
                 loot: [
                   "In the half-built crate: heavy-duty packing foam, a roll of stretch-wrap, a claw hammer.",
                   "Inside one of the moving blankets, wrapped: a Kallisto-issued field flashlight, a sealed waterproof case holding two flares."
@@ -2080,7 +2086,7 @@
               postRoom("Narrow Corridor A", 0, {
                 title: "Narrow Corridor A",
                 description: "A narrow corridor running east from the Service Wing toward the Outside Balcony. Wood floor, low ceiling, a row of small framed Kallisto promotional photographs along the south wall. A body lies slumped against the wall about halfway down.",
-                encounters: "The body is Hannah Reeve, Assistant Director, dead. She fell at 14:23 and was not moved. No active hostile.",
+                encounters: "**No active encounter.** Reeve's body lies halfway down the corridor.",
                 loot: [
                   "Reeve's body: her ID lanyard, a slim silver wristwatch (stopped 14:23), a leather portfolio under her arm, her own pen, a small bottle of stomach pills.",
                   "The leather portfolio holds: a clean copy of the Cohort 47 day-three interview schedule (with handwritten margin notes), a sealed envelope addressed to \"M. Vance — Main, eyes only,\" and a fountain pen."
@@ -2093,14 +2099,14 @@
               postRoom("Narrow Corridor B", 0, {
                 title: "Narrow Corridor B",
                 description: "A second narrow corridor running parallel to A, connecting the Service Wing to the Outside Balcony. Identical layout, identical promotional photographs. No body.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [],
                 clues: []
               }),
               postRoom("Outside Balcony", 0, {
                 title: "Outside Balcony",
                 description: "An exterior balcony off the east end of the Service Wing, overlooking the campus's loading lane. Cast-iron rail, weathered. The mist is denser out here than inside — the rupture vented through every external HVAC outlet on this side of the building. The Halder Mansion is not visible from this angle, but the freight-rail spur cutting east from the basement entrance is.",
-                encounters: "Empty. Mist exposure: standard mist-survival rules apply if the party lingers more than three rounds.",
+                encounters: "**No active encounter.** Hazard: the mist outside is denser here. Standard mist-survival rules apply if the party lingers more than three rounds.",
                 loot: [
                   "Tucked under the rail: a Kallisto-issued ashtray with three cigarette butts and a folded matchbook from a Boston bar called The Hollow Tree."
                 ],
@@ -2117,7 +2123,7 @@
                 area: true,
                 title: "Training Facility Entrance (1/F, sealed)",
                 description: "The facility's original public entrance, sealed shut since 2013. Stone-clad lobby with a vaulted ceiling and two pillars flanking a central walkway. The double doors at the south wall are welded along the seams. Above them, a bronze dedication plaque. A single decorative pillar sits opposite the welded doors with a stone tablet displayed on top under a glass case.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "On the display pillar, under glass: a black hexagonal stone token, no markings — Kallisto's commemorative \"Discipline\" token, presented to the building when it was sealed in 2013."
                 ],
@@ -2130,7 +2136,7 @@
                 area: true,
                 title: "Main Hall (1/F)",
                 description: "The 1/F central lobby, directly below the 2/F Main Hall via the wide marble staircase. Reception furniture pushed to the walls; a freestanding wayfinding sign indicates Dining, Kitchen, Bathroom, Boiler Room, Storage Room, Projection Room, and the welded north exit (Training Facility Entrance). The main door to the bridge sub-stair is on the east wall.",
-                encounters: "One mist-broken Kallisto kitchen-staff worker by the wayfinding sign. Easy combat at level 5 (zombie x1).",
+                encounters: "1\u00d7 **Berserker** (CR 2) \u2014 Kallisto kitchen-staff worker by the wayfinding sign, holding a meat hook. Adjusted XP 450 (EASY).",
                 loot: [
                   "On the kitchen worker's body: a kitchen ring of keys (opens the Kitchen and Storage Room).",
                   "On the wayfinding-sign base: a discarded Kallisto-branded coffee cup, half-full, still warm enough to read."
@@ -2142,14 +2148,14 @@
               postRoom("West Wing Corridor", 0, {
                 title: "West Wing Corridor",
                 description: "Connecting passage on 1/F running west from the Main Hall to the Dining Room and Kitchen. Warm-wood panelling, a row of small framed Kallisto employee-of-the-month photographs along one wall.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [],
                 clues: []
               }),
               postRoom("Dining Room", 1, {
                 title: "Dining Room",
                 description: "Trainee dining hall — long communal tables, bench seating, a small serving line at the east end. Lunch was being served when the rupture hit. Trays are still on the line. Half-eaten food on three of the tables.",
-                encounters: "Three mist-broken trainees, slumped over a table, get up if approached. Moderate combat at level 5 (zombies x3).",
+                encounters: "3\u00d7 **Zombie** (CR 1/4) \u2014 Cohort 47 trainees slumped over a long communal table; they get up if approached. Adjusted XP ~300 (TRIVIAL-EASY).",
                 loot: [
                   "Serving line: enough sealed food and water for a four-person rest (rations equivalent).",
                   "On one of the tables: a folded Cohort 47 day-three printed menu, a candidate's notebook left open, a pen.",
@@ -2162,7 +2168,7 @@
               postRoom("Kitchen", 1, {
                 title: "Kitchen",
                 description: "Industrial kitchen serving the Dining Room. Stainless steel prep counters, two ovens, a dishwasher half-loaded, walk-in fridge along the north wall. The fridge door hangs open.",
-                encounters: "One mist-broken kitchen worker between the prep counter and the fridge. Easy combat at level 5 (zombie x1).",
+                encounters: "1\u00d7 **Berserker** (CR 2) \u2014 Kallisto kitchen worker between the prep counter and the walk-in fridge, armed with a chef's knife. Adjusted XP 450 (EASY).",
                 loot: [
                   "From the kitchen: a heavy meat cleaver, a working chef's knife, two professional kitchen lighters.",
                   "From the fridge: enough sealed food for two more rests; one bottle of strong cooking wine."
@@ -2174,7 +2180,7 @@
               postRoom("Bathroom", 0, {
                 title: "Bathroom",
                 description: "Standard staff/trainee bathroom on 1/F. Three stalls, two sinks, mirrors. Lights flicker on battery reserve.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "On the floor of one stall: a dropped phone (locked, mostly drained, blood smear on the screen)."
                 ],
@@ -2183,7 +2189,7 @@
               postRoom("Boiler Room (1/F)", 1, {
                 title: "Boiler Room (1/F)",
                 description: "Building services for 1/F and 2/F. Two large steam boilers, a wall of valves and pressure gauges (most still active on the building's emergency pneumatic loop), a heavy-duty workbench in the corner. The room is hot and smells of metal and oil.",
-                encounters: "One mist-broken Kallisto facilities engineer in coveralls, between the boilers. He has a heavy wrench in one hand. Moderate combat at level 5 (zombie x1, +1 to hit / +1 dmg with the wrench).",
+                encounters: "1\u00d7 **Berserker** (CR 2) \u2014 Kallisto facilities engineer in coveralls, heavy wrench in one hand, between the steam boilers. Tight quarters; the boilers are hot to the touch. Adjusted XP 450 (EASY).",
                 loot: [
                   "On the engineer's belt: a Kallisto facilities master key (opens utility doors throughout 1/F and 2/F, plus the basement-utility doors — but not the subject corridors).",
                   "From the workbench: heavy gloves, a torque wrench, a working acetylene torch with two small tanks.",
@@ -2196,7 +2202,7 @@
               postRoom("Storage Room (1/F)", 0, {
                 title: "Storage Room (1/F)",
                 description: "General-purpose storage on 1/F. Shelves of cleaning supplies, a rolling cart, two empty wheeled laundry hampers, three uniform-stocking bins. Smells of cleaning solvent.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "Cleaning solvents (flammable), a heavy mop, six clean Kallisto-trainee tunics in different sizes.",
                   "Behind one of the bins (perception DC 13): a small steel locker, locked. Inside (Maintenance master key opens it): a slim courier envelope addressed \"M. Vance, Director — by hand, do not log\"."
@@ -2208,7 +2214,7 @@
               postRoom("Projection Room", 0, {
                 title: "Projection Room",
                 description: "A small room behind the Lecture Room on 1/F (one level below) — facility's central projection and recording booth. Two projector heads, a wall-mounted server cabinet, a sound mixing console, a single chair. The server cabinet has a USB drive port that accepts a paired set of two drives.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "On the chair: a forgotten hooded jacket. In the pocket: a notebook with technical settings, a Kallisto badge for the projection booth, a half-eaten chocolate bar.",
                   "Inside the server cabinet (drive-paired access only): a sealed compilation of the SC-17 archive — Iris Shane's full documented service record. Plays automatically when both drives are paired."
@@ -2226,7 +2232,7 @@
                 area: true,
                 title: "Basement Entrance (B1)",
                 description: "The first basement level, accessed from the 1/F Main Hall via a red-badge door at the rear of the building. Concrete-walled stair landing. A wall-mounted card reader. Below the landing, a corridor leads south to the Monitor Room, Observation Room, and the two Interrogation Chambers (Torture Rooms A and B). A second corridor heads west to a stair down to B2.",
-                encounters: "One Kallisto security guard, mist-broken, on the landing in tactical gear. Moderate combat at level 5 (zombie x1, AC 14, body armour).",
+                encounters: "1\u00d7 **Veteran** (CR 3) \u2014 Kallisto basement security guard on the landing in tactical gear (light body armour, AC 14, sidearm and shortsword). Adjusted XP 700 (EASY-MEDIUM).",
                 loot: [
                   "On the guard: a Kallisto-issued sidearm (loaded, twelve rounds, plus one spare magazine of twelve), a tactical flashlight, body armour vest (light, +1 AC), a red-badge access card (opens basement subject corridors)."
                 ],
@@ -2237,7 +2243,7 @@
               postRoom("Monitor Room", 0, {
                 title: "Monitor Room (B1)",
                 description: "A surveillance station off the B1 corridor. Wall of monitors covering every interior camera in the basement levels (B1, B2, B3) and the four 2/F admin rooms. A duty-officer chair, a logbook, a coffee maker. Most monitors are dark; battery reserve keeps four feeds alive.",
-                encounters: "Empty. The duty officer's body is in the corridor outside.",
+                encounters: "**No active encounter.** The duty officer's body is in the corridor outside.",
                 loot: [
                   "Coffee maker (not useful), the logbook (see clues), a working pair of headphones, a working radio handset (no comm — entire facility's radio loop is dead).",
                   "In a side drawer, locked (DC 13 thieves' tools): a sealed silver Kallisto Triage Injector kit (one dose, broad-spectrum codon — the same kind Sally has in her car)."
@@ -2250,7 +2256,7 @@
               postRoom("Observation Room", 0, {
                 title: "Observation Room (B1)",
                 description: "An adjacent room to the two Interrogation Chambers (Torture Rooms A and B), separated by one-way glass on each side. From here, you can see directly into both chambers. A single chair, a pair of headphones, a notebook on a small desk.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "On the desk: the Observation Room notebook, in Reeve's hand. Last entry dated 14 April morning."
                 ],
@@ -2261,7 +2267,7 @@
               postRoom("Torture Room A", 0, {
                 title: "B1 Interrogation Chamber A",
                 description: "A small interrogation room — concrete walls, drainage channel in the floor, a heavy steel chair bolted to the centre with restraint straps, a single overhead light, a wall-mounted ECG monitor on battery reserve. The chair is occupied.",
-                encounters: "Subject S-3 / Ren Okolo: unconscious in the chair, restraints intact, ECG showing climbing irregularity. He is helix-positive and his expression is awakening from rupture exposure. If Sally administers any healing, he regains consciousness within a round, confused, alive, harmless.",
+                encounters: "**Subject S-3 / Ren Okolo** unconscious in the chair, restraints intact, ECG climbing irregularly. Helix-positive, expression awakening from rupture exposure. **Not hostile.** If healed, regains consciousness within a round, confused, alive.",
                 loot: [
                   "Beside the chair: a small clinical tray with a stethoscope, a sphygmomanometer, an IV bag of saline (intact), and a sealed syringe.",
                   "On the wall above the ECG: a clipboard with Ren Okolo's intake card."
@@ -2273,7 +2279,7 @@
               postRoom("Torture Room B", 0, {
                 title: "B1 Interrogation Chamber B",
                 description: "Identical layout to A. A heavy steel chair bolted to the centre — but the restraints have been forced. Two leather straps cleanly cut. A spent ECG sensor lies on the floor. The wall above the chair has five fresh bullet-holes in an irregular pattern. The room smells of cordite.",
-                encounters: "Empty. The occupant — Subject S-4 / 47-19 — is gone, armed, and currently in the Sewer Passage at the far end of B3.",
+                encounters: "**No active encounter.** The subject (S-4 / 47-19) cut his own straps and fled. He is currently in the Sewer Passage at the far end of B3, armed.",
                 loot: [
                   "On the floor near the chair: a spent .22 casing (one of five fired). The other four casings and the weapon itself are with S-4 in the sewer.",
                   "Under the chair: a small folded scrap of paper — a Kallisto badge stub with the printed line \"47-19 / no name on file / director route.\""
@@ -2290,7 +2296,7 @@
               postRoom("Boiler Room (B2)", 0, {
                 title: "Boiler Room (B2)",
                 description: "Building services for the basement levels. Smaller than the 1/F boiler room, fewer pipes, more electrical. A wall-mounted breaker panel covers the south wall. The two B2 ventilation fans are still running on emergency power, slowly.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "Workbench: a basic tool kit, a heavy crowbar, a pair of insulated gloves.",
                   "Beneath the workbench, in a cardboard box: three road flares, a coil of climbing rope (50 ft), two industrial chemical lights."
@@ -2302,7 +2308,7 @@
               postRoom("Bunk Room A", 1, {
                 title: "B2 Bunk Room A — Subject S-5 (Alicia)",
                 description: "A converted dormitory cell, repurposed as long-term subject holding. Single cot bolted to the floor, small steel sink, a metal stool, a steel toilet behind a half-wall, a hardback Kallisto-issued bible on the cot's pillow. The cot's occupant sits upright on the edge, motionless, awake, restraints loose at her wrists (she could remove them at will).",
-                encounters: "Subject S-5 / Alicia — Cohort 45 holdover, helix-ambiguous, held since October. Approximately 30, wasted but stable, hospital gown. She is awake and watches the party with steady, exhausted eyes. She is not hostile. She will not join the party. She will speak in short sentences if addressed and ask only one thing in return: that the party leave the basement door unlocked behind them when they go. She wants to walk out on her own, on her own time.",
+                encounters: "**Subject S-5 / Alicia** sits upright on the cot, restraints loose at her wrists (she could remove them at will). **Not hostile.** Approximately 30, wasted but stable. She is awake and watches the party with steady, exhausted eyes. She will not fight. She will not join the party. She will speak in short sentences if addressed, and ask only that the party leave the basement door unlocked behind them when they go.",
                 loot: [
                   "On the small stool: a hardcover bible, Kallisto-issued, with a pressed flower (asphodel) between two pages.",
                   "Inside the bible's hollow back cover (Investigation DC 14): a small folded note in Iris Shane's handwriting."
@@ -2315,7 +2321,7 @@
               postRoom("Bunk Room B", 0, {
                 title: "B2 Bunk Room B — Iris Shane (deceased)",
                 description: "A second converted dormitory cell, similar layout to Bunk Room A but more clinically equipped. Cot, steel sink, steel toilet, ECG monitor mounted to the wall above the cot, two IV stands beside the bed. The cot is empty. A body lies on the floor between the cot and the wall, face turned toward the wall, in a hospital gown.",
-                encounters: "The body is Iris Shane. She died at approximately 14:00 on 14 April, organ failure. She is not animate. (She is helix-positive but did not reanimate — Iris's body was already so cumulatively burned through that the rupture's mass-expression event found nothing to reawaken in her cells.)",
+                encounters: "**No active encounter.** Iris Shane's body lies on the floor between the cot and the wall, face turned toward the wall. The body is not animate.",
                 loot: [
                   "Beneath the cot's mattress (Perception DC 13): a small leather-bound notebook in Iris's handwriting — her own private journal, not the Kallisto-transcribed flashes. Roughly forty entries, dated, mostly fragmentary.",
                   "On the wall above the cot: a single sheet of paper taped up at her eye level, in her own handwriting. Three short bars of music, the same fragment found on the Piano Bar piano, with one extra line written below: \"the tone is the tone is the tone.\""
@@ -2329,7 +2335,7 @@
                 area: true,
                 title: "B2 Cavernous Area",
                 description: "The main holding-level common area — a wide concrete chamber with an exposed steel-truss ceiling. Three corridors radiate to the bunk cells, the storage room, and the boiler room; a fourth opens to the Statue Room. The chamber's centre holds a single locked steel cage on a low platform, currently empty.",
-                encounters: "Two mist-broken Kallisto medical staff between the steel cage and the storage corridor. They were on B2 rounds when the rupture hit. Moderate combat at level 5 (zombies x2). Plus a swarm of medical-grade leeches in a fallen specimen jar near the cage (treat as Swarm of Insects, CR 1/2, if disturbed).",
+                encounters: "2\u00d7 **Cult Fanatic** (CR 2) \u2014 Kallisto medical staff who were on B2 rounds when the rupture hit; deep enough in Vance's protocols to read as zealous before they broke. Plus 1\u00d7 **Swarm of Insects** (CR 1/2) \u2014 medical-grade leeches in a fallen specimen jar near the central cage; activates if the jar is disturbed or stepped near. Adjusted XP ~1,900 (MEDIUM).",
                 loot: [
                   "On one of the medical staff: a lab-access keycard (opens B2 storage and the Statue Room plinth chamber), a small clinical tablet (locked, mostly drained), a sealed pen.",
                   "On the floor near the cage: a clipboard with a list of subject feeding times for the past week."
@@ -2341,7 +2347,7 @@
               postRoom("Statue Room", 1, {
                 title: "B2 Statue Room",
                 description: "An ornate side chamber off the Cavernous Area, panelled in wood, with a marble plinth at the centre supporting a small bronze bust of Dr. Everett Halder. Two chairs, a writing desk against the east wall, no overhead light (battery sconces only). The plinth's base has two small recesses — a black hexagonal cavity and a white hexagonal cavity, side by side, the size of the tokens found upstairs.",
-                encounters: "One mist-broken Kallisto archivist in the room, knocked the bust slightly off its plinth. Easy combat at level 5 (zombie x1).",
+                encounters: "1\u00d7 **Cult Fanatic** (CR 2) \u2014 Kallisto archivist, knocked the bronze bust slightly off its plinth as he turned. Adjusted XP 450 (EASY).",
                 loot: [
                   "On the writing desk: a sheaf of blank Kallisto stationery, a fountain pen, a sealed bottle of dark ink.",
                   "When both tokens are placed (black from the Training Facility Entrance display, white from the Small Library hidden hollow): the plinth's marble cap rotates, exposing a chamber beneath."
@@ -2353,7 +2359,7 @@
               postRoom("Storage Room (B2)", 0, {
                 title: "B2 Storage Room",
                 description: "Cold-storage and supply room for B2 operations. Walk-in refrigerator (still cold on emergency power), shelves of sealed clinical supplies, a stack of marked specimen-shipping crates ready for export.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "From the walk-in: enough sealed clinical-grade saline, antibiotics, and basic medical supplies for half a dozen field repairs.",
                   "From the specimen-shipping crates (one is half-packed): four small clinical vials labelled with TGC- codes — codon-locked serums (TGC-CGT, TGC-AAA, TGC-CCC, TGC-GGT). Plus a packing slip in the half-packed crate."
@@ -2371,7 +2377,7 @@
                 area: true,
                 title: "B3 Cavernous Area",
                 description: "The deep complex's main chamber. Concrete-floored, lit by emergency strip-lighting only. Three sub-spaces open off this room: the lab cage (Vorshev's), the Training Room (a steel-doored arena), and a corridor west toward the Waterfall Room and Sewer Passage. The lab cage occupies the east end of the chamber — a free-standing wire cage about thirty feet square, with a desk, a sample workbench, and a tall industrial cryogenic cabinet inside. The cryogenic cabinet's door is half-open. Three of its slots are empty.",
-                encounters: "Two mist-broken Kallisto B3 technicians on the chamber floor between the cage and the Training Room door. Moderate combat at level 5 (zombies x2).",
+                encounters: "2\u00d7 **Veteran** (CR 3) \u2014 Vorshev's elite B3 lab security in body armour with Kallisto sidearms. Both stationed between the lab cage and the Training Room door \u2014 last orders were to keep the cage sealed. Adjusted XP ~2,100 (MEDIUM).",
                 loot: [
                   "Inside the lab cage (door is locked — Maintenance master key, or DC 14 thieves' tools): the desk holds a working terminal (locked), a paper tray of sample-batch printouts, a coffee mug. The locked drawer beneath the desk (DC 14 thieves' tools) holds **Vorshev's notebook 8** — black leather, current journal — full text in VORSHEV_JOURNAL.md.",
                   "On the workbench: clean lab tools, a working microscope, a sealed sample jar marked \"S-7 / 13 Apr / approved\" containing a pale tissue fragment (Iris's cellular sample from the night before the rupture). Three more empty sample jars beside it.",
@@ -2386,7 +2392,7 @@
               postRoom("Training Room", 4, {
                 title: "B3 Training Room — Subject Response Arena",
                 description: "A heavy steel-doored chamber off the Cavernous Area. Concrete-floored arena with a recessed central pit; wire-glass control booth along the south wall holds a wall-mounted control panel with a single covered SESSION START button. The pit floor is heavily scarred — long claw-marks, burn scars, dark organic stains. A locked steel rack on the north wall holds Kallisto's response gear. Inside the booth, a small steel locker.",
-                encounters: "Empty on first arrival. The moment SESSION START is pressed (or the side cage doors are forced), two Kallisto-cultivated combat hunters charge from the arena's side cages. HARD combat at level 5 — two CR 3 hunter equivalents in an open arena designed for them.",
+                encounters: "Empty on first entry. When the SESSION START button is pressed (or the side cage doors are forced), 2\u00d7 **Minotaur** (CR 3) charge from the arena's side cages \u2014 Kallisto-cultivated combat hunters trained in this exact arena. Open arena, central pit, control booth as elevated cover. Adjusted XP ~2,100 (MEDIUM-HARD at level 5; the arena's design favours the hunters).",
                 loot: [
                   "From the response-gear rack (key on one of the dead B3 technicians in the Cavernous Area): heavy-caliber sidearm (one .357 with twelve rounds plus one spare cylinder), a sealed pump shotgun with seven shells, six small caustic grenades (4d6 acid AOE), four ordinary 9mm magazines.",
                   "Inside the small booth locker (Locker Key from the Waterfall Room — see that room): a locked aluminium case. Inside: a pistol-modification kit (work as +1 9mm with extended magazine when fitted to a Kallisto sidearm), and one TGC-coded codon-locked serum (TGC-AGT)."
@@ -2398,7 +2404,7 @@
               postRoom("Waterfall Room", 1, {
                 title: "B3 Waterfall Room",
                 description: "A water-feature room — Kallisto's industrial water-recovery and decontamination chamber, dressed up with stone facing to look like a small grotto. A wide spillway runs along the north wall, water cascading from a fixture in the ceiling into a deep recovery pool. A workbench against the east wall holds the spillway controls. The pool's deep end has a concealed underwater grate (closed) opening to the sewer.",
-                encounters: "One mist-broken Kallisto utility worker, slipped near the pool's edge, unsteady. Easy combat at level 5 (zombie x1, prone-prone hazard near the pool).",
+                encounters: "1\u00d7 **Zombie** (CR 1/4) \u2014 Kallisto utility worker, slipped near the pool's edge, unsteady. Slip hazard for the party near the pool (DC 12 Acrobatics or fall prone in shallow water). Adjusted XP 50 (TRIVIAL).",
                 loot: [
                   "Workbench: a wrench set, a heavy-duty headlamp, a coil of rope.",
                   "Mounted under the workbench, on a small magnet: the **Waterfall Room Locker Key** — key to the locker in the Training Room booth.",
@@ -2411,7 +2417,7 @@
               postRoom("Sewer Passage", 1, {
                 title: "B3 Sewer Passage",
                 description: "Industrial sewer tunnel running east from beneath the Waterfall Room's pool. Concrete walls with a steel walkway above ankle-deep murky water. The tunnel runs a long curve east toward the rail station's antechamber. Acoustic — sounds carry. The mist is thinner here than upstairs; the tunnel's own ventilation pulls cleaner air in from the station end.",
-                encounters: "Subject S-4 / 47-19 is here, alive, armed (one round remaining in his .22), watching the entrance. He is not hostile if approached carefully — he can read intent. He will speak. He is helix-positive, strong flash-cognition, broker-contracted, trained, calm. He will negotiate; he will not surrender. His exit goal is the station, then the rail, then anywhere away from Kallisto.",
+                encounters: "**Subject S-4 / 47-19** \u2014 alive, armed (one round remaining in his .22), watching the entrance. **Not hostile if approached carefully** \u2014 he reads intent. He will speak. He will negotiate. He will not surrender. If forced into combat, treat as **Bandit Captain** (CR 2) with one bullet, a concealed knife, and calm bearing. Adjusted XP 450 (EASY) if combat \u2014 but the table reward is talking him through.",
                 loot: [
                   "If S-4 is killed (not recommended): a small concealed blade (the one he used to cut his straps), a .22 pistol (one round), a wallet with a credit-card-sized blank Kallisto access card, and a small slip of paper with a Greek address written in pencil.",
                   "If S-4 is talked through (recommended): he tells the party three things in exchange for unrestricted passage to the station — see clues."
@@ -2429,7 +2435,7 @@
                 area: true,
                 title: "Station Arrival",
                 description: "A concrete utility antechamber at the east end of the sewer passage — Kallisto's private personnel-rail station. Industrial LED fixtures in wire cages overhead. Wayfinding signage: RAIL — PERSONNEL ACCESS ONLY — BADGE REQUIRED. A glass-walled Kallisto security booth sits on the south side. An archway east opens onto the rail platform itself. The Kallisto logo is embossed into the concrete above the archway. This is a working operational station, not a passenger terminus — no benches, no finishes, just poured concrete and industrial steel.",
-                encounters: "One body against the west wall: a man in his late seventies, Kallisto senior-staff suit, collapsed with one hand to his chest. Cardiac event. Wristwatch stopped at 14:24. The mist is thin here; the tunnel's ventilation pulls it away.",
+                encounters: "**No active encounter.** Everett H. Archer's body slumped against the west wall. Cardiac event at 14:24.",
                 loot: [
                   "On the body (Everett H. Archer, Committee Liaison, see the buildingBWestRoster): a slim aluminium briefcase (locked, DC 13 thieves' tools), a wristwatch stopped at 14:24, a Kallisto rail badge engraved \"BOARD — HALDER HOUSE ROUTE,\" a Kallisto Committee ID card.",
                   "Inside the briefcase: a Kallisto-letterhead Committee agenda (see clues), and a fountain pen with a fresh ink cartridge."
@@ -2442,7 +2448,7 @@
               postRoom("Security Booth", 0, {
                 title: "Station Security Booth",
                 description: "A small Kallisto security operator's booth, glass-walled on two sides. One chair, one desk, one security terminal showing three live feeds. A Kallisto-issued sidearm lies on the desk beside a spent magazine. The operator's body slumps against the back wall, sidearm drawn but unfired.",
-                encounters: "The operator is dead — mist exposure during the rupture window. He had time to draw and not enough time to fire. No active hostile.",
+                encounters: "**No active encounter.** The operator's body slumped against the back wall, sidearm drawn but unfired. Mist exposure during the rupture window.",
                 loot: [
                   "Operator's Kallisto security pistol (Glock 17, fifteen-round mag, nine rounds remaining).",
                   "Operator's Kallisto security lanyard (standard facility access).",
@@ -2456,7 +2462,7 @@
                 area: true,
                 title: "Rail Platform",
                 description: "The platform itself. Single-track operational rail running east-west. The car sits idle on the track, headlights dim on battery, doors open. A man's body lies face-up at the cab end of the platform — Kallisto coveralls, name patch B. TAYLOR — RAIL OPS, family photograph clipped to his pocket. He died on his last approach to the operator cab.",
-                encounters: "The rail-ops technician's body. No active hostile.",
+                encounters: "**No active encounter.** Bren Taylor's body face-up at the cab end of the platform.",
                 loot: [
                   "On the technician (Bren Taylor): a Kallisto rail-ops shift roster for the day's traffic — including Gideon's 10:32 departure and Archer's missed 14:00. A small pocketknife. A wedding ring on a chain.",
                   "Inside the technician's coverall pocket, alongside the family photograph: a folded letter from his wife, brief, asking when he'll be home this weekend."
@@ -2468,7 +2474,7 @@
               postRoom("Rail Car Cab", 0, {
                 title: "Rail Car Cab",
                 description: "The forward operator cab of the rail car. Single seat, control panel with a slot for the Rail Departure Badge, a single headlamp control, an emergency brake lever. Manual is bolted to the wall.",
-                encounters: "Empty. The rail car is intact, on battery, awaiting authorisation to depart.",
+                encounters: "**No active encounter.** The rail car is intact, on battery, awaiting authorisation to depart.",
                 loot: [
                   "A working radio (no signal — Halder Mansion has been radio-silent since 14:30 yesterday).",
                   "Operator's manual bolted to the wall (covers normal departure procedure)."
@@ -2480,7 +2486,7 @@
               postRoom("Rail Car Cabin", 0, {
                 title: "Rail Car Personnel Cabin",
                 description: "The passenger compartment behind the cab. Six padded benches in two rows, an overhead luggage rack, a small intercom panel by the door. The cabin is empty of people — Gideon rode it up alone yesterday morning. A single envelope is wedged into the rear bench's cushion.",
-                encounters: "Empty.",
+                encounters: "**No active encounter.**",
                 loot: [
                   "From the overhead rack: a Kallisto-issued blanket, a sealed bottle of water.",
                   "Wedged in the rear bench: a single sealed envelope, no addressee."

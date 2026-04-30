@@ -421,14 +421,22 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 - **Naomi Varga** — Building A access control officer. Dead off-stage during the rupture.
 - **Elias Varo** — Yates's contractor. Dead on the bridge, killed by the party. No leads on his body.
 - **Victor Haldane** — killed in 299 at 09:15 on April 15 by Varo on Yates's order. Reanimated, codon-stabilised by the party. Now awakened and travelling with them. (*See* Why Haldane was killed.)
+- **Reynaldo Okolo** — Cohort 47 candidate (47-05), musician, brother of Subject S-3 / Ren Okolo. Helix-negative. Dead in the Cohort 47 mass casualty during the rupture. The Okolo brothers were recruited together; Ren screened helix-positive on day three and was pulled to B1 the morning of placement-interview day, while Reynaldo continued through the cohort schedule and was caught in the rupture.
+- **Everett H. Archer** — Committee Liaison from the Archer family seat (descendant of Col. Byron Archer). Cardiac event at Station Arrival, 14:24 on rupture day. Was Gideon-aligned on the Committee; intended to vote against Halder on the Iris terminal decision that afternoon.
+- **Bren Taylor** — Kallisto Rail Operations technician, nine years' service. Held the rail line operational for survivors during the rupture window; caught by the field on his final approach to the operator cab. Body on the rail platform.
+- **Kallisto Station Security Operator** — name not on file at the table; operator of the rail station's security booth. Mist exposure during the rupture. Body in the booth.
 - *(Many additional Kallisto staff and Cohort 47 trainees, dead or broken across the campus.)*
 
-### Historical figures (1962-era)
+### Historical figures (Halder lineage)
 - **Dr. Everett Halder** (1919–1984) — founder. Poisoned by Committee order after his grandson's prototype exposure cracked his patience.
+- **J. Halder II** (1942–2018) — Everett's only son, Edmund's father. Held the Halder Foundation Board Chair from his father's death until his own. Signed the 2013 closure of the Induction Facility's public entrance as Board Chair. Died of natural causes in 2018; Edmund inherited the seat. Knew the bare outlines of what the Foundation funded — never the operational specifics. Did not press.
 - **Marian Esterhazy** (1908–1975) — patron. Funded pre-1962 work. Her seat on the Committee passes through her family.
 - **Dr. Lionel West** (1922–1967) — dissenter. Killed in a staged 1967 lab "explosion."
-- **Col. Byron Archer** (1924–1991) — operations 1962–1979. Natural causes 1991. Historical only.
+- **Col. Byron Archer** (1924–1991) — operations 1962–1979. Natural causes 1991. The Archer family seat on the Committee descends from him; his nephew Everett H. Archer (above) held it until rupture day.
 - **Dr. Lenore Aspe** (1928–2003) — medical lead under Archer's cover. Ran the human-experimentation programme 1965–2001. Halder's reluctant compromise to keep the antiviral side-project funded. Historical only.
+
+### Minor named figures (referenced in clue text)
+- **Elena Foell** — Boston-based sculptor commissioned by Kallisto in 1998 for *Descent*, the bronze figure displayed in the Induction Facility's Large Hall. No further canon role. Used to date the Hall's display mechanism.
 
 ---
 
