@@ -1,10 +1,10 @@
-# Vorshev — private journal (full text)
+# Iris Shane — private journal (full text)
 
 Single-source canon for the journal entries. Every excerpt the party finds at the Induction Facility, in his B3 working spaces, or later at the Halder Mansion, is one of the entries below.
 
-In-world context: Vorshev has kept this journal, by his own discipline, since the day Halder gave him his first notebook in March 1976. Eight notebooks across fifty years; he has never missed what he calls a *significant night.* Notebooks 1–7 are at the Halder Mansion in his private cabinet — the entirety of his pre-2024 life. Notebook 8 (current, black leather) lives in a locked drawer in his B3 lab cage at the Induction Facility — it covers his work since Iris arrived. He had no time to retrieve it when he ran on April 14. A ninth notebook, freshly broken in at the Mansion, holds the single post-rupture entry.
+In-world context: Shane has kept this journal, by his own discipline, since the day Halder gave her her first notebook in March 1976. Eight notebooks across fifty years; he has never missed what he calls a *significant night.* Notebooks 1–7 are at the Halder Mansion in his private cabinet — the entirety of his pre-2024 life. Notebook 8 (current, black leather) lives in a locked drawer in his B3 lab cage at the Induction Facility — it covers his work since Iris arrived. She had no time to retrieve it when she ran on April 14. A ninth notebook, freshly broken in at the Mansion, holds the single post-rupture entry.
 
-The character behind the voice: arrogant, brilliant, ideologically committed to the helix gene as humanity's destined next stage, contemptuous of anyone who does not see what he sees, methodical to the point of obsession, and — beneath the polish — a man who learned at age 16 that his guardian had been poisoned by men he still works for, and who has spent the forty-two years since training himself to outlive them.
+The character behind the voice: arrogant, brilliant, ideologically committed to the helix gene as humanity's destined next stage, contemptuous of anyone who does not see what he sees, methodical to the point of obsession, and — beneath the polish — a woman who learned at age 16 that her guardian had been poisoned by men she still works for, and who has spent the forty-two years since training herself to outlive them. As of late 2023, her flash-cognition has begun to mature into something more — divinations of events six to thirty-six hours ahead, accurate enough to plan around.
 
 ---
 
@@ -108,7 +108,7 @@ I am positive.
 
 I have read the panel twice and repeated it once and the result is the same. Low expression, dormant, but unambiguous. I am one of them. I have been one of them my whole life and the institution that raised me did not see it because the institution was looking for prodigies and I was raised to be quiet.
 
-I have not told anyone. I will not tell anyone. There is no version of disclosure that does not end with me on the other side of the glass. Halder's adopted son, helix-positive, working in B3 — March would secure me within twenty-four hours and tell himself, on the drive home, that it had been a kindness.
+I have not told anyone. I will not tell anyone. There is no version of disclosure that does not end with me on the other side of the glass. Halder's adopted daughter, helix-positive, working in B3 — March would secure me within twenty-four hours and tell himself, on the drive home, that it had been a kindness.
 
 Tonight I sat in the dark for an hour and tried to feel different. I could not. The gene is in me; the gene has been in me; the gene was always in me. The boy who learned the rule of the house in 1984 was a carrier. The men who killed his guardian raised the carrier without ever realising what they were raising.
 
@@ -140,45 +140,51 @@ Brief notes on the current floor. I have been promoted again and have begun thin
 
 ---
 
-## [12] 9 January 2024 — Kallisto B2, observation gallery. Age 56.
+## [12] 9 January 2024 — Kallisto B3 lab cage, after hours. Age 56.
 
-Subject SC-17 transferred into B2 today. The first verified intact helix-positive natural bloodline the programme has ever recovered. *Iris Shane.* I watched her processed in through the glass. She did not weep. I appreciate that.
+Something began in October. A flash, a name, a moment that had not yet happened. I dismissed it as fatigue. Three days later the moment happened — a colleague I had not seen in years walked into the courtyard and asked the question I had imagined him asking, in the words I had imagined. I noted the date and dismissed it again as coincidence. By December I could no longer dismiss it.
 
-She is the first specimen in my career that I will be allowed to truly *use.* The sample material we have worked with for thirty years is flesh; she is mechanism. Watching her express will be like watching a galaxy from inside its own formation.
+I am beginning to see things. Specifically: I am beginning to see things that are about to happen, in a window of about four to six hours, with consistency. The visions arrive without warning, complete, and resolve themselves in real time when the moment comes. I have begun keeping a sealed-envelope log to test the accuracy.
 
-I will record everything. I will record her as I have never recorded anything else.
+I have not told anyone. I will not tell anyone. The institution would interpret this as helix expression maturing into something instrumentable, and I would be on the other side of the glass within twenty-four hours. I have spent fifty-six years training myself to outlive them. This is the gift of those fifty-six years.
 
 ---
 
-## [13] 18 October 2024 — Kallisto B2 review room. Age 56.
+## [13] 18 October 2024 — Kallisto B3 lab cage. Age 56.
 
-Her flashes are not interpretation. I have read every transcript and every wall-recording, and I have watched her produce them in real time. She is not channelling anything. The flashes are an artefact of her own expression — the gene, finding patterns her conscious mind cannot reach, throwing them up through her language centre as fragmentary sentences. They feel oracular because they are *high-bandwidth*: she perceives correlations that no ordinary cognition would survive long enough to articulate.
+The window has lengthened. I am now seeing nine to thirty-six hours ahead, occasionally further when the events involved are emotionally weighted. The sealed envelopes return a 72% accuracy rate, increasing if I am physically present at the moment of vision. The institution would call this divination. The institution does not know.
 
-The implication is significant. If the mechanism is intrinsic to the expression and not bound to her specifically, the right next-generation work could *induce* it. Reproducible flash-cognition. A genuine new modality of human thought.
+I have begun outlining what to do with this. My initial impulse was to use it as an exfil accelerant — divine the next foreign-counterpart contact, divine the safest exit window, walk out clean. That is too small a use.
 
-She will burn out before the work is finished. I have approximately eighteen months. After her, replacements will be slower to acquire and weaker in expression. I have begun pulling extra cellular samples from her on the night-shift schedule — kept off the official log, kept in my private drawer in B3. The institution will not get the catalogue she could have produced. I will.
+I have started to see four people in the visions. They have not arrived yet. They will, within two years. A man in a tailored suit holding a phone he does not look at. A woman with a stethoscope across her shoulders, asking the wrong question of the right person. A young man with a singer's posture, his throat working at a tone I cannot quite hear from the inside of the vision. A fourth I cannot bring into focus — the visions of him are partial, as if he is moving in a different rhythm than the others.
+
+I do not yet know what they will mean to me. I will know.
 
 ---
 
 ## [14] 3 March 2026 — Kallisto B3 lab cage. Age 58.
 
-I have decided to leave.
+I am going to make the rupture happen.
 
-The decision is overdetermined. Serrat's foreign-sales line has been operating without my knowledge for at least seven years; she has been brokering through the same shell I will be using to exit, and one of us will trip the other's surveillance within weeks if I delay. March has begun asking me questions about my private requisitions. Iris will not last the spring. The airborne programme is two months from a productisation review I do not intend to attend.
+Forty different forecasts of the next eight weeks. Four end with the four being captured by Vance through her off-list intake; sixteen end in their deaths or breaks before they meet me; eleven end in their continued anonymity at the Building A summit, useless to me; one ends with the four walking past my body in a B2 cell while I scream silently from inside an organism too far gone to act. The remaining eight end in a campus-wide rupture event that catches them in Room 195 with full helix expression and no Kallisto handler alive within a hundred metres of any of them.
 
-I will exit cleanly. I will take the refined material I have been quietly partitioning. I will reach the eastern channel within seventy-two hours of departure. I will continue the work on resources that will let me move at the pace this gene actually requires, instead of at the pace an oversight committee permits.
+I will create the rupture. The airborne agent containers are already in B3; I have the safety override; I have the eight-hour exit window to be elsewhere when it vents. The rupture will kill several hundred helix-negative staff who would have died in the next decade in service of this programme regardless. It will awaken the four. It will leave Vance off-site and impotent for the critical window. It will close every option Kallisto had for handling them quietly.
 
-The institution does not know what it has been holding. I do. I am the only one who does. I am taking it with me.
+The four will be the instrument. I have begun preparing what they need to find. Their notes — addressed to them by what I have seen them be — go in tonight. The wider materials will follow over the coming weeks as the visions clarify.
+
+The institution does not know what it has been holding. I do. I am the only one who does. I am taking it forward.
 
 ---
 
 ## [15] 13 April 2026 — Kallisto B3 night shift. Age 58.
 
-Tomorrow I leave. The summit is loud upstairs; cohort 47 is on its day-three placement-interview circuit; security is overstretched; my colleagues are tired; my exit window is forty minutes wide. The containers are prepared. The secondary safety vent is tampered. The exit credentials are clean.
+Tomorrow I leave. The summit is loud upstairs; security is overstretched; my colleagues are tired; my exit window is forty minutes wide. The containers are prepared. The secondary safety vent is tampered. The exit credentials are clean.
 
 I record this entry not in the expectation that it will be read, but because I have written entries every significant night of my life and I will not make this night the exception.
 
-If this notebook is read at all, you are in a room I built. You are breathing material I refined. You are looking at the handwriting of the only man on this floor who fully understood what was being done here.
+If this notebook is read at all, you are in a room I built. You are breathing material I refined. You are looking at the handwriting of the only person on this floor who fully understood what was being done here.
+
+The four of you will reach this notebook within thirty hours of my departure. Two of you will read this entry first. The Doctor, who will go to the cabinet next; the Singer, who will go to the desk. The Director will not read this page — he will be reading something else of mine in the room one floor up. The Killer will already have moved ahead.
 
 Be impressed.
 
@@ -186,27 +192,27 @@ Be impressed.
 
 ## [16] 14 April 2026, evening — Halder Mansion, study. Age 58.
 
-The breach happened differently than I planned. I will not waste pages cataloguing what went wrong; the technical reconstruction is in my working notes, sealed. What matters is the outcome.
+The breach happened exactly as I divined.
 
 The agent vented at venous pressure through the campus HVAC. Mass-expression event in Boston. Helix-positives within range expressing fully; helix-negatives breaking in the attempt.
 
-This is not the outcome I designed. It is, however, an outcome I would have designed if I had been bolder. Loew's 1989 paper warned that an uncontained airborne form would *probably* produce unpredictable global consequences. The Boston perimeter held this time. It will not hold every time.
+This is the outcome I designed. Loew's 1989 paper warned that an uncontained airborne form would *probably* produce unpredictable global consequences. The Boston perimeter held this time. It will not hold every time.
 
-I am at the Mansion. The Asterweiss is on the desk in front of me as I write. Halder put it there in 1977 and March has not moved it once in fifty years. He thought it was a paperweight.
+I am at the Mansion. I left the Asterweiss on the desk in the Director's Office. Halder put it there in 1977 and March has not moved it once in fifty years. They thought it was a paperweight. I divined that you, the four of you, will find it before you reach me. What you do with it after that is what tells me whether I have read you correctly.
 
-The men who killed my guardian raised the boy who is going to outlive them. I have been patient for forty-two years. I am running now.
+The men who killed my guardian raised the girl who is going to outlive them. I have been patient for forty-two years. I am moving now. The four of you will arrive at this house within ninety-six hours of my putting down this pen. I will be elsewhere by the time you cross the threshold. What I leave for you here is in the cabinet behind me.
 
 ---
 
 ## DM notes — how the party finds the journal
 
-Three physical clusters, three single-find moments. No scattered loose pages — Vorshev is too methodical for that, and the table loses tension when a clue is the seventh of fourteen identical scraps.
+Three physical clusters, three single-find moments. No scattered loose pages — Shane is too methodical for that, and the table loses tension when a clue is the seventh of fourteen identical scraps.
 
 ### Cluster 1 — Notebook 8, recovered at the Induction Facility
 
 Single black leather notebook, locked in a drawer beneath the desk in his B3 lab cage. The party gets it in one pickup, after defeating whatever guards the cage and finding the drawer key (or forcing the drawer). The notebook covers his work since Iris arrived in B2 — **entries 12, 13, 14, 15.**
 
-What the party leaves the Induction Facility knowing about Vorshev after reading it:
+What the party leaves the Induction Facility knowing about Shane after reading it:
 - His name and his role (lead on the airborne-conversion programme, B3).
 - That he caused the breach personally, knowingly, and as part of an exit plan.
 - That Iris was his subject and he was skimming her samples privately for years.
@@ -217,36 +223,38 @@ This cluster is the operational read. Sufficient on its own to motivate pursuit.
 
 ### Cluster 2 — Notebooks 1 through 7, recovered at the Halder Mansion
 
-Seven older notebooks, in chronological order, in his private cabinet in the Mansion room he has been using. The party finds them when they reach the Mansion next session. The cabinet is locked but unguarded — Vorshev assumed he had time to come back for them. **Entries 1 through 11.**
+Seven older notebooks, in chronological order, in her private cabinet in the Mansion room she has been using. The party finds them when they reach the Mansion next session. The cabinet is locked but unguarded — Shane assumed she had time to come back for them. **Entries 1 through 11.**
 
 What the seven older notebooks give the party:
-- His childhood as Halder's adopted son, his parents' suspicious deaths, Halder's tutorials.
-- The 1984 entry — Halder's killing, March's complicity, the moment Vorshev decided to outlive everyone.
-- His rise through Kallisto: Yates, Aspe, the 2008 self-discovery as helix-positive.
-- The 2014 Berlin contact and his cipher-redundant record-keeping habits.
-- His read of every Chimera figure currently alive (Loew, Peters, Crale, Serrat).
+- Her childhood as Halder's adopted daughter, her parents' suspicious deaths, Halder's tutorials.
+- The 1984 entry — Halder's killing, March's complicity, the moment Shane decided to outlive everyone.
+- Her rise through Kallisto: Yates, Aspe, the 2008 self-discovery as helix-positive.
+- The 2014 Berlin contact and her cipher-redundant record-keeping habits.
+- Her read of every Chimera figure currently alive (Loew, Peters, Crale, Serrat).
+- The late-2023 onset and 2024 maturation of her divinatory expression — the gift she has not disclosed to the institution and is now using against it.
 
-This cluster is the character read. It transforms Vorshev from "the scientist who caused the rupture" into a person the party has watched grow up across forty years.
+This cluster is the character read. It transforms Shane from "the scientist who caused the rupture" into a person the party has watched grow up across fifty years.
 
 ### Cluster 3 — Notebook 9 (entry 16 only), on the Mansion desk
 
-Fresh notebook, single entry, written that evening. On the desk in his study with the Asterweiss beside it. The party will read it before they read notebooks 1–7 if they enter the study first; or after, if they search the cabinet first. Either order works.
+Fresh notebook, single entry, written that evening. On the desk in her study, alone (no Asterweiss — she left that in the Building B Director's Office for the party to find). The party will read it before they read notebooks 1–7 if they enter the study first; or after, if they search the cabinet first. Either order works.
 
-This cluster confirms his current presence in the building, names what he has taken (the Asterweiss intent), and lands the closing line.
+This cluster confirms her departure from the Mansion ahead of the party, names what she has prepared for them, and lands the closing line.
 
 ### If the party never reaches the Mansion
 
-Notebook 8 is sufficient on its own. The deeper backstory simply remains unread. Vorshev becomes a name with a motive but no past. That is acceptable; the rupture story works at either depth.
+Notebook 8 is sufficient on its own. The deeper backstory simply remains unread. Shane becomes a name with a motive but no past. That is acceptable; the rupture story works at either depth.
 
 ---
 
 ## Voice notes (for me when writing scenes around the entries)
 
-- He calls Halder *Doctor Halder*, never *my father*, never *Everett*. The form of address never softens.
-- He calls Gideon March *March* — never *Gideon*. Distance is intentional; March is his guardian and his enemy in the same hand.
-- He refers to S-0 as *the source* in his earliest entries, switching to *the body in the cave* by the late 1990s and to *the substrate* in his late career. The drift tracks his cooling.
-- He never names his parents in any entry. Mother and Father are referred to only as *Mother* and *Father*, then never again after entry 1.
-- He never uses the word *evil.* He uses *wrong placement*, *waste*, *taxidermy*, *softness*, *sentiment*, *incompetence.*
-- Latin or classical tags are out. He is not theatrical. He is precise.
-- He does not write in the present tense about events that have not happened yet. He writes in the conditional or the simple future.
-- He never writes dialectical *X, not Y* constructions. He states the thing.
+- She calls Halder *Doctor Halder*, never *my father*, never *Everett*. The form of address never softens.
+- She calls Gideon March *March* — never *Gideon*. Distance is intentional; March is her guardian and her enemy in the same hand.
+- She refers to S-0 as *the source* in her earliest entries, switching to *the body in the cave* by the late 1990s and to *the substrate* in her late career. The drift tracks her cooling.
+- From entry 12 onward she uses divination-language sparingly — *the visions, the forecasts, the windows* — and never as performance. Divination is a tool, not a sacrament.
+- She never names her parents in any entry. Mother and Father are referred to only as *Mother* and *Father*, then never again after entry 1.
+- She never uses the word *evil.* She uses *wrong placement*, *waste*, *taxidermy*, *softness*, *sentiment*, *incompetence.*
+- Latin or classical tags are out. She is not theatrical. She is precise.
+- Through entry 11 she does not write in the present tense about events that have not happened yet. From entry 12 onward she increasingly does — because she has begun to see them.
+- She never writes dialectical *X, not Y* constructions. He states the thing.

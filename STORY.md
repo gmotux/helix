@@ -51,8 +51,8 @@ Private biotech in Boston. Public face: DoD-adjacent contractor and host of the 
 Two cover floors above-grade (training rooms, dining, libraries, director offices, projection room) plus three basement levels of the actual programme work:
 
 - **B1:** observation rooms, monitoring stations, low-security interrogation.
-- **B2:** subject holding cells, the long-term containment block. **Iris Shane was held and experimented on here from 2024 until her death.**
-- **B3:** sample-processing labs, cryogenic storage for flesh material shipped in from Antarctica, the airborne-conversion programme containers Vorshev was working out of when the rupture happened, and a sub-basement training arena for cultivated helix-positive subjects.
+- **B2:** subject holding cells, the long-term containment block. Historically used by the program to hold long-term research subjects.
+- **B3:** sample-processing labs, cryogenic storage for flesh material shipped in from Antarctica, the airborne-conversion programme containers Shane was working out of when the rupture happened, and a sub-basement training arena for cultivated helix-positive subjects.
 
 The east end of B3 opens onto a Kallisto-owned private freight rail platform. The rail runs to the **Halder Mansion** (see future arcs) — the programme's off-site terminus for handling subjects it cannot keep on the Boston campus, and for storing the Halder pre-1962 archive vault.
 
@@ -115,8 +115,6 @@ Small mountain-valley community in northern Greece (Pindos range). ~200 resident
 
 **Keeper:** **Eleni Parokhos**, mid-50s. Village teacher and midwife. Tolerates Yates and the Listener presence but is not a Listener herself. Has private reasons to distrust Kallisto.
 
-**Iris's lineage.** Iris Shane's great-great-grandfather emigrated from this village in 1853 to Ohio. Three generations of American outbreeding diluted but did not eliminate her concentrated helix expression. Kallisto did not know the lineage when they recruited her in 2023; Gideon traced it retroactively.
-
 **Logistical link to the foreign-sales wire.** The Boston logistics shell that fronts the Frankfurt route also handles charter cargo into Greece for Yates's network — same fleet, same shell company. The vehicle plate Haldane logged in his freight-bay file fronts both threads. This is why Yates ordered the hit (see below).
 
 ### Evelyn Ross's CIA cell
@@ -145,7 +143,7 @@ The tribe collapsed in internal violence; most flowers were destroyed in the in-
 
 **Current state.** Conscious in a way that does not match modern human cognition. Physically unable to leave the stone. Shows continuous helix expression at sustained low rate. Does not communicate in language. Kallisto has been taking flesh samples from him since the 1940s, shipping them to Boston by sea.
 
-**On rupture day.** S-0 was undisturbed. He is still in Antarctica. His samples — held in cryogenic storage on Building B's B3 level — were what Vorshev was working with when the breach happened.
+**On rupture day.** S-0 was undisturbed. He is still in Antarctica. His samples — held in cryogenic storage on Building B's B3 level — were what Shane was working with when the breach happened.
 
 (Visual reference: `lilith.png` in the repo root.)
 
@@ -158,8 +156,6 @@ Public-facing Kallisto programme launched in 2023 under the slogan *"helix initi
 **Real function:** mass-screening cover for helix-positive identification. Every "helix initiative" applicant submits to a baseline blood panel and a battery of "wellness" cognitive/sensory tests. The panels are scored against the Halder helix profile. Positives are flagged and quietly recruited under cover stories — pattern-analytics consulting, advanced-sciences scholarships, advisory seats. Most never come out the other side.
 
 The annual HELIX summit (where the rupture happened) is the programme's highest-profile screening event of the year — three days, twenty cohort trainees per week, multiple screening passes disguised as interviews and medical baselines.
-
-**Cohort 47** was active on April 13–14 (placement-interview day on the 13th was when the rupture hit Building B). **Cohort 48** was the slate the four PCs were on, scheduled for the week of April 21.
 
 ---
 
@@ -257,7 +253,6 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 - **The same logistics shell handles charter cargo into the Pindos enclave for Yates's network.** Yates knows about the shell because he set up the Pindos channel through it before Serrat existed; Serrat does not know Yates is co-using the shell, and Yates does not know Serrat is using it for Frankfurt. Both the foreign-sales records and the Pindos supply records sit in the same company books. (This is what makes Haldane's freight-bay file lethal in 2026.)
 
 ### 2023 — three convergent events
-- **Iris Shane recruited.** Flagged by Kallisto's pattern-analytics screen for anomalous pattern-recognition scores. Recruited under a "pattern-analytics consulting" cover via a Chimera-adjacent shell. Genotyped on intake — comes back as the **first verified intact helix-positive natural bloodline** Kallisto has ever recovered. Her ancestral link to the Pindos enclave is traced retroactively by Gideon. Kept under cover roles for her first year while her expression is cultivated.
 - **Peters runs Sean's blood panel.** Routine spousal panel or targeted curiosity. Sean comes back helix-positive with an unusual expression profile. Peters understands what this means immediately — Kallisto's screening apparatus will identify the same flag through any non-Peters channel within months, and Serrat's security playbook is to remove rather than process. Peters goes to Gideon and asks for protection.
 - **Kallisto's screening flags Sean independently** during a separate routine pull (he is, after all, a Chimera Director — his medical baseline gets re-pulled as an oversight matter). Two flags arrive on Gideon's desk in the same quarter: Peters's confidential request, and the screening hit. Gideon now has a problem he can shape rather than a problem he must report up.
 
@@ -268,14 +263,14 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 - Gideon goes to Serrat before Serrat finds the screening flag through Kallisto's normal escalation. Proposes **Halder Mansion processing** as the controlled alternative to elimination — a quiet transfer to the off-site terminus where the programme handles subjects it cannot keep on the Boston campus. Serrat agrees reluctantly. Papers stay unsigned for now — Gideon wants more time before triggering the move.
 - Gideon does not tell Peters the plan. Peters believes Sean is being informally watched. Peters keeps working — partly because of Sean, partly because Sean is a capable Director and his career advances are tied to her productivity. Win-win, in her own framing. (The compromise will eat her alive when it matures, but for now she works.)
 
-### 2024 — Iris into the basement
-- Iris's expression has reached a level Kallisto can productively cultivate. She is moved to **B2 of the Induction Facility basement** under permanent containment. Officially: extended medical observation. In practice: experimental subject, run on aggressive protocols.
-- Her flashes of knowledge (a side-effect of cultivated expression — fragmentary intuitions, names, images, sentences she has no source for) are transcribed by staff. The transcripts sit in Kallisto's archive. None of them are predictions about S-0 — Iris has never been near S-0, knows S-0 only as "the source" in laboratory paperwork. Her flashes about the four PCs, about the "black horned hexagon," about the door — those are real, but they come from her expression itself, not from a relationship with S-0.
+### 2023–2024 — Shane's divinatory awakening
+- **Dr. Iris Shane** (b. 1968), Halder's adopted daughter and lifelong inside operator, has run the airborne-conversion programme out of the B3 lab cage for years. She is helix-positive — discovered the result herself in a private 2008 panel and never disclosed it.
+- In late 2023 her flash-cognition begins maturing into something more — divinations of events six to thirty-six hours ahead, accurate enough to plan around. By late 2024 she has begun planning around the visions. Four people in the visions she does not yet recognise. They will arrive within two years.
+- She does not disclose the divination. The institution would secure her within twenty-four hours of finding out. She has spent fifty-six years training to outlive that institution.
 
-### 2024–2025 — Vorshev's defection brews
-- **Dr. Adrian Vorshev** (b. 1968), senior virologist running the Induction Facility basement labs and lead on the **airborne-conversion research programme**, begins skimming S-0 flesh samples for personal stash.
-- Vorshev is helix-positive himself — discovered late, never disclosed. He has spent two decades quietly forming the conviction that the gene is humanity's destined next stage and the programme has been crawling when it should be running.
-- He opens a private channel to Kallisto's Russian counterpart (the same buyer as Serrat's wire, but Vorshev does not know Serrat is also selling — they run separate covers). Plans to defect, fake his death, and emerge with private resources to push his own accelerationist work.
+### 2024 — the Haldane play
+- Shane begins planting clues for **Victor Haldane** — anonymously delivered scraps suggesting irregularities at the secondary loading bay. She wants Haldane to start watching the freight movements. She does not yet know exactly what role he will play; the divinations are clear that he will play one.
+- Haldane bites in February 2026 (see *Why Haldane was killed*). The chain that runs from his investigation through Kessler, through Yates's clerical asset, to Varo on the bridge is the chain Shane intended.
 
 ### Early February 2026 — Haldane's freight anomaly
 - Haldane catches Building A's secondary loading bay running unauthorised after-hours freight at 02:14. Naomi Varga's badge plus a no-record badge. Cargo into an unmarked private medical-transport vehicle, no manifest. He logs plate, badge IDs, timestamps; files a protocol-violation report. Kessler closes it *addressed at director level — close*. (Truth: vessel-pipeline transfers — past-cohort holdovers being moved by road to the Halder Mansion for off-site processing.)
@@ -287,29 +282,22 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 - Haldane walks into Kessler's office and asks plainly what the original closure had meant. Kessler stalls, ushers him out, calls **Yates's broker** — not Serrat. (Detail: Yates has a long-standing intelligence asset inside Kessler's office, a quiet clerical assistant who has been feeding him movement data on Kessler's calls and visitors for years; the call out was routine, and Yates received a flag the same day.)
 - Yates reads the freight pattern as imminent compromise of the Pindos supply line. If Haldane's file ever reaches compliance, the audit follows the plate, finds the shell, finds Pindos. Kallisto identifies the enclave and consumes the ~200 helix-positive descendants as a vessel reserve over the next decade. Yates trades Haldane's life for theirs. Hires **Elias Varo** through a contractor broker layer — Varo never knows who paid.
 
-### April 13, 2026 — Cohort 47, day three
-- Cohort 47 placement-interview day at the Induction Facility. Twenty trainees, three days in residence.
-- Vorshev is in the basement labs running the airborne-conversion programme. Plans to extract a fresh personal stash of refined airborne-form viral material that night and disappear into his exit network the next morning.
+### April 13, 2026 — eve of rupture
+- Shane is in the B3 lab cage, recording her last entry before departure. The rupture is set for the next afternoon. She has divined the four PCs reaching her notes within thirty hours.
 
 ### April 14, 2026 — the morning before the rupture
 - Kallisto's annual HELIX summit, day one of the public schedule, runs in Building A.
 - The four PCs converge on Building A under their separate covers.
-- Vorshev attempts the extraction at the airborne-conversion containers on Building B's B3 level roughly mid-morning. **He is caught mid-skim by a B3 technician.** In the panic he leaves a container ajar and the secondary safety vent system, already tampered for his exit, malfunctions. The breach goes undetected for several minutes. The airborne agent leaks into the basement ventilation reserve.
-- Vorshev flees the campus before security closes. **Reaches the Halder Mansion that afternoon** and goes to ground there. (Why the mansion? It is a Kallisto-secure off-grid site, his clearances still nominally work, he had cached resources there. He intends to ride out the cover storm and exit the country within a week.)
+- Shane is in B3 mid-morning, finishing her exit prep. She opens the airborne-conversion containers herself and walks out — the breach is deliberate, the safety override is hers, the timing is divined to the minute. The agent begins leaking into the basement ventilation reserve.
+- Shane leaves the campus on foot before security closes. **Reaches the Halder Mansion that afternoon** and goes to ground there. (The Mansion is a Kallisto-secure off-grid site, her clearances still nominally work, she has cached resources there. She intends to be elsewhere again before the party arrives.)
 
 ---
 
 ## Rupture day — April 14, 2026
 
-### Iris's death (~14:00)
-- Iris had been refusing IVs and medications for several days. By the morning of the 14th she is too weak to sit up.
-- Her body's cumulative experimental burn has reached terminal load. Around **14:00** her organs give out. She dies in her cell in B2.
-- Her death is **not** the rupture trigger. (It is not unrelated either — her flashes had warned of a "venting" event in the days before, and Kallisto staff were cycling readings at higher frequency that morning because of those warnings. None of them connected the warnings to Vorshev.)
-- Body still in B2.
-
 ### The rupture (14:23)
 - The B3 containment system has been venting agent into the basement ventilation reserve for roughly forty minutes by the time the secondary safety logic finally kicks in.
-- The safety logic, instead of containing, **routes the reserve outward through the campus HVAC** — a fail-open mode meant for chemical contamination from outside, repurposed catastrophically by the tampered settings Vorshev left.
+- The safety logic, instead of containing, **routes the reserve outward through the campus HVAC** — a fail-open mode meant for chemical contamination from outside, repurposed catastrophically by the tampered settings Shane left.
 - At **14:23** the airborne viral agent vents through Building A and Building B simultaneously.
 - **Helix-positive bodies in range express fully** — the four PCs (Room 195, Building A), Mara Kessler somewhere on Building A 1/F, possibly a small handful of others.
 - **Helix-negative bodies in range begin breaking** — every zombie, hunter, ruptured, wraith, and cocooned subject in the building is what their physiology turned into when forced to express a gene they did not carry.
@@ -321,8 +309,7 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 - Sean's internal voice begins speaking during the cascade and does not stop. Sally's hands learn the breath-shard. Bernard's throat finds 528 Hz. The Killer's attention finds the seam.
 
 ### What Kallisto leadership knows
-- Vorshev is missing. Kallisto's internal forensics will eventually identify his fingerprints on the breach within 24–48 hours; he has time to disappear cleanly if he does not stay in the country.
-- Iris is dead. Reports moving up the medical chain.
+- Shane is missing. Kallisto's internal forensics will be slow to identify her — she covered her exit thoroughly and her clearance level inside the program runs deep. Days, not hours, before her name surfaces as the agent.
 - Serrat, off-site at Building A, is alive. Loew, off-site at Chimera Boston offices, is alive. Peters, off-campus by her own choice, is alive. Gideon, in DC, is alive. Crale, off-site, is alive.
 - Kessler is missing/unaccounted-for inside Building A.
 
@@ -348,7 +335,7 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 
 ### Current moment (April 15, mid-morning)
 - **Party is in the glass enclosed bridge connecting Building A and Building B.** Not yet inside the Induction Facility. Haldane is with them. They have his Building A 2/F bridge key and the BRG-REL ratchet from Room 297. Varo is dead behind them. The directive is folded in someone's pocket.
-- Cohort 47 dead or scattered ahead of them. Serrat off-site at Building A, alive. Reeve dead in Narrow Corridor A. The far east of the basement opens onto the Kallisto private freight rail. Halder Mansion is the next stop down the line.
+- Building B's staff dead or scattered ahead of them. Serrat off-site at Building A, alive. Reeve dead in Narrow Corridor A. Shane gone — at the Halder Mansion as of yesterday evening, expected to move on before they arrive. The far east of the basement opens onto the Kallisto private freight rail. Halder Mansion is the next stop down the line.
 
 ---
 
@@ -408,24 +395,22 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 - **Col. N. Serrat** — off-site at Building A's exec wing on rupture day, alive. Hidden Kallisto security architect. Runs the Frankfurt foreign-sales wire. Fanatic patriot who wants the BOW programme to continue. Does **not** know Yates ordered Haldane killed; reads the death as her own kill order would have, had she signed one (she didn't — she knew about Haldane's freight pulls but had not yet decided what to do).
 - **Naomi Varga** — Building A access control officer. Serrat's recruit on the freight-bay vessel transfers. **Dead** as of an off-stage moment during the rupture; party will not encounter her alive.
 - **Anselm Yates** — Listener leader, Pindos enclave. Currently composing his next move now that Haldane is buried and the rupture is unfolding faster than he expected.
-- **Dr. Adrian Vorshev** — defector. **Alive at the Halder Mansion.** Plans to exit the country within the week. His journals (to be written separately) are scattered through the Induction Facility basement labs.
+- **Dr. Iris Shane** — Halder's adopted daughter, lifelong Kallisto scientist, helix-positive (undisclosed), divination wizard awakened late 2023. **Alive, at the Halder Mansion as of April 14 evening; expected to depart again before the party arrives.** Caused the rupture deliberately. Has been planting clues for the party — both her own divined-tone notes (see IRIS_NOTES.md) and the original Haldane investigation thread that ended with Haldane's killing. Her motivations and the dilemma she presents the party are reserved for later sessions; do not surface them on first encounter.
 
 ---
 
 ## NPC roster — dead, off-stage, future arc
 
 ### Dead on rupture day
-- **Iris Shane (SC-17)** — dead in her B2 cell ~14:00 on April 14. Body still in the cell.
 - **Hannah Reeve** — Induction Facility Assistant Director. Dead in Narrow Corridor A.
 - **Julian Park** — Building A Partnership Liaison. Dead in Room 102.
 - **Naomi Varga** — Building A access control officer. Dead off-stage during the rupture.
 - **Elias Varo** — Yates's contractor. Dead on the bridge, killed by the party. No leads on his body.
 - **Victor Haldane** — killed in 299 at 09:15 on April 15 by Varo on Yates's order. Reanimated, codon-stabilised by the party. Now awakened and travelling with them. (*See* Why Haldane was killed.)
-- **Reynaldo Okolo** — Cohort 47 candidate (47-05), musician, brother of Subject S-3 / Ren Okolo. Helix-negative. Dead in the Cohort 47 mass casualty during the rupture. The Okolo brothers were recruited together; Ren screened helix-positive on day three and was pulled to B1 the morning of placement-interview day, while Reynaldo continued through the cohort schedule and was caught in the rupture.
 - **Everett H. Archer** — Committee Liaison from the Archer family seat (descendant of Col. Byron Archer). Cardiac event at Station Arrival, 14:24 on rupture day. Was Gideon-aligned on the Committee; intended to vote against Halder on the Iris terminal decision that afternoon.
 - **Bren Taylor** — Kallisto Rail Operations technician, nine years' service. Held the rail line operational for survivors during the rupture window; caught by the field on his final approach to the operator cab. Body on the rail platform.
 - **Kallisto Station Security Operator** — name not on file at the table; operator of the rail station's security booth. Mist exposure during the rupture. Body in the booth.
-- *(Many additional Kallisto staff and Cohort 47 trainees, dead or broken across the campus.)*
+- *(Many additional Kallisto staff and outside arrivals, dead or broken across the campus.)*
 
 ### Historical figures (Halder lineage)
 - **Dr. Everett Halder** (1919–1984) — founder. Poisoned by Committee order after his grandson's prototype exposure cracked his patience.
@@ -443,7 +428,8 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 ## Why Haldane was killed
 
 - **Position.** Kessler's security lead, Building A, nine years. No clearance for Project Chimera, S-0, the Antarctica site, the Halder Mansion's actual function, or anything above the cover-story level of Kallisto's operations.
-- **The anomaly.** Early February 2026, on a covered night shift, 02:14 — caught the secondary loading bay running unauthorised after-hours freight. Two badges scanning in: Naomi Varga and a man whose badge returned *no record*. Cargo into an unmarked private medical-transport vehicle. He logged plate, badge IDs, timestamps; filed a protocol-violation report. Kessler closed it *addressed at director level — close*. No follow-up.
+- **Setup (Shane's hand).** From sometime in 2024 onward, Shane has been quietly feeding Haldane anonymous scraps — odd internal documents, unsourced photographs of the secondary loading bay, a tip-off about a badge ID that should not exist. She wants him to start watching. He bites. She has divined the chain that follows.
+- **The anomaly.** Early February 2026, on a covered night shift, 02:14 — Haldane catches the secondary loading bay running unauthorised after-hours freight (the event Shane's tips primed him to look for). Two badges scanning in: Naomi Varga and a man whose badge returned *no record*. Cargo into an unmarked private medical-transport vehicle. He logged plate, badge IDs, timestamps; filed a protocol-violation report. Kessler closed it *addressed at director level — close*. No follow-up.
 - **The pattern.** Two months of quiet archive pulls. Seven matching events in twelve months. Three vehicle plates, one repeat. April 11: Haldane walked into Kessler's office and asked plainly what the original closure had meant. Kessler stalled, ushered him out, and called **Yates's clerical asset inside her office** without realising she was doing it. The flag reached Yates that afternoon.
 - **Yates's decision.** One of Haldane's three plates traces, two queries downstream, to the Boston logistics shell that fronts both Serrat's Frankfurt route and **Yates's Pindos supply.** If Haldane's file reaches compliance, audit follows the plate, finds the shell, finds Pindos. Kallisto identifies the enclave within weeks and consumes ~200 helix-positive descendants over the next decade. Yates traded Haldane's life for theirs.
 - **The hit.** Hired **Elias Varo** through a contractor broker layer; Varo never knew who paid. April 15, 09:15: Varo in summit-week auditor credentials, knocked on 299, suppressed sidearm from the side, directive placed on the desk as case closure, exited.
@@ -459,13 +445,13 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 - Train terminus from the Induction Facility basement freight rail.
 - Halder family seat. Staffed by Kallisto operations; Edmund does not live there.
 - **Off-site processing terminus.** This is where the programme handles subjects it cannot keep on the Boston campus. The seven freight-bay events Haldane logged were road transfers from Building A to here. Sean's planned 15:05 transfer on rupture day was scheduled to end here. Holds the **Halder pre-1962 archive vault**, including Loew's 1989 mass-expression paper.
-- **Vorshev is in residence**, hiding, planning his exit. Brilliant, arrogant, manipulative, extremely dangerous, ideologically committed to mass helix-expression as humanity's destiny.
-- The **Asterweiss sphere** sits on the Halder office desk, hidden in plain sight as a paperweight.
-- Vorshev's working papers may also be cached here — separate from the journal extracts in the Induction Facility basement.
+- **Shane was here**, but is moving by the time the party arrives. She has prepared what they need to find in her cabinet and on her desk — including her older journal notebooks (1–7) and the post-rupture entry 16. She will not be in the Mansion when they cross the threshold.
+- The **Asterweiss sphere** is in the Building B Director's Office (not the Mansion) — Shane left it for the party to find on the way through.
+- Shane's working papers and divined preparations for the party are cached here.
 
 ### Halder Genomics Initiative (Boston, current arc reachable)
 - Edmund Halder's lab and office. Reachable if PCs leave the campus and seek allies outside Kallisto.
-- Edmund will not act on Kallisto unprompted. If the PCs bring him evidence of the antiviral programme's status, the airborne agent's existence, or Vorshev's defection, he becomes a major ally.
+- Edmund will not act on Kallisto unprompted. If the PCs bring him evidence of the antiviral programme's status, the airborne agent's existence, or Shane's role as the agent of the rupture, he becomes a major ally.
 
 ### The Pindos enclave (Greece, future arc)
 - Future destination for the PCs who survive Kallisto and want to understand what they are.
@@ -482,12 +468,11 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 
 ## Open questions / things to lock when convenient
 
-- **Iris's body.** Currently in B2. Whether the party recovers her, what the recovery does, and how it interacts with the Listeners' theology — open.
 - **The Killer's name and personal backstory.** Open at the table.
 - **Mara Kessler's status post-rupture.** Open. Likely alive somewhere on Building A.
 - **Dev Patel's status post-rupture.** Open.
 - **Yvette Cole's status post-rupture.** Open.
-- **Vorshev's journal** — to be written separately as a complete document before its extracts are scattered through the Induction Facility basement.
+- **Shane's confrontation with the party** — when and where they meet her in person. Currently she is the off-stage manipulator; her on-screen appearance is reserved for a later session.
 - **The Asterweiss's mechanic** — what does it actually do if used? Currently treated as inert decoration. Open.
 - **The carved tablets at the Antarctica site** — what they contain in detail. Open until the Antarctica arc is closer.
 
@@ -498,12 +483,12 @@ Hidden from the players. The Chimera Triage Injector and the rest of Kallisto's 
 Do not reintroduce any of the following retired framings:
 
 - "Continuity officer" as Sean's cover. (Standing public cover is City Hall budget analyst.)
-- Iris as an "interpreter" of S-0. (She is the first verified intact helix-positive natural bloodline. She was experimented on, not in communication with anyone.)
+- Iris as an "interpreter" of S-0, or Iris as a captured subject in B2. (Iris is alive, off-stage, the scientist who caused the rupture — see her entry above. The forensic-claims-investigator backstory is retired.)
 - S-0 anywhere other than Antarctica.
-- The rupture as caused by S-0 dying. (S-0 is alive in Antarctica. Rupture is the airborne agent venting after Vorshev's breach.)
+- The rupture as caused by S-0 dying. (S-0 is alive in Antarctica. Rupture is the airborne agent venting after Shane's deliberate breach.)
 - "Orpheus Annex" / "OA" anywhere. Removed from canon. Functions split between **Building B's B3 level** (sample cryostore, airborne-conversion lab, processing) and the **Halder Mansion** (off-site subject handling, the pre-1962 archive vault).
 - "Vessel programme" / "OA processing" as an active human-conversion pipeline tied to S-0 proximity. (Subjects are processed off-site at the Halder Mansion against shipped samples, not against S-0 in person.)
-- The "black horned hexagon" line as having anything to do with an interpreter relationship. (Iris's flashes were a side-effect of cultivated expression. The hexagon is the Chimera mark on Sally's Triage Injector. The flash was Iris's expression catching a future moment, no different in kind from Sean's pact voice except that her expression manifested in fragmentary intuitions while his manifests as a continuous internal voice.)
+
 - "Residue" as the party's term for the mist. The party uses **mist** or **black dust**.
 - The Chimera mark appearing openly anywhere in Building A except hidden under Haldane's pistol grip.
 
