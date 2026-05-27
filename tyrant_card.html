@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Tyrant — Stat Card</title>
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root {
+    --ink: #58180D;
+    --rule: #922610;
+    --paper: #FDF1DC;
+    --body: #000;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ccc;
+    font-family: "Bookman Old Style", "Charter", "Iowan Old Style", Georgia, serif;
+    color: var(--body);
+  }
+  .page {
+    background: var(--paper);
+    width: 210mm;
+    min-height: 297mm;
+    box-sizing: border-box;
+    padding: 14mm 16mm;
+    margin: 16px auto;
+    box-shadow: 0 0 16px rgba(0,0,0,.25);
+  }
+  @media print {
+    html, body { background: #fff; }
+    .page { box-shadow: none; margin: 0; width: auto; min-height: 0; padding: 0; }
+  }
+  .stat {
+    column-count: 2;
+    column-gap: 10mm;
+    column-rule: 1mm solid var(--rule);
+    background: var(--paper);
+    font-size: 10.5pt;
+    line-height: 1.18;
+  }
+  .stat h1, .stat h2, .stat h3, .stat p, .stat ul {
+    margin: 0;
+    padding: 0;
+  }
+  .stat .name {
+    font-family: "Cinzel", "Trajan Pro", "Bookman Old Style", serif;
+    font-variant: small-caps;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 22pt;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 2mm;
+    break-after: avoid;
+  }
+  .stat .meta {
+    font-style: italic;
+    margin-bottom: 2mm;
+    break-after: avoid;
+  }
+  .stat .divider {
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin: 2mm 0;
+    background: linear-gradient(to right, var(--rule) 0 50%, transparent 50%);
+    background-size: 8px 5px;
+    background-repeat: repeat-x;
+    background: var(--rule);
+    clip-path: polygon(0 40%, 100% 40%, 100% 60%, 50% 100%, 0 60%);
+    height: 7px;
+  }
+  .stat .topblock,
+  .stat .midblock {
+    color: var(--ink);
+  }
+  .stat .topblock p,
+  .stat .midblock p {
+    margin-bottom: 0.5mm;
+  }
+  .stat .topblock strong,
+  .stat .midblock strong {
+    font-weight: 700;
+  }
+  .stat table.abilities {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2mm 0;
+    color: var(--ink);
+    text-align: center;
+  }
+  .stat table.abilities th {
+    font-variant: small-caps;
+    font-size: 9.5pt;
+    font-weight: 700;
+    padding: 0.5mm 0;
+  }
+  .stat table.abilities td {
+    font-size: 10pt;
+    padding: 0.2mm 0 1mm 0;
+  }
+  .stat h3.section {
+    font-family: "Cinzel", "Trajan Pro", "Bookman Old Style", serif;
+    font-variant: small-caps;
+    color: var(--ink);
+    font-size: 14pt;
+    border-bottom: 1px solid var(--ink);
+    margin: 2.5mm 0 1.5mm 0;
+    padding-bottom: 0.5mm;
+    break-after: avoid;
+  }
+  .stat .trait,
+  .stat .action {
+    margin-bottom: 1.4mm;
+    text-align: justify;
+    break-inside: avoid;
+  }
+  .stat .trait b,
+  .stat .action b {
+    font-style: italic;
+  }
+  .stat .roar-italic {
+    font-style: italic;
+  }
+  .flavor {
+    column-span: all;
+    font-style: italic;
+    margin-bottom: 4mm;
+    font-size: 10pt;
+    text-align: justify;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="stat">
+    <div class="flavor">
+      A massive humanoid stripped to its mutant core. Pale grey-purple flesh stretched over an inhuman frame; one arm grown into a recurved bone-blade as long as a man is tall. The chest cavity is open. The heart beats wet behind a cage of split ribs. The face above the missing jaw is recognisable. The eyes are not.
+    </div>
+
+    <h1 class="name">Tyrant</h1>
+    <p class="meta">Large aberration (transformation), unaligned</p>
+    <div class="divider"></div>
+
+    <div class="topblock">
+      <p><strong>Armor Class</strong> 17 (mutated hide)</p>
+      <p><strong>Hit Points</strong> 248 (16d10 + 160)</p>
+      <p><strong>Speed</strong> 40 ft.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <table class="abilities">
+      <tr>
+        <th>STR</th><th>DEX</th><th>CON</th><th>INT</th><th>WIS</th><th>CHA</th>
+      </tr>
+      <tr>
+        <td>24 (+7)</td>
+        <td>16 (+3)</td>
+        <td>26 (+8)</td>
+        <td>6 (&minus;2)</td>
+        <td>12 (+1)</td>
+        <td>6 (&minus;2)</td>
+      </tr>
+    </table>
+
+    <div class="divider"></div>
+
+    <div class="midblock">
+      <p><strong>Saving Throws</strong> Str +11, Con +12, Wis +5</p>
+      <p><strong>Skills</strong> Athletics +11, Perception +5</p>
+      <p><strong>Damage Resistances</strong> bludgeoning, piercing, and slashing from nonmagical attacks that aren't silvered</p>
+      <p><strong>Damage Vulnerabilities</strong> radiant</p>
+      <p><strong>Damage Immunities</strong> poison, necrotic</p>
+      <p><strong>Condition Immunities</strong> charmed, exhaustion, frightened, poisoned</p>
+      <p><strong>Senses</strong> blindsight 30 ft., darkvision 120 ft., passive Perception 15</p>
+      <p><strong>Languages</strong> understands all languages the carrier knew but can't speak</p>
+      <p><strong>Challenge</strong> 12 (8,400 XP) &nbsp; <strong>Proficiency Bonus</strong> +4</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="trait"><b>Magic Resistance.</b> The Tyrant has advantage on saving throws against spells and other magical effects.</div>
+
+    <div class="trait"><b>Regeneration.</b> The Tyrant regains 15 hit points at the start of its turn if it has at least 1 hit point and hasn't taken radiant damage since the end of its last turn.</div>
+
+    <div class="trait"><b>Exposed Heart.</b> The Tyrant's vital organs are visible in its open chest cavity. A creature can target the heart specifically with a ranged or melee weapon attack; doing so imposes disadvantage on the attack roll, but on a hit the attack scores a critical hit on a roll of 18, 19, or 20 (in addition to dealing the normal damage of a critical hit). When the Tyrant takes 25 damage or more from a single critical hit targeting the heart, its Regeneration trait doesn't function at the start of its next turn.</div>
+
+    <div class="trait"><b>Rampage.</b> At the end of its turn, if no creature is within 10 feet of it, the Tyrant uses its reaction to move up to its speed toward the nearest creature it can sense and makes one Massive Claw attack against that creature. The Tyrant does not distinguish friend from foe.</div>
+
+    <div class="trait"><b>Wretched Pull.</b> While any creature carrying the helix gene is within 60 feet of it, the Tyrant has disadvantage on attack rolls against any creature that is not carrying the helix gene.</div>
+
+    <div class="trait"><b>Reckless.</b> At the start of its turn, the Tyrant can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn.</div>
+
+    <h3 class="section">Actions</h3>
+
+    <div class="action"><b>Multiattack.</b> The Tyrant makes three attacks: two with its Massive Claw and one with its Devouring Bite.</div>
+
+    <div class="action"><b>Massive Claw.</b> <i>Melee Weapon Attack:</i> +11 to hit, reach 10 ft., one target. <i>Hit:</i> 23 (3d10 + 7) slashing damage. On a critical hit, the target must succeed on a DC 19 Strength saving throw or be thrown 15 feet from the Tyrant and knocked prone.</div>
+
+    <div class="action"><b>Devouring Bite.</b> <i>Melee Weapon Attack:</i> +11 to hit, reach 5 ft., one creature. <i>Hit:</i> 20 (3d8 + 7) piercing damage, and the target must succeed on a DC 19 Strength saving throw or be grappled (escape DC 19). Until this grapple ends, the target is restrained, and the Tyrant can't bite another target. While a creature is grappled by the Tyrant's bite, the Tyrant has advantage on attack rolls against it.</div>
+
+    <div class="action"><b>Lunge (Recharge 5&ndash;6).</b> The Tyrant moves up to 30 feet in a straight line. Each creature in its path must make a DC 19 Dexterity saving throw, taking 33 (6d10) bludgeoning damage and being knocked prone on a failed save, or half as much damage and not prone on a successful one. The Tyrant must end this movement in an unoccupied space along the line.</div>
+
+    <div class="action"><b>Frightful Roar (Recharge 6).</b> The Tyrant emits a sub-harmonic roar. Each creature of the Tyrant's choice within 60 feet of it that can hear it must succeed on a DC 17 Wisdom saving throw or be frightened of the Tyrant for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Creatures that share the helix gene with the Tyrant's host are immune to this effect.</div>
+
+    <h3 class="section">Legendary Actions</h3>
+    <p style="margin-bottom:1.5mm; text-align:justify;">The Tyrant can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The Tyrant regains spent legendary actions at the start of its turn.</p>
+
+    <div class="action"><b>Stride.</b> The Tyrant moves up to half its speed without provoking opportunity attacks.</div>
+
+    <div class="action"><b>Claw Attack.</b> The Tyrant makes one Massive Claw attack.</div>
+
+    <div class="action"><b>Wretched Cry (Costs 2 Actions).</b> The Tyrant emits a brief sub-harmonic pulse. Each creature within 30 feet of it that can hear it must succeed on a DC 17 Constitution saving throw or take 11 (2d10) thunder damage and have its speed halved until the end of its next turn.</div>
+
+  </div>
+</div>
+</body>
+</html>

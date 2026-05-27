@@ -1,0 +1,620 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500" font-family="serif">
+  <defs>
+    <!-- Fine stone grain (sand-grain scale noise) -->
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="7"/>
+      <feColorMatrix values="0 0 0 0 0.22  0 0 0 0 0.19  0 0 0 0 0.15  0 0 0 0.42 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- Medium-scale mineral mottling -->
+    <filter id="patina" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11"/>
+      <feColorMatrix values="0 0 0 0 0.32  0 0 0 0 0.27  0 0 0 0 0.20  0 0 0 0.55 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- Large-scale colour banding (mineral veins) -->
+    <filter id="banding" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.004 0.012" numOctaves="2" seed="19"/>
+      <feColorMatrix values="0 0 0 0 0.18  0 0 0 0 0.15  0 0 0 0 0.10  0 0 0 0.30 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- Pale highlight patches (weathered light spots) -->
+    <filter id="hilite" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="23"/>
+      <feColorMatrix values="0 0 0 0 0.82  0 0 0 0 0.78  0 0 0 0 0.70  0 0 0 0.20 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- Surface relief (diffuse lighting on a bump map) -->
+    <filter id="relief" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="13" result="bump"/>
+      <feDiffuseLighting in="bump" surfaceScale="2.2" diffuseConstant="1.0" lighting-color="#ffffff" result="diff">
+        <feDistantLight azimuth="135" elevation="55"/>
+      </feDiffuseLighting>
+      <feComposite in="diff" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- Edge erosion (uneven boundary) -->
+    <filter id="erode" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" seed="5"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+    <!-- Inscription depth -->
+    <filter id="incised" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur stdDeviation="0.4"/>
+    </filter>
+
+    <!-- Cuneiform wedge primitives -->
+    <symbol id="wV" viewBox="0 0 12 22">
+      <path d="M6,2 L0,18 L12,18 Z" fill="#3a2410" opacity="0.92"/>
+    </symbol>
+    <symbol id="wH" viewBox="0 0 22 12">
+      <path d="M2,6 L18,2 L18,10 Z" fill="#3a2410" opacity="0.92"/>
+    </symbol>
+    <symbol id="wD" viewBox="0 0 18 18">
+      <path d="M2,2 L16,8 L8,16 Z" fill="#3a2410" opacity="0.92"/>
+    </symbol>
+    <symbol id="winkel" viewBox="0 0 18 18">
+      <path d="M2,2 L10,10 L2,10 Z" fill="#3a2410" opacity="0.92"/>
+      <path d="M10,10 L16,4 L16,16 Z" fill="#3a2410" opacity="0.92"/>
+    </symbol>
+
+    <!-- Numeral 1: single vertical -->
+    <g id="n1"><use href="#wV" x="0" y="0" width="12" height="22"/></g>
+    <g id="n2"><use href="#wV" x="0" y="0" width="12" height="22"/><use href="#wV" x="14" y="0" width="12" height="22"/></g>
+    <g id="n3"><use href="#wV" x="0" y="0" width="12" height="22"/><use href="#wV" x="14" y="0" width="12" height="22"/><use href="#wV" x="28" y="0" width="12" height="22"/></g>
+    <g id="n4"><use href="#wV" x="0" y="0" width="12" height="22"/><use href="#wV" x="14" y="0" width="12" height="22"/><use href="#wV" x="0" y="22" width="12" height="22"/><use href="#wV" x="14" y="22" width="12" height="22"/></g>
+    <g id="n8">
+      <use href="#wV" x="0" y="0" width="12" height="22"/><use href="#wV" x="14" y="0" width="12" height="22"/><use href="#wV" x="28" y="0" width="12" height="22"/>
+      <use href="#wV" x="0" y="22" width="12" height="22"/><use href="#wV" x="14" y="22" width="12" height="22"/><use href="#wV" x="28" y="22" width="12" height="22"/>
+      <use href="#wV" x="0" y="44" width="12" height="22"/><use href="#wV" x="14" y="44" width="12" height="22"/>
+    </g>
+    <g id="n10"><use href="#winkel" x="0" y="0" width="18" height="18"/></g>
+    <g id="n13"><use href="#winkel" x="0" y="0" width="18" height="18"/><use href="#wV" x="20" y="0" width="12" height="22"/><use href="#wV" x="34" y="0" width="12" height="22"/><use href="#wV" x="48" y="0" width="12" height="22"/></g>
+    <g id="n30"><use href="#winkel" x="0" y="0" width="18" height="18"/><use href="#winkel" x="20" y="0" width="18" height="18"/><use href="#winkel" x="40" y="0" width="18" height="18"/></g>
+    <g id="n38">
+      <use href="#winkel" x="0" y="0" width="18" height="18"/><use href="#winkel" x="20" y="0" width="18" height="18"/><use href="#winkel" x="40" y="0" width="18" height="18"/>
+      <use href="#wV" x="62" y="0" width="12" height="22"/><use href="#wV" x="76" y="0" width="12" height="22"/><use href="#wV" x="90" y="0" width="12" height="22"/><use href="#wV" x="104" y="0" width="12" height="22"/>
+      <use href="#wV" x="62" y="22" width="12" height="22"/><use href="#wV" x="76" y="22" width="12" height="22"/><use href="#wV" x="90" y="22" width="12" height="22"/><use href="#wV" x="104" y="22" width="12" height="22"/>
+    </g>
+    <!-- Decorative cuneiform glyph clusters (not real Akkadian, just authentic-looking) -->
+    <g id="glyphA">
+      <use href="#wV" x="0" y="0" width="12" height="22"/>
+      <use href="#wH" x="14" y="4" width="22" height="12"/>
+      <use href="#wV" x="40" y="0" width="12" height="22"/>
+      <use href="#winkel" x="14" y="24" width="18" height="18"/>
+    </g>
+    <g id="glyphB">
+      <use href="#wD" x="0" y="0" width="18" height="18"/>
+      <use href="#wV" x="22" y="0" width="12" height="22"/>
+      <use href="#wH" x="0" y="24" width="22" height="12"/>
+      <use href="#wV" x="24" y="22" width="12" height="22"/>
+    </g>
+    <g id="glyphC">
+      <use href="#wH" x="0" y="0" width="22" height="12"/>
+      <use href="#wH" x="0" y="14" width="22" height="12"/>
+      <use href="#wV" x="26" y="0" width="12" height="22"/>
+      <use href="#wV" x="26" y="24" width="12" height="22"/>
+      <use href="#winkel" x="42" y="14" width="18" height="18"/>
+    </g>
+    <g id="glyphD">
+      <use href="#winkel" x="0" y="0" width="18" height="18"/>
+      <use href="#wD" x="22" y="0" width="18" height="18"/>
+      <use href="#wH" x="0" y="22" width="22" height="12"/>
+      <use href="#wV" x="26" y="22" width="12" height="22"/>
+    </g>
+  </defs>
+
+  <!-- Drop shadow plate behind tablet -->
+  <rect x="40" y="60" width="1120" height="1380" rx="36" ry="36" fill="#2a1a0a" opacity="0.35"/>
+
+  <!-- Tablet base (weathered limestone, irregular via erode filter) -->
+  <g filter="url(#erode)">
+    <rect x="30" y="40" width="1140" height="1400" rx="32" ry="32" fill="#998870"/>
+    <!-- Bevelled rim (darker outer, lighter inner — gives a 3D edge feel) -->
+    <rect x="30" y="40" width="1140" height="1400" rx="32" ry="32" fill="none" stroke="#5a4e3c" stroke-width="3" opacity="0.65"/>
+    <rect x="42" y="52" width="1116" height="1376" rx="26" ry="26" fill="none" stroke="#c2b598" stroke-width="1" opacity="0.35"/>
+    <rect x="56" y="66" width="1088" height="1348" rx="22" ry="22" fill="none" stroke="#6a5e4c" stroke-width="1" opacity="0.40"/>
+  </g>
+
+  <!-- LAYER 1: Large-scale mineral colour banding (slow drift across the stone) -->
+  <rect x="30" y="40" width="1140" height="1400" rx="32" ry="32" fill="#000" filter="url(#banding)" opacity="0.85"/>
+  <!-- LAYER 2: Medium-scale mottling (irregular dark patches) -->
+  <rect x="30" y="40" width="1140" height="1400" rx="32" ry="32" fill="#000" filter="url(#patina)" opacity="0.62"/>
+  <!-- LAYER 3: Bright highlight patches (calcite spots, weathered surface) -->
+  <rect x="30" y="40" width="1140" height="1400" rx="32" ry="32" fill="#000" filter="url(#hilite)" opacity="0.32"/>
+  <!-- LAYER 4: Surface relief (bump-lit) -->
+  <rect x="30" y="40" width="1140" height="1400" rx="32" ry="32" fill="#cfc2a8" filter="url(#relief)" opacity="0.45"/>
+  <!-- LAYER 5: Fine sand grain -->
+  <rect x="30" y="40" width="1140" height="1400" rx="32" ry="32" fill="#000" filter="url(#grain)" opacity="0.40"/>
+
+  <!-- Mineral inclusions: small dark and light specks scattered across the surface -->
+  <g opacity="0.55">
+    <!-- Dark specks (iron / manganese inclusions) -->
+    <circle cx="180" cy="195" r="2" fill="#1a1208"/>
+    <circle cx="340" cy="280" r="1.5" fill="#1a1208"/>
+    <circle cx="520" cy="160" r="2.5" fill="#1a1208"/>
+    <circle cx="780" cy="220" r="1.8" fill="#1a1208"/>
+    <circle cx="920" cy="350" r="2" fill="#1a1208"/>
+    <circle cx="1070" cy="170" r="1.5" fill="#1a1208"/>
+    <circle cx="120" cy="450" r="2" fill="#1a1208"/>
+    <circle cx="260" cy="620" r="1.6" fill="#1a1208"/>
+    <circle cx="420" cy="710" r="2.2" fill="#1a1208"/>
+    <circle cx="680" cy="540" r="1.8" fill="#1a1208"/>
+    <circle cx="860" cy="680" r="2" fill="#1a1208"/>
+    <circle cx="1060" cy="580" r="1.5" fill="#1a1208"/>
+    <circle cx="200" cy="880" r="2.4" fill="#1a1208"/>
+    <circle cx="450" cy="950" r="1.8" fill="#1a1208"/>
+    <circle cx="640" cy="1020" r="2" fill="#1a1208"/>
+    <circle cx="820" cy="900" r="1.5" fill="#1a1208"/>
+    <circle cx="1010" cy="1090" r="2.1" fill="#1a1208"/>
+    <circle cx="160" cy="1170" r="1.7" fill="#1a1208"/>
+    <circle cx="380" cy="1280" r="2" fill="#1a1208"/>
+    <circle cx="620" cy="1340" r="1.6" fill="#1a1208"/>
+    <circle cx="900" cy="1240" r="2.2" fill="#1a1208"/>
+    <circle cx="1080" cy="1370" r="1.5" fill="#1a1208"/>
+    <!-- Pale specks (quartz / calcite grains) -->
+    <circle cx="220" cy="320" r="1.4" fill="#e8dec6"/>
+    <circle cx="600" cy="290" r="1.2" fill="#e8dec6"/>
+    <circle cx="900" cy="190" r="1.6" fill="#e8dec6"/>
+    <circle cx="380" cy="510" r="1.4" fill="#e8dec6"/>
+    <circle cx="740" cy="610" r="1.2" fill="#e8dec6"/>
+    <circle cx="980" cy="780" r="1.5" fill="#e8dec6"/>
+    <circle cx="170" cy="820" r="1.3" fill="#e8dec6"/>
+    <circle cx="490" cy="1080" r="1.4" fill="#e8dec6"/>
+    <circle cx="770" cy="1150" r="1.6" fill="#e8dec6"/>
+    <circle cx="280" cy="1380" r="1.2" fill="#e8dec6"/>
+    <circle cx="990" cy="1320" r="1.5" fill="#e8dec6"/>
+  </g>
+
+  <!-- Surface scratches / cracks -->
+  <g opacity="0.30" stroke="#3a2410" stroke-width="1" fill="none">
+    <path d="M 80 200 Q 200 240 320 215 T 540 230"/>
+    <path d="M 900 1200 Q 1000 1180 1090 1210"/>
+    <path d="M 100 1300 L 250 1280"/>
+    <path d="M 1100 380 L 1130 480"/>
+    <path d="M 60 700 Q 90 760 80 820"/>
+  </g>
+  <g opacity="0.15" stroke="#3a2410" stroke-width="2" fill="none">
+    <path d="M 80 1100 Q 200 1140 380 1110 T 700 1130"/>
+    <path d="M 760 80 Q 800 130 870 110"/>
+  </g>
+
+  <!-- Header band — cuneiform-style inscription at top -->
+  <g transform="translate(120 130)">
+    <use href="#glyphA" x="0" y="0"/>
+    <use href="#glyphC" x="80" y="0"/>
+    <use href="#glyphB" x="180" y="0"/>
+    <use href="#glyphD" x="260" y="0"/>
+    <use href="#glyphA" x="340" y="0"/>
+    <use href="#glyphC" x="420" y="0"/>
+    <use href="#glyphB" x="520" y="0"/>
+    <use href="#glyphD" x="600" y="0"/>
+    <use href="#glyphA" x="680" y="0"/>
+    <use href="#glyphC" x="760" y="0"/>
+    <use href="#glyphB" x="860" y="0"/>
+  </g>
+  <!-- Header underline (incised) -->
+  <line x1="100" y1="195" x2="1100" y2="195" stroke="#3a2410" stroke-width="2" opacity="0.55"/>
+
+  <!-- ============ MAP CARTOUCHE ============ -->
+  <g transform="translate(600 800)">
+
+    <!-- THREE OUTER TRIANGLES (chimera-logo style, 3-fold symmetry) -->
+    <g stroke="#3a2410" stroke-width="3" stroke-linejoin="round" fill="#a9885a" opacity="0.95">
+      <!-- Upward triangle -->
+      <polygon points="190,-329 -190,-329 0,-560"/>
+      <!-- Lower-right triangle -->
+      <polygon points="190,329 380,0 530,290"/>
+      <!-- Lower-left triangle -->
+      <polygon points="-380,0 -190,329 -530,290"/>
+    </g>
+
+    <!-- HEXAGON OUTER RIM (heavy etched line) -->
+    <polygon points="380,0 190,-329 -190,-329 -380,0 -190,329 190,329" fill="#9c7a4c" stroke="#3a2410" stroke-width="4"/>
+    <!-- HEXAGON INNER INSET (lighter ring) -->
+    <polygon points="354,0 177,-307 -177,-307 -354,0 -177,307 177,307" fill="#a9885a" stroke="#3a2410" stroke-width="1" opacity="0.7"/>
+
+    <!-- ============ EURASIAN MAP INSIDE HEX ============ -->
+    <!-- Clipping path so geography stays inside the hex -->
+    <clipPath id="hexclip">
+      <polygon points="354,0 177,-307 -177,-307 -354,0 -177,307 177,307"/>
+    </clipPath>
+
+    <g clip-path="url(#hexclip)" stroke="#3a2410" stroke-linejoin="round" stroke-linecap="round" fill="none">
+
+      <!-- Northern landmass (Siberia / steppes outline along upper edge) -->
+      <path d="M -350 -260 Q -270 -290 -180 -270 T 30 -280 T 240 -270 T 350 -250" stroke-width="3"/>
+
+      <!-- Caspian Sea (small enclosed oval, west of Pamir) -->
+      <ellipse cx="-160" cy="-60" rx="22" ry="42" stroke-width="2.5" fill="#7a5832"/>
+
+      <!-- Aral Sea (smaller, NE of Caspian) -->
+      <ellipse cx="-90" cy="-110" rx="14" ry="20" stroke-width="2" fill="#7a5832"/>
+
+      <!-- Black Sea (NW) -->
+      <ellipse cx="-250" cy="-100" rx="40" ry="20" stroke-width="2.5" fill="#7a5832"/>
+
+      <!-- Mediterranean (far west) -->
+      <path d="M -354 -90 Q -310 -80 -290 -110 Q -270 -90 -310 -60 Q -340 -50 -354 -60 Z" stroke-width="2.5" fill="#7a5832"/>
+
+      <!-- Persian Gulf -->
+      <path d="M -210 50 Q -180 70 -150 70 Q -120 90 -150 105 Q -195 90 -210 70 Z" stroke-width="2.5" fill="#7a5832"/>
+
+      <!-- Arabian Peninsula coastline (south-west) -->
+      <path d="M -280 60 Q -260 110 -230 150 Q -200 180 -170 180 Q -140 175 -130 150 Q -150 110 -180 80 Q -220 60 -280 60 Z" stroke-width="3" fill="none"/>
+
+      <!-- Indian subcontinent (south-east of Pamir) -->
+      <path d="M 30 120 Q 60 140 90 180 Q 110 230 100 270 Q 80 295 60 275 Q 50 240 30 200 Q 10 160 30 120 Z" stroke-width="3" fill="none"/>
+
+      <!-- Africa edge (lower-left corner of view, just a curve) -->
+      <path d="M -354 200 Q -320 230 -300 270 Q -280 305 -240 307" stroke-width="3"/>
+
+      <!-- East Asia coast (right side) -->
+      <path d="M 354 -150 Q 320 -100 290 -40 Q 280 30 290 80 Q 310 160 340 230 Q 354 270 354 307" stroke-width="3"/>
+
+      <!-- Anatolia / Greece -->
+      <path d="M -300 -130 Q -270 -135 -240 -125 Q -220 -110 -240 -90 Q -270 -85 -290 -100 Z" stroke-width="2.5"/>
+
+      <!-- ===== MOUNTAINS ===== -->
+      <!-- Himalayan arc (south-east of Pamir, going east) -->
+      <g fill="#3a2410" opacity="0.85" stroke="none">
+        <polygon points="10,30 20,45 0,45"/>
+        <polygon points="30,40 42,58 18,58"/>
+        <polygon points="55,55 70,76 40,76"/>
+        <polygon points="85,75 102,98 68,98"/>
+        <polygon points="118,98 134,118 102,118"/>
+        <polygon points="148,120 162,138 134,138"/>
+      </g>
+      <!-- Tian Shan (north-east of Pamir) -->
+      <g fill="#3a2410" opacity="0.85" stroke="none">
+        <polygon points="20,-30 32,-12 8,-12"/>
+        <polygon points="48,-55 60,-37 36,-37"/>
+        <polygon points="78,-80 90,-62 66,-62"/>
+        <polygon points="108,-100 120,-82 96,-82"/>
+      </g>
+      <!-- Hindu Kush (south-west of Pamir) -->
+      <g fill="#3a2410" opacity="0.85" stroke="none">
+        <polygon points="-20,30 -8,48 -32,48"/>
+        <polygon points="-45,55 -32,74 -58,74"/>
+        <polygon points="-72,82 -58,100 -86,100"/>
+      </g>
+      <!-- Caucasus (between Black and Caspian) -->
+      <g fill="#3a2410" opacity="0.85" stroke="none">
+        <polygon points="-200,-90 -190,-76 -210,-76"/>
+        <polygon points="-180,-78 -170,-64 -190,-64"/>
+      </g>
+
+      <!-- ===== RIVERS ===== -->
+      <!-- Indus: from Pamir SE to Indian Ocean -->
+      <path d="M 0 0 Q 20 50 50 110 Q 60 170 70 250" stroke="#3a2410" stroke-width="2.5" fill="none" opacity="0.85"/>
+      <!-- Amu Darya (Oxus): Pamir to Aral -->
+      <path d="M 0 0 Q -30 -30 -60 -50 Q -85 -90 -90 -110" stroke="#3a2410" stroke-width="2.5" fill="none" opacity="0.85"/>
+      <!-- Syr Darya: Tian Shan to Aral -->
+      <path d="M 90 -80 Q 40 -90 0 -100 Q -50 -105 -90 -110" stroke="#3a2410" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Tigris-Euphrates -->
+      <path d="M -240 -80 Q -230 -40 -210 0 Q -200 30 -195 60" stroke="#3a2410" stroke-width="2" fill="none" opacity="0.8"/>
+      <path d="M -250 -70 Q -225 -30 -215 5 L -205 55" stroke="#3a2410" stroke-width="2" fill="none" opacity="0.7"/>
+      <!-- Ganges (east of Indus) -->
+      <path d="M 50 60 Q 80 90 110 150 Q 130 200 150 240" stroke="#3a2410" stroke-width="2.5" fill="none" opacity="0.85"/>
+      <!-- Nile (far south-west) -->
+      <path d="M -260 165 Q -250 220 -240 290" stroke="#3a2410" stroke-width="2.5" fill="none" opacity="0.85"/>
+      <!-- Yangtze (far east) -->
+      <path d="M 160 -50 Q 220 0 280 60 Q 320 100 340 130" stroke="#3a2410" stroke-width="2" fill="none" opacity="0.75"/>
+
+      <!-- ===== PAMIR DESTINATION MARKER ===== -->
+      <!-- Concentric mark, drilled and inscribed -->
+      <g>
+        <circle cx="0" cy="0" r="22" fill="#5a3a1a" stroke="#3a2410" stroke-width="2"/>
+        <circle cx="0" cy="0" r="14" fill="#a9885a" stroke="#3a2410" stroke-width="1.5"/>
+        <circle cx="0" cy="0" r="6" fill="#3a2410"/>
+        <!-- Radiating wedges (eight points) -->
+        <g fill="#3a2410" stroke="none">
+          <polygon points="0,-34 -3,-24 3,-24"/>
+          <polygon points="0,34 -3,24 3,24"/>
+          <polygon points="-34,0 -24,-3 -24,3"/>
+          <polygon points="34,0 24,-3 24,3"/>
+          <polygon points="-24,-24 -19,-17 -17,-19"/>
+          <polygon points="24,-24 17,-19 19,-17"/>
+          <polygon points="-24,24 -17,19 -19,17"/>
+          <polygon points="24,24 19,17 17,19"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- ============ CUNEIFORM ANNOTATIONS AROUND THE HEX ============ -->
+    <!-- Each cardinal direction labelled with cuneiform glyph cluster -->
+    <!-- North label -->
+    <g transform="translate(-60 -355)">
+      <use href="#glyphC" x="0" y="0"/>
+      <use href="#glyphA" x="70" y="0"/>
+    </g>
+    <!-- South label -->
+    <g transform="translate(-60 345)">
+      <use href="#glyphD" x="0" y="0"/>
+      <use href="#glyphB" x="70" y="0"/>
+    </g>
+    <!-- East label -->
+    <g transform="translate(395 -10)">
+      <use href="#glyphA" x="0" y="0"/>
+    </g>
+    <!-- West label -->
+    <g transform="translate(-455 -10)">
+      <use href="#glyphB" x="0" y="0"/>
+    </g>
+
+    <!-- COORDINATE PAIR: Pamir at 73 / 38 in cuneiform -->
+    <!-- 73 (lon): one vertical + winkel + 3 verticals -->
+    <g transform="translate(45 -45)">
+      <use href="#n1" x="0" y="0"/>
+      <use href="#n13" x="22" y="0"/>
+    </g>
+    <!-- 38 (lat): 3 winkel + 8 verticals -->
+    <g transform="translate(35 25)">
+      <use href="#n38" x="0" y="0"/>
+    </g>
+    <!-- Divider between coordinate pair and the marker -->
+    <path d="M 25 -30 L 40 -10" stroke="#3a2410" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- DISTANCE NUMERALS scattered on map edges (bēru units) -->
+    <!-- East edge -->
+    <g transform="translate(290 -200)"><use href="#n10" x="0" y="0"/><use href="#n3" x="22" y="0"/></g>
+    <g transform="translate(290 200)"><use href="#n10" x="0" y="0"/><use href="#n4" x="22" y="0"/></g>
+    <!-- West edge -->
+    <g transform="translate(-310 -200)"><use href="#n10" x="0" y="0"/><use href="#n2" x="22" y="0"/></g>
+    <g transform="translate(-310 200)"><use href="#n10" x="0" y="0"/><use href="#n1" x="22" y="0"/></g>
+    <!-- North edge -->
+    <g transform="translate(-30 -290)"><use href="#n8" x="0" y="0"/></g>
+    <g transform="translate(120 -290)"><use href="#n10" x="0" y="0"/></g>
+    <g transform="translate(-180 -290)"><use href="#n10" x="0" y="0"/></g>
+    <!-- South edge -->
+    <g transform="translate(-30 270)"><use href="#n10" x="0" y="0"/><use href="#n2" x="22" y="0"/></g>
+    <g transform="translate(140 270)"><use href="#n8" x="0" y="0"/></g>
+    <g transform="translate(-180 270)"><use href="#n3" x="0" y="0"/></g>
+
+    <!-- ANNOTATIONS INSIDE EACH OF THE 3 OUTER TRIANGLES -->
+    <!-- Top triangle -->
+    <g transform="translate(-30 -460)">
+      <use href="#glyphA" x="0" y="0"/>
+      <use href="#wV" x="0" y="60" width="12" height="22"/>
+      <use href="#wV" x="14" y="60" width="12" height="22"/>
+    </g>
+    <!-- Lower-right triangle -->
+    <g transform="translate(335 230)">
+      <use href="#glyphB" x="0" y="0"/>
+      <use href="#winkel" x="0" y="60" width="18" height="18"/>
+    </g>
+    <!-- Lower-left triangle -->
+    <g transform="translate(-410 230)">
+      <use href="#glyphC" x="0" y="0"/>
+      <use href="#winkel" x="0" y="60" width="18" height="18"/>
+    </g>
+
+    <!-- Subtle line from Pamir to each triangle apex (alignment marks) -->
+    <g stroke="#3a2410" stroke-width="0.6" opacity="0.35" stroke-dasharray="2 4" fill="none">
+      <line x1="0" y1="0" x2="0" y2="-560"/>
+      <line x1="0" y1="0" x2="530" y2="290"/>
+      <line x1="0" y1="0" x2="-530" y2="290"/>
+    </g>
+  </g>
+
+  <!-- ============ DENSE CUNEIFORM SIDE COLUMNS ============ -->
+  <!-- Left column inscription (vertical strip beside hex) -->
+  <g transform="translate(80 260)">
+    <use href="#glyphA" x="0" y="0"/>
+    <use href="#glyphC" x="0" y="70"/>
+    <use href="#glyphB" x="0" y="140"/>
+    <use href="#glyphD" x="0" y="210"/>
+    <use href="#glyphA" x="0" y="280"/>
+    <use href="#glyphB" x="0" y="350"/>
+    <use href="#glyphC" x="0" y="420"/>
+    <use href="#glyphD" x="0" y="490"/>
+    <use href="#glyphA" x="0" y="560"/>
+    <use href="#glyphC" x="0" y="630"/>
+    <use href="#glyphB" x="0" y="700"/>
+    <use href="#glyphD" x="0" y="770"/>
+    <use href="#glyphA" x="0" y="840"/>
+    <use href="#glyphC" x="0" y="910"/>
+  </g>
+  <!-- Vertical divider line left column -->
+  <line x1="160" y1="250" x2="160" y2="1190" stroke="#3a2410" stroke-width="1" opacity="0.45"/>
+
+  <!-- Right column inscription -->
+  <g transform="translate(1010 260)">
+    <use href="#glyphC" x="0" y="0"/>
+    <use href="#glyphB" x="0" y="70"/>
+    <use href="#glyphD" x="0" y="140"/>
+    <use href="#glyphA" x="0" y="210"/>
+    <use href="#glyphC" x="0" y="280"/>
+    <use href="#glyphD" x="0" y="350"/>
+    <use href="#glyphB" x="0" y="420"/>
+    <use href="#glyphA" x="0" y="490"/>
+    <use href="#glyphC" x="0" y="560"/>
+    <use href="#glyphB" x="0" y="630"/>
+    <use href="#glyphD" x="0" y="700"/>
+    <use href="#glyphA" x="0" y="770"/>
+    <use href="#glyphC" x="0" y="840"/>
+    <use href="#glyphB" x="0" y="910"/>
+  </g>
+  <line x1="995" y1="250" x2="995" y2="1190" stroke="#3a2410" stroke-width="2" opacity="0.45"/>
+
+  <!-- Extra header row (second row of cuneiform under first) -->
+  <g transform="translate(120 220)">
+    <use href="#glyphB" x="0" y="0"/>
+    <use href="#glyphD" x="80" y="0"/>
+    <use href="#glyphA" x="180" y="0"/>
+    <use href="#glyphC" x="260" y="0"/>
+    <use href="#glyphD" x="340" y="0"/>
+    <use href="#glyphB" x="420" y="0"/>
+    <use href="#glyphA" x="500" y="0"/>
+    <use href="#glyphC" x="600" y="0"/>
+    <use href="#glyphD" x="680" y="0"/>
+    <use href="#glyphB" x="760" y="0"/>
+    <use href="#glyphA" x="860" y="0"/>
+  </g>
+
+  <!-- BOTTOM CUNEIFORM BAND (first row) -->
+  <g transform="translate(120 1240)">
+    <use href="#glyphD" x="0" y="0"/>
+    <use href="#glyphB" x="80" y="0"/>
+    <use href="#glyphA" x="160" y="0"/>
+    <use href="#glyphC" x="240" y="0"/>
+    <use href="#glyphB" x="320" y="0"/>
+    <use href="#glyphD" x="400" y="0"/>
+    <use href="#glyphA" x="480" y="0"/>
+    <use href="#glyphC" x="560" y="0"/>
+    <use href="#glyphB" x="640" y="0"/>
+    <use href="#glyphD" x="720" y="0"/>
+    <use href="#glyphA" x="800" y="0"/>
+    <use href="#glyphC" x="880" y="0"/>
+  </g>
+  <!-- BOTTOM CUNEIFORM BAND (second row) -->
+  <g transform="translate(120 1320)">
+    <use href="#glyphA" x="0" y="0"/>
+    <use href="#glyphC" x="80" y="0"/>
+    <use href="#glyphD" x="160" y="0"/>
+    <use href="#glyphB" x="240" y="0"/>
+    <use href="#glyphA" x="320" y="0"/>
+    <use href="#glyphD" x="400" y="0"/>
+    <use href="#glyphC" x="480" y="0"/>
+    <use href="#glyphB" x="560" y="0"/>
+    <use href="#glyphA" x="640" y="0"/>
+    <use href="#glyphD" x="720" y="0"/>
+    <use href="#glyphC" x="800" y="0"/>
+    <use href="#glyphB" x="880" y="0"/>
+  </g>
+  <line x1="100" y1="1220" x2="1100" y2="1220" stroke="#3a2410" stroke-width="2" opacity="0.55"/>
+  <line x1="100" y1="1295" x2="1100" y2="1295" stroke="#3a2410" stroke-width="1" opacity="0.4"/>
+
+  <!-- Small scribe's mark (corner signature) -->
+  <g transform="translate(1040 1380)">
+    <use href="#wD" x="0" y="0" width="18" height="18"/>
+    <use href="#wV" x="22" y="0" width="12" height="22"/>
+  </g>
+  <g transform="translate(80 1380)">
+    <use href="#winkel" x="0" y="0" width="18" height="18"/>
+  </g>
+
+  <!-- Final grain overlay -->
+  <rect x="30" y="40" width="1140" height="1400" rx="48" ry="48" fill="#000" filter="url(#grain)" opacity="0.18"/>
+
+  <!-- ============================================================ -->
+  <!-- FRACTURE LINES — tablet broken into 4 irregular fragments -->
+  <!-- Drawn last so they overlay everything. -->
+  <!-- ============================================================ -->
+
+  <defs>
+    <!-- Drop-shadow blur for the crack to feel like depth -->
+    <filter id="crackshadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <!-- Roughening filter — turbulent displacement gives micro-zigzag to any stroke -->
+    <filter id="cracky" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="3" seed="31"/>
+      <feDisplacementMap in="SourceGraphic" scale="11"/>
+    </filter>
+    <filter id="cracky2" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="3" seed="47"/>
+      <feDisplacementMap in="SourceGraphic" scale="9"/>
+    </filter>
+    <filter id="cracky3" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="2" seed="59"/>
+      <feDisplacementMap in="SourceGraphic" scale="13"/>
+    </filter>
+    <filter id="crackyFine" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.35" numOctaves="2" seed="71"/>
+      <feDisplacementMap in="SourceGraphic" scale="3"/>
+    </filter>
+  </defs>
+
+  <!-- Crack A: diagonal from upper-left to lower-right, gentle curves, occasional kinks -->
+  <!-- Crack B: diagonal from middle-left edge to upper-right edge, crossing crack A -->
+  <!-- Together they create 4 irregular fragments (none square, none symmetrical) -->
+
+  <!-- ====================================================== -->
+  <!-- FRACTURE: hand-written polyline paths with ~45 irregular -->
+  <!-- waypoints each. The cracks change direction unpredictably, -->
+  <!-- jog sideways, sometimes double back. No smooth curves.   -->
+  <!-- ====================================================== -->
+
+  <!-- Crack A path data (re-used) -->
+  <defs>
+    <path id="crackA" d="
+      M 405,40
+      L 422,68 L 415,95 L 432,118 L 425,142 L 446,168 L 438,192 L 452,222
+      L 470,246 L 458,272 L 478,298 L 490,326 L 478,352 L 462,380 L 488,408
+      L 510,432 L 498,460 L 522,490 L 545,510 L 568,532 L 590,562 L 612,592
+      L 638,612 L 660,628 L 642,658 L 622,682 L 638,712 L 660,740 L 642,768
+      L 622,790 L 644,818 L 670,838 L 658,868 L 678,898 L 698,920 L 682,948
+      L 700,978 L 720,1008 L 708,1038 L 690,1062 L 712,1088 L 732,1118
+      L 720,1148 L 740,1178 L 758,1208 L 748,1238 L 768,1268 L 786,1298
+      L 778,1328 L 798,1360 L 810,1392 L 800,1420 L 820,1440"/>
+    <!-- Crack B path data (re-used) -->
+    <path id="crackB" d="
+      M 30,560
+      L 62,558 L 88,572 L 115,564 L 142,580 L 168,572 L 198,586 L 222,576
+      L 248,594 L 275,584 L 302,602 L 332,594 L 360,612 L 388,608 L 408,572
+      L 422,540 L 448,532 L 478,558 L 508,588 L 538,604 L 568,618 L 598,640
+      L 628,650 L 658,668 L 685,680 L 712,692 L 740,704 L 765,720 L 790,728
+      L 815,720 L 842,738 L 870,748 L 898,754 L 925,748 L 952,762 L 980,772
+      L 1008,768 L 1035,780 L 1062,792 L 1090,790 L 1118,800 L 1148,798 L 1170,795"/>
+  </defs>
+
+  <!-- Diffuse depth shadow under both cracks -->
+  <g filter="url(#crackshadow)" opacity="0.50">
+    <use href="#crackA" stroke="#1a1208" stroke-width="11" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    <use href="#crackB" stroke="#1a1208" stroke-width="11" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+
+  <!-- Main dark fracture lines (raw — already irregular from waypoints) -->
+  <g>
+    <use href="#crackA" stroke="#1f140a" stroke-width="3" fill="none" stroke-linejoin="miter" stroke-linecap="round" opacity="0.88"/>
+    <use href="#crackB" stroke="#1f140a" stroke-width="3" fill="none" stroke-linejoin="miter" stroke-linecap="round" opacity="0.88"/>
+  </g>
+
+  <!-- Twin overlay path slightly offset (a real fracture's two walls aren't perfectly aligned — gives the line a sense of width and irregularity) -->
+  <g opacity="0.55">
+    <use href="#crackA" stroke="#3a2410" stroke-width="1.5" fill="none" stroke-linejoin="miter" stroke-linecap="round" transform="translate(2 -1)"/>
+    <use href="#crackB" stroke="#3a2410" stroke-width="1.5" fill="none" stroke-linejoin="miter" stroke-linecap="round" transform="translate(-1 2)"/>
+  </g>
+
+  <!-- Highlight rim on the down-light side -->
+  <g opacity="0.30">
+    <use href="#crackA" stroke="#d6c9ad" stroke-width="0.9" fill="none" stroke-linejoin="miter" transform="translate(2.5 2.5)"/>
+    <use href="#crackB" stroke="#d6c9ad" stroke-width="0.9" fill="none" stroke-linejoin="miter" transform="translate(1 2.5)"/>
+  </g>
+
+  <!-- Faded sections — short stone-coloured overlays in 3-4 places per crack, simulating segments where the fracture barely shows -->
+  <g stroke="#a39076" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.55">
+    <!-- Crack A fade points -->
+    <path d="M 470,246 L 478,298 L 490,326"/>
+    <path d="M 700,978 L 720,1008 L 708,1038"/>
+    <!-- Crack B fade points -->
+    <path d="M 248,594 L 275,584 L 302,602"/>
+    <path d="M 870,748 L 898,754 L 925,748"/>
+  </g>
+
+  <!-- Hairline branch fractures: small offshoots from the main cracks (these don't separate fragments — they're just stress branches) -->
+  <g stroke="#1f140a" stroke-width="1.1" fill="none" stroke-linejoin="miter" opacity="0.65">
+    <path d="M 488,408 L 478,425 L 492,448 L 482,470"/>
+    <path d="M 660,740 L 685,748 L 702,760 L 720,758"/>
+    <path d="M 720,1008 L 750,1015 L 768,1028 L 778,1048"/>
+    <path d="M 478,558 L 462,572 L 470,592 L 458,610"/>
+    <path d="M 760,720 L 768,742 L 782,762 L 778,785"/>
+    <path d="M 295,605 L 282,624 L 290,648 L 280,668"/>
+    <path d="M 588,562 L 595,548 L 612,538 L 625,548"/>
+  </g>
+
+  <!-- Small chip ellipses scattered along the cracks (varied rotation, varied size) -->
+  <g fill="#1a0e06" opacity="0.7">
+    <ellipse cx="498" cy="460" rx="2.4" ry="1.5" transform="rotate(38 498 460)"/>
+    <ellipse cx="612" cy="592" rx="2.8" ry="1.9" transform="rotate(52 612 592)"/>
+    <ellipse cx="642" cy="658" rx="2" ry="1.3" transform="rotate(75 642 658)"/>
+    <ellipse cx="720,1008" rx="3.2" ry="2.1" transform="rotate(48 720 1008)"/>
+    <ellipse cx="408" cy="572" rx="2.2" ry="1.4" transform="rotate(15 408 572)"/>
+    <ellipse cx="678" cy="685" rx="1.7" ry="1.1" transform="rotate(22 678 685)"/>
+    <ellipse cx="952" cy="762" rx="2.6" ry="1.5" transform="rotate(6 952 762)"/>
+    <ellipse cx="448" cy="532" rx="2" ry="1.3" transform="rotate(-30 448 532)"/>
+    <ellipse cx="778" cy="1328" rx="1.8" ry="1.2" transform="rotate(58 778 1328)"/>
+    <ellipse cx="445" cy="168" rx="1.5" ry="1" transform="rotate(45 445 168)"/>
+  </g>
+
+</svg>

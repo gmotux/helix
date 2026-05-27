@@ -1,0 +1,375 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500"
+     font-family="'Garamond','EB Garamond','Times New Roman',serif">
+  <defs>
+    <!-- Paper grain (very subtle) -->
+    <filter id="paperGrain" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="9"/>
+      <feColorMatrix values="0 0 0 0 0.35  0 0 0 0 0.30  0 0 0 0 0.22  0 0 0 0.10 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- Paper foxing / age stains (large irregular blotches) -->
+    <filter id="foxing" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="17"/>
+      <feColorMatrix values="0 0 0 0 0.52  0 0 0 0 0.42  0 0 0 0 0.28  0 0 0 0.30 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- Subtle ink-bleed displacement (gives lines a slightly hand-drawn quality) -->
+    <filter id="inkbleed" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="21"/>
+      <feDisplacementMap in="SourceGraphic" scale="0.7"/>
+    </filter>
+
+    <!-- Crack A path (SAME geometry as the tablet — dashed here so it can be cut with scissors) -->
+    <path id="crackA" d="
+      M 405,40
+      L 422,68 L 415,95 L 432,118 L 425,142 L 446,168 L 438,192 L 452,222
+      L 470,246 L 458,272 L 478,298 L 490,326 L 478,352 L 462,380 L 488,408
+      L 510,432 L 498,460 L 522,490 L 545,510 L 568,532 L 590,562 L 612,592
+      L 638,612 L 660,628 L 642,658 L 622,682 L 638,712 L 660,740 L 642,768
+      L 622,790 L 644,818 L 670,838 L 658,868 L 678,898 L 698,920 L 682,948
+      L 700,978 L 720,1008 L 708,1038 L 690,1062 L 712,1088 L 732,1118
+      L 720,1148 L 740,1178 L 758,1208 L 748,1238 L 768,1268 L 786,1298
+      L 778,1328 L 798,1360 L 810,1392 L 800,1420 L 820,1440"/>
+    <!-- Crack B path (SAME geometry as the tablet) -->
+    <path id="crackB" d="
+      M 30,560
+      L 62,558 L 88,572 L 115,564 L 142,580 L 168,572 L 198,586 L 222,576
+      L 248,594 L 275,584 L 302,602 L 332,594 L 360,612 L 388,608 L 408,572
+      L 422,540 L 448,532 L 478,558 L 508,588 L 538,604 L 568,618 L 598,640
+      L 628,650 L 658,668 L 685,680 L 712,692 L 740,704 L 765,720 L 790,728
+      L 815,720 L 842,738 L 870,748 L 898,754 L 925,748 L 952,762 L 980,772
+      L 1008,768 L 1035,780 L 1062,792 L 1090,790 L 1118,800 L 1148,798 L 1170,795"/>
+  </defs>
+
+  <!-- ============ PAPER ============ -->
+  <rect x="0" y="0" width="1200" height="1500" fill="#f6ecd6"/>
+  <!-- Subtle foxing stains -->
+  <rect x="0" y="0" width="1200" height="1500" fill="#000" filter="url(#foxing)" opacity="0.45"/>
+  <!-- Sand grain -->
+  <rect x="0" y="0" width="1200" height="1500" fill="#000" filter="url(#paperGrain)" opacity="0.30"/>
+  <!-- Page border (rough drawn pencil rectangle) -->
+  <rect x="50" y="50" width="1100" height="1400" fill="none" stroke="#3a322a" stroke-width="1" opacity="0.35"/>
+  <rect x="60" y="60" width="1080" height="1380" fill="none" stroke="#3a322a" stroke-width="0.4" opacity="0.20"/>
+
+  <!-- ============ HEADER ============ -->
+  <text x="600" y="115" text-anchor="middle" font-size="32" font-style="italic" font-weight="700" fill="#1a1612" letter-spacing="2">
+    Pamir Tablet — Translation &amp; Interpretation
+  </text>
+  <text x="600" y="148" text-anchor="middle" font-size="16" font-style="italic" fill="#3a322a">
+    Reading of the proto-cuneiform inscription on fragment HF-A-1 (clay, ca. 2nd millennium BCE)
+  </text>
+  <line x1="200" y1="170" x2="1000" y2="170" stroke="#1a1612" stroke-width="0.8" opacity="0.5"/>
+  <line x1="280" y1="178" x2="920" y2="178" stroke="#1a1612" stroke-width="0.4" opacity="0.35"/>
+
+  <!-- ============ MAP CARTOUCHE ============ -->
+  <g transform="translate(600 800)">
+    <!-- Three outer triangles (chimera-logo style) -->
+    <g stroke="#1a1612" stroke-width="1.4" stroke-linejoin="round" fill="none" filter="url(#inkbleed)">
+      <polygon points="190,-329 -190,-329 0,-560"/>
+      <polygon points="190,329 380,0 530,290"/>
+      <polygon points="-380,0 -190,329 -530,290"/>
+    </g>
+
+    <!-- Hexagon -->
+    <polygon points="380,0 190,-329 -190,-329 -380,0 -190,329 190,329"
+             fill="none" stroke="#1a1612" stroke-width="1.6" filter="url(#inkbleed)"/>
+
+    <!-- Inner clip for geography -->
+    <clipPath id="hexclipT">
+      <polygon points="378,0 188,-327 -188,-327 -378,0 -188,327 188,327"/>
+    </clipPath>
+
+    <g clip-path="url(#hexclipT)" stroke="#1a1612" fill="none" filter="url(#inkbleed)">
+
+      <!-- Stylised but more accurate Eurasia silhouette -->
+      <!-- Northern landmass (Siberia / steppes) -->
+      <path d="M -378 -240 Q -300 -270 -200 -260 T 50 -270 T 280 -250 T 378 -230" stroke-width="1.6"/>
+
+      <!-- Caspian -->
+      <ellipse cx="-160" cy="-60" rx="22" ry="44" stroke-width="1.4" fill="#e0d2b0"/>
+      <!-- Aral -->
+      <ellipse cx="-92" cy="-118" rx="14" ry="20" stroke-width="1.2" fill="#e0d2b0"/>
+      <!-- Black Sea -->
+      <ellipse cx="-258" cy="-108" rx="44" ry="22" stroke-width="1.4" fill="#e0d2b0"/>
+      <!-- Mediterranean -->
+      <path d="M -378 -100 Q -330 -88 -300 -120 Q -270 -88 -310 -55 Q -348 -50 -378 -64 Z" stroke-width="1.4" fill="#e0d2b0"/>
+      <!-- Persian Gulf -->
+      <path d="M -215 50 Q -180 72 -148 72 Q -122 92 -150 108 Q -198 92 -215 70 Z" stroke-width="1.4" fill="#e0d2b0"/>
+      <!-- Arabian Peninsula -->
+      <path d="M -284 60 Q -262 110 -232 152 Q -202 184 -172 184 Q -140 178 -132 152 Q -152 110 -180 80 Q -222 60 -284 60 Z" stroke-width="1.6"/>
+      <!-- India -->
+      <path d="M 28 122 Q 60 142 92 184 Q 112 234 102 274 Q 80 298 60 278 Q 50 242 30 200 Q 8 162 28 122 Z" stroke-width="1.6"/>
+      <!-- Africa -->
+      <path d="M -378 200 Q -340 230 -315 270 Q -285 305 -245 320" stroke-width="1.6"/>
+      <!-- East Asia coast -->
+      <path d="M 378 -150 Q 340 -98 305 -38 Q 290 30 300 80 Q 322 160 348 230 Q 365 275 378 320" stroke-width="1.6"/>
+      <!-- Anatolia -->
+      <path d="M -300 -130 Q -270 -135 -240 -125 Q -220 -110 -240 -90 Q -270 -85 -290 -100 Z" stroke-width="1.4"/>
+
+      <!-- Mountains as small chevrons -->
+      <g stroke-width="1.2">
+        <!-- Himalayas -->
+        <g><path d="M 10,30 l 5,12 l 5,-12"/><path d="M 24,40 l 5,14 l 5,-14"/><path d="M 40,55 l 6,16 l 6,-16"/><path d="M 60,72 l 7,18 l 7,-18"/><path d="M 84,92 l 7,18 l 7,-18"/><path d="M 110,115 l 7,18 l 7,-18"/></g>
+        <!-- Tian Shan -->
+        <g><path d="M 22,-32 l 6,16 l 6,-16"/><path d="M 44,-50 l 6,16 l 6,-16"/><path d="M 70,-72 l 7,18 l 7,-18"/><path d="M 100,-92 l 7,18 l 7,-18"/></g>
+        <!-- Hindu Kush -->
+        <g><path d="M -18,30 l 5,14 l 5,-14"/><path d="M -38,55 l 6,16 l 6,-16"/><path d="M -62,80 l 6,16 l 6,-16"/></g>
+        <!-- Caucasus -->
+        <g><path d="M -200,-90 l 5,14 l 5,-14"/><path d="M -184,-78 l 5,14 l 5,-14"/></g>
+      </g>
+
+      <!-- Rivers (thinner ink) -->
+      <g stroke-width="1.1" opacity="0.92">
+        <!-- Indus -->
+        <path d="M 0 0 Q 22 50 50 110 Q 60 170 70 248"/>
+        <!-- Amu Darya -->
+        <path d="M 0 0 Q -28 -28 -58 -52 Q -82 -90 -92 -118"/>
+        <!-- Syr Darya -->
+        <path d="M 88 -78 Q 38 -90 0 -100 Q -50 -108 -92 -118" stroke-width="0.9"/>
+        <!-- Tigris -->
+        <path d="M -244 -82 Q -232 -38 -210 0 Q -200 32 -195 60"/>
+        <!-- Euphrates -->
+        <path d="M -254 -68 Q -228 -28 -218 8 L -208 56" stroke-width="0.9"/>
+        <!-- Ganges -->
+        <path d="M 50 60 Q 80 92 110 148 Q 130 200 150 240"/>
+        <!-- Nile -->
+        <path d="M -260 168 Q -252 222 -240 290"/>
+        <!-- Yangtze -->
+        <path d="M 158 -52 Q 218 -2 280 58 Q 320 100 342 130" stroke-width="0.9"/>
+      </g>
+
+      <!-- Pamir marker — drawn as a target -->
+      <g>
+        <circle cx="0" cy="0" r="22" fill="none" stroke="#1a1612" stroke-width="2"/>
+        <circle cx="0" cy="0" r="13" fill="none" stroke="#1a1612" stroke-width="1.4"/>
+        <circle cx="0" cy="0" r="5" fill="#8a3018" stroke="none"/>
+        <line x1="-30" y1="0" x2="-22" y2="0" stroke="#1a1612" stroke-width="1.4"/>
+        <line x1="22" y1="0" x2="30" y2="0" stroke="#1a1612" stroke-width="1.4"/>
+        <line x1="0" y1="-30" x2="0" y2="-22" stroke="#1a1612" stroke-width="1.4"/>
+        <line x1="0" y1="22" x2="0" y2="30" stroke="#1a1612" stroke-width="1.4"/>
+      </g>
+    </g>
+
+    <!-- LABELS over the map -->
+    <g fill="#1a1612" font-size="13" font-style="italic">
+      <text x="-225" y="-130" text-anchor="middle">Pontus Euxinus</text>
+      <text x="-225" y="-115" text-anchor="middle" font-size="10">(Black Sea)</text>
+
+      <text x="-150" y="-30" text-anchor="middle">Mare Caspium</text>
+      <text x="-150" y="-15" text-anchor="middle" font-size="10">(Caspian)</text>
+
+      <text x="-345" y="-72" text-anchor="middle">Mare Internum</text>
+
+      <text x="-180" y="200" text-anchor="middle">Arabia</text>
+
+      <text x="-178" y="78" text-anchor="middle" font-size="11">Sinus Persicus</text>
+
+      <text x="80" y="240" text-anchor="middle">India</text>
+
+      <text x="-300" y="270" text-anchor="middle">Aegyptus</text>
+
+      <text x="260" y="-40" text-anchor="middle">Serica</text>
+      <text x="260" y="-25" text-anchor="middle" font-size="10">(China)</text>
+
+      <text x="40" y="-50" text-anchor="middle" font-size="11">Tian Shan</text>
+      <text x="80" y="100" text-anchor="middle" font-size="11">Himalāya</text>
+      <text x="-60" y="80" text-anchor="middle" font-size="11">Hindu Kush</text>
+
+      <!-- Rivers -->
+      <text x="-55" y="-72" font-size="10" font-style="italic">Oxus</text>
+      <text x="-45" y="-130" font-size="10" font-style="italic">Iaxartes</text>
+      <text x="60" y="170" font-size="10" font-style="italic">Indus</text>
+      <text x="125" y="170" font-size="10" font-style="italic">Gaṅgā</text>
+      <text x="-225" y="0" font-size="10" font-style="italic">Tigris</text>
+      <text x="-208" y="40" font-size="10" font-style="italic">Eu.</text>
+      <text x="-256" y="252" font-size="10" font-style="italic">Nilus</text>
+    </g>
+
+    <!-- Pamir marker label (in red ink, prominent) -->
+    <g fill="#8a3018" font-size="16" font-style="italic" font-weight="700">
+      <text x="38" y="-12" text-anchor="start">PAMIR</text>
+      <text x="38" y="6" font-size="11" font-style="italic" font-weight="400" fill="#5a2010">38°N · 73°E</text>
+      <text x="38" y="20" font-size="10" font-style="italic" font-weight="400" fill="#3a1808">approx. Fedchenko region</text>
+      <text x="38" y="32" font-size="10" font-style="italic" font-weight="400" fill="#3a1808">eastern Tajikistan</text>
+    </g>
+    <!-- Arrow from label to marker -->
+    <path d="M 36,-10 Q 24,-4 6,-2" stroke="#8a3018" stroke-width="1.2" fill="none"/>
+    <polygon points="6,-2 14,-7 12,1" fill="#8a3018"/>
+
+    <!-- Triangle labels -->
+    <g fill="#1a1612" font-size="14" font-style="italic">
+      <text x="0" y="-470" text-anchor="middle">NORTH ARM</text>
+      <text x="0" y="-454" text-anchor="middle" font-size="10">"the cold quarter"</text>
+
+      <text x="425" y="230" text-anchor="middle" transform="rotate(60 425 230)">EAST ARM</text>
+      <text x="425" y="246" text-anchor="middle" font-size="10" transform="rotate(60 425 246)">"the rising quarter"</text>
+
+      <text x="-425" y="230" text-anchor="middle" transform="rotate(-60 -425 230)">WEST ARM</text>
+      <text x="-425" y="246" text-anchor="middle" font-size="10" transform="rotate(-60 -425 246)">"the dying quarter"</text>
+    </g>
+
+    <!-- Scale bar -->
+    <g transform="translate(-340 380)">
+      <line x1="0" y1="0" x2="180" y2="0" stroke="#1a1612" stroke-width="1.2"/>
+      <line x1="0" y1="-4" x2="0" y2="4" stroke="#1a1612" stroke-width="1.2"/>
+      <line x1="60" y1="-3" x2="60" y2="3" stroke="#1a1612" stroke-width="0.8"/>
+      <line x1="120" y1="-3" x2="120" y2="3" stroke="#1a1612" stroke-width="0.8"/>
+      <line x1="180" y1="-4" x2="180" y2="4" stroke="#1a1612" stroke-width="1.2"/>
+      <text x="0" y="20" font-size="10">0</text>
+      <text x="56" y="20" font-size="10">1 000</text>
+      <text x="114" y="20" font-size="10">2 000</text>
+      <text x="170" y="20" font-size="10">3 000 km</text>
+    </g>
+  </g>
+
+  <!-- ============ LEFT MARGIN: cuneiform sign list ============ -->
+  <g transform="translate(80 240)">
+    <text x="0" y="0" font-size="14" font-weight="700" fill="#1a1612">SIGN INVENTORY</text>
+    <line x1="0" y1="6" x2="130" y2="6" stroke="#1a1612" stroke-width="0.6"/>
+
+    <!-- Sign row 1 -->
+    <g transform="translate(0 30)">
+      <rect x="0" y="-18" width="32" height="24" fill="none" stroke="#1a1612" stroke-width="0.5" opacity="0.4"/>
+      <use href="#wV" x="6" y="-16" width="10" height="20" fill="#1a1612"/>
+      <use href="#wV" x="18" y="-16" width="10" height="20" fill="#1a1612"/>
+      <text x="42" y="-2" font-size="12" font-style="italic">= "two", or "we"</text>
+      <text x="42" y="12" font-size="10" fill="#3a322a">(context: speakers / the bound one)</text>
+    </g>
+
+    <g transform="translate(0 70)">
+      <rect x="0" y="-18" width="32" height="24" fill="none" stroke="#1a1612" stroke-width="0.5" opacity="0.4"/>
+      <use href="#winkel" x="6" y="-16" width="20" height="20"/>
+      <text x="42" y="-2" font-size="12" font-style="italic">= "ten" / "the long count"</text>
+      <text x="42" y="12" font-size="10" fill="#3a322a">(here a count of generations)</text>
+    </g>
+
+    <g transform="translate(0 110)">
+      <rect x="0" y="-18" width="32" height="24" fill="none" stroke="#1a1612" stroke-width="0.5" opacity="0.4"/>
+      <use href="#wD" x="8" y="-16" width="20" height="20"/>
+      <text x="42" y="-2" font-size="12" font-style="italic">= "stone" / "the standing"</text>
+      <text x="42" y="12" font-size="10" fill="#3a322a">(in compound: "stone-bound")</text>
+    </g>
+
+    <g transform="translate(0 150)">
+      <rect x="0" y="-18" width="40" height="24" fill="none" stroke="#1a1612" stroke-width="0.5" opacity="0.4"/>
+      <use href="#wH" x="6" y="-12" width="22" height="12"/>
+      <use href="#wV" x="28" y="-16" width="10" height="20"/>
+      <text x="50" y="-2" font-size="12" font-style="italic">= "earth" / "the place"</text>
+      <text x="50" y="12" font-size="10" fill="#3a322a">(determinative for locations)</text>
+    </g>
+
+    <g transform="translate(0 190)">
+      <rect x="0" y="-18" width="40" height="24" fill="none" stroke="#1a1612" stroke-width="0.5" opacity="0.4"/>
+      <use href="#wH" x="2" y="-14" width="18" height="10"/>
+      <use href="#wH" x="2" y="-3" width="18" height="10"/>
+      <text x="50" y="-2" font-size="12" font-style="italic">= "sealed" / "covered"</text>
+      <text x="50" y="12" font-size="10" fill="#3a322a">(of the flower; of the man)</text>
+    </g>
+
+    <g transform="translate(0 230)">
+      <rect x="0" y="-18" width="40" height="24" fill="none" stroke="#1a1612" stroke-width="0.5" opacity="0.4"/>
+      <use href="#winkel" x="2" y="-16" width="14" height="14"/>
+      <use href="#wD" x="18" y="-16" width="16" height="16"/>
+      <text x="50" y="-2" font-size="12" font-style="italic">= "the binding"</text>
+      <text x="50" y="12" font-size="10" fill="#3a322a">(verb + determinative)</text>
+    </g>
+  </g>
+
+  <!-- Wedge primitives (we need them in this file too for the sign-inventory above) -->
+  <defs>
+    <symbol id="wV" viewBox="0 0 12 22"><path d="M6,2 L0,18 L12,18 Z" fill="#1a1612"/></symbol>
+    <symbol id="wH" viewBox="0 0 22 12"><path d="M2,6 L18,2 L18,10 Z" fill="#1a1612"/></symbol>
+    <symbol id="wD" viewBox="0 0 18 18"><path d="M2,2 L16,8 L8,16 Z" fill="#1a1612"/></symbol>
+    <symbol id="winkel" viewBox="0 0 18 18"><path d="M2,2 L10,10 L2,10 Z" fill="#1a1612"/><path d="M10,10 L16,4 L16,16 Z" fill="#1a1612"/></symbol>
+  </defs>
+
+  <!-- ============ RIGHT MARGIN: numeral / coordinate explanation ============ -->
+  <g transform="translate(990 240)">
+    <text x="0" y="0" font-size="14" font-weight="700" fill="#1a1612">COORDINATES</text>
+    <line x1="0" y1="6" x2="130" y2="6" stroke="#1a1612" stroke-width="0.6"/>
+
+    <text x="0" y="30" font-size="13">The pair beside the Pamir marker:</text>
+
+    <g transform="translate(0 50)">
+      <use href="#wV" x="0" y="0" width="11" height="20"/>
+      <text x="20" y="14" font-size="14">+ </text>
+      <use href="#winkel" x="35" y="2" width="16" height="16"/>
+      <use href="#wV" x="54" y="0" width="11" height="20"/>
+      <use href="#wV" x="68" y="0" width="11" height="20"/>
+      <use href="#wV" x="82" y="0" width="11" height="20"/>
+      <text x="0" y="40" font-size="11" font-style="italic">= 1×60 + 13 = 73</text>
+      <text x="0" y="55" font-size="10" fill="#3a322a">(read as longitude)</text>
+    </g>
+
+    <g transform="translate(0 130)">
+      <use href="#winkel" x="0" y="2" width="16" height="16"/>
+      <use href="#winkel" x="19" y="2" width="16" height="16"/>
+      <use href="#winkel" x="38" y="2" width="16" height="16"/>
+      <use href="#wV" x="60" y="0" width="11" height="20"/>
+      <use href="#wV" x="74" y="0" width="11" height="20"/>
+      <use href="#wV" x="88" y="0" width="11" height="20"/>
+      <use href="#wV" x="102" y="0" width="11" height="20"/>
+      <text x="0" y="40" font-size="11" font-style="italic">= 3×10 + 8 = 38</text>
+      <text x="0" y="55" font-size="10" fill="#3a322a">(read as latitude)</text>
+    </g>
+
+    <text x="0" y="225" font-size="13" font-weight="700">→ 38°N · 73°E</text>
+    <text x="0" y="245" font-size="11" font-style="italic">Pamir corridor,</text>
+    <text x="0" y="260" font-size="11" font-style="italic">east-central Tajikistan.</text>
+    <text x="0" y="275" font-size="11" font-style="italic">Possible glacial cave</text>
+    <text x="0" y="290" font-size="11" font-style="italic">at the Fedchenko head.</text>
+
+    <line x1="0" y1="310" x2="160" y2="310" stroke="#1a1612" stroke-width="0.4"/>
+
+    <text x="0" y="340" font-size="14" font-weight="700" fill="#1a1612">BĒRU DISTANCES</text>
+    <text x="0" y="360" font-size="11">marginal numerals = travel-days from Pamir</text>
+    <text x="0" y="380" font-size="11" font-style="italic">(1 bēru ≈ 10.7 km / 7 mi)</text>
+
+    <g transform="translate(0 400)">
+      <text x="0" y="0" font-size="11">E edge   "13"   ≈ 140 km</text>
+      <text x="0" y="18" font-size="11">W edge  "12"   ≈ 128 km</text>
+      <text x="0" y="36" font-size="11">N edge   "8"     ≈ 86 km</text>
+      <text x="0" y="54" font-size="11">S edge   "12"   ≈ 128 km</text>
+    </g>
+  </g>
+
+  <!-- ============ BOTTOM ANNOTATIONS ============ -->
+  <g transform="translate(110 1240)">
+    <text x="0" y="0" font-size="14" font-weight="700" fill="#1a1612">PARTIAL READING OF THE INSCRIPTION</text>
+    <line x1="0" y1="6" x2="320" y2="6" stroke="#1a1612" stroke-width="0.6"/>
+
+    <text x="0" y="30" font-size="12" font-style="italic">
+      "...the [stone] which holds the man-who-does-not-end. Eight generations the [seal] keeps. The flower beside [him]..."
+    </text>
+    <text x="0" y="50" font-size="12" font-style="italic">
+      "...[binding] not to be broken. The three arms point to him. Read by the count of the days..."
+    </text>
+    <text x="0" y="70" font-size="12" font-style="italic">
+      "...beyond the [last river] in the [cold quarter]. Do not open. Do not return."
+    </text>
+
+    <text x="0" y="100" font-size="10" fill="#5a2010" font-style="italic">
+      Lacunae represented in [brackets]. Three glyph clusters along the lower border remain undeciphered; see ref. R-7.
+    </text>
+  </g>
+
+  <!-- ============ RESEARCHER SIGNATURE ============ -->
+  <g transform="translate(110 1410)">
+    <text x="0" y="0" text-anchor="start" font-size="13" font-style="italic" fill="#1a1612">— B. R. Silvertongue</text>
+    <text x="0" y="16" text-anchor="start" font-size="11" font-style="italic" fill="#3a322a">Cambridge, March 1978</text>
+    <text x="0" y="32" text-anchor="start" font-size="10" font-style="italic" fill="#3a322a">unpublished working notes</text>
+  </g>
+
+  <!-- ============ THE TWO BREAK LINES (dashed scissor cuts) ============ -->
+  <!-- Same path geometry as the tablet. Dashed so the user can cut along them with scissors. -->
+  <g>
+    <use href="#crackA" fill="none" stroke="#3a322a" stroke-width="1.4" stroke-dasharray="8 5" opacity="0.55"/>
+    <use href="#crackB" fill="none" stroke="#3a322a" stroke-width="1.4" stroke-dasharray="8 5" opacity="0.55"/>
+  </g>
+  <!-- Tiny scissor icons near each entry point so it's obvious -->
+  <g fill="#3a322a" opacity="0.7" font-size="14">
+    <text x="395" y="36" text-anchor="end">✂</text>
+    <text x="18" y="567">✂</text>
+  </g>
+
+</svg>

@@ -1,0 +1,298 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500"
+     font-family="'Garamond', 'EB Garamond', serif">
+  <defs>
+    <!-- subtle paper grain -->
+    <filter id="paperGrain" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="9"/>
+      <feColorMatrix values="0 0 0 0 0.42  0 0 0 0 0.36  0 0 0 0 0.26  0 0 0 0.07 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <!-- light ink jitter for hand-drawn annotation lines -->
+    <filter id="ink" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="17"/>
+      <feDisplacementMap in="SourceGraphic" scale="0.6"/>
+    </filter>
+
+    <!-- clipping path for the bottom-left fragment of the tablet -->
+    <!-- Mirrors the crack geometry from tablet_pamir.svg, scaled to the layout below. -->
+    <clipPath id="fragclip">
+      <path d="
+        M 90,1440
+        L 90,750
+        L 122,740 L 148,755 L 175,747 L 202,763 L 228,755 L 258,768 L 282,758
+        L 308,776 L 335,766 L 362,784 L 392,776 L 420,794 L 448,790 L 468,754
+        L 482,722 L 508,714 L 538,740 L 568,770 L 598,786 L 628,800 L 658,822
+        L 688,832 L 718,850 L 745,862 L 772,874 L 800,886 L 825,902 L 850,910
+        L 875,902 L 902,920 L 930,930 L 958,936 L 985,930 L 1012,944 L 1040,954
+        L 1068,950 L 1095,962 L 1110,974
+        L 1110,1440
+        Z
+      "/>
+    </clipPath>
+
+    <!-- cuneiform wedge primitives, used for tiny details on the fragment -->
+    <symbol id="wV" viewBox="0 0 10 18"><path d="M5,1 L0,15 L10,15 Z" fill="#3a2410"/></symbol>
+    <symbol id="wH" viewBox="0 0 18 10"><path d="M2,5 L15,1 L15,9 Z" fill="#3a2410"/></symbol>
+    <symbol id="wD" viewBox="0 0 14 14"><path d="M2,2 L12,6 L7,12 Z" fill="#3a2410"/></symbol>
+    <symbol id="winkel" viewBox="0 0 14 14">
+      <path d="M2,2 L8,8 L2,8 Z" fill="#3a2410"/>
+      <path d="M8,8 L12,4 L12,12 Z" fill="#3a2410"/>
+    </symbol>
+  </defs>
+
+  <!-- =========== PAPER =========== -->
+  <rect x="0" y="0" width="1200" height="1500" fill="#f6efdc"/>
+  <rect x="0" y="0" width="1200" height="1500" fill="#000" filter="url(#paperGrain)" opacity="0.40"/>
+
+  <!-- =========== FRAGMENT =========== -->
+  <!-- Stone-tan fill within the fragment shape -->
+  <g clip-path="url(#fragclip)">
+    <!-- Stone base colour -->
+    <rect x="0" y="0" width="1200" height="1500" fill="#a18968"/>
+
+    <!-- Patina mottling (large-scale colour variation in the stone) -->
+    <rect x="0" y="0" width="1200" height="1500" fill="#000" opacity="0.18">
+      <animate attributeName="opacity" dur="0s" values="0.18"/>
+    </rect>
+
+    <!-- Hexagonal map cartouche inside the fragment.
+         Original hex was centred at (600, 800), radius 380. The lower-left
+         portion is what's visible on this fragment. -->
+    <g transform="translate(600, 800)" stroke="#3a2410" stroke-linejoin="round">
+
+      <!-- partial outer hex rim -->
+      <polygon points="380,0 190,-329 -190,-329 -380,0 -190,329 190,329"
+               fill="#9b8460" stroke-width="4"/>
+
+      <!-- west arm (lower-left triangle, the only complete arm on this fragment) -->
+      <polygon points="-380,0 -190,329 -530,290" fill="#a18968" stroke-width="3"/>
+
+      <!-- inner ring -->
+      <polygon points="354,0 177,-307 -177,-307 -354,0 -177,307 177,307"
+               fill="none" stroke="#3a2410" stroke-width="1" opacity="0.6"/>
+
+      <!-- Inside the hex - geographic features (only those visible in lower-left portion) -->
+
+      <!-- Mediterranean -->
+      <path d="M -354 -90 Q -310 -80 -290 -110 Q -270 -90 -310 -60 Q -340 -50 -354 -60 Z"
+            stroke-width="2" fill="#7a5832"/>
+
+      <!-- Black Sea (only the south edge visible) -->
+      <ellipse cx="-258" cy="-108" rx="38" ry="18" stroke-width="2" fill="#7a5832"/>
+
+      <!-- Caspian (partly visible) -->
+      <ellipse cx="-160" cy="-60" rx="22" ry="40" stroke-width="2" fill="#7a5832"/>
+
+      <!-- Persian Gulf -->
+      <path d="M -210 50 Q -180 70 -150 70 Q -120 90 -150 105 Q -195 90 -210 70 Z"
+            stroke-width="2" fill="#7a5832"/>
+
+      <!-- Arabian peninsula -->
+      <path d="M -280 60 Q -260 110 -230 150 Q -200 180 -170 180 Q -140 175 -130 150
+               Q -150 110 -180 80 Q -220 60 -280 60 Z" stroke-width="2.4" fill="none"/>
+
+      <!-- Anatolia -->
+      <path d="M -300 -130 Q -270 -135 -240 -125 Q -220 -110 -240 -90 Q -270 -85 -290 -100 Z"
+            stroke-width="2" fill="none"/>
+
+      <!-- Africa coast -->
+      <path d="M -354 200 Q -320 230 -300 270 Q -280 305 -245 320"
+            stroke-width="2.4" fill="none"/>
+
+      <!-- Mountains: Caucasus (between Black and Caspian) -->
+      <g fill="#3a2410" stroke="none">
+        <polygon points="-200,-90 -190,-76 -210,-76"/>
+        <polygon points="-180,-78 -170,-64 -190,-64"/>
+      </g>
+      <!-- Hindu Kush (visible at fragment edge) -->
+      <g fill="#3a2410" stroke="none" opacity="0.9">
+        <polygon points="-72,82 -58,100 -86,100"/>
+        <polygon points="-45,55 -32,74 -58,74"/>
+      </g>
+
+      <!-- Rivers -->
+      <!-- Nile -->
+      <path d="M -260 168 Q -252 222 -240 290" stroke-width="2" opacity="0.85" fill="none"/>
+      <!-- Tigris -->
+      <path d="M -240 -80 Q -230 -40 -210 0 Q -200 30 -195 60" stroke-width="2" opacity="0.85" fill="none"/>
+      <!-- Euphrates -->
+      <path d="M -250 -70 Q -225 -30 -215 5 L -205 55" stroke-width="1.6" opacity="0.75" fill="none"/>
+      <!-- Amu Darya (only the eastern part visible, cut by crack) -->
+      <path d="M -60 -50 Q -85 -90 -90 -110" stroke-width="2" opacity="0.85" fill="none"/>
+
+      <!-- west arm inscription glyph cluster (inside the lower-left triangle) -->
+      <g transform="translate(-410 230)">
+        <use href="#wH" x="0" y="0" width="22" height="12"/>
+        <use href="#wV" x="26" y="-4" width="10" height="18"/>
+        <use href="#wD" x="0" y="18" width="14" height="14"/>
+        <use href="#wV" x="20" y="16" width="10" height="18"/>
+        <use href="#winkel" x="36" y="18" width="14" height="14"/>
+      </g>
+
+      <!-- bottom band cuneiform (left half only) -->
+      <g transform="translate(-380, 470)">
+        <use href="#wV" x="0" y="0" width="10" height="18"/>
+        <use href="#wH" x="14" y="4" width="22" height="12"/>
+        <use href="#winkel" x="40" y="0" width="14" height="14"/>
+        <use href="#wV" x="60" y="0" width="10" height="18"/>
+        <use href="#wD" x="76" y="0" width="14" height="14"/>
+        <use href="#wH" x="96" y="4" width="22" height="12"/>
+        <use href="#wV" x="124" y="0" width="10" height="18"/>
+        <use href="#winkel" x="140" y="0" width="14" height="14"/>
+        <use href="#wV" x="160" y="0" width="10" height="18"/>
+        <use href="#wH" x="176" y="4" width="22" height="12"/>
+        <use href="#wV" x="204" y="0" width="10" height="18"/>
+        <use href="#wD" x="220" y="0" width="14" height="14"/>
+      </g>
+
+      <!-- left column cuneiform (lower half only) -->
+      <g transform="translate(-520, -150)">
+        <use href="#wV" x="0" y="0" width="10" height="18"/>
+        <use href="#wH" x="-2" y="22" width="22" height="12"/>
+        <use href="#winkel" x="0" y="42" width="14" height="14"/>
+        <use href="#wV" x="2" y="62" width="10" height="18"/>
+        <use href="#wD" x="0" y="84" width="14" height="14"/>
+        <use href="#wH" x="-2" y="104" width="22" height="12"/>
+        <use href="#wV" x="2" y="124" width="10" height="18"/>
+        <use href="#winkel" x="0" y="146" width="14" height="14"/>
+        <use href="#wV" x="2" y="168" width="10" height="18"/>
+        <use href="#wH" x="-2" y="188" width="22" height="12"/>
+        <use href="#wV" x="2" y="210" width="10" height="18"/>
+        <use href="#wD" x="0" y="232" width="14" height="14"/>
+        <use href="#wH" x="-2" y="252" width="22" height="12"/>
+      </g>
+
+      <!-- distance numeral at south edge (cuneiform "12") -->
+      <g transform="translate(-180, 270)">
+        <use href="#winkel" x="0" y="0" width="14" height="14"/>
+        <use href="#wV" x="18" y="-2" width="10" height="18"/>
+        <use href="#wV" x="30" y="-2" width="10" height="18"/>
+      </g>
+
+      <!-- a smaller numeral on the west arm (something like "3") -->
+      <g transform="translate(-450, 250)">
+        <use href="#wV" x="0" y="0" width="10" height="18"/>
+        <use href="#wV" x="12" y="0" width="10" height="18"/>
+        <use href="#wV" x="24" y="0" width="10" height="18"/>
+      </g>
+    </g>
+
+    <!-- Stone surface scratches inside the fragment -->
+    <g stroke="#3a2410" opacity="0.18" fill="none">
+      <path d="M 200 1200 Q 320 1180 440 1210"/>
+      <path d="M 600 1380 L 750 1360"/>
+      <path d="M 300 900 Q 360 920 420 905"/>
+    </g>
+  </g>
+
+  <!-- Fragment edge - inked outline so the break edges are clear -->
+  <path d="
+    M 90,1440
+    L 90,750
+    L 122,740 L 148,755 L 175,747 L 202,763 L 228,755 L 258,768 L 282,758
+    L 308,776 L 335,766 L 362,784 L 392,776 L 420,794 L 448,790 L 468,754
+    L 482,722 L 508,714 L 538,740 L 568,770 L 598,786 L 628,800 L 658,822
+    L 688,832 L 718,850 L 745,862 L 772,874 L 800,886 L 825,902 L 850,910
+    L 875,902 L 902,920 L 930,930 L 958,936 L 985,930 L 1012,944 L 1040,954
+    L 1068,950 L 1095,962 L 1110,974
+    L 1110,1440
+    Z
+  " fill="none" stroke="#1a1208" stroke-width="2" stroke-linejoin="round" opacity="0.7"/>
+
+  <!-- =========== ANNOTATIONS (Bernard's hand, sparse, with lead lines) =========== -->
+  <g fill="#1a2238" filter="url(#ink)">
+    <!-- west arm inscription -->
+    <g>
+      <line x1="320" y1="1100" x2="200" y2="1180" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="100" y="1120" font-size="20" font-style="italic" font-family="'Caveat', cursive">"the dying quarter</text>
+      <text x="100" y="1146" font-size="20" font-style="italic" font-family="'Caveat', cursive">— those who walked here</text>
+      <text x="100" y="1172" font-size="20" font-style="italic" font-family="'Caveat', cursive">did not return."</text>
+    </g>
+
+    <!-- bottom border partial -->
+    <g>
+      <line x1="600" y1="1280" x2="780" y2="1340" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="790" y="1310" font-size="19" font-style="italic" font-family="'Caveat', cursive">"...the binding holds..."</text>
+      <text x="790" y="1336" font-size="19" font-style="italic" font-family="'Caveat', cursive">"...do not open. do not return..."</text>
+      <text x="790" y="1360" font-size="14" font-family="'Caveat', cursive" fill="#3a4258">(= Wittenbach's closing line.)</text>
+    </g>
+
+    <!-- distance numeral -->
+    <g>
+      <line x1="475" y1="1080" x2="370" y2="1010" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="220" y="1000" font-size="20" font-family="'Caveat', cursive">12 bēru ≈ 128 km</text>
+      <text x="220" y="1024" font-size="14" font-family="'Caveat', cursive" fill="#3a4258">(from where? unanchored)</text>
+    </g>
+
+    <!-- a smaller numeral on the west arm -->
+    <g>
+      <line x1="225" y1="1120" x2="285" y2="1095" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="155" y="1090" font-size="16" font-family="'Caveat', cursive">"3"</text>
+    </g>
+
+    <!-- Mediterranean -->
+    <g>
+      <line x1="320" y1="790" x2="395" y2="750" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="200" y="780" font-size="18" font-family="'Caveat', cursive">Mediterranean</text>
+    </g>
+
+    <!-- Black Sea -->
+    <g>
+      <line x1="370" y1="710" x2="365" y2="752" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="290" y="700" font-size="14" font-family="'Caveat', cursive">[Black Sea — corner only]</text>
+    </g>
+
+    <!-- Nile -->
+    <g>
+      <line x1="375" y1="1110" x2="345" y2="1075" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="320" y="1230" font-size="16" font-family="'Caveat', cursive" font-style="italic">Nile</text>
+    </g>
+
+    <!-- Tigris / Euphrates -->
+    <g>
+      <line x1="400" y1="840" x2="450" y2="810" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="455" y="800" font-size="16" font-family="'Caveat', cursive" font-style="italic">Tigris / Eu. — cut at break</text>
+    </g>
+
+    <!-- Anatolia -->
+    <g>
+      <line x1="335" y1="720" x2="340" y2="675" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="200" y="670" font-size="16" font-family="'Caveat', cursive">Anatolia</text>
+    </g>
+
+    <!-- Arabia -->
+    <g>
+      <line x1="390" y1="960" x2="430" y2="990" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="440" y="990" font-size="16" font-family="'Caveat', cursive">Arabia</text>
+    </g>
+
+    <!-- Africa coast -->
+    <g>
+      <line x1="270" y1="1020" x2="250" y2="1060" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="155" y="1060" font-size="16" font-family="'Caveat', cursive">Africa</text>
+    </g>
+
+    <!-- centre arrow (off-fragment) -->
+    <g>
+      <line x1="950" y1="850" x2="1050" y2="800" stroke="#a02818" stroke-width="1.2"/>
+      <polygon points="1050,800 1042,803 1046,810" fill="#a02818"/>
+      <text x="970" y="780" font-size="18" font-family="'Caveat', cursive" fill="#a02818" font-style="italic">centre / coords — not here</text>
+    </g>
+
+    <!-- proto-cuneiform note on the bottom border script -->
+    <g>
+      <line x1="700" y1="1240" x2="700" y2="1278" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="650" y="1264" font-size="14" font-family="'Caveat', cursive" fill="#3a4258">proto-cuneiform — pre-Akkadian</text>
+    </g>
+
+    <!-- left-column count note -->
+    <g>
+      <line x1="170" y1="850" x2="118" y2="900" stroke="#1a2238" stroke-width="0.8"/>
+      <text x="200" y="838" font-size="15" font-family="'Caveat', cursive" fill="#3a4258">a count — ≥ 8 entries on this</text>
+      <text x="200" y="858" font-size="15" font-family="'Caveat', cursive" fill="#3a4258">fragment alone. unit unclear.</text>
+    </g>
+  </g>
+
+  <!-- Signature, tucked low -->
+  <text x="1060" y="1420" font-family="'Caveat', cursive" font-size="24" fill="#1a2238" font-style="italic" filter="url(#ink)">— B.</text>
+</svg>
