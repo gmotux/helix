@@ -1,0 +1,87 @@
+{
+  "round": 1,
+  "turn": 0,
+  "combatants": [
+    {
+      "name": "bard",
+      "init": 19,
+      "side": "pc",
+      "down": false,
+      "hp": null,
+      "maxhp": null,
+      "lr": 0,
+      "maxlr": 0,
+      "la": 0,
+      "maxla": 0,
+      "reaction": null,
+      "recharge": {},
+      "conds": {}
+    },
+    {
+      "name": "rogue",
+      "init": 15,
+      "side": "pc",
+      "down": false,
+      "hp": null,
+      "maxhp": null,
+      "lr": 0,
+      "maxlr": 0,
+      "la": 0,
+      "maxla": 0,
+      "reaction": null,
+      "recharge": {},
+      "conds": {}
+    },
+    {
+      "name": "five",
+      "init": 14,
+      "side": "enemy",
+      "down": false,
+      "hp": 300,
+      "maxhp": 300,
+      "lr": 2,
+      "maxlr": 2,
+      "la": 3,
+      "maxla": 3,
+      "reaction": true,
+      "recharge": {
+        "Roar": {
+          "lo": 5,
+          "hi": 6,
+          "ready": true
+        }
+      },
+      "conds": {}
+    },
+    {
+      "name": "cleric",
+      "init": 12,
+      "side": "pc",
+      "down": false,
+      "hp": null,
+      "maxhp": null,
+      "lr": 0,
+      "maxlr": 0,
+      "la": 0,
+      "maxla": 0,
+      "reaction": null,
+      "recharge": {},
+      "conds": {}
+    },
+    {
+      "name": "warl",
+      "init": 18,
+      "side": "pc",
+      "down": false,
+      "hp": null,
+      "maxhp": null,
+      "lr": 0,
+      "maxlr": 0,
+      "la": 0,
+      "maxla": 0,
+      "reaction": null,
+      "recharge": {},
+      "conds": {}
+    }
+  ]
+}

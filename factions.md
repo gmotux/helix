@@ -133,7 +133,7 @@ Most Kallisto employees — the lab staff, the administrative workers, the secur
 - **Dr. Vivian Crale** (public CEO). Detained for questioning. Knows Kallisto is Chimera-adjacent; does not know about S-0, the airborne programme, or the Frankfurt route. Looks guilty under questioning despite being honest.
 - **Gideon March** (covert chain). Director of Chimera's covert compartment, runs Kallisto's covert work through the chain of command. Currently off-grid.
 - **Col. N. Serrat / "Dr. Moira Vance"** (security architect). See Serrat's network below.
-- **Dr. Mara Kessler** (Building A closed-track director). Ran the screening that the four PCs passed through during the summit. Presumed dead in the strike. Did not know her own administrative assistant was Yates's mole.
+- **Dr. Mara Kessler** (Building A closed-track director). Ran the candidate screening **and the rupture-day harvest** — activated the four and lost them. **Slipped the campus before the April-17 strike; publicly presumed dead in it, actually alive and gone to ground** — the PCs' findable face for what was done to them; answers to Gideon, and above him the Committee. Did not know her own administrative assistant was Yates's mole.
 - **Dr. Dev Patel** (Kallisto neurocognitive lead, Building A). Ran the Cognitive Resonance Testing programme. Carried Bernard's three-year working file. Recorded Bernard's real CRT waveform to a private cassette the morning of the rupture. Presumed dead in the strike; the cassette is now glass.
 - **Yvette Cole** (Building A behavioural interviewer). Two days of summit interviews with all four PCs. Presumed dead in the strike.
 - **Hannah Reeve** (Assistant Director of the Induction Facility, b. 1989). Sharp, principled. Began noticing off-list intake handling in 2024 and kept a private working diary about it in her office. Dead in the strike.
@@ -141,7 +141,7 @@ Most Kallisto employees — the lab staff, the administrative workers, the secur
 - **Bren Taylor** (rail operations technician). Found Archer's body in the Station antechamber the morning of April 14. Killed pre-rupture.
 - **The Station Security Operator** (Mansion rail line). Called Archer's body up to Mansion control; the line went dead during the call. Killed pre-rupture.
 - **Victor Haldane** (Building A security lead). Helix-positive without ever knowing. Caught the badge anomaly Iris had primed him to find. Killed by the Tyrant-Rogue in the B3 cavern on April 17.
-- **Marta Ibarra** (Custodial Lead). Helix-positive without ever knowing; awakened during the rupture into a stable spectre expression. Used Greta's face to haunt the PCs in the warehouse pursuit. Killed by the Doctor's improvised absorption in the cabin kitchen.
+- **Marta Ibarra** (Custodial Lead). Helix-positive without ever knowing; awakened during the rupture into a **stable spectre expression.** Wore "Greta's" appearance to haunt the PCs through the walls during their long rest in the **Building B kitchen**, then attacked as the Spectre. **Killed by the Doctor's improvised absorption** (Sally's self-sacrifice) in that fight. Whatever was left of her vaporised in the strike.
 - **Dr. Hannes Vogt** (paediatric immunologist, 1942–2014). Committee operative inside Building B 1978–1985; architect of the forced-expression work.
 - **Dr. Mira Hadj** (cardiologist, 1922–2003). Kallisto's quiet killer 1979–1989. Eleven kills, all logged as natural cardiac events.
 - **The Antarctic base staff** — ~18 people, rotated annually, supervised by Vogt's old senior protégé **Dr. Lukas Brandt** (he was at the campus at the rupture and his strike-survival is open at the table). The base is operational and doesn't yet know what happened in Boston.
@@ -204,7 +204,8 @@ Sean did not know this compartment existed. Loew knew it existed but not its ope
 
 ## Key people (covert compartment)
 
-- **Iris Shane** (architect, 1968–2026). Halder's adopted daughter, raised inside the institution. Spent thirty-five years building the airborne-conversion programme from inside, then spent her last two years dismantling it. Lived under the **Greta Solheim** cover identity in the PCs' weeks at Building A. Body vaporised in the strike.
+- **Iris Shane** (architect, 1968–2026). Halder's adopted daughter, raised inside the institution. Built the airborne-conversion programme over thirty-five years, then spent her last two years dismantling it. Lived for years under the **Greta Solheim** cover identity; was presumed dead in the rupture (just another body lost in the building) and used that to vanish; kept the Greta cover through the PCs' encounters; **revealed herself in the Building B kitchen and spent her lifeforce to revive the Doctor (Sally), dying for real.** Body vaporised in the strike.
+- **J. Shane** — Iris's **birth brother** (the Shane line is hers; Halder only adopted *her*). Helix-positive; his stable expression is a **mimic**, natural form a big cat with a collar tag reading *"J. Shane."* Kessler's program held and broke him at some point — her rupture-day leverage (*"the sounds he made… again"*). **Iris hid him beyond Kessler's reach by leaving him in mimic form.** He is **lucid and mute** — a mimic can't hold human speech — so he guides only through transformation: the party adopted him as a stray, and the **public-phone card that handed them Todd's number was him**, steering them onto Iris's road (the tablet fragment → Pamir). He knows Iris is dead and grieves it in silence. The four have no idea what they carry. *(Reveal lever: the dream's "your brother" + the tag. Fleshing and play left to the DM.)*
 - **Dr. Alice Peters** (Sean's wife, b. 1982). Covertly seconded to Kallisto's overt-compartment biosafety review and quietly tasked by Sean to keep an eye on the covert side from underneath. Currently held under Chimera protective custody, isolated from Sean.
 - **Reuben Sokol** (1956–2026). Forty-eight years in a welded cell on B2. Halder's first tier-2 forced-expression output; held alive across three Directors because what was done to him could not be undone. Vaporised in the strike.
 - **The three last upper-floor carriers** (residence wing). Names not on record outside Building B; descendants from the Halder register, brought in by force or by promise across the 1970s–1980s. Vaporised in the strike.
@@ -270,33 +271,61 @@ The Committee's mechanism is **leverage and patronage.** Members hold seats on t
 
 ## What it is
 
-A semi-independent operational layer **inside** Kallisto's covert compartment. Approximately twelve contractors under Serrat's direct control, plus the operators who served under her in 18D/18A and went on her foreign missions.
+A semi-independent operational layer **inside** Kallisto's covert compartment. Approximately twelve contractors under Serrat's direct control, plus the operators who served under him in 18D/18A and went on his foreign missions.
 
-Distinguished from the Committee's other resources because Serrat **owns these people personally.** Their loyalty is to her, not to Klaus or the Committee. The Frankfurt route runs through them. The foreign missions ran through them. The current cleanup of the operator chain is running through them.
+Distinguished from the Committee's other resources because Serrat **owns these people personally.** Their loyalty is to him, not to Klaus or the Committee. The Frankfurt route runs through them. The foreign missions ran through them. The current cleanup of the operator chain is running through them.
+
+## What the network actually served (1995–2026)
+
+Not a clean either/or. The pipeline was **Kallisto-tasked, Serrat-skimmed.** Klaus and the covert compartment used the network as their expeditor arm — sample and equipment thefts from competing labs, extractions of Wittenbach-line carriers from Halder's 1976 register, removals of journalists and witnesses who came too close to the cover-floor seam, surveillance ops Klaus did not want routed through formal contractors. Kallisto paid in three currencies: money through the Frankfurt-adjacent shells, protection (clean federal records, accelerated promotions, the Chimera-issued field medkits), and information — which is Serrat's actual currency.
+
+On every operation Serrat kept a piece back: a courier manifest, a sample residue, a photograph that wasn't supposed to leave the site, a cross-referenced name. He doesn't trust his patrons and never has. Over fifteen years he assembled **a private file on Kallisto's covert compartment itself** — what Iris was actually doing on B3, who paid for the 1979 paediatric trial, the Sokol material, the names of every Committee principal who ever signed an authorisation. The file is his insurance against Klaus turning on him and his retirement instrument if he ever has to sell. Mironov is the buyer he has been cultivating for that contingency. The file's physical location is one of the three private vaults (Geneva / Liechtenstein / the third) — which one is open for the table to discover.
 
 ## Members (key)
 
-- **Col. N. Serrat** (cover: "Dr. Moira Vance"). Off-grid, near the Maine/Quebec border, with two operators. Alive after the strike.
-- **Hatch** (lieutenant). Loyal to Serrat absolutely. With her at the safehouse.
-- **Crow** (northeast cell team leader). Will fight to the death.
-- **Reese** (marksman). Knows the missions were illegal. Vulnerable to being flipped.
-- **Diaz** (breacher). In it for the money. Will flip under pressure.
-- **Mehmet** (driver/QRF). Personal debt to Serrat. Hard to flip, easy to neutralise.
-- **Riggs** (Little Bird pilot). Personally loyal to Serrat. Risk-tolerant.
+- **Col. N. Serrat** (cover: "Dr. Moira Vance" — a deliberate cross-gender female cover identity used Kallisto-side only). Off-grid, near the Maine/Quebec border, with two operators. Alive after the strike.
+- **Hatch** (lieutenant). Loyal to Serrat absolutely. Serrat's field commander — led the **Bravo team that hit Wider's cabin and got mauled.** **Hatch escaped; his team didn't.** Now back with Serrat, the only senior man left.
+- **Crow, Rourke, Diaz, Mehmet** — the ground crew that *wasn't* committed to the cabin (the other rotating team), so still alive. Rourke (marksman) is the worn-down, flippable one; Diaz flips under pressure; Mehmet is debt-loyal but neutralisable; Crow fights to the death.
+- **The Bravo cabin team** (Klein, Vargas, Pell, Yeoh) — **dead at the cabin.**
+- **Riggs** (Little Bird pilot) — **DEAD.** His helicopter was downed at the cabin; the burning wreck is what dragged the federal net onto the scene.
 - **"L"** (Geneva handler). Real name not yet locked. Lives in Geneva. Coordinates funds, comms, the European end. Has been Serrat's conduit to Mironov for four years.
-- **The other ~5 operators** — two with her at the border safehouse, two on a separate domestic operation (specifics open), one in Frankfurt maintaining cold-chain contacts.
+- **Two operators in Europe** — one in Frankfurt holding the cold-chain, one in Geneva with L.
 
 ## What they're doing right now
 
-The cleanup of the 18D/18A operator pipeline. Killing the men who ran her foreign missions before federal investigators reach them. **The next-session encounters are this network in action.**
+**Over. Serrat dropped the hunt.** His Bravo team died at the cabin, Hatch fled, and the heli crash scattered his network's evidence — the West Mountain shell's aircraft, his dead men's kit — across an FBI-bound crime scene inside the no-fly zone. The cleanup is finished; he's now in **bury-and-run** mode: sever the trail (torch the Spofford safehouse, kill the shell paper), reach his Mironov/Geneva exit, survive Klaus. **He is no longer hunting the PCs.** (Full cold-case detail: `serrat-coldcase.md`.)
+
+## Serrat during the rupture and strike (April 14–17, 2026)
+
+Serrat did not cause the rupture; Iris did. But Serrat was on-site at his Building A office (in Vance identity) when the agent vented at 14:23 — far enough from the B2 epicentre to receive alarm reports rather than mist. Within an hour he had moved to a pre-prepared forward command site outside the cordon, taking Hatch and two operators with him. From there he coordinated Kallisto's external response: containment liaison with the National Guard, internal evacuation orders that mostly arrived too late, and the public-facing story shaping with Klaus on secure line through the evening.
+
+His private priorities across April 14–17 were three:
+
+1. **Identify what actually happened.** He suspected Iris's hand within hours; the "death on the Mansion lawn" cover did not entirely fit. He kept the suspicion to himself — saying it out loud would have invited questions about why Vance had not already neutralised Iris (he was two weeks from doing so).
+2. **Recover what could be saved.** He sent two operators into the cordon perimeter under medical-NGO cover to attempt to retrieve specific items from a list — the B2 production logs, Sokol's cell records, the cold-vault access codes. None got past the inner perimeter. All returned empty.
+3. **Accelerate the operator cleanup.** The pre-strike kill queue had been running since February (Kesłowski, Horowitz, Reyes). With federal investigators now inevitable, Serrat moved every remaining live operator who had been on a foreign mission to the active-hunt list — including the cabin host, Ron Bennett, and (with a question mark) the Killer. **Sally was the exception.** Before the strike she had been deliberately *not* on the active queue for two reasons: she was Serrat's best living lead to Ron (their relationship the only thread he could pull on Ron's whereabouts), and she was a fresh CIA asset under Ross whose death would draw the Agency onto him at the worst possible moment of the foreign-mission burn — Serrat had clocked Ross's recruitment of Sally inside his own Group HQ within days of it happening, and chose to tolerate it precisely because moving on her was costlier than leaving her in place. The strike resolved the question for him: she was crossed out as presumed dead in the rupture without confirmation, and he let that stand. If she surfaces alive in the coming weeks, the calculus flips fast — capture-preferred while Ron can still be wrung out of her, kill-if-forced if she's about to become a federal witness.
+
+He did not push for the federal nuclear strike on April 17. He learned of the authorisation through Committee channels with roughly two hours' lead time, walked out of his forward command site within thirty minutes, and disappeared off-grid. He was never officially listed as a strike casualty — the federal investigation has him as **"location unknown, presumed alive."**
+
+## Current location and posture (post-strike)
+
+Maine/Quebec border safehouse — forested, single-track, satellite uplink, ninety-day stock — but **packing to leave.** With him: Hatch (back from the cabin) and the surviving ground crew. Direct sat-line to **L** in Geneva.
+
+**Posture flipped from hunter to hunted.** The cabin disaster plus the heli crash blew his cover-up wide open — an armed black aircraft down in a federal no-fly zone, his dead men and his shell's tail number all over an FBI scene. So he's abandoned the cleanup and gone to **self-preservation:**
+
+- **Sever the trail** — torch the Spofford safehouse before the FBI raids it; kill the West Mountain / GSPG paper.
+- **Reach the exit** — close with Mironov via L for extraction (the formula and/or a live carrier as his ticket).
+- **Survive Klaus** — who'd happily hang it all on him as the rogue colonel. Serrat's shield is his private file on Kallisto's covert compartment: *touch me and it goes public.*
+
+Riggs's Little Bird is gone (downed at the cabin), so his run-out is now overland to Quebec → a Halifax float-plane standby → international. **He is not chasing the PCs** — he hasn't the assets, and it's pointless now the feds are the ones closing. (If the PCs choose to chase *him*: `serrat-coldcase.md`.)
 
 ## Tied to
 
 - Kallisto's covert compartment (where Serrat formally sits)
 - Mironov (Frankfurt route)
-- The Committee (her cover comes from Klaus, but she's outpacing his control)
+- The Committee (his cover comes from Klaus, but he's outpacing Klaus's control)
 - Klaus specifically (the fraying relationship)
-- Mironov's interest in her depends on what she can still deliver
+- Mironov's interest in him depends on what he can still deliver
 
 ---
 
@@ -354,7 +383,7 @@ The helix gene is sacred inheritance from S-0. Awakening is approached as a sacr
 In priority order:
 
 1. **The agent's formula.** He believes it was destroyed in the strike.
-2. **Serrat alive.** She is the only person who can reproduce the formula. He has offered her extraction.
+2. **Serrat alive.** Serrat is the only person who can reproduce the formula. Mironov has offered him extraction.
 3. **A live helix-positive carrier.** He does not know one exists in the West outside the wreckage. If he learns of the PCs, especially of the Killer, he will move.
 4. **The Halder archive.** If he learns the Mansion holds it, he will move for that too.
 
@@ -365,7 +394,7 @@ Modest in the US — he relies on Serrat's network for anything operational on N
 ## Current state post-strike
 
 - Has heard everything Russian intelligence has heard, which is substantial (CTBTO data, satellite imagery, signals intelligence on the strike).
-- Has sent an emissary to a Frankfurt safe address. **Serrat has roughly 48 hours from the start of next session to make contact** or Mironov will assume the route is dead and start looking for alternatives.
+- Has sent an emissary to a Frankfurt safe address. **Serrat is now actively pushing to close the extraction** — post-cabin it's his lifeboat, not just a business option. Mironov, who'd half-assumed the route was dead, has a suddenly-motivated seller offering the formula and/or a live carrier as the price of rescue.
 - Has not yet learned the PCs survived. When he does, the campaign threat ceiling rises by a tier.
 
 ## Tied to
@@ -420,7 +449,7 @@ Foundation Board Chair. Public face of cooperation with the federal investigatio
 
 ## What it is
 
-The post-strike federal effort to figure out what happened at JOINP. Multi-agency. FBI leads on the criminal side. DOJ leads on the prosecutorial side. CDC/USAMRIID at the perimeter on the biological-hazard side. CIA via Evelyn Ross's cell on the foreign-sales angle. Congressional inquiry (Edmund as special advisor) on the political side.
+The post-strike federal effort to figure out what happened at the HELIX site. Multi-agency. FBI leads on the criminal side. DOJ leads on the prosecutorial side. CDC/USAMRIID at the perimeter on the biological-hazard side. CIA via Evelyn Ross's cell on the foreign-sales angle. Congressional inquiry (Edmund as special advisor) on the political side.
 
 ## What they know
 
@@ -444,8 +473,9 @@ Bureaucratically: prosecutions, defensible reports, a closed file. Politically: 
 
 - Wall around the investigation is holding for the Committee. Loew was released because they could not break him in classified interrogation.
 - Edmund is the leak the wall cannot stop.
-- The PCs are not on any federal radar yet.
-- If the PCs surface — via Edmund, via Ross, via any institutional channel — they become the most valuable witnesses on the planet.
+- **NEW — the cabin crash put the PCs on the board.** A black helicopter went down inside the 100-mile no-fly zone, beside a dead armed paramilitary team, with intercepted *"Tyrant-level threat"* chatter. The honest net (Guard / FBI / USAMRIID) is converging on it as a **containment** problem: four possible contaminated survivors from ground zero, to be captured, deconned, quarantined — **alive, not killed.** They don't have names yet; they have a scene and a manhunt. (The dead operators + the heli's West Mountain tail number are also a fresh thread pointing *toward Serrat.*)
+- **The Committee's hand is inside the response.** It owns the classification and has people threaded through the federal effort. The PCs are the loose ends that *survived* — the Committee wants them gone, and is using the "Tyrant" intercept to push them from *"survivors to recover"* toward *"hostile assets to neutralise,"* maybe slipping Chimera-covert shooters in under federal cover. The soldiers aren't the malice; the hand on their leash is.
+- So: surface *cleanly* (via Edmund, Ross, any institutional channel) → the most valuable witnesses on the planet. Surface *as the cabin's "Tyrant threat"* → prey.
 
 ## Tied to
 
@@ -461,15 +491,17 @@ Bureaucratically: prosecutions, defensible reports, a closed file. Politically: 
 
 ## What they are right now
 
-Four awakened helix-positive carriers presumed dead in the strike. **Officially nonexistent.** Currently at a wood cabin two hours north of Boston with the Rogue's army contact.
+Four awakened helix-positive carriers presumed dead in the strike. **Officially nonexistent — for now.** **Post-cabin:** on the run in Wider's truck, the cabin behind them (Wider dead, an SF team dead, a heli down and burning). The federal net is converging on that scene; whether the PCs grasp that the *government* is now the thing coming for them is open.
 
 In their possession:
 - The sealed Asterweiss sphere with the only flower in the world.
 - A Sumerian tablet pointing to the Pamir.
-- A small number of vials of the airborne-conversion agent (taken from the Beacon Marine warehouse).
-- The codon-locked technology in their bodies.
+- **Wider's list** (his kill-tracking journal — the evidence chain that damns Serrat) and **Wider's sat-phone** (his contacts, incl. a pilot-friend exfil lead).
+- An operator's radio (Serrat's net, going cold).
+- The codon-locked technology in their bodies — *and the dawning fact that their presence mutates helix-negatives over hours* (it killed Wider).
 - The Killer carries S-0's pattern.
 - The Doctor is back from the dead by Iris's sacrifice.
+- **One vial of S-0 tissue suspended in nitric acid** (found in the freight tunnel). They had more; **the Rogue ate all but this last one** — continuing his S-0 absorption. *Not* airborne agent.
 
 ## What they can do
 
@@ -479,14 +511,15 @@ Everything every other faction wants done, or wants prevented. They are the only
 - A live S-0-pattern carrier (the Killer).
 - Direct knowledge of Iris's plan.
 - The mobility of being officially dead.
-- Cross-faction contacts: Edmund (Sean), Loew (Sean), Ross (Sean and Sally), Casetti (sphere arc), Todd (Bernard's mentor), the cabin host's network (Sally and the Killer), Iris's prepared materials they have not yet exhausted.
+- Cross-faction contacts the PCs **actually have:** Ross (Sean and Sally), Casetti (sphere arc), **Todd (Bernard's mentor — now phoned; meeting set in 3 days, US)**, **Wider's network via his sat-phone** (the pilot "Hutch" and others; Wider himself dead), Iris's prepared materials they have not yet exhausted.
+- Reachable only through a bridge, **NOT yet known to any PC** (per `PC_KNOWN.md`): **Edmund** (Todd can introduce him — `next-session/todd.md`) and **Loew.**
 
 ## What every other faction wants from them
 
-- **The Committee** — them dead, the sphere recovered.
-- **Serrat** — Sally and the Killer dead, the cabin host dead, herself extracted.
+- **The Committee** — them dead, the sphere recovered (now pursued *through the federal net*).
+- **Serrat** — **nothing from them anymore; he just wants OUT.** He dropped the hunt; they're holding the evidence that damns him, but he's running, not coming for it.
 - **Yates** — the sphere; the Killer alive; Bernard ideally converted.
-- **Mironov** — the formula reconstructed from the vials; a live carrier; Serrat alive.
+- **Mironov** — the agent's formula (which Serrat holds); a live carrier; Serrat alive.
 - **Federal investigation** — them alive as witnesses, the agent secured, prosecutions enabled.
 - **Edmund** — partnership, truth surfacing, the historical record protected.
 - **Loew** — partnership, the protective lineage continuing.
@@ -503,7 +536,7 @@ A single example: **the Tajik villager extraction in 2013.**
 - **Chimera's covert compartment** (under Gideon as Director) authorised the operation.
 - **Kallisto** provided the corporate cover — a forged "medical NGO" identity, a real biotech-staffed receiving point in Tbilisi, a stasis crate from the Antarctic supply chain.
 - **The Halder Foundation** funded the operation through a grant labelled "international rare-disease outreach," which paid the operators and the Tbilisi infrastructure.
-- **Serrat** (then still Col. Serrat openly, pre-Vance cover) ran the operation through her 18D channels. Two operators on the ground for the extraction itself.
+- **Serrat** (then still Col. Serrat openly, pre-Vance cover) ran the operation through his 18D channels. Two operators on the ground for the extraction itself.
 - **The villager** was taken to Tbilisi, transferred to Boston, held in B2, forced into expression, and died in 2015.
 
 That is one operation. The Foundation paid for it. The Foundation board did not know. Kallisto staffed it. Most Kallisto employees did not know. Chimera classified it. Sean was Director of the overt compartment at the time and signed budget that included it without seeing the line. The Committee owned it strategically. Klaus would have known the broad strokes.
@@ -519,17 +552,17 @@ Named figures outside any faction's payroll. Some are PC contacts the table can 
 ## Current — alive, reachable
 
 - **Dr. Bianca Casetti** (Italian materials scientist, retired, Naples). The only outside specialist who ever physically examined the Asterweiss sphere — 1991 Halder consult. Pre-briefed by Iris in 2024. The sphere-cracking thread.
-- **Prof. Aaron Todd** (USP São Carlos). Bernard's PhD supervisor. Multi-node connector — knew Silvertongue through Hartwell, took Patel's CRT cassettes 2010–2023 without realising the programme was illegitimate, corresponded with Iris through a Cambridge intermediary, knows Edmund through a 2020 HGI grant. Pre-briefed by Iris in late 2024. Holds thirteen years of Patel's CRT cassette recordings.
+- **Prof. Aaron Todd** (USP São Carlos). Bernard's PhD supervisor. Multi-node connector — met Bernard's grandfather (Silvertongue's son) through Hartwell in 1989 and was quietly given the Fragment III tablet piece that afternoon, took Patel's CRT cassettes 2010–2023 without realising the programme was illegitimate, corresponded with Iris through a Cambridge intermediary, knows Edmund through a 2020 HGI grant. Pre-briefed by Iris in late 2024. Holds thirteen years of Patel's CRT cassette recordings.
 - **Prof. Hartwell's widow** (Cambridge MA). Lives quietly, knows nothing. Served as the Iris→Todd intermediary across 2024–2025, carrying letters she believed were ordinary academic correspondence between her late husband's old friends.
-- **The Rogue's army contact** (cabin host, off-the-grid veteran living north of Boston). Drove out and brought the PCs north on the night of April 17–18 from a Boston motel. The cabin they are at now is his, held under a name unconnected to any database. Trail still partly cold — Serrat's people are working it. He has a journal that includes the seven-name list overlap.
-- **Ron Bennett** (Sally's boyfriend, 18D veteran). Last contact early March; phone goes to voicemail; Portland apartment unoccupied. On Serrat's kill list, uncrossed — meaning still alive somewhere. Left a bank-deposit box key with his mother in February.
+- **Joe Wider** (the Rogue's army contact, off-grid veteran) — **DEAD.** Mutated from proximity to the PCs during the long rest and was killed at his cabin. He'd driven them north (night of April 17–18, from a Boston motel). What survives him, now in the PCs' hands: his **kill-tracking journal** (the list) and his **sat-phone** (contacts incl. a getaway-pilot friend, "Hutch"). Sat-phone contents: `ron-bennett-case.md`.
+- **Ron Bennett** (Sally's partner, 18D veteran). Off-grid ~a month; on Serrat's *now-abandoned* kill queue — so his immediate danger has **receded** (most likely alive and hidden). Left a deposit-box key with his mother. Sally's personal arc — full trail in `ron-bennett-case.md`.
 - **Mrs. Bennett** (Lewiston ME, retired schoolteacher, mid-70s). Ron's mother. Knows nothing about his military work. Has not heard from him since early March. Holds the deposit-box key for Sally; does not know Sally is alive.
 
 ## Historic — figures whose work still shapes the present
 
 - **Zacharia Wittenbach** (1840s–1891). Austrian ethnographer. First written record of S-0; copied the Pamir tablet set in the field. Notebooks reached the Esterhazy library in 1903.
-- **Dr. B. R. Silvertongue** (1912–1989). Cambridge philologist. Bernard's grandfather. His working translations of the Pamir tablets point at the corridor; papers sealed in MIT special collections under a 50-year embargo until 2039. One outside researcher (Yates) has accessed them.
-- **Prof. Marian Hartwell** (~1932–~2018). Todd's MIT PhD adviser, friend of Silvertongue. Long dead; the bridge she carried between Cambridge and São Carlos is the bridge Iris later used.
+- **Dr. B. R. Silvertongue** (1865–1948). Cambridge philologist. Bernard's great-grandfather. Wittenbach's field partner in the Pamir 1885–1891; carried the philological work for five decades afterwards. Translations and one physical tablet fragment held by the family in a private archive at the old Cambridge house, maternal line. Not in any university collection. One outside researcher (Yates) accessed it, in 2014.
+- **Prof. Marian Hartwell** (~1932–~2018). Todd's MIT PhD adviser, personal friend of Bernard's grandfather (Silvertongue's son). Long dead; the bridge she carried between Cambridge and São Carlos is the bridge Iris later used.
 
 ## Halder family, by adoption and by household — non-Committee, non-Foundation
 
@@ -546,12 +579,14 @@ Named figures outside any faction's payroll. Some are PC contacts the table can 
 
 # Where the next sessions sit
 
-- **The Serrat arc** is the immediate operational threat.
-- **Mironov** is the deadline pressure (48 hours to make contact, then he escalates).
-- **Edmund and Loew** are the institutional allies the PCs can reach.
-- **The Mansion** is the archive that anyone reaching first controls.
-- **Yates** has not yet learned the PCs survived; when he does, the threat ceiling rises.
+- **The federal net is the immediate threat.** Drawn by the heli crash, converging on the PCs as a containment problem — with the Committee's hand inside it steering toward elimination. *Getting out from under it is the next session* (`next-session/base.md`).
+- **Serrat is demoted to a cold, off-screen thread** — hunter-turned-hunted, running for his Mironov/Geneva exit. The PCs hold the evidence that damns him, but pursuing him is *their* choice (`serrat-coldcase.md`); the default payoff is Ross + the federal investigation.
+- **Todd** is the one forward appointment — phoned, meeting in three days, US. (The mutation field makes a closed-room meeting with a helix-negative mentor a quiet horror.)
+- **Mironov** is now Serrat's lifeboat, not a business clock — a motivated seller offering the formula and/or a live carrier. If he learns the PCs (esp. the Killer) survived, the threat ceiling jumps a tier.
+- **Edmund and Loew** are the institutional allies the PCs can reach — but reaching them means surfacing.
+- **The Mansion** archive is still unbreached; whoever reaches it first controls it.
+- **Yates** still doesn't know the PCs survived; when he does, the ceiling rises again.
 - **The Committee** is wounded and fragmenting; Klaus is not unchallenged.
-- **The Antarctic base** is comms-blind and on a clock to either freeze or improvise.
+- **The Antarctic base** is comms-blind, on a clock to freeze or improvise.
 
 The PCs are the most valuable thing on the board and the most exposed thing on the board, simultaneously.

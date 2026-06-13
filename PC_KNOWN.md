@@ -1,161 +1,137 @@
-# What the PCs Actually Know
+# What the PCs Actually Know — the living reference
 
-Empirical baseline. Only what the four PCs have seen with their own eyes, read with their own hands, heard with their own ears, or carried in from their pre-summit lives.
+**Single source of truth** for what the four PCs currently *know, hold, and believe*, plus a compact **session history** (the old `session-log.md` is folded in here). Update this from play after each session. Anything not in here is not yet established as far as the PCs are concerned.
 
-The new story gets built on top of this file. Anything not in here is not yet established as far as the PCs are concerned.
-
----
-
-## Locations the PCs have been in
-
-- **Building A** — testing floor (woke up there), the stair-entry area (cleared a zombie pack), Room 299 (Haldane's office, found bridge key + ratchet), part of 1/F (left Solheim and Ibarra alive there).
-- **The glass bridge** between Building A and Building B (killed Varo here).
-- **Building B 2/F** — the main floor only. They have NOT entered the Director's Office, libraries, lecture room, medicine room, piano bar, Old Laboratory, the rest of the cover-floor rooms.
-- **Building B basement** — kitchen, storage room, boiler room, and from the boiler room a secret passage into the **sealed cavern** (the stone-circle room).
-
-They have NOT been to:
-- The east end of the basement (where the freight rail platform sits — they don't know it exists)
-- The B2 production lab
-- Halder Mansion
-- Antarctica
-- Anywhere outside the campus
+**In-world clock:** rupture 14 Apr 14:23 · federal strike 17 Apr · cabin session morning 18 Apr.
 
 ---
 
-## NPCs the PCs have met face-to-face
+## CURRENT SITUATION (right now)
 
-### Pre-rupture (during the summit, before April 14)
+On the road, a day or so past the cabin, working toward the **Todd meeting (US).** They beat the federal net's opening ring — evaded the helicopter, bypassed a checkpoint — but left a messy wake: a **murdered woman (Dana Holloway) and her burned-out SUV**, and a **motel full of mutated dead** where their long rest turned the occupants into monsters. They now hold the **looted operator clues** (the Spofford / shell trail). Their ride is a **pickup truck taken from some locals** on the road (they fireballed Holloway's hot SUV).
 
-All four PCs were processed through summit induction and have met:
-- **Mara Kessler** — Building A closed-track director
-- **Dev Patel** — Kallisto neurocognitive lead (and Bernard's three-year prior recruiter)
-- **Yvette Cole** — Building A behavioural interviewer
-
-### Post-rupture
-
-- **Victor Haldane** — Building A security lead. Met dead in 299; codon-stabilised by the party; awakened; travelled with them for one day. Mutated to monster in the cavern, shouted *"Destroy this wretched thing. It's us or it."*, and was **killed by the Tyrant-Rogue** during the transformation. Body on the cavern floor.
-- **Elias Varo** — hostile on the bridge. Killed by the party. No ID. They do not know who hired him.
+What they still haven't fully clocked: the **federal containment net** is the real threat now (not just Serrat's people), and — the big one — **their long rests mutate everyone around them** (Wider, now the whole motel).
 
 ---
 
-## NPCs the PCs have seen the bodies of
+## SESSION HISTORY (what happened, in order)
 
-- **Hannah Reeve** — body in Narrow Corridor A on Building B 1/F.
-- *(Other unnamed Kallisto staff dead across the floors.)*
+*Arcs 1–3 reconstructed (we didn't log live then) — boundaries approximate. Logged live from the cabin session on.*
 
----
+### Arc 1 — The campus: Building A → the bridge
+- Woke among strange **tanks** on the **Building A testing floor** the morning after the rupture (clock **14:23** the day before), disoriented, a night of blackout lost. Cleared a **zombie pack** at the stair-entry.
+- **Room 299:** found **Victor Haldane** dead → codon-stabilised him → he awakened and travelled with them ~a day. Found the **bridge key + ratchet.** A directive **signed "Col. N. Serrat"** was pinned to Haldane's body (Sally recognised the name — her old 18D commander).
+- Left **Solheim** and **Ibarra** alive (Building A 1/F). Crossed the **glass bridge**, killed **Elias Varo** (no ID).
+- Into **Building B** (the Induction Facility): 2/F main floor, basement (kitchen/storage/boiler) → secret passage to the **B3 cavern.**
+- Met pre-rupture at induction: **Kessler, Patel, Cole.** Body found: **Hannah Reeve.**
 
-## NPCs the PCs have left alive (off-stage)
+### Arc 2 — The Induction Facility: cavern → sphere/tablet → Iris's death
+- **B3 cavern:** stone circle, **S-0's hand** on it, four suppression lights. Disabled the lights → the circle glowed and dispersed the mist. **Haldane mutated**, attacked (*"Destroy this wretched thing. It's us or it."*), and was **killed by the Tyrant-Rogue.**
+- The **Rogue entered the circle** (human again inside) and **ate S-0's hand** → gained S-0's + Iris's memories (his private quest), unlocked the **Tyrant.** **Sally's Channel Divinity pulled him back.**
+- Found **all of Iris's notes**; decoded **"I am like you already dead."**
+- Recovered the **Asterweiss sphere** (the only flower) and the **Sumerian tablet** (Main Library safe).
+- **The kitchen (long rest):** a **Spectre** wearing "Greta's" face attacked — it was **Marta Ibarra** (the Custodial Lead they'd left alive), awakened by the mist. **Sally killed it with an improvised absorption that cost her own life.** Then "Greta" revealed herself as **Iris** and spent her lifeforce to **revive Sally**, dying for real. The party now knows: **Greta was Iris; Iris died for Sally; the spectre is dead.**
 
-- **Greta Solheim** (Care Liaison) and **Marta Ibarra** (Custodial Lead) — both helix-negative, last seen on Building A 1/F. Held back for plot twists.
+### Arc 3 — The escape: freight tunnel → north to the cabin
+- Into the **freight-rail service tunnel** (NE of Boston) on foot, carrying the sphere + tablet. Surfaced at the **Beacon Marine warehouse** (Mystic River waterfront).
+- **Joe Wider** (the Rogue's off-grid army contact) drove them north from a **Boston motel** to his **cabin.**
 
----
+### The cabin session (morning 18 Apr)
+- Long rest — **the shared dream played.** Woke to find **Wider mutated** (they appear to emit a field that breaks normals over hours). **Fought and killed him.**
+- Explored the **tunnels under the cabin** → found **Wider's list** (his kill-tracking journal).
+- The **SF team (Bravo) attacked** → PCs won, **but the commander (Hatch) escaped.**
+- A **helicopter** came → fought it, **downed it.**
+- **Phoned Prof. Todd** (Sean placed the call) → Todd agreed to **meet in three days, in the US.**
+- Left on the truck; bodies + wreck **unlooted.**
 
-## NPCs the PCs know by name through documents, signatures, or recovered objects
-
-- **Dr. Iris Shane.** Her name is on the scattered handwritten notes throughout the floors and the cavern. The PCs have decoded the hidden phrase **"I am like you already dead"** from her six cipher-signatures. She addresses them directly. She knew they were coming. She left the notes for them. They do not know where she is now.
-- **"Col. N. Serrat."** Signed the directive pinned to Haldane's body in 299. **Sally personally recognises this name — Serrat was her 18D commander.** The other three PCs do not know who Serrat is. Sally has not necessarily volunteered this to the others yet.
-
-PCs have NOT yet entered the Director's Office, so they do NOT have Vance's diary, do NOT know the name "Moira Vance," and have NOT made the Vance = Serrat connection.
-
----
-
-## NPCs each PC knows from their pre-summit life
-
-Individual-PC knowledge, not party knowledge unless the PC has told the others.
-
-- **Sean Erinn (Director) knows:**
-  - **Dr. Alice Peters** — his wife.
-  - **Gideon March** — his mentor.
-  - **Evelyn Ross** — female CIA liaison.
-  - **Project Chimera** as he understands it — the overt antiviral and biosecurity compartment he directs. He does not know about any covert compartment.
-- **Bernard (Singer) knows:**
-  - **Prof. Aaron Todd** — Bernard's PhD supervisor at USP São Carlos.
-  - **Dev Patel** — recruited him through Todd three years ago; first met in person at this summit.
-- **Sally Burton (Doctor) knows:**
-  - **Evelyn Ross** — her CIA handler. (Same person Sean knows from his Chimera-side work; neither PC has put that together yet.)
-  - **Col. N. Serrat** — her former 18D commander.
-  - Has the **Chimera Triage Injector** stolen from her last deployment in her car. Has not connected the "Chimera" mark to anything specific.
-- **The Killer (Rogue) knows:**
-  - **Sally** — by reputation; trained her years ago. Whether he has acknowledged this at the table is open.
-  - **[INSIDE-KALLISTO CONTACT — name pending]** — someone inside Kallisto whom the Killer personally knows. This contact is how he came to be at the summit. Lock the name when the table picks one.
-  - He does NOT know Gideon March.
+### The road to Todd (the escape session)
+- **Looted the cabin operators** → clue haul: **challenge coins**, a **Chimera medkit** (Sean: *"my program's mark"*), a **burner**, the **tasking card** (→ the Spofford / Manchester NH FOB), the **printed map** (cabin + an I-93 Concord rest area). *The Spofford → West Mountain → shell trail is now physically in their hands — not yet traced.*
+- Drove **Wider's truck** to a main road and **evaded the federal helicopter** (the Eye).
+- Reached a **federal checkpoint** and **bypassed it** — slipped past, **did not go loud**, so the feds got **no faces** there.
+- Past the roadblock they **carjacked a luxury SUV** from **Dana R. Holloway**, a woman who happened to drive by — **fought and killed her.** *(Unknown to them: Holloway is the **nominee signatory on Serrat's shells**, West Mountain / GSPG.)*
+- On the way they **swapped into a pickup truck taken from some locals ("rednecks")** — their current ride.
+- Holed up at a **random roadside motel** for a **long rest** → the **mutation field turned the occupants** → fought the result: a **naga + spawns** and a **phantom-like entity.** Won.
+- **Dumped and fireballed Holloway's SUV** (the murder-linked one). Left behind: her body, a burned luxury SUV, and a motel of mutated dead.
 
 ---
 
-## Documents and objects the PCs have actually recovered
+## LOCATIONS THEY'VE BEEN
+- **Building A** — testing floor, stair-entry, Room 299, part of 1/F.
+- **The glass bridge.**
+- **Building B (Induction Facility)** — 2/F main floor, basement (kitchen/storage/boiler), the **B3 cavern**, the **Main Library** (sphere/tablet), the **kitchen** (Iris's death).
+- **The freight-rail tunnel** · **Beacon Marine warehouse** · **a Boston motel** · **Wider's cabin + the tunnels under it.**
+- **The escape route:** a mountain road + a **federal checkpoint** (bypassed) · a **random roadside motel** (the long-rest mutation fight) — somewhere on the road toward the Todd meeting.
+- **Still NOT been:** the Director's Office, the B2 production lab, Halder Mansion, Antarctica.
 
-- **Iris's scattered notes** — placed throughout the floors and the cavern. Six of them carry the cipher-signatures that decode to **"I am like you already dead."** The unsigned ones tie to each PC's mist-survival cue (piano-bar 528 Hz, hospital-fire note, breath-holding note, "speak past me" note, hexagon-medkit note, numeric-lock note, Fourier reference, and the rest).
+## NPCs MET FACE-TO-FACE
+- **Pre-rupture:** Mara Kessler, Dev Patel, Yvette Cole.
+- **Victor Haldane** — stabilised, travelled a day, mutated in the cavern, killed by the Tyrant-Rogue.
+- **Elias Varo** — hostile on the bridge, killed (no ID).
+- **Iris Shane** — they'd unknowingly met her for weeks as **"Greta Solheim"** (her cover); she **revealed herself in the Building B kitchen and died reviving Sally.** They now connect Greta = Iris.
+- **Joe Wider** — the cabin host; drove them north, then mutated; they killed him.
+- **The Bravo SF team** — hostiles at the cabin (most killed; **Hatch, the commander, escaped**).
+- **Dana R. Holloway** — a woman they **carjacked and killed** on the road past the checkpoint; they have her name (ID / registration). *(DM: she's the **nominee signatory on Serrat's West Mountain / GSPG shells.** When the PCs trace the shells or hand the operator clues to Ross, the name of the woman they murdered surfaces — the money trail runs back through their own victim. They don't know it yet. Dramatic-irony bomb.)*
+- **Bodies seen:** Hannah Reeve; unnamed Kallisto staff; the mutated motel occupants.
+- *(The "Greta Solheim" and "Marta Ibarra" they left alive in Arc 1 both **died in the kitchen** — Greta was Iris's cover; Ibarra was the spectre. Nobody's left alive off-stage.)*
 
-That is the complete list of documents the PCs have actually read so far.
+## NPCs KNOWN BY NAME (via documents / objects, not met)
+- **Col. N. Serrat** — signed the directive on Haldane. **Sally knows him** (her 18D commander); the others don't. *They do **not** yet know Serrat is behind the cabin attack* — that needs the unlooted operator gear.
+- They do **NOT** have "Moira Vance" / the Vance = Serrat link (Director's Office unreached).
 
-They have NOT recovered or read: Vance's diary, the AVL-7 ampoule, the lecture-room math (improbability field / M(x^μ) waveform), Halder's chalkboard, the 1962 founding certificate, the bronze plaque, the Fourier math book, the Asterweiss sphere, Reeve's diary, Iris's published 1995–1997 papers, or anything else from the unreached rooms.
+## PER-PC PRE-SUMMIT KNOWLEDGE (individual, not party-shared unless told)
+- **Sean (Warlock):** wife **Alice Peters**; mentor **Gideon March**; CIA liaison **Evelyn Ross**; **Project Chimera** (overt only — unaware of any covert compartment).
+- **Bernard (Bard):** **Prof. Aaron Todd** (PhD supervisor) — **now phoned; meeting set in 3 days, US**; **Dev Patel** (recruiter).
+- **Sally (Cleric):** handler **Evelyn Ross**; **Col. Serrat** (former CO); **two Chimera Triage Injectors** (lifted from Dr. Lev Burian's case, 2025 Moldova op — *still has both*); the dying-teammate whisper **"CHMR"** (**not yet linked** to the injector mark or Chimera-the-programme).
+- **The Killer (Rogue):** **Sally** (trained her, years back); **[inside-Kallisto contact — name pending]** (how he got to the summit); does **not** know Gideon.
 
-> *Note: filename `SHANE_JOURNAL.md` is misleading — Iris left scattered notes, not a journal. Rename pending.*
+## OBJECTS & DOCUMENTS THEY HOLD
+- **Iris's scattered notes** — decoded to *"I am like you already dead."*
+- **The Asterweiss sphere** (the only flower).
+- **The Sumerian tablet** (Main Library safe).
+- **One vial of S-0 tissue suspended in nitric acid** (found in the freight tunnel). They had more; **the Rogue ate all but this last one.**
+- **Wider's list** — his kill-tracking journal (names, dates, patterns; flags **Ron Bennett** off-grid).
+- **Wider's sat-phone** — his contacts (Ron unanswered; the pilot **"Hutch"**; Marin/Mahoney/Daniels). *His, not Serrat's.*
+- **An operator's tactical radio** — on **Serrat's net, going cold.**
+- **The mimic** — a shapeshifter the party adopted back in Building A. Natural form: a big cat, collar tag **"J. Shane."** Has quietly helped (it became the **public-phone card** that gave them Todd's number). *(DM: it is Iris's mute brother, guiding them — see `factions.md`. The PCs don't know.)*
+- **Looted from the cabin operators (now held):** challenge coins; a **Chimera medkit** (hexagon + three triangles — Sean's mark; serums function as healing potions); a **burner** (recent calls incl. **(617) 555-0144** = the GSPG cover line); the **tasking card** (→ **47 SPF / Manchester NH FOB**); the **printed map** (two marks: the cabin + an I-93 Concord rest area). *Trail in hand → Spofford → West Mountain shells. Not yet traced.*
+- **Current vehicle: a pickup truck taken from some locals ("rednecks")** on the road to the motel. (Wider's truck left at the first swap; Holloway's SUV fireballed.)
 
----
+## PHENOMENA OBSERVED
+- **The mist** — kills/mutates helix-negatives; the PCs don't turn.
+- **Their awakened abilities** — Sean's borrowed words; Bernard's 528 Hz mist-thinning; Sally's CD mist-dispersal; the Killer's held-breath phase-step.
+- **The B3 stone circle** — suppression lights, the hand, the upward glow.
+- **The Tyrant** — the Rogue's transformation, now witnessed **twice** (cavern + cabin). **Sally's CD is the leash** — pulled him back both times. The others **do not know what he absorbed.**
+- **The kitchen — Sally's death-and-revival + Iris's sacrifice.** Sally died killing the Ibarra-spectre (improvised absorption); Iris then revealed herself and died reviving Sally. The party witnessed all of it.
+- **The mutation field (confirmed pattern):** healthy helix-negatives mutate into monsters after a long rest in the PCs' proximity — now **twice**: **Wider** (cabin), then the **motel occupants** (→ a **naga + spawns** and a **phantom-like entity**). No longer deniable: **wherever they sleep, the people nearby turn.**
+- **Rupture time 14:23** (stopped clocks).
 
-## Phenomena the PCs have directly observed
-
-- **The mist.** They have walked through it. They have seen what it does to helix-negative bodies. They have noticed they themselves are not turning.
-- **Their own awakened abilities.** Each PC has used theirs in play.
-  - Sean: speaking words he didn't author.
-  - Bernard: voice at 528 Hz thinning local mist.
-  - Sally: Channel Divinity dispersing mist for short windows.
-  - Killer: held-breath phase-step.
-- **The stone circle in the B3 cavern.** Four suppression lights running. A hand on the circle. When the lights were disabled the circle began glowing and dispersed the mist trickling from a crack in the ceiling.
-- **Haldane mutated to monster** in the cavern, attacked, shouted *"Destroy this wretched thing. It's us or it."* Stabilised back to awakened state post-fight.
-- **The Rogue ate the hand and transformed into the Tyrant.** The Doctor's Channel Divinity pulled him back. The other three witnessed the transformation. The Rogue has not told them what he absorbed.
-- **The rupture time 14:23** — corroborated by various stopped clocks.
-
----
-
-## What the Rogue alone knows (private, from absorbing the hand)
-
-Not shared with the other three PCs. He has not spoken about it.
-
-- **S-0** exists — a proto-human bound by carved markings, somewhere distant, ten thousand years old, still alive.
+## THE ROGUE'S PRIVATE KNOWLEDGE (from the hand) — NOT shared
+*Still his alone. He has said nothing.*
+- **S-0** exists — a proto-human bound by carved markings, distant, ~10,000 years old, alive.
 - The hand he ate was a piece of S-0.
-- **Iris's plan was to destroy the gene at its source** by having him consume the remaining pieces of S-0.
-- Each absorption brings him closer to becoming S-0; the Doctor's CD is the leash.
-- A vivid impression of Iris's last days — her voice, her conviction, her death.
+- **Iris's plan:** destroy the gene at its source by having him consume the rest of S-0.
+- Each absorption brings him closer to *becoming* S-0; **Sally's CD is the leash.**
+- He has since **eaten the tunnel's S-0 tissue samples** (all but one vial) — more S-0 in him, one more step toward the edge. *(The others may have watched him swallow the vials without understanding what they were.)*
+- Vivid impressions of Iris's last days — her voice, conviction, death.
 
----
+## WHAT THE PARTY BELIEVES / HAS INFERRED
+- The rupture was **14 Apr, 14:23.**
+- **Iris** wrote them notes, knew they'd come, was central to all of it — **and she's dead, having died saving Sally.**
+- *"I am like you already dead"* is her message; meaning undecided.
+- The building was **Kallisto's**; something sits under the cover floors.
+- They are **different** from the mist's victims — and now know they are **dangerous to normal people**: every long rest near civilians turns them into monsters (**Wider, then the motel**). They cannot safely shelter among normals.
+- They are **being hunted** (the SF team came), and they need to disappear.
 
-## What the party as a whole has inferred or believes
+## NOT YET ON THEIR RADAR
+- "Moira Vance" / Vance = Serrat · Anselm Yates & the Listeners · Edmund Halder · Vivian Crale · Henrik Loew · the Halders (Everett, J. Halder II) · Eleni Parokhos · **the Committee** · the Frankfurt route / foreign buyers / Russian interest · the Antarctic base · the rail-platform NPCs · Naomi Varga.
+- **The federal net** (the real next threat — they don't know the government is coming).
+- **Serrat as the boss of the cabin attack.** They now **hold** the operator clues (tasking card → Spofford FOB; map; burner/GSPG line; coins; medkit) but **haven't traced them** — Spofford / West Mountain / the shells / L / the kill ledger are reachable from here, not yet pursued. *(And the woman they killed, Holloway, is the shells' nominee — the trail leads back through their own victim.)*
 
-- The rupture happened on **April 14, 14:23**.
-- **Iris Shane wrote them notes** specifically and knew they would find them. She is connected to whatever is happening.
-- The hidden phrase **"I am like you already dead"** is her message to them. They have not decided what it means.
-- The building is **Kallisto's**. There is something underneath the cover floors that the cover doesn't describe.
-- They are different from the people the mist is killing. They don't have the vocabulary for *why* yet.
-
----
-
-## NPCs not yet on the PCs' radar
-
-Levers for future sessions. None of these exist in the PCs' world until evidence surfaces.
-
-- "Dr. Moira Vance" (would emerge if they enter the Director's Office)
-- Anselm Yates and the Listeners
-- Edmund Halder
-- Dr. Vivian Crale
-- Dr. Henrik Loew
-- Dr. Everett Halder (any meaningful knowledge of him)
-- J. Halder II
-- Eleni Parokhos
-- The Committee
-- Foreign buyers / Frankfurt route / Russian state interest
-- The Antarctic base
-- Bren Taylor, the rail Security Operator, Everett H. Archer (rail platform NPCs they haven't reached)
-- Naomi Varga (died in Building A; PCs did not encounter)
-
----
-
-## Open questions the table has surfaced
-
-- Who is Serrat and why did she sign a directive pinned to Haldane's body? (Sally knows the name, doesn't know why it's there.)
-- Why was Haldane killed?
-- Why is there a hand in a glowing circle, and why was Haldane begging them to destroy it?
-- Where is Iris now?
-- What does "I am like you already dead" mean?
+## OPEN QUESTIONS (their POV)
+- Who sent the SF team — who's hunting us?
+- **What actually causes the mutations around us?** — **no party consensus; this is an active in-character argument.** Live theories on the table: *we're infectious / spreading a contagion*; *it's only the Rogue* (he ate S-0, he goes Tyrant — he's the source); *it's the sphere / tablet we're carrying*; *it's all four of us together*. **(DM truth — keep them wrong for now: it's the four of them as carriers — their helix-positive *presence* breaks helix-negatives over ~7–8 hours. Not classic infection, not the Rogue alone, not the objects. The 7:39 field-clock in Iris's second letter at the Todd meeting is their first hard pointer toward the real answer — a *time*, not a contagion, and it applies to a room with all of them in it.)**
+- **What is the sphere? The tablet?** (they're carrying both)
+- Where do we even go now?
+- Who is Serrat, and why was his name on Haldane's body?
+- What does *"I am like you already dead"* mean?
+- *(Resolved this arc: "Where is Iris?" — she's dead.)*

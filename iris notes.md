@@ -1,8 +1,3 @@
-# Iris Shane — private journal (full text)
-
-
----
-
 ## Notes left behind
 
 - Don't forget, complicated fancy things tend to break easier. -> PCs find a SIG Prototype rifle. It jams mid fight!

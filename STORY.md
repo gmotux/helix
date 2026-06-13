@@ -64,9 +64,13 @@ The gene survives in diluted form, scattered across humanity. Most carriers live
 
 The standing stone in Antarctica stayed where it was. Ice covered it. No one looked for it because no one knew to.
 
-## 1880s — Wittenbach
+## 1880s — Wittenbach and Silvertongue in the Pamir
 
-**Zacharia Wittenbach.** Austrian ethnographer, born in the 1840s. Worked the Pamir corridor in the 1880s, recording oral traditions of isolated highland populations. The stories he wrote down described a man who could not die, sealed under a stone at the southern end of the world, and a flower he had taken with him. Wittenbach died of fever in 1891 before publishing. His Pamir guide, who had translated the oldest of the stories for him, was found drowned in a mountain stream two weeks later.
+**Zacharia Wittenbach.** Austrian ethnographer, born in the 1840s. Worked the Pamir corridor through the 1880s, recording oral traditions of isolated highland populations. The stories he wrote down described a man who could not die, sealed under a stone at the southern end of the world, and a flower he had taken with him.
+
+He did not work alone. From **1885** his field partner was **B. R. Silvertongue** (b. 1865), a young Cambridge-trained philologist sent out by his college on a Mesopotamian-script grant that had bled sideways into proto-Indo-European fieldwork. Silvertongue spent six summers in the Pamir at Wittenbach's side. He was present in the cave alcove the morning Wittenbach found the four broken tablet pieces; he sketched them in situ; he sat with the elder who told them the oldest of the stories and rendered the philological core into Latin.
+
+Wittenbach died of fever in 1891 before publishing. His Pamir guide, who had translated the oldest of the stories for the two men from the local dialect, was found drowned in a mountain stream two weeks later. Silvertongue, twenty-six, went home to Cambridge with his own field notebooks, the tablet drawings, and a working partial decoding nobody had asked him for. He carried the work for the next fifty-seven years.
 
 ## 1903 — Papers reach the Esterhazy library
 
@@ -360,7 +364,7 @@ He has not been on Kallisto premises since. He has been recruiting, very quietly
 
 ## 1998–2024 — The Todd thread
 
-**Prof. Aaron Todd** (b. 1965) earned his cognitive-science PhD at MIT in 1992 under **Prof. Marian Hartwell** — a senior MIT psychologist who happened to be a personal friend and frequent visitor of **B. R. Silvertongue** at Cambridge. Todd visited Silvertongue's home with Hartwell once in 1989 as a postgrad. He met a tall, sharp old man who showed him a Mesopotamian tablet over tea. Todd remembers the afternoon distinctly. Silvertongue does not appear to have remembered Todd at all.
+**Prof. Aaron Todd** (b. 1965) earned his cognitive-science PhD at MIT in 1992 under **Prof. Marian Hartwell** — a senior MIT psychologist who happened to be a personal friend and frequent visitor of **Bernard's maternal grandfather** at Cambridge. B. R. Silvertongue himself had been dead for forty years by then, but his son had inherited the Pamir field notebooks, the tablet drawings, the unpublished translations, and one of the original physical fragments, and had kept the family work alive as a private avocation in a quiet study off the kitchen of the old Cambridge house. Todd visited the house with Hartwell once in 1989 as a postgrad. He met a tall, sharp old man who showed him a Mesopotamian tablet over tea. Todd remembers the afternoon distinctly. The old man does not appear to have remembered Todd at all.
 
 **1998:** Kallisto recruits Todd on a research grant titled *"cognitive resonance and harmonic perception."* Five-year contract, generous funding, vague deliverables. The administering Kallisto officer is a junior virologist named **Anselm Yates**. Todd and Yates meet twice that year — once over the project budget, once over an unusual methodology question Yates wanted answered. Todd remembers Yates as polite, controlled, and a little too interested in Todd's protocols for measuring auditory thresholds. Yates remembers Todd as *"a man who asks the wrong questions politely."* The contract delivers nothing Kallisto can use overtly; the data feeds into Vogt's old workstream behind the scenes.
 
@@ -368,7 +372,7 @@ He has not been on Kallisto premises since. He has been recruiting, very quietly
 
 **2010 onward:** A new Kallisto liaison contacts Todd — **Dev Patel** — proposing continued cognitive-resonance consulting under a different grant structure. Todd accepts. From 2010 to 2023 he receives CRT cassette recordings from Patel three or four times a year for *"harmonic-pattern review and theoretical interpretation."* He works on them honestly. Patel pays well. Todd continues to believe the work is legitimate, though he has private opinions about Patel he never voices to Patel.
 
-**2018:** Todd takes on **Bernard Silvertongue** as a PhD student at USP São Carlos. Bernard has come to São Carlos through his own interest in cross-cultural harmonic perception. Todd does not connect Bernard's surname to Cambridge until their second meeting. He says nothing to Bernard about having met the grandfather, and has not yet decided whether he ever will.
+**2018:** Todd takes on **Bernard Silvertongue** as a PhD student at USP São Carlos. Bernard has come to São Carlos through his own interest in cross-cultural harmonic perception. Todd does not connect Bernard's surname to Cambridge until their second meeting. He says nothing to Bernard about having met his grandfather, and has not yet decided whether he ever will.
 
 **2020:** A research grant arrives at Todd's USP lab from a small US foundation — **Halder Genomics Initiative**, signed by **Edmund Halder** personally. Edmund flies down to São Carlos for the signing dinner. The two men talk for three hours over a meal Todd's wife has cooked. Edmund leaves at midnight; Todd's wife says later that the American was *"someone who looked at us like we might be the same kind of strange he was."* Edmund and Todd have kept up an irregular correspondence ever since — never about Kallisto, always about cognitive science.
 
@@ -408,35 +412,38 @@ He takes the Board seat and immediately begins asking questions about antiviral 
 
 ## 2019 — Serrat arrives; the Frankfurt route opens
 
-**Col. N. Serrat** transfers in from US Army Special Operations Command as Kallisto's new security architect. She takes the cover identity **"Dr. Moira Vance"** as Director of the Induction Facility. She comes recommended through the Committee's defence-procurement seat.
+**Col. N. Serrat** takes on Kallisto's new security architect role in parallel to his active US Army Special Operations Command position. His Army career continues uninterrupted — he remains a serving Group Commander throughout. The Kallisto role is covert; he works it under the cover identity **"Dr. Moira Vance"**, Director of the Induction Facility — a deliberate cross-gender cover (female, presented as a respectable mid-career biotech security executive) intended to make the Serrat/Vance link forensically harder to surface. He comes recommended through the Committee's defence-procurement seat. The two roles are run in parallel for the next six years and are what eventually allow him to deploy 18D/18A operators on unauthorised Kallisto-side missions while still officially commanding them in the Army.
 
-Serrat is a fanatic patriot of a particular shape. She believes the airborne-conversion programme is a strategic national asset of unparalleled value and that the Committee's caution about deployment is institutional cowardice. Within a year she begins building a **private foreign-sales pipeline** — Frankfurt route, end buyer a Russian state-affiliated principal named **Stepan Mironov**, who intends the agent for use against Chechen and Dagestani separatist populations he has been told carry "abnormal genetic markers." The agent will work on them — about 2% of any population is helix-positive — and produce mass civilian casualties as a side effect. Mironov has been told the casualties are a feature, not a bug.
+Serrat is a fanatic patriot of a particular shape. He believes the airborne-conversion programme is a strategic national asset of unparalleled value and that the Committee's caution about deployment is institutional cowardice. Within a year he begins building a **private foreign-sales pipeline** — Frankfurt route, end buyer a Russian state-affiliated principal named **Stepan Mironov**, who intends the agent for use against Chechen and Dagestani separatist populations he has been told carry "abnormal genetic markers." The agent will work on them — about 2% of any population is helix-positive — and produce mass civilian casualties as a side effect. Mironov has been told the casualties are a feature, not a bug.
 
 Serrat designed the pipeline to create unstoppable foreign demand that will force the Committee to fully commercialise the programme. The Committee does not know. Gideon does not know. The pipeline runs in 2019, 2020, 2021, into 2026 — seven years of off-books sales by the time the campaign opens.
 
-She also runs the legitimate side of Kallisto's security architecture competently. She is good at her job. She and Iris cross in the corridors weekly. They do not speak more than necessary.
+Vance also runs the legitimate side of Kallisto's security architecture competently. She is good at her job. She and Iris cross in the corridors weekly. They do not speak more than necessary. To everyone at Kallisto, Vance is who she appears to be: a quiet, competent, middle-aged woman.
 
 ## 2011–2025 — Serrat's parallel use of 18D/18A
 
-From around 2011 onward, Serrat ran her Special Operations command as a private extraction-and-acquisition service for Kallisto, the Committee, and her own portfolio — on top of the legitimate federal taskings of those units. Her operators believed they were doing classified national-security work for the United States. They were in fact doing classified national-security work for **Klaus Esterhazy, the Frankfurt route, and Serrat herself.**
+From around 2011 onward, Serrat ran his Special Operations command as a private extraction-and-acquisition service for Kallisto, the Committee, and his own portfolio — on top of the legitimate federal taskings of those units. His operators believed they were doing classified national-security work for the United States. They were in fact doing classified national-security work for **Klaus Esterhazy, the Frankfurt route, and Serrat himself.**
+
+**What the off-books missions actually served.** Not a clean either/or. The pipeline is **Kallisto-tasked, Serrat-skimmed.** Kallisto's covert compartment used Serrat's network as its expeditor arm — sample and equipment thefts from competing labs, extractions of Wittenbach-line carriers flagged in Halder's 1976 register, removals of journalists and witnesses who came too close to the cover-floor seam, and surveillance ops Klaus did not want routed through formal contractors. Kallisto paid in three currencies: money through the Frankfurt-adjacent shells, protection (clean records, promotions, the Chimera-issued field medkits), and **information** — which is Serrat's real currency. On every operation Serrat keeps a piece back: a copy of the courier manifest, a sample residue, the photograph that wasn't supposed to leave the site, the cross-referenced name. He doesn't trust his patrons and never has. Over fifteen years he has built **a private file on Kallisto's covert compartment itself** — what Iris was actually doing on B3, who paid for the 1979 paediatric trial, the Sokol material, the names of every Committee principal who ever signed an authorisation. The file is his insurance against Klaus turning on him and his retirement instrument if he ever needs to sell. Mironov is the buyer he has been cultivating for that contingency. The file's physical location is one of the three private vaults — which one is open for the table to discover.
 
 Representative missions across the window (not exhaustive — Serrat had personnel on ~thirty off-books taskings over fifteen years):
 
-- **2013, Tajikistan.** Two-man extraction of a Wittenbach-line descendant flagged in Halder's 1976 register. Target taken from his Pamir village at 03:00, delivered through Tbilisi to a Kallisto receiving point. Died in Antarctic custody 2015 after eleven months of forced-expression work.
+- **2013, Tajikistan.** Two-man extraction of a Wittenbach-line descendant flagged in Halder's 1976 register. Target taken from his Pamir village at 03:00, delivered through Tbilisi to a Kallisto receiving point in Boston. Held in B2, forced into expression, did not stabilise. Died in B2 in 2015 after eleven months of work.
 - **2015, Moscow.** Four-man weekend penetration of the Vavilov Institute of General Genetics. Theft of a freezer's worth of cryo-samples flagged for anomalous low-temperature behaviour. Samples turned out to be unrelated; Russian counter-intelligence never identified the intruders.
 - **2017, Bratislava.** Extraction of a former East German virologist who had read the 1979 paediatric-trial roster while working as a Stasi-era informant on Kallisto. He refused a deal and disappeared from his hotel three weeks later. Two of Serrat's people were in the lobby.
 - **2018, Munich.** Quiet removal of a German freelance journalist filing FOI requests against the Halder Foundation's German-charitable arm. Suicide on record. Single 18A operator on scene thirty-four minutes.
 - **2019, Yokohama.** Theft of stasis-protocol research from a Japanese cryobiology lab producing results adjacent to Tanaka's. Materials reached Kallisto inside a month.
-- **2020, coastal Greece.** Six-week surveillance of the Pindos enclave by two operators posing as ornithologists. Photographed Yates without confirming identity, noted the village's population anomaly. **Serrat shelved the file** rather than tell the Committee how close she had been to a security failure she should have caught earlier. The file is still in her private holdings.
+- **2020, coastal Greece.** Six-week surveillance of the Pindos enclave by two operators posing as ornithologists. Photographed Yates without confirming identity, noted the village's population anomaly. **Serrat shelved the file** rather than tell the Committee how close he had been to a security failure he should have caught earlier. The file is still in his private holdings.
 - **2022, São Paulo.** Two-man mission to ensure a Brazilian shell company stayed cooperative on a sample shipment route. One witness paid; one wasn't.
 - **2023, Boston.** Quiet pressure on a local journalist asking about Edmund Halder's HGI funding. Journalist dropped the story. No bodies.
 - **2024, Geneva.** Counter-surveillance on a meeting Marie Ducharme attended without Serrat's knowledge. Operators identified Marie was passing information to an outside party but could not confirm the recipient (Yates). Serrat watched Marie for ten months thereafter; the rupture made the question moot.
+- **2025, Moldova (Chișinău outskirts, exact site locked).** Full eleven-person deployment of **ODA-3223** against a hardened former-Soviet bio-research bunker — 12th Main Directorate (Biological) era, officially decommissioned in 1992, leased through a Cypriot shell. The brief: kill **Dr. Lev Burian**, a Kallisto covert-compartment biochemist who had defected in late 2024 carrying a portable cryo of expression-line samples and a draft of Iris's airborne-stabilisation protocol, and recover everything he had taken. Burian had set up inside the bunker with his own ex-Spetsnaz contingent and a small cell of Chimera operators he had peeled off through old loyalties; he was deep in negotiations with an undisclosed third-party buyer when ODA-3223 breached. Whether the bunker's defences were genuinely heavier than Serrat had been briefed for, or whether Burian had been tipped and was waiting, is unresolved in Sally's own memory. The team took the building. Burian died on the second sub-level. Most of the recoverable material was destroyed in the firefight or in the burn that followed. Only **SFC Sally Burton** (18D medic) and **SSgt Aragones** (18B weapons, never spoke again) walked out. Sally lifted two **Chimera Triage Injectors** from Burian's personal case during her sweep of his quarters. The team's **18F** — an intelligence sergeant who had joined ODA-3223 in late '24 after Marin's retirement — was dying in a stairwell when he pieced together from documents he had just photographed that this was not a JSOC tasking, and whispered **"CHMR"** to Sally as she tried to stabilise him. She did not know what it meant at the time.
 
-Most operators participated in two to four such missions; the senior 18D officers in more. Some are retired and assume the missions were legitimate. **The men who did Munich, Bratislava, Yokohama, and Geneva know what they did.** Sally Burton, on detached CIA assignment in Serrat's office from 2022 onward, was quietly assembling the contradictions in the cover stories at the time the summit cancelled her assignment.
+Most operators participated in two to four such missions; the senior 18D officers in more. Some are retired and assume the missions were legitimate. **The men who did Munich, Bratislava, Yokohama, and Geneva know what they did. The 2025 Moldova op was the one that finally produced a CIA recruitable asset — Sally Burton.** Some weeks after surviving, Sally was quietly approached inside Serrat's Group HQ by **Evelyn Ross**, who had been watching for exactly this kind of shake-loose moment in the network. **Serrat clocked the contact within days** — surveillance on his own premises, watching who walked which corridors with whom, is reflex for him — and chose not to act on it for reasons described in the kill-list section below. Ross does not know he knows. Sally does not know he knows. The recruitment was secret and recent. Sally's tenure as a CIA asset was short — only the months leading up to the April 2026 strike. In that window she was quietly assembling the contradictions in Serrat's cover stories at the time the summit cancelled her assignment.
 
-**Beyond foreign research, the same pipeline served Serrat personally.** Roughly $2–3 million in portable assets — bearer instruments, art lifted from extraction targets, the Tajik villager's family icons, the Bratislava virologist's cash — held in three private vaults in Switzerland and Liechtenstein. Compromising material on European political figures, useful as the Committee's leverage. Off-books surveillance on Gideon March's residence in 2021 for six weeks (Serrat does not trust Gideon and never has; Gideon does not know he was watched). A small private archive of pre-1984 Halder materials Serrat holds as insurance against Klaus if she ever needs to make a deal.
+**Beyond foreign research, the same pipeline served Serrat personally.** Roughly $2–3 million in portable assets — bearer instruments, art lifted from extraction targets, the Tajik villager's family icons, the Bratislava virologist's cash — held in three private vaults in Switzerland and Liechtenstein. Compromising material on European political figures, useful as the Committee's leverage. Off-books surveillance on Gideon March's residence in 2021 for six weeks (Serrat does not trust Gideon and never has; Gideon does not know he was watched). A small private archive of pre-1984 Halder materials Serrat holds as insurance against Klaus if he ever needs to make a deal.
 
-This entire shadow command is what she must now bury before the federal investigation reaches it.
+This entire shadow command is what he must now bury before the federal investigation reaches it.
 
 ## 2020 — Hannah Reeve hired
 
@@ -500,13 +507,17 @@ Independent of Iris's preparations, **Vance** has begun to suspect that someone 
 
 Vogt leaves Kallisto in **1985** for a respectable academic post in Berlin, his Building B work compartmentalised behind a wall of paediatric immunology publications. He dies in **2014** of natural causes at seventy-two, never publicly connected to anything that happened at Building B. Iris keeps his old initials file in B3 secondary cold storage alongside the paediatric trial dossier; the file is still there at the rupture.
 
-### Note on Bernard's grandfather and the Pamir line
+### Note on Bernard's great-grandfather and the Pamir line
 
-**Dr. B. R. Silvertongue** (1912–1989). Cambridge-trained philologist of Mesopotamian and proto-Indo-European scripts. Worked through the 1960s and 1970s on a private collection of Mesopotamian tablets believed to encode geographic coordinates. His translations and interpretive sketches were never published — he died in 1989 with the work in manuscript form. His papers are held in MIT's special collections under a 50-year embargo, sealed at his bequest until 2039.
+**Dr. B. R. Silvertongue** (1865–1948). Cambridge-trained philologist of Mesopotamian and proto-Indo-European scripts. Wittenbach's field partner in the Pamir from 1885 through 1891 (see the 1880s entry). After Wittenbach's death he returned to Cambridge, took a college fellowship, and spent the next five decades quietly working through the tablet drawings and field transcriptions. His translations and interpretive sketches were never published — he died in 1948 with the work in manuscript form.
 
-**One outside researcher has accessed the papers since the embargo began: a junior Kallisto archivist named A. Yates, in 2014.** Yates left Kallisto four years later citing *conscience.* Yates knows what Silvertongue knew.
+His papers and the one physical fragment he kept in family hands (Fragment III in the four-fragment set; see `tablet_fragments.md`) passed to his son, **Bernard's maternal grandfather**, who held them in the family for the rest of the century. The grandfather was the one Hartwell befriended, the one who hosted Todd in 1989, and the one who quietly passed Fragment III to Todd that afternoon (see the 1998–2024 Todd thread). After the grandfather's death the archive descended through the maternal line and now sits in a small private library at the old Cambridge house, held by a relative on Bernard's mother's side. Bernard has the right of access through the family but has never used it.
 
-The Sumerian tablet the PCs took from the Main Library safe is one of a set — Silvertongue's working notes describe **five fragments scattered across European and Asian private collections in the early 20th century,** each carrying a partial coordinate set that, assembled, points to a precise location in the **Pamir corridor in eastern Tajikistan,** near the head of the Fedchenko glacier. This is **where Wittenbach was working in the 1880s** when he recorded the oral tradition that eventually reached the Esterhazy archive; it is also **where the original tribe — S-0's tribe — lived and died ten thousand years ago** after S-0 carved his runes and walked himself southward to the Antarctic stone.
+**The papers are not in any university collection.** Silvertongue refused institutional capture across his life; his son honoured that. MIT was never offered them.
+
+**One outside researcher has accessed the archive: a junior Kallisto archivist named A. Yates, in 2014.** Yates presented himself to the relative holding the archive under an academic cover (Kallisto-funded Mesopotamian-script research), was granted reading rights for several days, took notes, and left. The relative did not understand what they were stewarding. Yates left Kallisto four years later citing *conscience.* Yates knows what Silvertongue knew.
+
+The Sumerian tablet the PCs took from the Main Library safe is one of a set — Silvertongue's working notes describe **five tablets in the historical group, of which HF-A-1 broke into four pieces in antiquity,** each fragment carrying a partial coordinate set that, assembled, points to a precise location in the **Pamir corridor in eastern Tajikistan,** near the head of the Fedchenko glacier. This is **where Wittenbach and Silvertongue were working together in the 1880s** when Wittenbach recorded the oral tradition that eventually reached the Esterhazy archive; it is also **where the original tribe — S-0's tribe — lived and died ten thousand years ago** after S-0 carved his runes and teleported himself southward to the Antarctic stone.
 
 What is in the cave at the Pamir coordinates:
 - The tribe's final inscriptions on the cave walls, in a proto-cuneiform script that pre-dates Sumerian by millennia. The Sumerian tablets are much later copies made by scholars who passed through the region around 2000 BCE and recognised the inscriptions as sacred.
@@ -514,7 +525,7 @@ What is in the cave at the Pamir coordinates:
 - Personal accounts of S-0's last years before he left.
 - **A second sealed sphere.** Smaller than the Asterweiss, older. Whatever is inside has been waiting ten thousand years.
 
-Bernard is Silvertongue's grandson, helix-positive through his maternal line. He has the surname his mother carried. He does not yet know any of this in detail; he has the tablet, the partial decoding, and the inheritance to push the thread when he chooses.
+Bernard is Silvertongue's great-grandson, helix-positive through his maternal line. He has the surname his mother carried. He does not yet know any of this in detail; he has the tablet, the partial decoding, and the inheritance to push the thread when he chooses.
 
 ## February 2026 — Haldane catches the anomaly
 
@@ -536,7 +547,7 @@ He walks into Kessler's office on the Saturday and asks plainly what the origina
 
 ## April 12, evening — Yates decides
 
-Yates spends Saturday night and Sunday day with the implications. One of Haldane's three vehicle plates traces — through two queries downstream — to the Boston logistics shell that fronts both Serrat's Frankfurt route **and Yates's Pindos supply** (Yates has been receiving small quarterly shipments of his own from the same shell since 2020, a quiet bargain Serrat does not know he made with one of her freight handlers).
+Yates spends Saturday night and Sunday day with the implications. One of Haldane's three vehicle plates traces — through two queries downstream — to the Boston logistics shell that fronts both Serrat's Frankfurt route **and Yates's Pindos supply** (Yates has been receiving small quarterly shipments of his own from the same shell since 2020, a quiet bargain Serrat does not know he made with one of his freight handlers).
 
 If Haldane's file reaches Foundation compliance, the audit follows the plate, finds the shell, finds Pindos. Kallisto identifies the enclave within weeks. Yates trades Haldane's life for the two hundred descendants in the highlands.
 
@@ -575,7 +586,7 @@ The PCs arrive in Boston for the **Kallisto annual summit** at the JOINN Innovat
 - **Dev Patel** (Kallisto neurocognitive lead, based out of Building A) runs the CRT — Cognitive Resonance Testing — sessions on selected attendees. Bernard is one of his subjects: three years in the making, finally in person. Patel records the real waveform readings to a private cassette and submits a sanitised version to his superiors.
 - **Yvette Cole** (Building A behavioural interviewer) sits all four PCs through two days of interviews.
 
-The summit's hidden function is **candidate identification** for the airborne agent — testing, profiling, monitoring. The four PCs are flagged through different sub-routes and tagged for the post-rupture phase. **None of them know.**
+The summit's hidden function is **the harvest.** The program can already *activate* carriers (the airborne agent) and crudely *control* them (a domination serum); it has never *stabilised* one — an awakened carrier without the flower rots into a Tyrant and dies. A **controlled, stable awakened carrier** is the grail the Committee has chased since Marian Esterhazy, and Gideon's forty-year asset-positioning project was always pointed here. The summit gathers the ripened candidates; the four are flagged through different sub-routes — **Gideon's groomed asset (Sean), the ripened CIA flag (Sally), Patel's CRT referral via Todd (Bernard), the Killer's own inside thread** — and tagged for the **post-rupture phase — activate, tank, control. None of them know.** *(The third pillar — stabilisation — the program has never held: one bloom, in a sphere no tool cracks, and Iris has already hidden it in plain sight.)*
 
 Sean is on-site as Director of Chimera's overt compartment, hosting the summit's public sessions. Sally is on her CIA cover, attending as a contracting medical advisor. The Killer is on his contractor cover. Bernard is on Patel's CRT cover.
 
@@ -590,18 +601,20 @@ Sean is on-site as Director of Chimera's overt compartment, hosting the summit's
 - **Vance** is at her Building A office. She is two weeks from acting on Iris and does not know she will not get the chance.
 - **Iris** is in her B3 lab cage. She has been there since 7am, working in pretty hand on top of an old paper she has no intention of finishing.
 
-## 14:00
+## 14:00 — Kessler's lecture
 
-Iris walks into the **B2 airborne-conversion production room.** She knows the room better than anyone alive. She systematically breaches the containers — not all of them, the right ones, in the right order, to produce the largest possible vent through the building's HVAC return. The work takes twenty-three minutes. She leaves the production room at 14:23 by a service stair, returns to her own lab cage on B3, locks the door from the inside, and begins the divinatory work that will project her decoy body to Halder Mansion. Once the projection is locked, she changes into Greta's spare clothes (kept in the lab for exactly this) and walks out through Building B's still-functional staff exit on Greta's badge, hours before the cordon goes up.
+The four flagged carriers are gathered in the **Building A lecture hall** (on the testing floor) for **Mara Kessler's** afternoon session — the last lure of a summit that was never a conference. It was a harvest, and the four were the only point.
 
-## 14:23 — The chamber vents
+## 14:23 — The harvest
 
-Mist floods B2 and begins propagating through the HVAC system into the rest of Building B and across the bridge into Building A.
+On Gideon's authority, at Kessler's signal, the program **vents the airborne agent** into Building A's closed-track HVAC, timed to the lecture so the four are together in one room. The lights die. The agent floods the hall and propagates across both buildings.
 
-Everywhere it reaches:
-- Helix-negative bodies break. The first zombies and half-mutants stand up within minutes.
-- Helix-positive bodies are forced into full expression. Most of them — staff scattered across both buildings — slip and die in the first hour, never having known they carried the gene.
-- The four PCs are in **Room 195 of Building A's testing floor** when the mist reaches them. They die in the next forty-five minutes. Their bodies are stabilised back — codon-style, against the gene's first awakening shock — by mechanisms tied to their own emerging expression. They are not conscious for any of this.
+- **Helix-negative bodies break.** Everyone else in the lecture hall — and staff across both buildings — slips into forced expression and dies or mutates. The first zombies stand up within minutes.
+- **The four are helix-positive.** The agent fires their latent gene. They seize and black out as it wakes for the first time.
+- **The deep world flinches.** Four carriers expressing at once pulls on S-0's distant anchor — a brief, real **seismic pulse** rolls through Boston at 14:23, the bound thing feeling its blood wake. *(This is the tremor the four remember before the dark.)*
+- **The instant they activate, they begin to emit the field themselves.** Some of the dead and half-mutated they will wake among are not only the agent's work — they are the four's own expression, already leaking. They are implicated in their own first crime scene and will not know it for a long time.
+
+The convulsing four are pulled from the hall to the **activation tanks** — the post-rupture phase, running live, where the program means to stabilise and **control** them. What happens in the next forty-five minutes is the thing none of them remembers and all of them will dream: Kessler works a **control serum** on the tanked four; **Iris intervenes** to take them; the harvest fails; a **fifth tank** holds a flagged carrier that has expressed into a Tyrant, and she leaves it. *(Full scene → `next-session/dream.md`.)* The four are freed but un-stabilised and only briefly controlled; as the site collapses, they are left, unconscious, among the tanks on the testing floor where the harvest fell apart — and they stay under for the rest of the day and the night, bodies rewriting in the dark.
 
 ## 14:24
 
@@ -613,18 +626,12 @@ At Halder Mansion, the session is convened with Gideon present and Archer absent
 
 ## Evening, April 14
 
-- **Iris** does not leave Boston. She does not board the rail. Instead, from her B3 lab cage in the hours after the rupture, she pushes her divinatory expression to its absolute limit and projects a **stable simulacrum of her own dead body onto the lawn of Halder Mansion**, sustained at a distance through her connection to her own genetic anchor. The simulacrum is anatomically convincing; her years of work in the airborne-conversion line gave her enough biology to know what a Mansion coroner would inspect for. While the decoy materialises west of Boston, the real Iris slips into her Greta cover identity and quietly walks out of Building B on Greta's badge.
-- **Vance** has moved off-campus to a forward command site outside the cordon. She is coordinating containment from there.
-- **Gideon** is at the Mansion. He does not see anyone arrive. The decoy body is on the lawn when staff find it the next morning.
-- The four PCs are unconscious in Room 195. Their bodies are still rewriting.
+- **Iris** needs no decoy. The rupture's mass death covers her — to Gideon, Kessler, and the Committee she is simply another body lost in the building, **presumed dead in the rupture.** That presumption quietly moots the terminal vote on her. She slips into her **Greta** cover and walks off the campus on Greta's badge before the cordon locks.
+- **Vance** moves off-campus to a forward command site outside the cordon, coordinating containment.
+- **Kessler** works the wreckage of the harvest from a forward position: she got the four activated and *lost* them, and will spend the three days before the strike burying that.
+- The four PCs are unconscious among the activation tanks on the testing floor, their bodies still rewriting.
 
-## Late evening, April 14 — Iris's decoy at the Mansion
-
-Iris never goes to the Mansion. The body Mansion staff find on the lawn the morning of April 15 is **a divinatory-projected decoy** — her high-elf expression, pushed past its safe range and held there for hours, generates a stable simulacrum of herself far enough away to fool a coroner. The projection costs her. She is in physical pain for the rest of the day. She would not have been able to maintain it indefinitely. She didn't need to — only long enough for the chain of cover stories to lock around her death.
-
-Gideon believes she is dead. The Committee believes she is dead. Vance believes she is dead.
-
-**Iris herself is in Boston, wearing her alternate identity.**
+Gideon believes Iris is dead. The Committee believes it. Vance believes it. **Iris herself is in Boston, wearing her alternate identity** — the woman they meant to remove has been standing at staff briefings for years.
 
 ### Greta Solheim was always Iris
 
@@ -646,7 +653,7 @@ The "Marta" the PCs also left alive was a real person — Custodial Lead, helix-
 
 ## ~10:00–11:30
 
-**The four PCs come online** in Room 195. They wake up changed and don't know it yet. They begin to move.
+**The four PCs come online** among the tanks on the testing floor — the rupture a night behind them, the dead all around, Kessler gone. (The eventful first 45 minutes were the harvest, which they'll later dream; the rest was their bodies rewriting in the dark.) They wake up changed and don't know it yet. They begin to move.
 
 ## ~11:30–14:00
 
@@ -721,7 +728,7 @@ The Doctor pulls an improvised ability — channels her anti-necrotic helix expr
 
 ## Iris reveals herself
 
-"Greta" steps forward, drops the disguise, and is Iris. She is visibly exhausted — the projected-decoy at the Mansion and the Greta disguise have both been costing her. **She spends her remaining lifeforce to revive the Doctor.** She tells the four PCs:
+"Greta" steps forward, drops the disguise, and is Iris. She is visibly exhausted — holding the Greta appearance this long, on top of everything she has spent since the rupture, has been bleeding her dry. **She spends her remaining lifeforce to revive the Doctor.** She tells the four PCs:
 
 - A nuclear strike on the campus has been authorised by federal command. The cordon could not contain the event and the decision was made to sterilise it. **The strike is imminent — within the hour.**
 - The freight-rail service tunnel under the east end of Building B is the only way out.
@@ -736,6 +743,17 @@ The PCs run east through the basement to the freight-rail platform and into the 
 The tunnel holds. The strike obliterates everything above — Building A, Building B, the cavern, Sokol's cell, the Director's Office, the Old Laboratory (West's body in the cold drawer), the Halder Foundation archive on-site, the entire campus. **Everything that was in those buildings is now gone except what the PCs carried out and what was buried deep enough to survive.**
 
 **The B3 cold vault survives.** The vault was built in 1985 to hardened spec and sits below the main basement level; the strike's blast and thermal pulse do not penetrate it. **The 1986 left forearm of S-0 is still in stasis inside the vault, intact, under thousands of tons of rubble. Nobody currently knows it survived.** It is recoverable by anyone who later digs to that depth.
+
+## Why the strike happened (DM — the real motive)
+
+What Iris tells the PCs is true at the surface: federal command authorised a tactical strike because the cordon could not contain the event. What she doesn't say — she's dying, and it doesn't change their next ten minutes — is *who steered it.* The strike is the seam where two facts meet: **the Committee can't fire a warhead, and the government can't act on a threat it doesn't understand.**
+
+- **The emergency was real.** The vented agent, the multiplying mutants, and — the new variable — the four's own ever-growing field made a genuine uncontainable bio-event 100 miles from Boston, with no cure. Not a cover story; a true catastrophe.
+- **Only the Committee understood it,** and it owns the classification. So the Committee wrote the threat assessment that went up the chain — *uncontainable, no antidote, will reach the population, only sterilisation contains it* — true enough to be unanswerable. That assessment is what put the decision in front of the President. **"The President's decision"** (the public retreat-line) is real; the Committee just authored the question.
+- **The Committee wanted it gone anyway.** Kessler's reports read the harvest as a **successful-but-incomplete trial:** activation and control proven, **stabilisation (the flower) still missing, the mutation field a brand-new uncontrolled hazard.** They had the *data.* What remained on-site — the tanks, the program, the dead, the paper trail — was pure liability, with federal investigators three days from the basements. So they didn't resist the strike; they **engineered it.** Scorched earth, dressed as containment, sold as a criticality accident.
+- **The three days (14th→17th) are the Committee's window:** assess Kessler's reports, write the site off, shape both the strike and the cover story, and burn it before the investigation reaches anything that matters.
+
+**The blind spot that drives the rest of the campaign:** the Committee burned the site believing its lost assets died in it. They didn't — the four were already in the tunnel. The Committee's buried, *successful* experiment is loose in the world, and the day it learns that is the day this stops being a cover-up and becomes a hunt.
 
 What the PCs carried out:
 - **The Asterweiss sphere.** Still sealed. The flower inside, untouched. Unique in the world. Now untracked by Kallisto.
@@ -754,7 +772,7 @@ The rail tunnel runs west toward Boston. The east branch — toward Halder Mansi
 
 ## The tunnel
 
-The PCs walked the tunnel west. They took the long-rest alcove at Beat 1 (8 hours). They fought the mutated rat brood at the breeding chamber (Beat 2) and won, taking the 1960s supply cache. Further on, they fought the husk-courier at the broken train (Beat 3), took the courier's keycard and notebook with the hatch combination (030461), and **took two vials from the sealed cargo crate.** They reached the hatch at the end of the tunnel and entered the freight elevator.
+The PCs walked the tunnel west. They took the long-rest alcove at Beat 1 (8 hours). They fought the mutated rat brood at the breeding chamber (Beat 2) and won, taking the 1960s supply cache. Further on, they fought the husk-courier at the broken train (Beat 3), took the courier's keycard and notebook with the hatch combination (030461), and **took two vials from the sealed cargo crate** (tiny S-0 tissue samples suspended in nitric acid — *not* airborne agent; **the Rogue has since eaten one, leaving one**). They reached the hatch at the end of the tunnel and entered the freight elevator.
 
 ## The warehouse and out
 
@@ -773,9 +791,9 @@ The session ended with the offer on the table. **No decision yet.**
 
 ## What the PCs do not yet know about the comrade-dying thread
 
-Col. N. Serrat — Vance — survived the strike and is conducting a systematic cleanup of the 18D/18A operators she used for fifteen years as Kallisto's private extraction service. The dead were not random ex-colleagues; they were the men who actually ran the foreign missions Serrat is now trying to bury before federal investigators connect the dots. The first three kills (Vermont, upstate NY, New Hampshire) happened February–March 2026 as Serrat's pre-emptive cleanup against an internal threat she couldn't yet name. The strike accelerated her timeline.
+Col. N. Serrat — Vance — survived the strike and is conducting a systematic cleanup of the 18D/18A operators he used for fifteen years as Kallisto's private extraction service. The dead were not random ex-colleagues; they were the men who actually ran the foreign missions Serrat is now trying to bury before federal investigators connect the dots. The first three kills (Vermont, upstate NY, New Hampshire) happened February–March 2026 as Serrat's pre-emptive cleanup against an internal threat he couldn't yet name. The strike accelerated his timeline.
 
-**Sally is on her list** because Sally was a CIA plant inside Serrat's own 18D office for two years, quietly assembling the operational record of the foreign missions. Serrat assumes Sally has reconstructed at minimum the Munich removal and the Bratislava extraction, and possibly more. **The cabin host is on her list** for having served on one or more of the same missions. **The Killer is on her list with a question mark** — Serrat doesn't yet know which missions he was on (lock at the table per the player's choice).
+**Sally is currently in the cleanup ledger as "presumed dead in strike" — but the picture before the strike was deliberately different.** Sally was NOT on Serrat's active-kill queue. He had clocked Ross's recruitment of her within days of the contact and chose to leave it standing, for two reasons. **First, Sally was Serrat's best living lead to Ron Bennett** — the only ODA-3223 18D not on the Moldova op, off-grid since mid-March, and Serrat needs him silent for the same cleanup logic. Sally and Ron's tie was the only thread he could pull on Ron's location; killing Sally would freeze that trail. **Second, killing Ross's recently-recruited CIA asset would draw the full Agency onto him** at the worst possible moment of the foreign-mission burn — Ross would know within hours, the Bureau within days, and his Maine ground footprint would be lit up before he had finished moving the relevant operators. Sally alive and unaware-she-was-known was an instrument he could potentially use. The strike removed both calculations for him: she was supposed to die at the campus, the records crossed her off, and Serrat let it stand. **If she surfaces alive in the coming weeks, the calculus flips fast** — capture-preferred while Ron's location can still be squeezed out of her, kill-if-forced if she's about to become a federal witness. **The cabin host is on his list** for having served on one or more of the same off-books missions. **The Killer is on his list with a question mark** — Serrat doesn't yet know which missions he was on (lock at the table per the player's choice).
 
 ---
 
@@ -789,12 +807,13 @@ For the full hour-by-hour outside-world response in the days after the strike, s
 
 ### Kallisto / Committee
 - **Klaus Esterhazy** — in Vienna. Coordinating the Committee's defensive posture: sacrifice Kallisto wholesale, burn Vance and Hadj posthumously, shield Gideon and the Chimera classification.
-- **Gideon March** — **location open.** Off-grid in a pre-prepared safe position. Not on the Mansion grounds, not on the campus, not at any known address. Believes Iris dead (the decoy worked on him). Believes the PCs dead in the strike.
-- **Col. Serrat / "Dr. Moira Vance"** — **survived the strike** (forward command site outside the kill radius; walked out with three of her staff). Off-grid since hour two, operating from pre-prepared safe positions in northern New England. Holds the Frankfurt-route contact protocols. **Running an active cleanup of her former 18D/18A operators** to bury the foreign-mission paper trail (Tajikistan 2013, Moscow 2015, Bratislava 2017, Munich 2018, Yokohama 2019, et al.) before federal investigators reach it. About twelve contractors under direct control — identified across the operations by a black three-pointed-wolf challenge coin. Killings began February 2026 and have accelerated since the strike. Sally and the cabin host are on the kill queue; the Killer is on it with a question mark pending operational-history confirmation.
+- **Gideon March** — **location open.** Off-grid in a pre-prepared safe position. Not on the Mansion grounds, not on the campus, not at any known address. Believes Iris dead (presumed lost in the rupture). Believes the PCs dead in the strike.
+- **Col. Serrat / "Dr. Moira Vance"** — **survived the strike** (forward command site outside the kill radius; walked out with three of his staff). Off-grid since hour two, operating from pre-prepared safe positions in northern New England. Holds the Frankfurt-route contact protocols. **Running an active cleanup of his former 18D/18A operators** to bury the foreign-mission paper trail (Tajikistan 2013, Moscow 2015, Bratislava 2017, Munich 2018, Yokohama 2019, the 2025 Moldova op, et al.) before federal investigators reach it. About twelve contractors under direct control — identified across the operations by a black three-pointed-wolf challenge coin. Killings began February 2026 and have accelerated since the strike. The cabin host and Ron Bennett are on the active kill queue; the Killer is on it with a question mark pending operational-history confirmation. **Sally is currently crossed out as "presumed dead in strike"** — she was deliberately not being hunted before the rupture (best lead to Ron, plus untouchable as Ross's fresh CIA asset whom Serrat had already silently clocked); if she surfaces alive, capture-preferred while Ron's location can still be wrung out of her, kill-if-forced if she's about to testify.
 - **Dr. Adam Strauss** — Committee-appointed acting Director of Chimera (overt). Running Chimera from a Pentagon office under federal escort. Gideon's man.
 - **Dr. Vivian Crale** — public Kallisto CEO, detained for questioning. Knows nothing material. Looks guilty anyway.
 - **The Frankfurt route** — frozen. Mironov is calling in markers from Moscow and waiting for Vance to surface.
-- **Mara Kessler, Dev Patel, Yvette Cole** — at Building A on rupture day, presumed dead in the strike. Patel's private CRT cassette of Bernard's real readings was on his person; that is now glass.
+- **Dev Patel, Yvette Cole** — at Building A on rupture day, presumed dead in the strike. Patel's private CRT cassette of Bernard's real readings was on his person; that is now glass.
+- **Mara Kessler** — ran the harvest in person; got the four activated and then lost them. **Slipped the campus in the three days before the April-17 strike; publicly presumed dead in it, actually alive and gone to ground.** The PCs' findable face for what was done to them — she answers to Gideon, and above him the Committee.
 - **Hannah Reeve, Naomi Varga, Bren Taylor, the Station Security Operator, Everett H. Archer** — already dead before the strike; bodies vaporised.
 
 ### The Listeners (Yates)
@@ -808,8 +827,7 @@ For the full hour-by-hour outside-world response in the days after the strike, s
 - **Evelyn Ross** — pulled into the Congressional inquiry as a CIA witness. Selectively cooperating to preserve her access to Sean and Sally if either surfaces.
 
 ### Halder Mansion (intact)
-- **Empty house, secured but unstaffed.** Gideon is no longer there. Vance's people may have swept it for the decoy body and the Mansion's archive, depending on how the Committee allocated post-strike priorities (open at the table).
-- **The decoy Iris body** — on the grounds when the strike happened. May still be there. Federal investigators have not yet asked to enter the Mansion.
+- **Empty house, secured but unstaffed.** Gideon is no longer there. Vance's people may have swept it for the Mansion's archive, depending on how the Committee allocated post-strike priorities (open at the table). Federal investigators have not yet asked to enter.
 - **The Halder pre-1962 archive vault** — in the Mansion. Halder's original register cards, his translations of Wittenbach's notebooks, the 1939 expedition logs, his last working drafts. **Intact.** Reachable only by surfacing from the tunnel and approaching Boston-side, then Mansion-side.
 
 ### Buried under the strike rubble
@@ -835,8 +853,8 @@ Institutional placements only. Each PC carries into the campaign a small set of 
 - **Dev Patel** — Kallisto neurocognitive lead, based out of Building A, runs the CRT programme. Reports to Mara Kessler operationally and to Gideon strategically. Identified Bernard's profile through Todd in 2023 and has been waiting. Submits a sanitised version of Bernard's real readings to his superiors and keeps the truth on a private cassette. Presumed dead in the strike.
 
 ### Sally's contacts
-- **Evelyn Ross** — Sally's CIA handler. Recruited Sally into the cell that scouts Kallisto for foreign-sales violations. The cell operates from a CIA liaison position inside Serrat's old 18D command — which is what allowed Sally's recruitment in the first place.
-- **Col. N. Serrat** — Sally's former 18D commander. Sally served under her. Sally recognises the directive signature on Haldane's body as Serrat's hand and has not yet told the other three PCs.
+- **Evelyn Ross** — Sally's CIA handler. Recruited Sally recently and secretly into her cell, which scouts Kallisto for foreign-sales violations. Ross approached Sally inside Serrat's Group HQ in the weeks after Sally returned from the catastrophic 2025 Moldova op — Ross had been watching for an operator inside Serrat's command who might be shake-loose-able, and Sally fit. **Serrat clocked the contact within days and chose not to act on it** — Sally's value as a tracking lead to Ron Bennett plus the cost of touching a fresh CIA asset outweighed the cleanup gain. Ross does not know Serrat knows. Sally does not know Serrat knows. The recruitment is recent (months, not years).
+- **Col. N. Serrat** — Sally's former 18D commander. Sally served under him. Sally recognises the directive signature on Haldane's body as Serrat's hand and has not yet told the other three PCs.
 
 ### The Killer's contacts
 - **[INSIDE-KALLISTO CONTACT — name pending]** — the one person inside Kallisto the Killer personally knows. Put him on the summit roster on a facility-penetration-test cover. Has not yet revealed themselves. Position and motive open at the table.
@@ -903,7 +921,7 @@ Reddit, 4chan, Twitter, Discord have at least three viable open-source threads p
 
 - **The Committee (Klaus Esterhazy, Vienna)** — coordinating Kallisto's sacrifice; has not yet decided whether to dispose of Gideon as well.
 - **Gideon March** — off-grid in a pre-prepared safe position. Not on the Mansion grounds, not on the campus, not at any known address. Believes Iris is dead. Believes the PCs are dead in the strike.
-- **Col. Serrat / Vance** — survived. Off-grid in northern New England. Holds Frankfurt contact protocols. Actively cleaning her former 18D/18A operator network to bury the foreign-mission paper trail before federal investigators reach it.
+- **Col. Serrat / Vance** — survived. Off-grid in northern New England. Holds Frankfurt contact protocols. Actively cleaning his former 18D/18A operator network to bury the foreign-mission paper trail before federal investigators reach it.
 - **Mironov (Moscow)** — knows everything Russian intelligence knows. Calling in markers. Wants the formula, Vance, and any live carrier he learns exists.
 - **Yates (Pindos)** — Boston team dead in the strike; Marie Ducharme dead. Operationally blind in Boston. Shifting from acquisition to defence; expects pursuit.
 - **Evelyn Ross** — selectively cooperating with federal investigation to preserve her access to Sally and Sean if either surfaces.
@@ -929,7 +947,7 @@ A single line per named figure. For the full role and arc, see the timeline entr
 - **The four PCs** — Sean (Director), Bernard (Singer), Sally (Doctor), the Killer (Rogue). Currently in the freight-rail service tunnel heading west toward Boston.
 - **Klaus Esterhazy** — current Committee head, son of Marian. The man who ordered Halder's killing. In Vienna, managing the cover.
 - **Gideon March** — Kallisto's covert chief, the Committee's man since 1980. Location open, off-grid in a pre-prepared safe position.
-- **Col. N. Serrat ("Dr. Moira Vance")** — Kallisto security architect, runs the Frankfurt route privately. Used 18D/18A under her command as a private extraction service for Kallisto and herself 2011–2025. Survived the strike. Off-grid in northern New England, currently liquidating the operator network to bury the foreign-mission record.
+- **Col. N. Serrat ("Dr. Moira Vance")** — Kallisto security architect (under cross-gender female cover identity), runs the Frankfurt route privately. Used 18D/18A under his command as a private extraction service for Kallisto and himself 2011–2025. Survived the strike. Off-grid in northern New England, currently liquidating the operator network to bury the foreign-mission record.
 - **Dr. Adam Strauss** — Committee-appointed acting Director of Chimera (overt). Pentagon office.
 - **Dr. Henrik Loew** — antiviral programme director under Chimera, Halder's named continuator. Detained under Chimera material-witness protocols.
 - **Dr. Alice Peters** — Sean's wife, covertly seconded to Kallisto. Held under Chimera protective custody.
@@ -941,14 +959,14 @@ A single line per named figure. For the full role and arc, see the timeline entr
 - **Eleni Parokhos** — Pindos enclave keeper, future-arc contact (not yet on stage).
 - **Dr. Bianca Casetti** — Italian materials scientist (retired), in Naples. The only outside specialist who ever physically examined the Asterweiss sphere (1991 Halder consult). Pre-briefed by Iris in 2024. Asterweiss-cracking thread.
 - **Prof. Aaron Todd** — Bernard's PhD supervisor at USP São Carlos. Multi-node connector (Silvertongue/Patel/Yates/Edmund/Iris). Pre-briefed by Iris in late 2024. Has thirteen years of Patel's CRT cassette recordings.
-- **Prof. Marian Hartwell** (~early 1930s, late 1990s, deceased ~2018) — Todd's MIT PhD adviser, friend of Silvertongue. Dead. Her widow lives in Cambridge MA, served as the Iris→Todd intermediary, knows nothing.
+- **Prof. Marian Hartwell** (~early 1930s, late 1990s, deceased ~2018) — Todd's MIT PhD adviser, personal friend of Bernard's grandfather (Silvertongue's son). Dead. Her widow lives in Cambridge MA, served as the Iris→Todd intermediary, knows nothing.
 
 ## Dead since the rupture and the strike
-- **Iris Shane** — the architect. Lived under the **Greta Solheim** cover identity for years; faked her own death at the Mansion on April 14 via a divinatory-projected decoy; kept the Greta cover through the PCs' encounters; revealed herself in the kitchen on April 17 and sacrificed her lifeforce to revive the Doctor. Body vaporised in the strike.
+- **Iris Shane** — the architect. Lived under the **Greta Solheim** cover identity for years; was presumed dead in the rupture (just another body lost in the building); kept the Greta cover through the PCs' encounters; revealed herself in the kitchen on April 17 and sacrificed her lifeforce to revive the Doctor. Body vaporised in the strike.
 - **Victor Haldane** — Building A security lead. Killed by the Tyrant-Rogue in the B3 cavern. Body vaporised.
 - **Marta Ibarra** — Custodial Lead. Helix-positive without knowing, awakened into a stable spectre expression, used Greta's appearance to haunt the PCs. Killed by the Doctor's improvised absorption in the kitchen. Whatever was left of her vaporised.
 - **Hannah Reeve, Elias Varo, Everett H. Archer, Bren Taylor, the Station Security Operator, Naomi Varga** — already dead before the strike; bodies vaporised.
-- **Mara Kessler, Dev Patel, Yvette Cole** — at Building A on rupture day; presumed dead in the strike.
+- **Dev Patel, Yvette Cole** — at Building A on rupture day; presumed dead in the strike. *(Kessler ran the harvest here too, but slipped out before the strike — alive; see the status section.)*
 - **Marie Ducharme** — Yates's mole inside Kessler's office; dead in the strike.
 - **Reuben Sokol** — forty-eight years in his welded cell; vaporised.
 - **The three last upper-floor carriers** — vaporised.
@@ -971,12 +989,12 @@ A single line per named figure. For the full role and arc, see the timeline entr
 - **Aliz Shane** (1930–1976) — Iris's mother.
 - **Tomáš Shane** (1926–1976) — Iris's father.
 - **Zacharia Wittenbach** (1840s–1891) — Austrian ethnographer, first written record of S-0.
-- **Dr. B. R. Silvertongue** (1912–1989) — Cambridge philologist, Bernard's grandfather. Working translations of the Sumerian tablet set point to the Pamir corridor. Papers sealed in MIT special collections under a 50-year embargo until 2039; one outside researcher (Yates) has accessed them.
+- **Dr. B. R. Silvertongue** (1865–1948) — Cambridge philologist, Bernard's great-grandfather. Wittenbach's field partner in the Pamir 1885–1891. Working translations of the Sumerian tablet set point to the Pamir corridor. Papers and one physical fragment held in a private family archive at the old Cambridge house, maternal line; one outside researcher (Yates) has accessed them, in 2014.
 - **The seven men of Halder's 1939 expedition** — all dead by the late 1970s, four of them not naturally.
 - **Dr. Lukas Brandt** — Vogt's senior protégé, carved the cavern circle. Status post-rupture not yet locked — was he in the building when it vented?
 
 ## Other named places
-- **Halder Mansion** — Halder family seat east of the JOINN campus, the freight rail's east terminus. Intact after the strike. Holds the pre-1962 archive vault. The decoy Iris body is on the lawn.
+- **Halder Mansion** — Halder family seat east of the JOINN campus, the freight rail's east terminus. Intact after the strike. Holds the pre-1962 archive vault.
 - **JOINN Innovation Park** — the campus the two Buildings sit on, fenced research park, now under National Guard cordon.
 - **Pindos enclave** — Yates's village in northern Greece, ~200 helix-positive descendants.
 - **The Antarctic base** — permanent Kallisto facility within reach of the bound S-0, in continuous operation since 1990.

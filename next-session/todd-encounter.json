@@ -1,0 +1,13 @@
+[
+  {"name": "bard",    "init": 19, "side": "pc"},
+  {"name": "warl",    "init": 18, "side": "pc"},
+  {"name": "Garrity", "init": 17, "side": "enemy", "hp": 45},
+  {"name": "rogue",   "init": 16, "side": "pc"},
+  {"name": "Voss",    "init": 15, "side": "enemy", "hp": 45},
+  {"name": "Pike",    "init": 14, "side": "enemy", "hp": 45},
+  {"name": "cleric",  "init": 13, "side": "pc"},
+  {"name": "Mara",    "init": 12, "side": "enemy", "hp": 45},
+  {"name": "Renner",  "init": 11, "side": "enemy", "hp": 45},
+  {"name": "Driver",  "init": 9,  "side": "enemy", "hp": 45},
+  {"name": "Todd",    "init": 7,  "side": "pc"}
+]
